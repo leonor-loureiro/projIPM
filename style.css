@@ -1,41 +1,53 @@
+@font-face {
+    font-family: "FjallaOne-Regular";
+    src:url("FjallaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Kanit-Regular";
+    src:url("Kanit-Regular.ttf");
+}
+
+@font-face {
+    font-family: "PT_Sans-Web-Regular";
+    src:url("PT_Sans-Web-Regular.ttf");
+}
+
 body {
-	font-family:calibri;
+	font-family: PT_Sans-Web-Regular;
 	text-align: center;
+	background-color: #eff5f5;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
 h1 {
-	color: green;
+	font-family: FjallaOne-Regular;
+	color: #0c4141;
 }
 
 h2 {
+	font-family: Kanit-Regular;
 }
 
-#foto_aluno {
+a {
+    color: #5F9EA0;
+}
+
+.foto_aluno {
     border-radius: 50%;
+}
+
+.section {
+}
+
+.inner_section {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border-top-style: solid;
+	font-size: 120%;
 }
 
 #links {
 	text-align: left;
-	padding-left: 100px;
-}
-
-#at {
-}
-
-#at_inner {
-}
-
-#mc {
-}
-
-#mc_inner {
-}
-
-#proto {
-}
-
-#proto_inner {
-}
-
-#au_inner {
 }
