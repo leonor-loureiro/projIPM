@@ -1,16 +1,16 @@
 @font-face {
     font-family: "FjallaOne-Regular";
-    src:url("FjallaOne-Regular.ttf");
+    src:url("fonts/FjallaOne-Regular.ttf");
 }
 
 @font-face {
     font-family: "Kanit-Regular";
-    src:url("Kanit-Regular.ttf");
+    src:url("fonts/Kanit-Regular.ttf");
 }
 
 @font-face {
     font-family: "PT_Sans-Web-Regular";
-    src:url("PT_Sans-Web-Regular.ttf");
+    src:url("fonts/PT_Sans-Web-Regular.ttf");
 }
 
 body {
