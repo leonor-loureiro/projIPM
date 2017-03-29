@@ -7,6 +7,6 @@ body {
 	border-radius: 50%;
 	background: red;
 	position: fixed;
-	left: 12.5vw;
-	bottom: -62.5vw;
+	left: 12.5vw; /* (100-75)/2 */
+	top: 28.125vw; /* 9/16*100/2 */
 }
