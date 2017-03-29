@@ -12,6 +12,7 @@
 		<script src="widgets/clock/clock.js"></script>
 		<link rel="stylesheet" href="widgets/simple_digital_clock/sdc.css">
 		<script src="widgets/simple_digital_clock/sdc.js"></script>
+		<script src="main.js"></script>
 	</head>
 	<body onload="SDC_startTime()">
 		<div class="jumbotron text-center">
@@ -29,7 +30,7 @@
 				</div>
 				<div class="col-xs-4">
 					<img src="images/f3_fazer_pagamento.svg" class="imagem_funcionalidade">
-					<button type="button" class="btn btn-primary btn-lg btn_func" id="f3_fazer_pagamento">Fazer pagamento</button>
+					<button type="button" onclick="f3()" class="btn btn-primary btn-lg btn_func" id="f3_fazer_pagamento">Fazer pagamento</button>
 				</div>
 				<div class="col-xs-4">
 				</div>
@@ -37,13 +38,13 @@
 			<div class="row">
 				<div class="col-xs-4">
 					<img src="images/f1_fazer_pedido.svg" class="imagem_funcionalidade">
-					<button type="button" class="btn btn-primary btn-lg btn_func" id="f1_fazer_pedido">Fazer pedido</button>
+					<button type="button" onclick="f1()" class="btn btn-primary btn-lg btn_func" id="f1_fazer_pedido">Fazer pedido</button>
 				</div>
 				<div class="col-xs-4">
 				</div>
 				<div class="col-xs-4">
 					<img src="images/f2_acompanhar_pedido.svg" class="imagem_funcionalidade">
-					<button type="button" class="btn btn-primary btn-lg btn_func" id="f2_acompanhar_pedido">Acompanhar pedido</button>
+					<button type="button" onclick="f2()" class="btn btn-primary btn-lg btn_func" id="f2_acompanhar_pedido">Acompanhar pedido</button>
 				</div>
 				</div>
 			</div>
