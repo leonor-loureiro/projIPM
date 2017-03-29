@@ -8,11 +8,20 @@
 		<script src="../libs/jquery-3.2.0.min.js"></script>
 		<script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="widgets/clock/clock.css">
+		<script src="widgets/clock/clock.js"></script>
+		<link rel="stylesheet" href="widgets/simple_digital_clock/sdc.css">
+		<script src="widgets/simple_digital_clock/sdc.js"></script>
 	</head>
-	<body>
+	<body onload="SDC_startTime()">
 		<div class="jumbotron text-center">
-			<h1>My First Bootstrap Page</h1>
-			<p>Resize this responsive page to see the effect!</p>
+			<h1>~Com.ISTo~</h1>
+			<ul id="clock">
+				<li id="sec"></li>
+				<li id="hour"></li>
+				<li id="min"></li>
+			</ul>
+			<div id="simple_digital_clock"></div>
 		</div>
 		<div class="container">
 			<div class="row">

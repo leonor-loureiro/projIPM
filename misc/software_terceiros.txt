@@ -1,0 +1,4 @@
+https://jquery.com/
+http://getbootstrap.com/
+https://css-tricks.com/css3-clock/
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock

@@ -2,11 +2,11 @@ body {
 }
 
 .prato {
-	width: 75vw;
-	height: 75vw;
+	width: 62.5vw;
+	height: 62.5vw;
 	border-radius: 50%;
 	background: red;
 	position: fixed;
-	left: 12.5vw; /* (100-75)/2 */
-	top: 28.125vw; /* 9/16*100/2 */
+	left: 18.75vw; /* (100-62.5)/2 */
+	top: 31.25vw; /* (9/16*100-62.5/2)*(1+0.25) */
 }
