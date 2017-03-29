@@ -1,43 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">
-<style type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   height="65"
+   width="65"
+   xml:space="preserve"
+   viewBox="0 0 65 64.999999"
+   y="0px"
+   x="0px"
+   id="Layer_1"
+   version="1.1"><metadata
+     id="metadata424"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs422" /><style
+     id="style397"
+     type="text/css">
 	.st0{fill:#16A085;}
 	.st1{fill:#1ABC9C;}
 	.st2{fill:#ECF0F1;}
 	.st3{fill:#F39C12;}
 	.st4{fill:#F1C40F;}
-</style>
-<g id="XMLID_1_">
-	<rect id="XMLID_3_" x="15.5" y="22.3" class="st0" width="65" height="37.9"/>
-	<rect id="XMLID_4_" x="15.5" y="25" class="st1" width="65" height="37.9"/>
-	<path id="XMLID_5_" class="st2" d="M29,27.7L29,27.7c0,6-4.9,10.8-10.8,10.8v10.6c6,0,10.8,4.9,10.8,11.1H67V60
-		c0-6,4.9-10.8,10.8-10.8V38.6c-6,0-10.8-4.9-10.8-10.8H29z"/>
-	<ellipse id="XMLID_6_" class="st1" cx="48" cy="44" rx="10.8" ry="13.5"/>
-	<path id="XMLID_7_" class="st2" d="M43.3,37.7l6.7-1.9h0.7v13.5c0,0.8,0.1,1.4,0.2,1.6c0.1,0.3,0.4,0.3,0.8,0.5h2.5v0.5H43.8v-0.5
-		h2.5c0.4-0.3,0.6-0.3,0.8-0.5c0.1-0.3,0.2-0.8,0.2-1.6v-8.7c0-1.4-0.1-1.9-0.2-2.4c-0.1-0.3-0.3-0.3-0.5-0.5h-0.9
-		c-0.5,0-1.2,0-2.1,0.3L43.3,37.7"/>
-	<path id="XMLID_8_" class="st3" d="M26.3,65.6c-2.4,0-4.4,0.5-5.9,1.4h-2.2v0.8v0.4v0.2v0.2v1.2c0,2.2,3.6,4.1,8.1,4.1
-		s8.1-1.8,8.1-4.1v-1.2v-0.2v-0.2v-0.4v-0.8h-2.2C30.8,66.1,28.7,65.6,26.3,65.6z"/>
-	<ellipse id="XMLID_9_" class="st4" cx="26.3" cy="66.9" rx="8.1" ry="4.1"/>
-	<path id="XMLID_10_" class="st3" d="M26.3,60.1c-2.4,0-4.4,0.5-5.9,1.4h-2.2v0.8v0.4v0.2V63v1.2c0,2.2,3.6,4.1,8.1,4.1
-		s8.1-1.8,8.1-4.1V63v-0.2v-0.2v-0.4v-0.8h-2.2C30.8,60.7,28.7,60.1,26.3,60.1z"/>
-	<ellipse id="XMLID_11_" class="st4" cx="26.3" cy="61.5" rx="8.1" ry="4.1"/>
-	<path id="XMLID_12_" class="st3" d="M26.3,54.7c-2.4,0-4.4,0.5-5.9,1.4h-2.2v0.8v0.4v0.2v0.2v1.2c0,2.2,3.6,4.1,8.1,4.1
-		s8.1-1.8,8.1-4.1v-1.2v-0.2v-0.2v-0.4v-0.8h-2.2C30.8,55.3,28.7,54.7,26.3,54.7z"/>
-	<ellipse id="XMLID_13_" class="st4" cx="26.3" cy="56.1" rx="8.1" ry="4.1"/>
-	<path id="XMLID_14_" class="st3" d="M26.3,49.3c-2.4,0-4.4,0.5-5.9,1.4h-2.2v0.8v0.4V52v0.2v1.2c0,2.2,3.6,4.1,8.1,4.1
-		s8.1-1.8,8.1-4.1v-1.2V52v-0.2v-0.4v-0.8h-2.2C30.8,49.9,28.7,49.3,26.3,49.3z"/>
-	<ellipse id="XMLID_15_" class="st4" cx="26.3" cy="50.6" rx="8.1" ry="4.1"/>
-	<path id="XMLID_16_" class="st3" d="M45.3,65.6c-2.4,0-4.4,0.5-5.9,1.4h-2.2v0.8v0.4v0.2v0.2v1.2c0,2.2,3.6,4.1,8.1,4.1
-		c4.5,0,8.1-1.8,8.1-4.1v-1.2v-0.2v-0.2v-0.4v-0.8h-2.2C49.7,66.1,47.7,65.6,45.3,65.6z"/>
-	<ellipse id="XMLID_17_" class="st4" cx="45.3" cy="66.9" rx="8.1" ry="4.1"/>
-	<path id="XMLID_18_" class="st3" d="M50.7,62.9c-2.4,0-4.4,0.5-5.9,1.4h-2.2V65v0.4v0.2v0.2v1.2c0,2.2,3.6,4.1,8.1,4.1
-		s8.1-1.8,8.1-4.1v-1.2v-0.2v-0.2V65v-0.8h-2.2C55.2,63.4,53.1,62.9,50.7,62.9z"/>
-	<ellipse id="XMLID_19_" class="st4" cx="50.7" cy="64.2" rx="8.1" ry="4.1"/>
-	<path id="XMLID_20_" class="st3" d="M26.3,43.9c-2.4,0-4.4,0.5-5.9,1.4h-2.2V46v0.4v0.2v0.2V48c0,2.2,3.6,4.1,8.1,4.1
-		s8.1-1.8,8.1-4.1v-1.2v-0.2v-0.2V46v-0.8h-2.2C30.8,44.4,28.7,43.9,26.3,43.9z"/>
-	<ellipse id="XMLID_21_" class="st4" cx="26.3" cy="45.2" rx="8.1" ry="4.1"/>
-</g>
-</svg>
+</style><g
+     transform="translate(-15.5,-15.6)"
+     id="XMLID_1_"><rect
+       style="fill:#16a085"
+       height="37.900002"
+       width="65"
+       class="st0"
+       y="22.299999"
+       x="15.5"
+       id="XMLID_3_" /><rect
+       style="fill:#1abc9c"
+       height="37.900002"
+       width="65"
+       class="st1"
+       y="25"
+       x="15.5"
+       id="XMLID_4_" /><path
+       style="fill:#ecf0f1"
+       d="m 29,27.7 v 0 c 0,6 -4.9,10.8 -10.8,10.8 v 10.6 c 6,0 10.8,4.9 10.8,11.1 H 67 V 60 C 67,54 71.9,49.2 77.8,49.2 V 38.6 C 71.8,38.6 67,33.7 67,27.8 H 29 Z"
+       class="st2"
+       id="XMLID_5_" /><ellipse
+       style="fill:#1abc9c"
+       ry="13.5"
+       rx="10.8"
+       cy="44"
+       cx="48"
+       class="st1"
+       id="XMLID_6_" /><path
+       style="fill:#ecf0f1"
+       d="M 43.3,37.7 50,35.8 h 0.7 v 13.5 c 0,0.8 0.1,1.4 0.2,1.6 0.1,0.3 0.4,0.3 0.8,0.5 h 2.5 v 0.5 H 43.8 v -0.5 h 2.5 c 0.4,-0.3 0.6,-0.3 0.8,-0.5 0.1,-0.3 0.2,-0.8 0.2,-1.6 v -8.7 c 0,-1.4 -0.1,-1.9 -0.2,-2.4 -0.1,-0.3 -0.3,-0.3 -0.5,-0.5 h -0.9 c -0.5,0 -1.2,0 -2.1,0.3 l -0.3,-0.3"
+       class="st2"
+       id="XMLID_7_" /><path
+       style="fill:#f39c12"
+       d="m 26.3,65.6 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.8 0.4 0.2 0.2 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 V 68.6 68.4 68.2 67.8 67 h -2.2 c -1.4,-0.9 -3.5,-1.4 -5.9,-1.4 z"
+       class="st3"
+       id="XMLID_8_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="66.900002"
+       cx="26.299999"
+       class="st4"
+       id="XMLID_9_" /><path
+       style="fill:#f39c12"
+       d="m 26.3,60.1 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.8 0.4 0.2 0.1 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 V 63 62.8 62.6 62.2 61.4 h -2.2 c -1.4,-0.7 -3.5,-1.3 -5.9,-1.3 z"
+       class="st3"
+       id="XMLID_10_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="61.5"
+       cx="26.299999"
+       class="st4"
+       id="XMLID_11_" /><path
+       style="fill:#f39c12"
+       d="m 26.3,54.7 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.8 0.4 0.2 0.2 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 v -1.2 -0.2 -0.2 -0.4 -0.8 h -2.2 c -1.4,-0.8 -3.5,-1.4 -5.9,-1.4 z"
+       class="st3"
+       id="XMLID_12_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="56.099998"
+       cx="26.299999"
+       class="st4"
+       id="XMLID_13_" /><path
+       style="fill:#f39c12"
+       d="m 26.3,49.3 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.8 0.4 0.1 0.2 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 V 52.2 52 51.8 51.4 50.6 h -2.2 c -1.4,-0.7 -3.5,-1.3 -5.9,-1.3 z"
+       class="st3"
+       id="XMLID_14_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="50.599998"
+       cx="26.299999"
+       class="st4"
+       id="XMLID_15_" /><path
+       style="fill:#f39c12"
+       d="m 45.3,65.6 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.8 0.4 0.2 0.2 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 V 68.6 68.4 68.2 67.8 67 h -2.2 c -1.5,-0.9 -3.5,-1.4 -5.9,-1.4 z"
+       class="st3"
+       id="XMLID_16_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="66.900002"
+       cx="45.299999"
+       class="st4"
+       id="XMLID_17_" /><path
+       style="fill:#f39c12"
+       d="m 50.7,62.9 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.7 0.4 0.2 0.2 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 V 65.8 65.6 65.4 65 64.2 h -2.2 c -1.4,-0.8 -3.5,-1.3 -5.9,-1.3 z"
+       class="st3"
+       id="XMLID_18_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="64.199997"
+       cx="50.700001"
+       class="st4"
+       id="XMLID_19_" /><path
+       style="fill:#f39c12"
+       d="m 26.3,43.9 c -2.4,0 -4.4,0.5 -5.9,1.4 h -2.2 v 0.7 0.4 0.2 0.2 1.2 c 0,2.2 3.6,4.1 8.1,4.1 4.5,0 8.1,-1.8 8.1,-4.1 V 46.8 46.6 46.4 46 45.2 h -2.2 c -1.4,-0.8 -3.5,-1.3 -5.9,-1.3 z"
+       class="st3"
+       id="XMLID_20_" /><ellipse
+       style="fill:#f1c40f"
+       ry="4.0999999"
+       rx="8.1000004"
+       cy="45.200001"
+       cx="26.299999"
+       class="st4"
+       id="XMLID_21_" /></g></svg>
