@@ -1,7 +1,12 @@
 body {
 }
 
-.prato {
+.container {
+   margin: 0 !important;
+   width: 100vw;
+}
+
+#prato {
 	width: 62.5vw;
 	height: 62.5vw;
 	border-radius: 50%;
@@ -9,4 +14,18 @@ body {
 	position: fixed;
 	left: 18.75vw; /* (100-62.5)/2 */
 	top: 31.25vw; /* (9/16*100-62.5/2)*(1+0.25) */
+	z-index: -100;
+}
+
+.btn_func {
+	margin: auto;
+	display: block;
+}
+
+.imagem_funcionalidade {
+	width: 10vw;
+	height: 10vw;
+	margin: auto;
+	display: block;
+	padding: 0.25vw;
 }
