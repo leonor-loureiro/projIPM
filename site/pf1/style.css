@@ -1,9 +1,6 @@
-body {
-}
-
 .container {
    margin: 0 !important;
-   width: 100vw;
+   width: auto;
 }
 
 #prato {
@@ -28,4 +25,11 @@ body {
 	margin: auto;
 	display: block;
 	padding: 0.25vw;
+}
+
+#zona_f1 {
+	margin: 0;
+	height: 14vw;
+	border: 1px solid black;
+	display: 'none' !important;
 }
