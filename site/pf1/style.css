@@ -4,19 +4,41 @@
 }
 
 #prato {
-	width: 62.5vw;
-	height: 62.5vw;
+	width: 50vw;
+	height: 50vw;
 	border-radius: 50%;
 	background: red;
 	position: fixed;
-	left: 18.75vw; /* (100-62.5)/2 */
-	top: 31.25vw; /* (9/16*100-62.5/2)*(1+0.25) */
+	left: 25vw; /* (100-50)/2 */
+	top: 39.0625vw; /* (9/16*100-50/2)*(1+0.25) */
 	z-index: -100;
 }
 
-.btn_func {
-	margin: auto;
-	display: block;
+#f1 {
+	width: 16vw;
+	height: 16vw;
+	position: fixed;
+	left: 15vw;
+	top: 40vw;
+	transform: translate(-50%, -50%);
+}
+
+#f2 {
+	width: 16vw;
+	height: 16vw;
+	position: fixed;
+	right: 15vw;
+	top: 40vw;
+	transform: translate(50%, -50%);
+}
+
+#f3 {
+	width: 16vw;
+	height: 16vw;
+	position: fixed;
+	left: 50vw;
+	top: 30vw;
+	transform: translate(-50%, -50%);
 }
 
 .imagem_funcionalidade {
@@ -31,5 +53,5 @@
 	margin: 0;
 	height: 14vw;
 	border: 1px solid black;
-	display: 'none' !important;
+	display: 'none';
 }
