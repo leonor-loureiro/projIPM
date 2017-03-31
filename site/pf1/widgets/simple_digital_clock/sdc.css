@@ -1,7 +1,6 @@
 #simple_digital_clock {
 	position: fixed;
-	width: 10vw;
-	height: 10vw;
-	top: 11vw;
-	right: 1vw;
+	width: 8vw;
+	top: 8.5vw;
+	right: 0.5vw;
 }
