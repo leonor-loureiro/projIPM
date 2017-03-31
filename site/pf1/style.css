@@ -50,8 +50,24 @@
 }
 
 #zona_f1 {
-	margin: 0;
+	position: relative;
 	height: 14vw;
 	border: 1px solid black;
 	display: 'none';
+}
+
+.row {
+	padding: 1vw;
+}
+
+.info {
+	display: inline-block;
+	vertical-align: middle;
+	width: 2%;
+	height: 2%;
+}
+
+.btn_nav {
+	position: absolute;
+	bottom: 1vw;
 }
