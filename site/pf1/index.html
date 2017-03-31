@@ -7,14 +7,15 @@
 		<link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<script src="../libs/jquery-3.2.0.min.js"></script>
 		<script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="widgets/clock/clock.css">
 		<script src="widgets/clock/clock.js"></script>
 		<link rel="stylesheet" href="widgets/simple_digital_clock/sdc.css">
 		<script src="widgets/simple_digital_clock/sdc.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="f1.css">
 		<script src="main.js"></script>
 	</head>
-	<body onload="loadMain(); SDC_startTime()">
+	<body onload="f1(); SDC_startTime()">
 		<div class="jumbotron text-center">
 			<h1>~Com.ISTo~</h1>
 			<ul id="clock">
@@ -24,7 +25,7 @@
 			</ul>
 			<div id="simple_digital_clock"></div>
 		</div>
-		<div class="container" id="container"></div>
+		<div id="loaded"></div>
 		<div id="prato"></div>
 	</body>
 </html>

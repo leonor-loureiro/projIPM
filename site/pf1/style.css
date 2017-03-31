@@ -52,8 +52,14 @@
 #zona_f1 {
 	position: relative;
 	height: 14vw;
-	border: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	display: 'none';
+}
+
+.loaded {
+	top: 0;
+	left: 0;
 }
 
 .row {

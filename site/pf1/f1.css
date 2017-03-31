@@ -1,0 +1,51 @@
+.tipo_comida {
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+	height: 8vw;
+	width: 8vw;
+	position: fixed;
+}
+
+.icone_tipo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 5vw;
+	width: 5vw;
+}
+
+#comida_bebidas {
+	top: 52vw;
+	left: 22vw;
+}
+
+#comida_entradas {
+	top: 44vw;
+	left: 27vw;
+}
+
+#comida_sopas {
+	top: 38vw;
+	left: 36vw;
+}
+
+#comida_carne {
+	top: 35vw;
+	left: 50vw;
+}
+
+#comida_peixe {
+	top: 38vw;
+	left: 64vw;
+}
+
+#comida_vegetariano {
+	top: 44vw;
+	left: 74vw;
+}
+
+#comida_sobremesas {
+	top: 52vw;
+	left: 78vw;
+}
