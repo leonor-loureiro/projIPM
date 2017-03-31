@@ -60,21 +60,39 @@
 }
 
 .oferta {
+	padding-left: 0.25vw;
+	padding-right: 0.25vw;
 	display: inline-block;
+	text-align: center;
+}
+
+.imagem_oferta {
+	width: 5vw;
+	height: 5vw;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.imagem_teste {
+	background: green;
 }
 
 .seta {
-	width: 5vw;
-	height: 5vw;
+	width: 8vw;
+	height: 8vw;
 	background: black;
 	border-radius: 50%;
 }
 
 #seta_esquerda {
 	position: absolute;
+	top: 1vw;
+	left: 1vw;
 }
 
 #seta_direita {
 	position: absolute;
-	right: 0;
+	top: 1vw;
+	right: 1vw;
 }
