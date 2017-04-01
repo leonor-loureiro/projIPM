@@ -1,3 +1,39 @@
+#zona_f1 {
+	position: relative;
+	height: 18vw;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#area_pedido {
+	position: fixed;
+	width: 16vw;
+	height: 24vw;
+	left: 84vw;
+	top: 32vw;
+	border: 1px solid black;
+	border-right: none;
+	padding-left: 1vw;
+}
+
+.botao_navegacao {
+	position: absolute;
+	bottom: 1vw;
+}
+
+.botoes_navegacao {
+	position: absolute;
+	bottom: 1vw;
+	width: 100%;
+	padding: 0;
+}
+
+.grupo_botoes_navegacao {
+	position: absolute;
+	bottom: 1vw;
+	width: 100%;
+}
+
 .tipo_comida {
 	top: 0;
 	left: 0;

@@ -53,14 +53,6 @@
 	padding: 0.25vw;
 }
 
-#zona_f1 {
-	position: relative;
-	height: 18vw;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	display: 'none';
-}
-
 .loaded {
 	top: 0;
 	left: 0;
@@ -75,9 +67,4 @@
 	vertical-align: middle;
 	width: 2%;
 	height: 2%;
-}
-
-.btn_nav {
-	position: absolute;
-	bottom: 1vw;
 }

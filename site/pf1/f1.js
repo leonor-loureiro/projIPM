@@ -4,6 +4,7 @@ function f1_ofertas(que_oferta) {
 		$("#ofertas").load(que_oferta);
 	});
 	$("#prato_decor").load("f1_tipos_pratos.html");
+	$("#area_direita").load("f1_pedido.html");
 }
 
 function ofertas_mover_esquerda() {
