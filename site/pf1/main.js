@@ -9,7 +9,7 @@ function f1() {
 
 function def1() {
 	$("#loaded").load("main.html");
-	$("#prato_decor").load("empty.html");
+	$("#prato_decor").html("");
 }
 
 function f2() {
