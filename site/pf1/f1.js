@@ -14,3 +14,15 @@ function ofertas_mover_esquerda() {
 function ofertas_mover_direita() {
 	document.getElementById("ofertas").scrollLeft += 256;
 }
+
+function f1_info_nutricional(info_produto) {
+	$("#loaded").load("f1_3.html", function()
+	{
+		$("#info_produto").load(info_produto);
+	});
+	("#prato_decor").load("");
+	("#seta_direita").load("");
+	("#seta_esquerda").load("");
+
+}
+

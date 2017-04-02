@@ -5,6 +5,14 @@
 	border-bottom: 1px solid black;
 }
 
+#zona_f1_2 {
+	position: relative;
+	height: 24vw;
+	border-top: 1px;
+	border-bottom: 1px ;
+	background-color: whitesmoke;
+}
+
 #area_pedido {
 	position: fixed;
 	width: 16vw;
@@ -136,4 +144,26 @@
 .imagem_pedido_lista {
 	width: 1vw;
 	height: 1vw;
+}
+
+
+.imagem_info {
+	padding-left: 0.25vw;
+	padding-right: 0.25vw;
+	padding-top: 1.5vw;
+	display: inline-block;
+	text-align: center;
+}
+.info_nutricional {
+	padding-left: 1vw;
+	padding-right: 0.25vw;
+	text-align: left;
+}
+
+.tempo_espera {
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-top: 8.0vw;
+	padding-bottom: 5.0vw;
+	text-align: center;
 }
