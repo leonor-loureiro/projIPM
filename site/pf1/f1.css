@@ -141,7 +141,7 @@
 
 
 .imagem_info {
-	padding-left: 0.25vw;
+	padding-left: 10vw;
 	padding-right: 0.25vw;
 	padding-top: 1.5vw;
 	display: inline-block;
@@ -159,4 +159,19 @@
 	padding-top: 8.0vw;
 	padding-bottom: 5.0vw;
 	text-align: center;
+}
+
+.add_sub{
+	width: 2vw;
+	height: 2vw;
+	border-radius: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.acompanhamentos{
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-top: 4vw;
+	text-align: left;	
 }

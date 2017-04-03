@@ -69,3 +69,8 @@
 	width: 2%;
 	height: 2%;
 }
+
+.btn-secundary:hover{
+	background-color: gray;
+	color: white;
+}
