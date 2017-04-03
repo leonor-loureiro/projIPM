@@ -1,12 +1,5 @@
 #zona_f1 {
 	position: relative;
-	height: 18vw;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-}
-
-#zona_f1_2 {
-	position: relative;
 	height: 24vw;
 	border-top: 1px;
 	border-bottom: 1px ;
@@ -111,8 +104,8 @@
 }
 
 .imagem_oferta {
-	width: 5vw;
-	height: 5vw;
+	width: 8vw;
+	height: 8vw;
 	border-radius: 50%;
 	margin-left: auto;
 	margin-right: auto;
