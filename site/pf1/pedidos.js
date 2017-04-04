@@ -18,7 +18,7 @@ function desenhar_pedidos() {
 	var html_pedidos = "";
 	var total = 0;
 	for (var item of pedidos) {
-		html_pedidos = html_pedidos.concat('<p><img src="' + item.imagem + '" class="imagem_pedido_lista" onclick="remover_pedido(' + item.id + '); desenhar_pedidos()"> ' + item.nome + " " + item.preco.toFixed(2) + "€");
+		html_pedidos = html_pedidos.concat('<p><img src="images/remover.svg" class="imagem_pedido_lista" onclick="remover_pedido(' + item.id + '); desenhar_pedidos()"> ' + item.nome + " " + item.preco.toFixed(2) + "€");
 		total += item.preco;
 	}
 	$("#lista_pedidos").html(html_pedidos);

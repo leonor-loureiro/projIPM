@@ -5,12 +5,12 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   height="60"
-   width="60"
-   id="svg6"
-   version="1.1"
+   viewBox="0 0 60 60"
    enable-background="new 0 0 64 64"
-   viewBox="0 0 60 60">
+   version="1.1"
+   id="svg6"
+   width="60"
+   height="60">
   <metadata
      id="metadata12">
     <rdf:RDF>
@@ -25,14 +25,8 @@
   </metadata>
   <defs
      id="defs10" />
-  <circle
-     style="fill:#4fd1d9"
-     id="circle2"
-     r="30"
-     cy="30"
-     cx="30" />
   <path
-     style="fill:#ffffff"
+     d="M 28.3,14 13,30 28.3,46 V 35.4 H 47 V 25.1 H 28.3 Z"
      id="path4"
-     d="M 28.3,14 13,30 28.3,46 V 35.4 H 47 V 25.1 H 28.3 Z" />
+     style="fill:#ffffff" />
 </svg>
