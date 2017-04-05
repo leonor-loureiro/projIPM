@@ -7,39 +7,26 @@ function f1_ofertas(tipo) {
 	$("#area_direita").load("f1_pedido.html");
 }
 
-function adicionar_oferta(nome, preco, imagem, anterior, informacoes)
-{
-	$(ofertas).append('<div class = "oferta">\
-	<div class="imagem_oferta imagem_teste" onclick=" \
-	adicionar_pedido(\'' + nome + '\', 12.98, \'images/' + imagem +'\'); \
-	desenhar_pedidos();" ></div>' + nome + '<p>Preço: ' + preco.toFixed(2) + '€\
-	<p><button type="button" onclick="\
-	f1_info_nutricional(\'' + informacoes + '\', \'' + anterior + '\', \'' + nome + '\', 12.98, \'images/' + imagem +'\') \
-	" class="btn btn-secundary  btn-xs">Detalhes</button></div>');
-}
-
-function ofertas_mover_esquerda() {
+function f1_ofertas_mover_esquerda() {
 	document.getElementById("ofertas").scrollLeft -= 256;
 }
 
-function ofertas_mover_direita() {
+function f1_ofertas_mover_direita() {
 	document.getElementById("ofertas").scrollLeft += 256;
 }
 
 var f1_anterior = "";
-var f1_nome = "";
-var	f1_preco = "";
-var f1_imagem = "";
-var f1_nutricional= "";
-function f1_info_nutricional(info_produto, anterior, nome, preco, imagem) {
-	f1_anterior = anterior;
-	f1_nome = nome;
-	f1_preco = preco;
-	f1_imagem = imagem;
-	f1_nutricional = info_produto;
+var f1_anterior_tipo = "";
+var f1_anterior_id = 0;
+
+function f1_info_nutricional(tipo, id) {
+	var oferta = obter_oferta(tipo, id);
+	f1_anterior = oferta.anterior;
+	f1_anterior_tipo = tipo;
+	f1_anterior_id = id;
 	$("#loaded").load("f1_3.html", function()
 	{
-		$("#info_produto").load(info_produto);
+		f1_info_nutricional_carregar(oferta);
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
@@ -82,5 +69,5 @@ function f1_sub_dose(){
 
 function f1_4_retroceder()
 {
-	f1_info_nutricional(f1_nutricional, f1_anterior, f1_nome, f1_preco, f1_imagem);
+	f1_info_nutricional(f1_anterior_tipo, f1_anterior_id);
 }
