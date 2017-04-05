@@ -1,13 +1,15 @@
 <div id="area_pedido">
 	<h4>Listagem do pedido</h4>
 	<div id="lista_pedidos" style="overflow-y: scroll ;height:16vw;"></div>
+	<div id="lista_pedidos_preco_total"></div>
 	<script>desenhar_pedidos();</script>
 	<div class="row botoes_navegacao">
 		<div class="col-xs-6">
-			<button type="button" onclick="def1()" class="btn btn-primary btn-sm btn-block">Cancelar</button>
+			<button type="button" onclick="f1_retroceder(); limpar_pedidos()" class="btn btn-primary btn-sm btn-block">Cancelar</button>
 		</div>
 		<div class="col-xs-6">
-			<button type="button" onclick="def1()" class="btn btn-primary btn-sm btn-block">Concluir</button>
+<!-- 		No futuro irá adicionar os pedidos a outra array além de os limpar -->
+			<button type="button" onclick="f1_retroceder(); limpar_pedidos()" class="btn btn-primary btn-sm btn-block">Concluir</button>
 		</div>
 	</div>
 </div>

@@ -3,7 +3,7 @@ function f1_carregar_ofertas(tipo)
 	switch(tipo)
 	{
 		case "bebidas":
-			for (i = 0; i < 16; i++)
+			for (i = 0; i < 5; i++)
 			{
 				adicionar_oferta("Bebida", 12.98, "comida_bebidas.svg", "bebidas", "f1_3_placeholder.html");
 			}
@@ -44,5 +44,16 @@ function f1_carregar_ofertas(tipo)
 				adicionar_oferta("Sobremesa", 12.98, "comida_sobremesas.svg", "sobremesas", "f1_3_placeholder.html");
 			}
 			break;
+	}
+	
+	if (isOverflowed(ofertas))
+	{
+		seta_esquerda.style.display = "inline";
+		seta_direita.style.display = "inline";
+	}
+	else
+	{
+		seta_esquerda.style.display = "none";
+		seta_direita.style.display = "none";
 	}
 }

@@ -119,8 +119,8 @@
 .seta {
 	width: 8vw;
 	height: 8vw;
-	background: black;
 	border-radius: 50%;
+	background-color: CornflowerBlue;
 }
 
 #seta_esquerda {
@@ -175,4 +175,9 @@
 	padding-right: 10vw;
 	padding-top: 4vw;
 	text-align: left;	
+}
+
+#lista_pedidos_preco_total {
+	text-align: right;
+	margin-right: 1vw;
 }

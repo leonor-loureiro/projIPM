@@ -45,14 +45,14 @@ function f1_info_nutricional(info_produto, anterior, nome, preco, imagem) {
 	$("#area_direita").load("f1_pedido.html");
 }
 
-function def3_retroceder()
+function f1_3_retroceder()
 {
 	f1_ofertas(f1_anterior);
 }
 
-function def3_adicionar_pedido()
+function f1_adicionar_pedido()
 {
-	adicionar_pedido("f1_nome", 12,98, "images/info.svg");
+	adicionar_pedido("f1_nome", 12.98, "images/info.svg");
 	desenhar_pedidos();
 }
 
@@ -80,7 +80,7 @@ function f1_sub_dose(){
 	}
 }
 
-function def4_retroceder()
+function f1_4_retroceder()
 {
 	f1_info_nutricional(f1_nutricional, f1_anterior, f1_nome, f1_preco, f1_imagem);
 }
