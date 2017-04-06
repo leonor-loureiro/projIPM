@@ -30,13 +30,3 @@ function limpar_pedidos() {
 	// http://stackoverflow.com/a/1232046
 	pedidos.splice(0, pedidos.length);
 }
-
-function modal_confirm(){
-
-	$(document).ready(function(){
-	    $("#myBtn").click(function(){
-	        $("#myModal").modal();
-	    });
-	});
-
-}
