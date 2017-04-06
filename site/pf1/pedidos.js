@@ -9,7 +9,7 @@ function adicionar_pedido(_nome, _preco, _imagem) {
 
 function remover_pedido(_id) {
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
-	var result = confirm("Want to delete?");
+	var result = confirm("Tem a certeza que deseja remover o produto?");
 	if (index > -1 && result) {
 		pedidos.splice(index, 1);
 	}
