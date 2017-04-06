@@ -83,3 +83,8 @@
 	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
+
+@font-face {
+        font-family: Roboto Bold Condensed;
+        src:"/libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf"
+}

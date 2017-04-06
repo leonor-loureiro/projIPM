@@ -79,13 +79,13 @@ function f1_carregar_ofertas(tipo)
 function f1_info_nutricional_carregar(oferta) {
 	var template =
 `
-<div class="col-sm-4 imagem_info_col">
+<div class="col-xs-4 imagem_info_col">
 	<img src='%s' class=imagem_info>
 	<p><b>%s</b></p>
 	<p>%s€</p>
 </div>
 
- <div class="col-sm-4 info_nutricional">
+ <div class="col-xs-4 info_nutricional">
  	<table class = "table">
  		<thead>
  			<tr>
@@ -124,7 +124,7 @@ function f1_info_nutricional_carregar(oferta) {
  		</tbody>
  	</table>
  </div>
- <div class="col-sm-4 tempo_espera">
+ <div class="col-xs-4 tempo_espera">
 	<b>Tempo de espera </b><p>%s min</p>
 </div>
 `
