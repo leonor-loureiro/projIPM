@@ -9,7 +9,8 @@ function adicionar_pedido(_nome, _preco, _imagem) {
 
 function remover_pedido(_id) {
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
-	if (index > -1) {
+	var result = confirm("Want to delete?");
+	if (index > -1 && result) {
 		pedidos.splice(index, 1);
 	}
 }
@@ -28,4 +29,14 @@ function desenhar_pedidos() {
 function limpar_pedidos() {
 	// http://stackoverflow.com/a/1232046
 	pedidos.splice(0, pedidos.length);
+}
+
+function modal_confirm(){
+
+	$(document).ready(function(){
+	    $("#myBtn").click(function(){
+	        $("#myModal").modal();
+	    });
+	});
+
 }
