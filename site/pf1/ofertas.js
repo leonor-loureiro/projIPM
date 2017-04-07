@@ -50,14 +50,14 @@ function f1_desenhar_oferta(oferta)
 {
 	var template = `
 <div class = "oferta">
-	<div class="imagem_oferta imagem_teste" onclick="adicionar_pedido('%s', %d, %d); desenhar_pedidos();"></div>
+	<div class="imagem_oferta imagem_teste" onclick="adicionar_pedido('%s', %d, %t, %d); desenhar_pedidos();"></div>
 	<p>%s
 	<p>Preço: %s€
 	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-secundary btn-xs">Detalhes</button>
 </div>
 `;
 	var html = sprintf(template,
-		oferta.tipo, oferta.id, 1, oferta.nome,
+		oferta.tipo, oferta.id, false, 1, oferta.nome,
 		oferta.preco.toFixed(2), oferta.tipo, oferta.id
 	);
 	$(ofertas).append(html);

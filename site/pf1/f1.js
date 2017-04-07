@@ -37,9 +37,9 @@ function f1_3_retroceder()
 	f1_ofertas(f1_anterior);
 }
 
-function f1_adicionar_pedido_detalhes()
+function f1_adicionar_pedido_detalhes(personalizado)
 {
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, 1);
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, personalizado, 1);
 	desenhar_pedidos();
 }
 
