@@ -39,7 +39,8 @@ function f1_3_retroceder()
 
 function f1_adicionar_pedido_detalhes(personalizado)
 {
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, personalizado, 1);
+	
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, personalizado, qtd);	
 	desenhar_pedidos();
 }
 
@@ -70,4 +71,5 @@ function f1_sub_dose(){
 function f1_4_retroceder()
 {
 	f1_info_nutricional(f1_anterior_tipo, f1_anterior_id);
+
 }
