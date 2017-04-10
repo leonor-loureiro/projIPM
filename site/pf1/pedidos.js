@@ -3,7 +3,7 @@ var id_counter = 0;
 
 function adicionar_pedido(_tipo, _id, _personalizado, _quantidade) {
 	var index = pedidos.map(function(e) { return String(e.oferta.tipo) + String(e.oferta.id) + String(e.personalizado) }).indexOf(String(_tipo) + String(_id) + String(false));
-	console.log(index);
+
 	if (_personalizado == true || index < 0)
 	{
 		var oferta = obter_oferta(_tipo, _id);
@@ -11,6 +11,7 @@ function adicionar_pedido(_tipo, _id, _personalizado, _quantidade) {
 			personalizado: _personalizado, quantidade: _quantidade };
 		id_counter += 1;
 		pedidos.push(pedido);
+		index +=1;
 		pedidos[index].quantidade = _quantidade;
 	}
 	else
@@ -29,10 +30,8 @@ function remover_pedido(_id) {
 }
 
 function cancelar_fazer_pedido(){
-	var result = confirm("Tem a certeza que deseja cancelar o pedido?");
-	if(result){
 		f1_retroceder();
-	}
+
 }
 
 function concluir_fazer_pedido(){
