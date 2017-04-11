@@ -18,9 +18,32 @@ function f1_random_tempo(min, max)
 	return Math.floor((Math.random() * (max - 1)) + min);
 }
 
-function f1_random_preco(min, max)
+function f1_random_preco_real(min, max)
 {
 	return Math.floor((Math.random() * (max - min + 1) * 2) + min * 2) / 2 - 0.01;
+}
+
+function f1_random_preco(tipo)
+{
+	switch(tipo)
+	{
+		case "bebidas":
+			return f1_random_preco_real(0.5, 3);
+		case "entradas":
+			return f1_random_preco_real(0.5, 2);
+		case "sopas":
+			return f1_random_preco_real(1, 1.5);
+		case "carne":
+			return f1_random_preco_real(6, 15);
+		case "peixe":
+			return f1_random_preco_real(6, 15);
+		case "vegetariano":
+			return f1_random_preco_real(5, 12);
+		case "sobremesas":
+			return f1_random_preco_real(0.5, 2.5);
+		default:
+			return 99.98;
+	}
 }
 
 function f1_informacoes_random(tempo_min, tempo_max)
@@ -31,10 +54,19 @@ function f1_informacoes_random(tempo_min, tempo_max)
 		tempo: f1_random_tempo(tempo_min, tempo_max)};
 }
 
-function f1_personalizacoes_random()
+function f1_personalizacoes_random(tipo)
 {
-	// Random no futuro
-	return { acompanhamentos: ["batatas", "arroz", "salada"], extras: ["Não", "tenho", "ideias"] };
+	switch(tipo)
+	{
+		case "carne":
+			return { acompanhamentos: ["Batatas fritas", "Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+		case "peixe":
+			return { acompanhamentos: ["Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+		case "vegetariano":
+			return { acompanhamentos: ["Batatas fritas", "Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+		default:
+			return false;
+	}
 }
 
 function f1_popular_ofertas()
@@ -45,7 +77,7 @@ function f1_popular_ofertas()
 	for (var tipo of ['bebidas', 'entradas', 'sopas', 'carne', 'peixe', 'vegetariano', 'sobremesas']) {
 		for (i = 0; i < 16; i++)
 		{
-			f1_inserir_oferta(tipo, nomes[j] + '_' + i, f1_random_preco(7, 15), "images/comida_" + tipo + ".svg", tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random());
+			f1_inserir_oferta(tipo, nomes[j] + '_' + i, f1_random_preco(tipo), "images/comida_" + tipo + ".svg", tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
 		}
 		j += 1;
 	}

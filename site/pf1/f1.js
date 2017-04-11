@@ -27,6 +27,14 @@ function f1_info_nutricional(tipo, id) {
 	$("#loaded").load("f1_3.html", function()
 	{
 		f1_info_nutricional_carregar(oferta);
+		if (tipo == "carne" || tipo == "peixe" || tipo == "vegetariano")
+		{
+			 document.getElementById("botao_personalizar").disabled = false;
+		}
+		else
+		{
+			 document.getElementById("botao_personalizar").disabled = true;
+		}
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
