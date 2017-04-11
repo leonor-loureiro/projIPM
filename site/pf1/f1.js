@@ -50,11 +50,12 @@ function f1_adicionar_pedido_personalizado()
 }
 
 var qtd = 1;
-function f1_personalizar(info_produto) {
+function f1_personalizar() {
 	qtd = 1;
+	var oferta = obter_oferta(f1_anterior_tipo, f1_anterior_id);
 	$("#loaded").load("f1_4.html", function()
 	{
-		$("#personalizacoes").load(info_produto);
+		f1_personalizacoes_carregar(oferta);
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
