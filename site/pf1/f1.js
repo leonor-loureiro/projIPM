@@ -37,13 +37,17 @@ function f1_3_retroceder()
 	f1_ofertas(f1_anterior);
 }
 
-function f1_adicionar_pedido_detalhes(personalizado)
+function f1_adicionar_pedido_detalhes()
 {
-	
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, personalizado, qtd);	
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, false, 1);
 	desenhar_pedidos();
 }
 
+function f1_adicionar_pedido_personalizado()
+{
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, true, qtd);
+	desenhar_pedidos();
+}
 
 var qtd = 1;
 function f1_personalizar(info_produto) {
