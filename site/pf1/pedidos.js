@@ -11,8 +11,6 @@ function adicionar_pedido(_tipo, _id, _personalizado, _quantidade) {
 			personalizado: _personalizado, quantidade: _quantidade };
 		id_counter += 1;
 		pedidos.push(pedido);
-		index +=1;
-		pedidos[index].quantidade = _quantidade;
 	}
 	else
 	{
@@ -63,7 +61,7 @@ function desenhar_pedidos() {
 		else
 		{
 			html = sprintf(template,
-				item.id, String(item.quantidade) + "×", item.oferta.nome,
+				item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
 				item.oferta.preco.toFixed(2)
 			);
 		}
