@@ -85,6 +85,9 @@
 }
 
 @font-face {
-        font-family: Roboto Bold Condensed;
-        src:"/libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf"
+    font-family: 'Glyphicons Halflings';
+
+    src: url('..libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot');
+    src: url('..libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
