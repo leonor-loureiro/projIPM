@@ -30,12 +30,6 @@
 	padding: 0;
 }
 
-.botoes_navegacao_2 {
-	position: absolute;
-	width: 100%;
-	padding: 0;
-}
-
 .grupo_botoes_navegacao {
 	position: absolute;
 	bottom: 1vw;
@@ -187,17 +181,17 @@
 	padding-right: 5vw;
 	padding-top: 1vw;
 	padding-bottom: 2vw;
-	text-align: center;	
+	text-align: center;
 }
 .extras{
 	padding-top: 2vw;
 	padding-bottom: 2vw;
-	text-align: center;	
+	text-align: center;
 }
 
 #lista_pedidos {
 	overflow-y: scroll;
-	height: 15vw;
+	height: 17vw;
 }
 
 #lista_pedidos_preco_total {
@@ -217,13 +211,12 @@
     display: none;
 }
 .form-group input[type="checkbox"] + .btn-group > label span:last-child {
-    display: inline-block;   
+    display: inline-block;
 }
 
 .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
     display: inline-block;
 }
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
-    display: none;   
+    display: none;
 }
-
