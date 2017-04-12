@@ -21,7 +21,6 @@
 	width: 50vw;
 	height: 50vw;
 	border-radius: 50%;
-	: red;
 	position: fixed;
 	left: 25vw; /* (100-50)/2 */
 	top: 39.0625vw; /* (9/16*100-50/2)*(1+0.25) */
@@ -102,6 +101,8 @@
 
 
 @font-face {
-        font-family: Roboto Bold Condensed;
-        src:"/libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf"
+    font-family: 'Glyphicons Halflings';
+
+    src: url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot');
+    src: url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }

@@ -9,9 +9,9 @@
 #area_pedido {
 	position: fixed;
 	width: 16vw;
-	height: 24vw;
+	height: 26vw;
 	left: 84vw;
-	top: 32vw;
+	top: 30vw;
 	border: 1px solid black;
 	border-right: none;
 	padding-left: 1vw;
@@ -26,6 +26,12 @@
 .botoes_navegacao {
 	position: absolute;
 	bottom: 1vw;
+	width: 100%;
+	padding: 0;
+}
+
+.botoes_navegacao_2 {
+	position: absolute;
 	width: 100%;
 	padding: 0;
 }
@@ -177,10 +183,21 @@
 }
 
 .acompanhamentos{
-	padding-left: 10vw;
-	padding-right: 10vw;
-	padding-top: 4vw;
-	text-align: left;	
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 1vw;
+	padding-bottom: 2vw;
+	text-align: center;	
+}
+.extras{
+	padding-top: 2vw;
+	padding-bottom: 2vw;
+	text-align: center;	
+}
+
+#lista_pedidos {
+	overflow-y: scroll;
+	height: 15vw;
 }
 
 #lista_pedidos_preco_total {
@@ -209,3 +226,4 @@
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
     display: none;   
 }
+

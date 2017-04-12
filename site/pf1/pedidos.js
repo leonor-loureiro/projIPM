@@ -11,8 +11,6 @@ function adicionar_pedido(_tipo, _id, _personalizado, _quantidade) {
 			personalizado: _personalizado, quantidade: _quantidade };
 		id_counter += 1;
 		pedidos.push(pedido);
-		index +=1;
-		pedidos[index].quantidade = _quantidade;
 	}
 	else
 	{
@@ -90,6 +88,7 @@ function desenhar_pedidos() {
 	$("#lista_pedidos_preco_total").html("Total: " + total.toFixed(2) + "€");
 }
 
+// Usar f1_limpar_pedidos() se a trabalhar na f1
 function limpar_pedidos() {
 	// http://stackoverflow.com/a/1232046
 	pedidos.splice(0, pedidos.length);

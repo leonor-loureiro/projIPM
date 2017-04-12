@@ -1,9 +1,9 @@
 var dados_ofertas = { bebidas: [], entradas: [], sopas: [], carne: [], peixe: [], vegetariano: [], sobremesas: [] };
 var ofertas_id_counter = 0;
 
-function f1_inserir_oferta(_tipo, _nome, _preco, _imagem, _anterior, _informacoes)
+function f1_inserir_oferta(_tipo, _nome, _preco, _imagem, _anterior, _informacoes, _personalizacoes)
 {
-	 var oferta = {id: ofertas_id_counter, tipo: _tipo, nome: _nome, preco: _preco, imagem: _imagem, anterior: _anterior, informacoes: _informacoes};
+	 var oferta = {id: ofertas_id_counter, tipo: _tipo, nome: _nome, preco: _preco, imagem: _imagem, anterior: _anterior, informacoes: _informacoes, personalizacoes: _personalizacoes};
 	ofertas_id_counter += 1;
 	dados_ofertas[_tipo].push(oferta);
 }
@@ -18,9 +18,32 @@ function f1_random_tempo(min, max)
 	return Math.floor((Math.random() * (max - 1)) + min);
 }
 
-function f1_random_preco(min, max)
+function f1_random_preco_real(min, max)
 {
 	return Math.floor((Math.random() * (max - min + 1) * 2) + min * 2) / 2 - 0.01;
+}
+
+function f1_random_preco(tipo)
+{
+	switch(tipo)
+	{
+		case "bebidas":
+			return f1_random_preco_real(0.5, 3);
+		case "entradas":
+			return f1_random_preco_real(0.5, 2);
+		case "sopas":
+			return f1_random_preco_real(1, 1.5);
+		case "carne":
+			return f1_random_preco_real(6, 15);
+		case "peixe":
+			return f1_random_preco_real(6, 15);
+		case "vegetariano":
+			return f1_random_preco_real(5, 12);
+		case "sobremesas":
+			return f1_random_preco_real(0.5, 2.5);
+		default:
+			return 99.98;
+	}
 }
 
 function f1_informacoes_random(tempo_min, tempo_max)
@@ -31,6 +54,21 @@ function f1_informacoes_random(tempo_min, tempo_max)
 		tempo: f1_random_tempo(tempo_min, tempo_max)};
 }
 
+function f1_personalizacoes_random(tipo)
+{
+	switch(tipo)
+	{
+		case "carne":
+			return { acompanhamentos: ["Batatas fritas", "Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+		case "peixe":
+			return { acompanhamentos: ["Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+		case "vegetariano":
+			return { acompanhamentos: ["Batatas fritas", "Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+		default:
+			return false;
+	}
+}
+
 function f1_popular_ofertas()
 {
 // 	Temporário, agora para testar
@@ -39,7 +77,7 @@ function f1_popular_ofertas()
 	for (var tipo of ['bebidas', 'entradas', 'sopas', 'carne', 'peixe', 'vegetariano', 'sobremesas']) {
 		for (i = 0; i < 16; i++)
 		{
-			f1_inserir_oferta(tipo, nomes[j] + '_' + i, f1_random_preco(7, 15), "images/comida_" + tipo + ".svg", tipo, f1_informacoes_random(3, 10));
+			f1_inserir_oferta(tipo, nomes[j] + '_' + i, f1_random_preco(tipo), "images/comida_" + tipo + ".svg", tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
 		}
 		j += 1;
 	}
@@ -50,7 +88,7 @@ function f1_desenhar_oferta(oferta)
 {
 	var template = `
 <div class = "oferta">
-	<div class="imagem_oferta imagem_teste" onclick="adicionar_pedido('%s', %d, %t, %d); desenhar_pedidos();"></div>
+	<div class="imagem_oferta imagem_teste" onclick="adicionar_pedido('%s', %d, %t, %d); f1_desenhar_pedidos();"></div>
 	<p>%s
 	<p>Preço: %s€
 	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-secundary btn-xs">Detalhes</button>
@@ -147,4 +185,75 @@ function f1_info_nutricional_carregar(oferta) {
 		oferta.informacoes.tempo
 	);
 	$("#info_produto").html(dados);
+}
+
+function f1_personalizacoes_carregar(oferta) {
+	var template = `
+<div class="col-xs-4 imagem_info_col">
+	<img src='%s' class=imagem_info>
+	<p><b>%s</b></p>
+	<p>%s€</p>
+	<p><b> Quantidade </b></p>
+	<p>
+		<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()">
+		<span id ="qtd">1</span> 
+		<img src="images/plus_sign.svg" class="add_sub" onclick="f1_add_dose()">
+	</p>
+	<p>
+</div>
+<div class="col-xs-4 acompanhamentos">
+	<h4><b>Acompanhamentos:</b></h4>
+	%s
+</div>
+<div class="col-xs-2 extras">
+	<select class = "form-control">
+		<option>--- Extras --- </option>
+		%s
+	</select>
+</div>
+`;
+
+var template_acompanhamento = `
+<div class="[ form-group ]">
+	<input type="checkbox" id="acompanhamento%d"/>
+	<div class="[ btn-group ]">
+		<label for="acompanhamento%d" class="[ btn btn-success ]">
+		<span class="[ glyphicon glyphicon-ok ]"></span>
+		<span> </span>
+		</label>
+		<label for="acompanhamento%d" class="[ btn btn-default active ]">
+		%s
+		</label>
+	</div>
+</div>
+`;
+
+var template_extra = `
+<option>%s</option>
+`;
+
+	var id_acompanhamento = 0;
+	var acompanhamentos = "";
+	for (var item of oferta.personalizacoes.acompanhamentos)
+	{
+		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
+			id_acompanhamento, id_acompanhamento, id_acompanhamento,
+			item
+		));
+		id_acompanhamento++;
+	}
+	
+	var extras = "";
+	for (var item of oferta.personalizacoes.extras)
+	{
+		extras = extras.concat(sprintf(template_extra,
+			item
+		));
+	}
+	
+	var dados = sprintf(template,
+		oferta.imagem, oferta.nome, oferta.preco.toFixed(2),
+		acompanhamentos, extras
+	);
+	$("#personalizacoes").html(dados);
 }
