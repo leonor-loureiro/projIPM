@@ -39,8 +39,8 @@ function f1_3_retroceder()
 
 function f1_adicionar_pedido_detalhes(personalizado)
 {
-	
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, personalizado, qtd);	
+
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, personalizado, qtd);
 	desenhar_pedidos();
 }
 

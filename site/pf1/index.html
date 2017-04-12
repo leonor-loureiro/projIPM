@@ -22,7 +22,8 @@
 		<script src="ofertas.js"></script>
 		<script src="f1.js"></script>
 	</head>
-	<body onload="loadMain(); SDC_startTime()">
+	<body onload="loadMain(); loadModals(); SDC_startTime()">
+		<img src = "images/main-background.jpg" id = "main-background">
 		<div class="jumbotron text-center">
 			<p>~Com.ISTo~
 			<div id="simple_digital_clock"></div>
@@ -32,6 +33,7 @@
 		<p>Se se estiver a usar o Chrome/Chromium localmente, iniciar com --allow-file-access-from-files.
 		<p>Exemplo: chromium --allow-file-access-from-files &
 		</div>
+		<div id="modals"></div>
 		<div id="prato"></div>
 		<div id="area_direita"></div>
 		<div id="prato_decor"></div>

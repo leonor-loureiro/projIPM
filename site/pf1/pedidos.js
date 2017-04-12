@@ -22,27 +22,43 @@ function adicionar_pedido(_tipo, _id, _personalizado, _quantidade) {
 
 function remover_pedido(_id) {
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
-	var result = confirm("Tem a certeza que deseja remover o produto?");
-	if (index > -1 && result)
+
+	if (index > -1)
 	{
 		pedidos.splice(index, 1);
 	}
 }
 
-function cancelar_fazer_pedido(){
-		f1_retroceder();
+function abrir_cancelar_fazer_pedido(){
 
+	if(id_counter == 0){
+		$("#modalOk-msg").text("O seu pedido está vazio!");
+		$("#modalOk").modal();
+		return;
+	}
+	else{
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
+		$("#modalNaoSim-Sim").attr("onclick", "limpar_pedidos()");
+		$("#modalNaoSim").modal();
+	}
+}
+
+function abrir_concluir_fazer_pedido(){
+	if(id_counter==0){
+		$("#modalOk-msg").text("O seu pedido está vazio!");
+		$("#modalOk").modal();
+		return;
+	}
+	else{
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir?");
+		$("#modalNaoSim-Sim").attr("onclick", "concluir_fazer_pedido()");
+		$("#modalNaoSim").modal();
+	}
 }
 
 function concluir_fazer_pedido(){
-	if(id_counter==0){
-		window.alert("O seu pedido está vazio!");
-		return;
-	}
-	var result = confirm("Tem a certeza que não deseja adicionar mais nada ao pedido?");
-	if(result){
-		f1_retroceder();
-	}
+	limpar_pedidos();
+	f1_retroceder();
 }
 
 function desenhar_pedidos() {
@@ -77,4 +93,6 @@ function desenhar_pedidos() {
 function limpar_pedidos() {
 	// http://stackoverflow.com/a/1232046
 	pedidos.splice(0, pedidos.length);
+	id_counter = 0;
+	desenhar_pedidos();
 }

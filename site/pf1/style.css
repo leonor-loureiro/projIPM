@@ -8,15 +8,25 @@
    width: auto;
 }
 
+#main-background{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: -100000;
+	width: 100%;
+	height: auto;
+}
+
 #prato {
 	width: 50vw;
 	height: 50vw;
 	border-radius: 50%;
-	background: red;
+	: red;
 	position: fixed;
 	left: 25vw; /* (100-50)/2 */
 	top: 39.0625vw; /* (9/16*100-50/2)*(1+0.25) */
 	z-index: -100;
+	border-style: solid;
 }
 
 #f1 {
@@ -83,6 +93,13 @@
 	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
+
+
+.modal-dialog{
+	font-size: 16px;
+	width: 400px;
+}
+
 
 @font-face {
         font-family: Roboto Bold Condensed;

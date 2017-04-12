@@ -2,6 +2,10 @@ function loadMain() {
 	$("#loaded").load("main.html");
 }
 
+function loadModals() {
+	$("#modals").load("modals.html");
+}
+
 function f1() {
 	$("#loaded").load("f1_1.html");
 	$("#prato_decor").load("f1_tipos_pratos.html");
@@ -9,6 +13,7 @@ function f1() {
 }
 
 function f1_retroceder() {
+	$("#modalNaoSim").modal('hide');
 	$("#loaded").load("main.html");
 	$("#prato_decor").html("");
 	$("#area_direita").html("");
