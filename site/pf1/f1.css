@@ -9,9 +9,9 @@
 #area_pedido {
 	position: fixed;
 	width: 16vw;
-	height: 24vw;
+	height: 26vw;
 	left: 84vw;
-	top: 32vw;
+	top: 30vw;
 	border: 1px solid black;
 	border-right: none;
 	padding-left: 1vw;
@@ -26,6 +26,12 @@
 .botoes_navegacao {
 	position: absolute;
 	bottom: 1vw;
+	width: 100%;
+	padding: 0;
+}
+
+.botoes_navegacao_2 {
+	position: absolute;
 	width: 100%;
 	padding: 0;
 }
@@ -189,6 +195,10 @@
 	text-align: center;	
 }
 
+#lista_pedidos {
+	overflow-y: scroll;
+	height: 15vw;
+}
 
 #lista_pedidos_preco_total {
 	text-align: right;
