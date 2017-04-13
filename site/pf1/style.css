@@ -68,10 +68,10 @@
 }
 
 .imagem_fundo {
-	width: 19vw;
-	height: 19vw;
-	background-color: rgba(255, 255, 255, .2);
-	border-radius: 50%;
+    width: 20vw;
+    height: 19vw;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 50%;
 }
 
 
@@ -96,6 +96,33 @@
 	transform: translate(-50%, -50%);
 }
 
+#f1_fazer_pedido {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 32px;
+		padding-bottom: 15px;
+		font-family: Verdana;
+		width: 200px;
+		padding-top: 7px;
+}
+
+#f2_acompanhar_pedido {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 1px;
+    padding-top: 20px;
+    font-family: Verdana;
+    width: 250px;
+}
+
+#f3_fazer_pagamento {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 15px;
+    font-family: Verdana;
+    width: 240px;
+}
+
 .loaded {
 	top: 0;
 	left: 0;
@@ -115,10 +142,6 @@
 .btn-secundary:hover{
 	background-color: gray;
 	color: white;
-}
-
-.imagem_fundo:active{
-	color red;
 }
 
 .mirror {
