@@ -130,8 +130,8 @@ function f1_info_nutricional_carregar(oferta) {
 	var template = `
 <div class="col-xs-4 imagem_info_col">
 	<img src='%s' class=imagem_info>
-	<p><b>%s</b></p>
-	<p>%s€</p>
+	<h3><b>%s</b></h3>
+	<h4>%s€</h4>
 </div>
 <div class="col-xs-4 info_nutricional">
 	<table class = "table">
@@ -173,7 +173,8 @@ function f1_info_nutricional_carregar(oferta) {
 	</table>
 </div>
 <div class="col-xs-4 tempo_espera">
-	<b>Tempo de espera </b><p>%s min</p>
+	<img src="images/temporizador.png" style="width: 7vw; height: 7vw;">
+	<h4><b>Tempo de espera </b><p>%s min</p></h4>
 </div>
 `;
 	var dados = sprintf(template,
@@ -189,71 +190,64 @@ function f1_info_nutricional_carregar(oferta) {
 
 function f1_personalizacoes_carregar(oferta) {
 	var template = `
-<div class="col-xs-4 imagem_info_col">
+<div class="col-xs-2 imagem_info_col">
+	<p></p>
 	<img src='%s' class=imagem_info>
-	<p><b>%s</b></p>
-	<p>%s€</p>
-	<p><b> Quantidade </b></p>
-	<p>
-		<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()">
-		<span id ="qtd">1</span> 
-		<img src="images/plus_sign.svg" class="add_sub" onclick="f1_add_dose()">
-	</p>
-	<p>
+	<h3><b>%s</b></h3>
+	<h4>%s€</h4>
 </div>
-<div class="col-xs-4 acompanhamentos">
-	<h4><b>Acompanhamentos:</b></h4>
-	%s
-</div>
-<div class="col-xs-2 extras">
-	<select class = "form-control">
-		<option>--- Extras --- </option>
+<div class="col-xs-8 acompanhamentos">
+	<h3><b>Acompanhamentos:</b></h3>
+	<div class="acompanhamento-container">
 		%s
-	</select>
+	</div>
+</div>
+<div class="col-xs-2 quantidade">
+	<h3><b> Quantidade </b></h3>
+		<p>
+			<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()">
+			<span id ="qtd">1</span> 
+			<img src="images/plus_sign.svg" class="add_sub" onclick="f1_add_dose()">
+		</p>
 </div>
 `;
 
 var template_acompanhamento = `
-<div class="[ form-group ]">
-	<input type="checkbox" id="acompanhamento%d"/>
-	<div class="[ btn-group ]">
-		<label for="acompanhamento%d" class="[ btn btn-success ]">
-		<span class="[ glyphicon glyphicon-ok ]"></span>
-		<span> </span>
-		</label>
-		<label for="acompanhamento%d" class="[ btn btn-default active ]">
-		%s
-		</label>
+<div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
+	<div class="info-block block-info clearfix">
+        <div class="square-box pull-left"></div>
+        <div data-toggle="buttons" class="btn-group bizmoduleselect">
+        	<label class="btn btn-default %s">
+           		<div class = "bizcontent">
+            		<input type="checkbox" name="var_id[]" autocomplete="off" value="">
+            		<span class = "glyphicon glyphicon-ok glyphicon-lg"></span>
+            		<h5><b>%s</b></h5>
+            	</div>
+        	</label>
+        </div>
 	</div>
 </div>
 `;
 
-var template_extra = `
-<option>%s</option>
-`;
 
-	var id_acompanhamento = 0;
 	var acompanhamentos = "";
 	for (var item of oferta.personalizacoes.acompanhamentos)
 	{
-		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
-			id_acompanhamento, id_acompanhamento, id_acompanhamento,
+		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,"active",
 			item
 		));
-		id_acompanhamento++;
 	}
-	
-	var extras = "";
 	for (var item of oferta.personalizacoes.extras)
 	{
-		extras = extras.concat(sprintf(template_extra,
+		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,"",
 			item
 		));
 	}
+	
 	
 	var dados = sprintf(template,
 		oferta.imagem, oferta.nome, oferta.preco.toFixed(2),
-		acompanhamentos, extras
+		acompanhamentos
 	);
 	$("#personalizacoes").html(dados);
 }

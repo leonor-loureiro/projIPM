@@ -150,8 +150,8 @@
 }
 
 .imagem_info {
-	width: 5vw;
-	height: 5vw;
+	width: 8vw;
+	height: 8vw;
 }
 
 .info_nutricional {
@@ -163,7 +163,7 @@
 .tempo_espera {
 	padding-left: 10vw;
 	padding-right: 10vw;
-	padding-top: 8.0vw;
+	padding-top: 5.0vw;
 	padding-bottom: 5.0vw;
 	text-align: center;
 }
@@ -177,7 +177,7 @@
 }
 
 .acompanhamentos{
-	padding-left: 5vw;
+	padding-left: 9vw;
 	padding-right: 5vw;
 	padding-top: 1vw;
 	padding-bottom: 2vw;
@@ -219,4 +219,44 @@
 }
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
     display: none;
+}
+
+
+.acompanhamento-container{
+	margin:1.53vw 0 0 0
+}
+
+.acompanhamento-container label.btn-default.active{
+	background-color:#228B22;color:#FFF
+
+}
+
+.acompanhamento-container label.btn-default{
+	width:100%;
+	border:0.1vw solid #228B22;
+	margin:0.35vw;
+	box-shadow:0.35vw 0.57vw 0.57vw 0 #ccc;
+}
+
+.acompanhamento-container label .bizcontent{
+	width:100%;
+}
+
+.acompanhamento-container .btn-group{
+	width:90%
+}
+
+.acompanhamento-container .btn span.glyphicon{
+    opacity: 0;
+}
+
+.acompanhamento-container .btn.active span.glyphicon {
+    opacity: 1;
+}
+
+.quantidade{
+	text-align: center;
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+	font-size: 1.5vw;
 }
