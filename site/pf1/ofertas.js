@@ -74,7 +74,7 @@ function f1_popular_ofertas() {
 	var nomes = {bebidas: ['Cerveja Sagres', 'Coca-Cola', 'Coca-Cola Zero', 'Fanta Laranja', 'Guaraná', 'Ice Tea Limão', 'Ice Tea Pessego', '7-up', 'Sumo de Laranja Natural', 'Vinho Tinto', 'Vinho Verde'],
 				 entradas: ['Pão', 'Pão com Alho', 'Broa', 'Manteiga com Sal', 'Paté de Atum', 'Paté de Sardinha', 'Queijo de Cabra', 'Queijo de Ovelha'],
 				 sopas: ['Caldo Verde', 'Canja de Galinha', 'Creme de Cenoura', 'Creme de Abóbora', 'Sopa de Espinafres', 'Sopa de Feijão', 'Sopa de Feijão Verde', 'Sopa da Pedra', 'Sopa de Tomate'],
-				 carne: ['Bitoque', 'Costeletas de Porco', 'Prego no Pão', 'Frango Frito', 'Cozido à Portuguesa', 'Bife com Natas', 'Enremeada', 'Lasanha à Bolonhesa', 'Lombinhos de Porco'],
+				 carne: ['Bitoque', 'Costeletas de Porco', 'Prego no Pão', 'Frango Frito', 'Cozido à Portuguesa', 'Bife com Natas', 'Entremeada', 'Lasanha à Bolonhesa', 'Lombinhos de Porco'],
 				 peixe: ['Arroz de Marisco', 'Bacalhau à Brás', 'Bacalhau com Grão', 'Bacalhau com Natas', 'Chocos Fritos', 'Dourada Grelhada', 'Filetes Panados', 'Lulas Guisadas', 'Pasteis de Bacalhau'],
 				 vegetariano: ['Espetadas de Tofu e Cogumelos', 'Espetadas Vegetarianas', 'Estrogonofe de Soja', 'Gratinado de Beringela', 'Lasanha de Legumes', 'Pataniscas de Legumes', 'Quiche de Legumes', 'Risoto de Cogumelos e Bróculos', 'Rissóis de Espinhafres'],
 				 sobremesas: ['Arroz Doce', 'Bolo de Bolacha', 'Bolo Brigadeiro', 'Tiramisu', 'Doce da Avó', 'Leite Creme', 'Mousse de Chocolate', 'Pudim Molotof', 'Salada de Frutas']
@@ -168,11 +168,11 @@ function f1_info_nutricional_carregar(oferta) {
 			<tr>
 				<th>Hidratos de Carbono</th>
 				<td>%sg</td>
-				<th>Acucares</th>
+				<th>Açúcares</th>
 				<td>%sg</td>
 			</tr>
 			<tr>
-				<th>Proteinas</th>
+				<th>Proteínas</th>
 				<td>%sg</td>
 				<th>Fibras</th>
 				<td>%sg</td>
