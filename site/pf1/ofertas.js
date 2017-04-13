@@ -79,10 +79,10 @@ function f1_popular_ofertas() {
 				 vegetariano: ['Espetadas de Tofu e Cogumelos', 'Espetadas Vegetarianas', 'Estrogonofe de Soja', 'Gratinado de Beringela', 'Lasanha de Legumes', 'Pataniscas de Legumes', 'Quiche de Legumes', 'Risoto de Cogumelos e Bróculos', 'Rissóis de Espinhafres'],
 				 sobremesas: ['Arroz Doce', 'Bolo de Bolacha', 'Bolo Brigadeiro', 'Tiramisu', 'Doce da Avó', 'Leite Creme', 'Mousse de Chocolate', 'Pudim Molotof', 'Salada de Frutas']
 				};
-	var imagens = {bebidas: ['cerveja_sagres.jpg','coca_cola.jpg','coca_cola_zero.jpg', 'fanta_laranja.jpg', 'guarana.png', 'ice_tea_limao.png','ice_tea_pessego.jpg', 'seven_up.jpg', 'sumo_laranja_natural.jpg', 'vinho_tinto.jpg', 'vinho_verde.jpg'],
-					entradas: ['pao.jpg', 'pao_alho.jpg', 'broa.jpg', 'manteiga_com_sal.png', 'pate_atum.jpg', 'pate_sardinha.jpg', 'queijo_cabra.jpg', 'queijo_ovelha.jpg'],
+	var imagens = {bebidas: ['cerveja_sagres.jpg','coca_cola.jpg','coca_cola_zero.jpg', 'fanta_laranja.jpg', 'guarana.jpg', 'ice_tea_limao.jpg','ice_tea_pessego.jpg', 'seven_up.jpg', 'sumo_laranja_natural.jpg', 'vinho_tinto.jpg', 'vinho_verde.jpg'],
+					entradas: ['pao.jpg', 'pao_alho.jpg', 'broa.jpg', 'manteiga_com_sal.jpg', 'pate_atum.jpg', 'pate_sardinha.jpg', 'queijo_cabra.jpg', 'queijo_ovelha.jpg'],
 					sopas: ['caldo_verde.jpg', 'canja_galinha.jpg', 'creme_cenoura.jpg', 'creme_abobora.jpg', 'sopa_espinafres.jpg', 'sopa_feijao.jpg', 'sopa_feijao_verde.jpg', 'sopa_pedra.jpg', 'sopa_tomate.jpg'],
-					carne: ['bitoque.jpg', 'costeletas_de_porco.jpg', 'prego_no_pao.png', 'frango_frito.jpg', 'cozido_a_portuguesa.jpg', 'bife_com_natas_e_cogumelos.jpg', 'entremeada.jpg', 'lasanha_a_bolonhesa.jpg', 'lombinhos_de_porco.jpeg'],
+					carne: ['bitoque.jpg', 'costeletas_de_porco.jpg', 'prego_no_pao.jpg', 'frango_frito.jpg', 'cozido_a_portuguesa.jpg', 'bife_com_natas_e_cogumelos.jpg', 'entremeada.jpg', 'lasanha_a_bolonhesa.jpg', 'lombinhos_de_porco.jpeg'],
 					peixe: ['arroz_de_marisco.jpg', 'bacalhau_a_bras.jpg', 'bacalhau_com_grao.jpg', 'bacalhau_com_natas.jpg', 'chocos_fritos.jpg', 'dourada_grelhada.jpg', 'filetes_panados.jpg', 'lulas_guisadas.jpg', 'pasteis_de_bacalhau.jpeg'],
 					vegetariano: ['espetadas_tofu.jpg', 'espetadas_vegetarianas.jpg', 'estrogonofe_soja.jpg', 'gratinado_beringelas.jpg', 'lasanha_legumes.jpg', 'pataniscas_legumes.jpg', 'quiche_legumes.jpg', 'risoto_cogumelos.jpeg', 'rissois_espinafres.jpg'],
 					sobremesas: ['arroz_doce.jpg', 'bolo_bolacha.jpg', 'bolo_brigadeiro.jpg', 'tiramisu.jpg', 'doce_avo.jpg', 'leite_creme.jpg', 'mousse_chocolate.jpg', 'pudim_molotof.jpg', 'salada_frutas.jpg']
@@ -187,7 +187,7 @@ function f1_info_nutricional_carregar(oferta) {
 	</table>
 </div>
 <div class="col-xs-4 tempo_espera">
-	<img src="images/temporizador.png" style="width: 7vw; height: 7vw;">
+	<img src="images/ampulheta.svg" style="width: 5vw; height: 5vw;">
 	<h4><b>Tempo de espera </b><p>%s min</p></h4>
 </div>
 `;
