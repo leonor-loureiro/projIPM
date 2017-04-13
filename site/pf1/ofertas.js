@@ -69,10 +69,10 @@ function f1_personalizacoes_random(tipo)
 	}
 }
 
-function f1_menu(){
+function f1_popular_ofertas() {
 	var tipos = ['bebidas', 'entradas', 'sopas', 'carne', 'peixe', 'vegetariano', 'sobremesas'];
 	var nomes = {bebidas: ['Cerveja Sagres', 'Coca-Cola', 'Coca-Cola Zero', 'Fanta Laranja', 'Guaraná', 'Ice Tea Limão', 'Ice Tea Pessego', '7-up', 'Sumo de Laranja Natural', 'Vinho Tinto', 'Vinho Verde'],
-				 entrada: ['Pão', 'Pão com Alho', 'Broa', 'Manteiga com Sal', 'Paté de Atum', 'Paté de Sardinha', 'Queijo de Cabra', 'Queijo de Ovelha'],
+				 entradas: ['Pão', 'Pão com Alho', 'Broa', 'Manteiga com Sal', 'Paté de Atum', 'Paté de Sardinha', 'Queijo de Cabra', 'Queijo de Ovelha'],
 				 sopas: ['Caldo Verde', 'Canja de Galinha', 'Creme de Cenoura', 'Creme de Abóbora', 'Sopa de Espinafres', 'Sopa de Feijão', 'Sopa de Feijão Verde', 'Sopa da Pedra', 'Sopa de Tomate'],
 				 carne: ['Bitoque', 'Costeletas de Porco', 'Prego no Pão', 'Frango Frito', 'Cozido à Portuguesa', 'Bife com Natas', 'Enremeada', 'Lasanha à Bolonhesa', 'Lombinhos de Porco'],
 				 peixe: ['Arroz de Marisco', 'Bacalhau à Brás', 'Bacalhau com Grão', 'Bacalhau com Natas', 'Chocos Fritos', 'Dourada Grelhada', 'Filetes Panados', 'Lulas Guisadas', 'Pasteis de Bacalhau'],
@@ -82,32 +82,18 @@ function f1_menu(){
 	var imagens = {bebidas: ['cerveja_sagres.jpg','coca_cola.jpg','coca_cola_zero.jpg', 'fanta_laranja.jpg', 'guarana.png', 'ice_tea_limao.png','ice_tea_pessego.jpg', 'seven_up.jpg', 'sumo_laranja_natural.jpg', 'vinho_tinto.jpg', 'vinho_verde.jpg'],
 					entradas: ['pao.jpg', 'pao_alho.jpg', 'broa.jpg', 'manteiga_com_sal.png', 'pate_atum.jpg', 'pate_sardinha.jpg', 'queijo_cabra.jpg', 'queijo_ovelha.jpg'],
 					sopas: ['caldo_verde.jpg', 'canja_galinha.jpg', 'creme_cenoura.jpg', 'creme_abobora.jpg', 'sopa_espinafres.jpg', 'sopa_feijao.jpg', 'sopa_feijao_verde.jpg', 'sopa_pedra.jpg', 'sopa_tomate.jpg'],
-					carne: ['bitoque.jpg', 'costeletas_de_porco.jpg', 'prego_no_pao.png', 'frango_frito.jpg', 'cozido_a_portuguesa.jpg', 'bife_com_natas.jpg', 'entremeda.jpg', 'lasanha_a_bolonhesa.jpg', 'lombinhos_de_porco.jpeg'],
-					peixe: ['arroz_de_marisco.jpg', 'bacalha_a_bras.jpg', 'bacalha_com_grao.jpg', 'bacalhau_com_natas.jpg', 'chocos_fritos.jpg', 'dourada_grelhada.jpg', 'filetes_panados.jpg', 'lulas_guisadas.jpg', 'pasteis_de_bacalhau.jpeg'],
-					vegetariano: ['espetadas_tofu.jpg', 'espetadas_vegetarianas.jpg', 'estrogonofe_soja.jpg', 'gratinado_beringela.jpg', 'lasanha_legumes.jpg', 'pataniscas_legumes.jpg', 'quiche_legumes.jpg', 'risoto_cogumelos.jpeg', 'rissois_espinafres. jpg'],
+					carne: ['bitoque.jpg', 'costeletas_de_porco.jpg', 'prego_no_pao.png', 'frango_frito.jpg', 'cozido_a_portuguesa.jpg', 'bife_com_natas_e_cogumelos.jpg', 'entremeada.jpg', 'lasanha_a_bolonhesa.jpg', 'lombinhos_de_porco.jpeg'],
+					peixe: ['arroz_de_marisco.jpg', 'bacalhau_a_bras.jpg', 'bacalhau_com_grao.jpg', 'bacalhau_com_natas.jpg', 'chocos_fritos.jpg', 'dourada_grelhada.jpg', 'filetes_panados.jpg', 'lulas_guisadas.jpg', 'pasteis_de_bacalhau.jpeg'],
+					vegetariano: ['espetadas_tofu.jpg', 'espetadas_vegetarianas.jpg', 'estrogonofe_soja.jpg', 'gratinado_beringelas.jpg', 'lasanha_legumes.jpg', 'pataniscas_legumes.jpg', 'quiche_legumes.jpg', 'risoto_cogumelos.jpeg', 'rissois_espinafres.jpg'],
 					sobremesas: ['arroz_doce.jpg', 'bolo_bolacha.jpg', 'bolo_brigadeiro.jpg', 'tiramisu.jpg', 'doce_avo.jpg', 'leite_creme.jpg', 'mousse_chocolate.jpg', 'pudim_molotof.jpg', 'salada_frutas.jpg']
 				};
 	var i = 0;
 	for(var tipo of tipos){
 		i = 0;
 		for(var nome of nomes[tipo]){
-			f1_inserir_oferta(tipo,nome,f1_random_preco(tipo), 'imagens/ofertas/' + images[tipo][i], tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
+			f1_inserir_oferta(tipo,nome,f1_random_preco(tipo), 'images/ofertas/' + imagens[tipo][i], tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
 			i += 1;
 		}
-	}
-}
-
-function f1_popular_ofertas()
-{
-// 	Temporário, agora para testar
-	var nomes = ['Bebida', 'Entrada', 'Sopa', 'Carne', 'Peixe', 'Vegetal', 'Sobremesa'];
-	var j = 0;
-	for (var tipo of ['bebidas', 'entradas', 'sopas', 'carne', 'peixe', 'vegetariano', 'sobremesas']) {
-		for (i = 0; i < 16; i++)
-		{
-			f1_inserir_oferta(tipo, nomes[j] + '_' + i, f1_random_preco(tipo), "images/comida_" + tipo + ".svg", tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
-		}
-		j += 1;
 	}
 }
 f1_popular_ofertas();
@@ -116,14 +102,14 @@ function f1_desenhar_oferta(oferta)
 {
 	var template = `
 <div class = "oferta">
-	<div class="imagem_oferta imagem_teste" onclick="adicionar_pedido('%s', %d, %t, %d); f1_desenhar_pedidos();"></div>
+	<img src='%s' class=imagem_oferta onclick="adicionar_pedido('%s', %d, %t, %d); f1_desenhar_pedidos();">
 	<p>%s
 	<p>Preço: %s€
 	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-secundary btn-xs">Detalhes</button>
 </div>
 `;
 	var html = sprintf(template,
-		oferta.tipo, oferta.id, false, 1, oferta.nome,
+		oferta.imagem, oferta.tipo, oferta.id, false, 1, oferta.nome,
 		oferta.preco.toFixed(2), oferta.tipo, oferta.id
 	);
 	$(ofertas).append(html);
@@ -157,7 +143,7 @@ function f1_carregar_ofertas(tipo)
 function f1_info_nutricional_carregar(oferta) {
 	var template = `
 <div class="col-xs-4 imagem_info_col">
-	<img src='%s' class=imagem_info>
+	<img src='%s' class=imagem_oferta>
 	<h3><b>%s</b></h3>
 	<h4>%s€</h4>
 </div>
@@ -220,7 +206,7 @@ function f1_personalizacoes_carregar(oferta) {
 	var template = `
 <div class="col-xs-2 imagem_info_col">
 	<p></p>
-	<img src='%s' class=imagem_info>
+	<img src='%s' class=imagem_oferta>
 	<h3><b>%s</b></h3>
 	<h4>%s€</h4>
 </div>
