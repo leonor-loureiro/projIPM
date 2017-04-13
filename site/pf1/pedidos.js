@@ -27,71 +27,9 @@ function remover_pedido(_id) {
 	}
 }
 
-function abrir_cancelar_fazer_pedido(){
-
-	if(id_counter == 0){
-		$("#modalOk-msg").text("O seu pedido está vazio!");
-		$("#modalOk").modal();
-		return;
-	}
-	else{
-		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
-		$("#modalNaoSim-Sim").attr("onclick", "limpar_pedidos()");
-		$("#modalNaoSim").modal();
-	}
-}
-
-function abrir_concluir_fazer_pedido(){
-	if(id_counter==0){
-		$("#modalOk-msg").text("O seu pedido está vazio!");
-		$("#modalOk").modal();
-		return;
-	}
-	else{
-		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir?");
-		$("#modalNaoSim-Sim").attr("onclick", "concluir_fazer_pedido()");
-		$("#modalNaoSim").modal();
-	}
-}
-
-function concluir_fazer_pedido(){
-	limpar_pedidos();
-	f1_retroceder();
-}
-
-function desenhar_pedidos() {
-	var template = `
-<p><img src="images/remover.svg" class="imagem_pedido_lista" onclick="remover_pedido(%d); desenhar_pedidos()"> %s %s %s €
-`;
-	var html_pedidos = "";
-	var total = 0;
-	for (var item of pedidos)
-	{
-		if (item.personalizado === false)
-		{
-			html = sprintf(template,
-				item.id, String(item.quantidade) + "×", item.oferta.nome,
-				item.oferta.preco.toFixed(2)
-			);
-		}
-		else
-		{
-			html = sprintf(template,
-				item.id, String(item.quantidade) + "×", item.oferta.nome,
-				item.oferta.preco.toFixed(2)
-			);
-		}
-		html_pedidos = html_pedidos.concat(html);
-		total += item.oferta.preco * item.quantidade;
-	}
-	$("#lista_pedidos").html(html_pedidos);
-	$("#lista_pedidos_preco_total").html("Total: " + total.toFixed(2) + "€");
-}
-
 // Usar f1_limpar_pedidos() se a trabalhar na f1
 function limpar_pedidos() {
 	// http://stackoverflow.com/a/1232046
 	pedidos.splice(0, pedidos.length);
 	id_counter = 0;
-	desenhar_pedidos();
 }

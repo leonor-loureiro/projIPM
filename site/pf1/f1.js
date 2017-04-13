@@ -87,20 +87,36 @@ function f1_4_retroceder()
 
 }
 
-function f1_cancelar_fazer_pedido(){
-	f1_limpar_pedidos();
-	f1_retroceder();
-}
+function f1_abrir_cancelar_fazer_pedido() {
 
-function f1_concluir_fazer_pedido(){
-	if(id_counter==0){
-		window.alert("O seu pedido está vazio!");
+	if(id_counter == 0){
+		$("#modalOk-msg").text("O seu pedido está vazio!");
+		$("#modalOk").modal();
 		return;
 	}
-	var result = confirm("Tem a certeza que não deseja adicionar mais nada ao pedido?");
-	if(result){
-		f1_retroceder();
+	else{
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
+		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
+		$("#modalNaoSim").modal();
 	}
+}
+
+function f1_abrir_concluir_fazer_pedido() {
+	if(id_counter==0){
+		$("#modalOk-msg").text("O seu pedido está vazio!");
+		$("#modalOk").modal();
+		return;
+	}
+	else{
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir?");
+		$("#modalNaoSim-Sim").attr("onclick", "f1_concluir_fazer_pedido()");
+		$("#modalNaoSim").modal();
+	}
+}
+
+function f1_concluir_fazer_pedido() {
+	f1_limpar_pedidos();
+	f1_retroceder();
 }
 
 function f1_desenhar_pedidos() {
