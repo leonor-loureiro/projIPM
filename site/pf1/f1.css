@@ -53,38 +53,82 @@
 	width: 5vw;
 }
 
-#comida_bebidas {
-	top: 52vw;
+#tipo_bebidas {
+	top: 51vw;
 	left: 22vw;
 }
 
-#comida_entradas {
-	top: 44vw;
-	left: 27vw;
+#tipo_entradas {
+	top: 42vw;
+	left: 28vw;
 }
 
-#comida_sopas {
-	top: 38vw;
-	left: 36vw;
+#tipo_sopas {
+	top: 36vw;
+	left: 38vw;
 }
 
-#comida_carne {
-	top: 35vw;
+#tipo_carne {
+	top: 34vw;
 	left: 50vw;
 }
 
-#comida_peixe {
-	top: 38vw;
-	left: 64vw;
+#tipo_peixe {
+	top: 36vw;
+	left: 62vw;
 }
 
-#comida_vegetariano {
-	top: 44vw;
-	left: 74vw;
+#tipo_vegetariano {
+	top: 42vw;
+	left: 72vw;
 }
 
-#comida_sobremesas {
-	top: 52vw;
+#tipo_sobremesas {
+	top: 51vw;
+	left: 78vw;
+}
+
+.tipo_comida_fundo {
+	transform: translate(-50%, -50%);
+	position: fixed;
+	width: 10vw;
+	height: 10vw;
+	background-color: rgba(255, 255, 255, .5);
+	border-radius: 50%;
+}
+
+#tipo_bebidas_fundo {
+	top: 51vw;
+	left: 22vw;
+}
+
+#tipo_entradas_fundo {
+	top: 42vw;
+	left: 28vw;
+}
+
+#tipo_sopas_fundo {
+	top: 36vw;
+	left: 38vw;
+}
+
+#tipo_carne_fundo {
+	top: 34vw;
+	left: 50vw;
+}
+
+#tipo_peixe_fundo {
+	top: 36vw;
+	left: 62vw;
+}
+
+#tipo_vegetariano_fundo {
+	top: 42vw;
+	left: 72vw;
+}
+
+#tipo_sobremesas_fundo {
+	top: 51vw;
 	left: 78vw;
 }
 

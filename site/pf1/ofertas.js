@@ -187,7 +187,7 @@ function f1_info_nutricional_carregar(oferta) {
 	</table>
 </div>
 <div class="col-xs-4 tempo_espera">
-	<img src="images/ampulheta.svg" style="width: 5vw; height: 5vw;">
+	<img src="images/eggtimer.svg" style="width: 5vw;">
 	<h4><b>Tempo de espera </b><p>%s min</p></h4>
 </div>
 `;
