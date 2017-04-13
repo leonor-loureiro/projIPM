@@ -33,3 +33,7 @@ function limpar_pedidos() {
 	pedidos.splice(0, pedidos.length);
 	id_counter = 0;
 }
+
+function pedidos_estao_vazios() {
+	return id_counter == 0;
+}

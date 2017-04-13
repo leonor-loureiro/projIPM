@@ -89,7 +89,7 @@ function f1_4_retroceder()
 
 function f1_abrir_cancelar_fazer_pedido() {
 
-	if(id_counter == 0){
+	if(pedidos_estao_vazios()){
 		$("#modalOk-msg").text("O seu pedido está vazio!");
 		$("#modalOk").modal();
 		return;
@@ -102,7 +102,7 @@ function f1_abrir_cancelar_fazer_pedido() {
 }
 
 function f1_abrir_concluir_fazer_pedido() {
-	if(id_counter==0){
+	if(pedidos_estao_vazios()){
 		$("#modalOk-msg").text("O seu pedido está vazio!");
 		$("#modalOk").modal();
 		return;
