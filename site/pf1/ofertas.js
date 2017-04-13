@@ -15,12 +15,12 @@ function f1_random()
 
 function f1_random_tempo(min, max)
 {
-	return Math.floor((Math.random() * (max - 1)) + min);
+	return Math.floor((Math.random() * (max - min + 1))) + min;
 }
 
 function f1_random_preco_real(min, max)
 {
-	return Math.floor((Math.random() * (max - min + 1) * 2) + min * 2) / 2 - 0.01;
+	return (Math.floor((Math.random() * (max - min + 0.5) * 2)) + min * 2) / 2 - 0.01;
 }
 
 function f1_random_preco(tipo)
