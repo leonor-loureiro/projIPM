@@ -72,6 +72,9 @@
     height: 19vw;
     background-color: rgba(255, 255, 255, .2);
     border-radius: 50%;
+		border-color: lightgrey;
+		border-width: 0.1px;
+		border-style: solid;
 }
 
 
@@ -153,6 +156,11 @@
 	transform: scale(-1, 1);
 }
 
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .modal-dialog{
 	font-size: 16px;

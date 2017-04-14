@@ -9,19 +9,21 @@
 #area_pedido {
 	position: fixed;
 	width: 16vw;
-	height: 26vw;
+	height: 21vw;
 	left: 84vw;
-	top: 30vw;
-	border: 1px solid black;
-	border-right: none;
+	top: 34vw;
+/* 	border: 1px solid black; */
 	padding-left: 1vw;
 }
 
-.tipo_comida {
-	font-family: Verdana;
-	font-size: 15px;
-	font-weight: bold;
+#area_pedido_fundo {
+	position: fixed;
+	width: 16vw;
+	height: 26vw;
+	left: 84vw;
+	top: 30vw;
 }
+
 
 #f1_sopas{
 	padding-left: 31px;
@@ -55,6 +57,34 @@
 	padding-left: 5px;
 }
 
+#lista_pedidos {
+	height: 13vw;
+	overflow-y: scroll;
+}
+
+#lista_pedidos_preco_total {
+	text-align: right;
+	margin-right: 1vw;
+}
+
+.lista_pedidos_tres_pontos {
+	width: 13vw;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	line-height: 100%;
+}
+
+.lista_pedidos_preco_item {
+	text-align: right;
+	margin-top: -2%;
+	padding-top: 0;
+	line-height: 100%;
+}
+
 .botao_navegacao {
 	position: absolute;
 	bottom: 1vw;
@@ -80,6 +110,13 @@
 	height: 8vw;
 	width: 8vw;
 	position: fixed;
+
+}
+
+.tipos_comidas{
+	font-size: 14px;
+	font-family: Verdana;
+	font-weight: bold;
 }
 
 .icone_tipo {
@@ -132,6 +169,9 @@
 	height: 10vw;
 	background-color: rgba(255, 255, 255, .2);
 	border-radius: 50%;
+	border-color: lightgrey;
+	border-style: solid;
+	border-width: 0.05px;
 }
 
 #tipo_bebidas_fundo {
@@ -260,16 +300,6 @@
 	padding-top: 2vw;
 	padding-bottom: 2vw;
 	text-align: center;
-}
-
-#lista_pedidos {
-	overflow-y: scroll;
-	height: 17vw;
-}
-
-#lista_pedidos_preco_total {
-	text-align: right;
-	margin-right: 1vw;
 }
 
 .form-group input[type="checkbox"] {
