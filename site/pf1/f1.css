@@ -24,39 +24,6 @@
 	top: 30vw;
 }
 
-
-#f1_sopas{
-	padding-left: 31px;
-}
-
-
-#f1_entradas{
-    padding-left: 13px;
-    padding-top: 5px;
-}
-
-#f1_bebidas{
-	padding-left: 22px;
-	padding-top: 5px;
-}
-
-#f1_carne{
-	padding-left: 22px;
-}
-
-#f1_peixe{
-	padding-left: 27px;
-	font-size: 16px;
-}
-
-#f1_vegetariano{
-	padding-left: 7px;
-}
-
-#f1_sobremesas{
-	padding-left: 5px;
-}
-
 #lista_pedidos {
 	height: 13vw;
 	overflow-y: scroll;
@@ -115,8 +82,9 @@
 
 .tipos_comidas{
 	font-size: 14px;
-	font-family: Verdana;
+    font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
+	text-align: center;
 }
 
 .icone_tipo {

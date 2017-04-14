@@ -33,8 +33,6 @@
 }
 
 #imagem_f1 {
-	width: 16vw;
-	height: 16vw;
 	position: fixed;
 	left: 15vw;
 	top: 40vw;
@@ -42,8 +40,6 @@
 }
 
 #imagem_f2 {
-	width: 16vw;
-	height: 16vw;
 	position: fixed;
 	right: 15vw;
 	top: 40vw;
@@ -51,8 +47,6 @@
 }
 
 #imagem_f3 {
-	width: 16vw;
-	height: 16vw;
 	position: fixed;
 	left: 50vw;
 	top: 28vw;
@@ -67,14 +61,21 @@
 	padding: 0.25vw;
 }
 
+.imagem_funcionalidade_div {
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
 .imagem_fundo {
-    width: 20vw;
-    height: 19vw;
-    background-color: rgba(255, 255, 255, .2);
-    border-radius: 50%;
-		border-color: lightgrey;
-		border-width: 0.1px;
-		border-style: solid;
+	width: 20vw;
+	height: 20vw;
+	background-color: rgba(255, 255, 255, .2);
+	border-radius: 50%;
+	border-color: lightgrey;
+	border-width: 0.1px;
+	border-style: solid;
 }
 
 
@@ -97,33 +98,6 @@
 	left: 50vw;
 	top: 28vw;
 	transform: translate(-50%, -50%);
-}
-
-#f1_fazer_pedido {
-    font-size: 20px;
-    font-weight: bold;
-    padding-left: 32px;
-		padding-bottom: 15px;
-		font-family: Verdana;
-		width: 200px;
-		padding-top: 7px;
-}
-
-#f2_acompanhar_pedido {
-    font-size: 20px;
-    font-weight: bold;
-    padding-left: 1px;
-    padding-top: 20px;
-    font-family: Verdana;
-    width: 250px;
-}
-
-#f3_fazer_pagamento {
-    font-size: 20px;
-    font-weight: bold;
-    padding-left: 15px;
-    font-family: Verdana;
-    width: 240px;
 }
 
 .loaded {
