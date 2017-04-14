@@ -263,7 +263,7 @@
 .acompanhamentos{
 	padding-left: 9vw;
 	padding-right: 5vw;
-	padding-top: 1vw;
+	padding-top: 0vw;
 	padding-bottom: 2vw;
 	text-align: center;
 }
@@ -306,7 +306,7 @@
 }
 
 .acompanhamento-container label.btn-default{
-	width:100%;
+	width: 100%;
 	border:0.1vw solid #228B22;
 	margin:0.35vw;
 	box-shadow:0.35vw 0.57vw 0.57vw 0 #ccc;
@@ -317,7 +317,7 @@
 }
 
 .acompanhamento-container .btn-group{
-	width:90%
+	width:100%
 }
 
 .acompanhamento-container .btn span.glyphicon{

@@ -91,21 +91,21 @@ function f1_personalizacoes_random(tipo)
 		case "carne":
 			acompanhamentos = shuffle(["Batatas fritas", "Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
 			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
-			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre bálsamico", "Molho de manteiga"]);
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 		case "peixe":
 			acompanhamentos = shuffle(["Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
 			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
-			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre bálsamico", "Feijão Verde","Molho de manteiga"]);
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 		case "vegetariano":
 			acompanhamentos = shuffle(["Batatas fritas", "Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
 			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
-			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
+			extras = shuffle(["Azeite", "Vinagre", "Molho de manteiga", "Vinagre bálsamico"]);
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
