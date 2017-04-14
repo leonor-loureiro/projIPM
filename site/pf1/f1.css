@@ -1,9 +1,12 @@
 #zona_f1 {
 	position: relative;
 	height: 24vw;
-	border-top: 1px;
-	border-bottom: 1px ;
-	background-color:  	whitesmoke;
+	border-width: 0.5vw;
+	border-left: 0;
+	border-right: 0;
+	border-style: solid;
+	border-color: rgba(184, 140, 33, 1);
+	background-color: rgba(241, 235, 212, 1) !important;
 }
 
 #area_pedido {

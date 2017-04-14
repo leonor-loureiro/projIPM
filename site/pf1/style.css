@@ -1,3 +1,8 @@
+body {
+    background-image: url("images/main-background.jpg");
+	background-size: cover;
+}
+
 .jumbotron {
 	padding: 0;
 	height: 2.5vw;
@@ -12,15 +17,6 @@
    width: auto;
 }
 
-#main-background{
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	z-index: -100000;
-	width: 100%;
-	height: auto;
-}
-
 #prato {
 	width: 50vw;
 	height: 50vw;
@@ -29,8 +25,8 @@
 	left: 25vw; /* (100-50)/2 */
 	top: 39.0625vw; /* (9/16*100-50/2)*(1+0.25) */
 	z-index: -100;
-	border-style: red solid;
-	background-image: url("images/tablecloth.jpeg");
+	border-style: solid;
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 #imagem_f1 {
@@ -72,7 +68,7 @@
 .imagem_fundo {
 	width: 20vw;
 	height: 20vw;
-	background-color: rgba(255, 255, 255, .2);
+	background-color: rgba(255, 255, 255, 0.25);
 	border-radius: 50%;
 	border-color: lightgrey;
 	border-width: 0.1px;
