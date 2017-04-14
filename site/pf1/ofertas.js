@@ -54,17 +54,61 @@ function f1_informacoes_random(tempo_min, tempo_max)
 		tempo: f1_random_tempo(tempo_min, tempo_max)};
 }
 
+function f1_escolher_acompanhamento(opcoes)
+{
+	// http://stackoverflow.com/a/9071606
+	var index = Math.floor(Math.random() * opcoes.length);
+	var escolhido = opcoes[index];
+	opcoes.splice(index, 1);
+	return [escolhido, opcoes];
+}
+
+// http://stackoverflow.com/a/6274398
+function shuffle(array) {
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+}
+
 function f1_personalizacoes_random(tipo)
 {
 	switch(tipo)
 	{
 		case "carne":
-			return { acompanhamentos: ["Batatas fritas", "Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+			acompanhamentos = shuffle(["Batatas fritas", "Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
+			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
+			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
+			escolha_s = f1_escolher_acompanhamento(saladas);
+			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 		case "peixe":
-			return { acompanhamentos: ["Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
+			acompanhamentos = shuffle(["Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
+			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
+			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
+			escolha_s = f1_escolher_acompanhamento(saladas);
+			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 		case "vegetariano":
-			return { acompanhamentos: ["Batatas fritas", "Batatas cozidas", "Arroz", "Salada Mista"], extras: ["Azeite", "Vinagre", "Ketchup", "Maionese", "Mostarda"] };
-		default:
+			acompanhamentos = shuffle(["Batatas fritas", "Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
+			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
+			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
+			escolha_s = f1_escolher_acompanhamento(saladas);
+			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 			return false;
 	}
 }

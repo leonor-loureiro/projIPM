@@ -259,7 +259,7 @@
 
 
 .acompanhamento-container{
-	margin:1.53vw 0 0 0
+	margin: 0 0 0 0;
 }
 
 .acompanhamento-container label.btn-default.active{
