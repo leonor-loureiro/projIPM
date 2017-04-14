@@ -9,14 +9,48 @@
 #area_pedido {
 	position: fixed;
 	width: 16vw;
-	height: 26vw;
+	height: 21vw;
 	left: 84vw;
-	top: 30vw;
-	border: 1px solid black;
-	border-right: none;
+	top: 34vw;
+/* 	border: 1px solid black; */
 	padding-left: 1vw;
 }
 
+#area_pedido_fundo {
+	position: fixed;
+	width: 16vw;
+	height: 26vw;
+	left: 84vw;
+	top: 30vw;
+}
+
+#lista_pedidos {
+	height: 13vw;
+	overflow-y: scroll;
+}
+
+#lista_pedidos_preco_total {
+	text-align: right;
+	margin-right: 1vw;
+}
+
+.lista_pedidos_tres_pontos {
+	width: 13vw;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	line-height: 100%;
+}
+
+.lista_pedidos_preco_item {
+	text-align: right;
+	margin-top: -2%;
+	padding-top: 0;
+	line-height: 100%;
+}
 
 .botao_navegacao {
 	position: absolute;
@@ -223,16 +257,6 @@
 	padding-top: 2vw;
 	padding-bottom: 2vw;
 	text-align: center;
-}
-
-#lista_pedidos {
-	overflow-y: scroll;
-	height: 17vw;
-}
-
-#lista_pedidos_preco_total {
-	text-align: right;
-	margin-right: 1vw;
 }
 
 .form-group input[type="checkbox"] {

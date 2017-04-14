@@ -109,6 +109,7 @@ function f1_personalizacoes_random(tipo)
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
+		default:
 			return false;
 	}
 }
