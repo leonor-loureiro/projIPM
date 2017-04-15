@@ -18,3 +18,9 @@
   font-style: bold;
   src:url("fonts/OpenSans-Bold.ttf");
 }
+
+@font-face {
+  font-family: 'Candy';
+  font-style: bold;
+  src:url("fonts/candy.ttf");
+}

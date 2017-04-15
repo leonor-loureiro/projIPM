@@ -1,5 +1,7 @@
 function loadMain() {
 	$("#loaded").load("main.html");
+	var nome_restaurante = document.getElementById("nome_restaurante");
+	nome_restaurante.style.fontSize = "11.5vw";
 }
 
 function loadModals() {
@@ -7,6 +9,8 @@ function loadModals() {
 }
 
 function f1() {
+	var nome_restaurante = document.getElementById("nome_restaurante");
+	nome_restaurante.style.fontSize = "3.5vw";
 	$("#loaded").load("f1_1.html");
 	$("#prato_decor").load("f1_tipos_pratos.html");
 	$("#area_direita").load("f1_pedido.html");
@@ -14,7 +18,8 @@ function f1() {
 
 function f1_retroceder() {
 	$("#modalNaoSim").modal('hide');
-	$("#loaded").load("main.html");
+//	$("#loaded").load("main.html");
+	loadMain();
 	$("#prato_decor").html("");
 	$("#area_direita").html("");
 }
