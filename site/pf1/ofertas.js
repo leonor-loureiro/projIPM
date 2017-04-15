@@ -116,12 +116,12 @@ function f1_personalizacoes_random(tipo)
 
 function f1_popular_ofertas() {
 	var tipos = ['bebidas', 'entradas', 'sopas', 'carne', 'peixe', 'vegetariano', 'sobremesas'];
-	var nomes = {bebidas: ['Cerveja Sagres', 'Coca-Cola', 'Coca-Cola Zero', 'Fanta Laranja', 'Guaraná', 'Ice Tea Limão', 'Ice Tea Pessego', '7-up', 'Sumo de Laranja Natural', 'Vinho Tinto', 'Vinho Verde'],
+	var nomes = {bebidas: ['Cerveja Sagres', 'Coca-Cola', 'Coca-Cola Zero', 'Fanta Laranja', 'Guaraná', 'Ice Tea Limão', 'Ice Tea Pêssego', '7-up', 'Sumo de Laranja Natural', 'Vinho Tinto', 'Vinho Verde'],
 				 entradas: ['Pão', 'Pão com Alho', 'Broa', 'Manteiga com Sal', 'Paté de Atum', 'Paté de Sardinha', 'Queijo de Cabra', 'Queijo de Ovelha'],
 				 sopas: ['Caldo Verde', 'Canja de Galinha', 'Creme de Cenoura', 'Creme de Abóbora', 'Sopa de Espinafres', 'Sopa de Feijão', 'Sopa de Feijão Verde', 'Sopa da Pedra', 'Sopa de Tomate'],
 				 carne: ['Bitoque', 'Costeletas de Porco', 'Prego no Pão', 'Frango Frito', 'Cozido à Portuguesa', 'Bife com Natas', 'Entremeada', 'Lasanha à Bolonhesa', 'Lombinhos de Porco'],
 				 peixe: ['Arroz de Marisco', 'Bacalhau à Brás', 'Bacalhau com Grão', 'Bacalhau com Natas', 'Chocos Fritos', 'Dourada Grelhada', 'Filetes Panados', 'Lulas Guisadas', 'Pasteis de Bacalhau'],
-				 vegetariano: ['Espetadas de Tofu e Cogumelos', 'Espetadas Vegetarianas', 'Estrogonofe de Soja', 'Gratinado de Beringela', 'Lasanha de Legumes', 'Pataniscas de Legumes', 'Quiche de Legumes', 'Risoto de Cogumelos e Bróculos', 'Rissóis de Espinhafres'],
+				 vegetariano: ['Espetadas de Tofu e Cogumelos', 'Espetadas Vegetarianas', 'Estrogonofe de Soja', 'Gratinado de Beringela', 'Lasanha de Legumes', 'Pataniscas de Legumes', 'Quiche de Legumes', 'Risoto de Cogumelos e Bróculos', 'Rissóis de Espinafres'],
 				 sobremesas: ['Arroz Doce', 'Bolo de Bolacha', 'Bolo Brigadeiro', 'Tiramisu', 'Doce da Avó', 'Leite Creme', 'Mousse de Chocolate', 'Pudim Molotof', 'Salada de Frutas']
 				};
 	var imagens = {bebidas: ['cerveja_sagres.jpg','coca_cola.jpg','coca_cola_zero.jpg', 'fanta_laranja.jpg', 'guarana.jpg', 'ice_tea_limao.jpg','ice_tea_pessego.jpg', 'seven_up.jpg', 'sumo_laranja_natural.jpg', 'vinho_tinto.jpg', 'vinho_verde.jpg'],
@@ -183,7 +183,7 @@ function f1_carregar_ofertas(tipo)
 	{
 		f1_desenhar_oferta(oferta);
 	}
-	
+
 	if (isOverflowed(ofertas))
 	{
 		seta_esquerda.style.display = "inline";
@@ -214,7 +214,7 @@ function f1_info_nutricional_carregar(oferta) {
 			</tr>
 		</thead>
 		<tbody>
-			
+
 			<tr>
 				<th>Gorduras</th>
 				<td>%sg</td>
@@ -276,7 +276,7 @@ function f1_personalizacoes_carregar(oferta) {
 	<h3><b> Quantidade </b></h3>
 		<p>
 			<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()">
-			<span id ="qtd">1</span> 
+			<span id ="qtd">1</span>
 			<img src="images/plus_sign.svg" class="add_sub" onclick="f1_add_dose()">
 		</p>
 </div>
@@ -313,8 +313,8 @@ var template_acompanhamento = `
 			item
 		));
 	}
-	
-	
+
+
 	var dados = sprintf(template,
 		oferta.imagem, oferta.nome, oferta.preco.toFixed(2),
 		acompanhamentos

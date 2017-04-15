@@ -10,7 +10,7 @@ body {
 	/*border-style: solid;
 	border-color: #b1d1c6;*/
 	font-weight: bold;
-	
+
 
 }
 
@@ -19,10 +19,7 @@ body {
 }
 
 #nome_restaurante{
-	
 	font-family: 'Candy';
-	font-style: bold;
-	font-size: 11.5vw;
 }
 .container {
    margin: 0 !important;
