@@ -6,12 +6,20 @@ body {
 .jumbotron {
 	padding: 0;
 	height: 2.5vw;
+	background-color: #61d8d8;
+	border-style: solid;
+	border-color: #b1d1c6;
+	font-weight: bold;
+
 }
 
 .jumbotron text-center{
 	height: auto;
 }
 
+#nome_restaurante{
+	font-weight: bold;
+}
 .container {
    margin: 0 !important;
    width: auto;

@@ -84,10 +84,14 @@
 }
 
 .tipos_comidas{
-	font-size: 14px;
+	font-size: 15px;
     font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	text-align: center;
+}
+
+.row{
+	font-size: 16px;
 }
 
 .icone_tipo {
@@ -131,6 +135,10 @@
 #tipo_sobremesas {
 	top: 51vw;
 	left: 78vw;
+}
+
+#titulo_listagem{
+	font-weight: bold;
 }
 
 .tipo_comida_fundo {
@@ -209,7 +217,7 @@
 	width: 8vw;
 	height: 8vw;
 	border-radius: 50%;
-	background-color: CornflowerBlue;
+	background-color: #ec8f19;
 }
 
 #seta_esquerda {
