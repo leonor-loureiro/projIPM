@@ -58,6 +58,15 @@ function f1_adicionar_pedido_personalizado()
 }
 
 var qtd = 1;
+var personalizar_from = 0; // 0 - info nutricional , 1 - ofertas
+function f1_personalizar_oferta(tipo,id){
+	var oferta = obter_oferta(tipo, id);
+	f1_anterior = oferta.anterior;
+	f1_anterior_tipo = tipo;
+	f1_anterior_id = id;
+	personalizar_from = 1;
+	f1_personalizar();
+}
 function f1_personalizar() {
 	qtd = 1;
 	var oferta = obter_oferta(f1_anterior_tipo, f1_anterior_id);
@@ -82,8 +91,13 @@ function f1_sub_dose(){
 }
 
 function f1_4_retroceder()
-{
-	f1_info_nutricional(f1_anterior_tipo, f1_anterior_id);
+{	if(personalizar_from==1){
+		f1_3_retroceder();
+		personalizar_from = 0;
+	}
+	else{
+		f1_info_nutricional(f1_anterior_tipo, f1_anterior_id);
+	}
 
 }
 

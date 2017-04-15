@@ -148,15 +148,26 @@ function f1_desenhar_oferta(oferta)
 	var template = `
 <div class = "oferta">
 	<img src='%s' class=imagem_oferta onclick="adicionar_pedido('%s', %d, %t, %d); f1_desenhar_pedidos();">
-	<p>%s
+	<p><b>%s</b>
 	<p>Preço: %s€
 	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-secundary btn-xs">Detalhes</button>
+	<p><button type="button" onclick="f1_personalizar_oferta('%s', %d)";" class="btn btn-success btn-xs" %s >Personalizar Pedido</button>
 </div>
 `;
-	var html = sprintf(template,
+	var html = "";
+	if(oferta.tipo == 'carne' || oferta.tipo == "peixe"){
+		html = sprintf(template,
 		oferta.imagem, oferta.tipo, oferta.id, false, 1, oferta.nome,
-		oferta.preco.toFixed(2), oferta.tipo, oferta.id
+		oferta.preco.toFixed(2), oferta.tipo, oferta.id, oferta.tipo, oferta.id, ""
+	);	
+	}
+	else{
+		html = sprintf(template,
+		oferta.imagem, oferta.tipo, oferta.id, false, 1, oferta.nome,
+		oferta.preco.toFixed(2), oferta.tipo, oferta.id, oferta.tipo, oferta.id, "disabled"
 	);
+	}
+	
 	$(ofertas).append(html);
 }
 
