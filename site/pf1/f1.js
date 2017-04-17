@@ -187,6 +187,18 @@ function f1_desenhar_pedidos() {
 	}
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("Total: " + total.toFixed(2) + "€");
+	
+	// Atualizar estado dos botões
+	if (pedidos_estao_vazios())
+	{
+		document.getElementById("cancelar").disabled = true;
+		document.getElementById("concluir").disabled = true;
+	}
+	else
+	{
+		document.getElementById("cancelar").disabled = false;
+		document.getElementById("concluir").disabled = false;
+	}
 }
 
 function f1_limpar_pedidos() {
