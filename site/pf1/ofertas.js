@@ -28,17 +28,17 @@ function f1_random_preco(tipo)
 	switch(tipo)
 	{
 		case "bebidas":
-			return f1_random_preco_real(0.5, 3);
+			return f1_random_preco_real(0.5, 2);
 		case "entradas":
 			return f1_random_preco_real(0.5, 2);
 		case "sopas":
 			return f1_random_preco_real(1, 1.5);
 		case "carne":
-			return f1_random_preco_real(6, 15);
+			return f1_random_preco_real(5, 10);
 		case "peixe":
-			return f1_random_preco_real(6, 15);
+			return f1_random_preco_real(5, 10);
 		case "vegetariano":
-			return f1_random_preco_real(5, 12);
+			return f1_random_preco_real(5, 10);
 		case "sobremesas":
 			return f1_random_preco_real(0.5, 2.5);
 		default:
@@ -151,24 +151,20 @@ function f1_desenhar_oferta(oferta)
 	<p><b>%s</b>
 	<p>Preço: %s€
 	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-secundary btn-xs">Detalhes</button>
-	<p><button type="button" onclick="f1_personalizar_oferta('%s', %d)";" class="btn btn-success btn-xs" %s >Personalizar Pedido</button>
+	<p><button type="button" onclick="f1_personalizar_oferta('%s', %d)";" class="btn btn-success btn-xs botao_personalizar" >Personalizar Pedido</button>
 </div>
 `;
-	var html = "";
-	if(oferta.tipo == 'carne' || oferta.tipo == "peixe"){
-		html = sprintf(template,
+	
+	
+	var html = sprintf(template,
 		oferta.imagem, oferta.tipo, oferta.id, false, 1, oferta.nome,
-		oferta.preco.toFixed(2), oferta.tipo, oferta.id, oferta.tipo, oferta.id, ""
+		oferta.preco.toFixed(2), oferta.tipo, oferta.id, oferta.tipo, oferta.id
 	);	
-	}
-	else{
-		html = sprintf(template,
-		oferta.imagem, oferta.tipo, oferta.id, false, 1, oferta.nome,
-		oferta.preco.toFixed(2), oferta.tipo, oferta.id, oferta.tipo, oferta.id, "disabled"
-	);
-	}
 	
 	$(ofertas).append(html);
+	if(oferta.tipo == 'entradas' || oferta.tipo == "bebidas" || oferta.tipo == "sobremesas" || oferta.tipo == "sopas"){
+		$('.botao_personalizar').hide();
+	}
 }
 
 function obter_oferta(tipo, _id)
@@ -256,6 +252,9 @@ function f1_info_nutricional_carregar(oferta) {
 		oferta.informacoes.tempo
 	);
 	$("#info_produto").html(dados);
+	if(oferta.tipo == 'entradas' || oferta.tipo == "bebidas" || oferta.tipo == "sobremesas" || oferta.tipo == "sopas"){
+		$('#botao_personalizar').hide();
+	}
 }
 
 function f1_personalizacoes_carregar(oferta) {
