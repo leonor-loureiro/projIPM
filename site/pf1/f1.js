@@ -104,7 +104,7 @@ function f1_4_retroceder()
 function f1_abrir_cancelar_fazer_pedido() {
 
 	$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
-	$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
+	$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
 	$("#modalNaoSim").modal();
 	
 }
