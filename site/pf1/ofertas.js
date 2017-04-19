@@ -90,22 +90,22 @@ function f1_personalizacoes_random(tipo)
 	{
 		case "carne":
 			acompanhamentos = shuffle(["Batatas fritas", "Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
-			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
-			extras = shuffle(["Azeite", "Vinagre", "Vinagre bálsamico", "Molho de manteiga"]);
+			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Brócolos"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Molho de manteiga"]);
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 		case "peixe":
 			acompanhamentos = shuffle(["Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
-			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
-			extras = shuffle(["Azeite", "Vinagre", "Vinagre bálsamico", "Feijão Verde","Molho de manteiga"]);
+			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Brócolos"]);
+			extras = shuffle(["Azeite", "Vinagre", "Vinagre balsâmico", "Feijão Verde","Molho de manteiga"]);
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
 		case "vegetariano":
 			acompanhamentos = shuffle(["Batatas fritas", "Batatas cozidas", "Arroz branco", "Arroz de tomate", "Arroz de cenoura", "Batatas assadas"]);
-			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Bróculos"]);
-			extras = shuffle(["Azeite", "Vinagre", "Molho de manteiga", "Vinagre bálsamico"]);
+			saladas = shuffle(["Esparregado", "Couve-flor", "Cenoura", "Feijão preto", "Brócolos"]);
+			extras = shuffle(["Azeite", "Vinagre", "Molho de manteiga", "Vinagre balsâmico"]);
 			escolha_a = f1_escolher_acompanhamento(acompanhamentos);
 			escolha_s = f1_escolher_acompanhamento(saladas);
 			return { acompanhamentos: [escolha_a[0], escolha_s[0]], extras: [escolha_a[1][0], escolha_a[1][1], escolha_a[1][2], escolha_s[1][0], escolha_s[1][1], escolha_s[1][2], extras[0], extras[1], extras[2], extras[3]] };
@@ -121,7 +121,7 @@ function f1_popular_ofertas() {
 				 sopas: ['Caldo Verde', 'Canja de Galinha', 'Creme de Cenoura', 'Creme de Abóbora', 'Sopa de Espinafres', 'Sopa de Feijão', 'Sopa de Feijão Verde', 'Sopa da Pedra', 'Sopa de Tomate'],
 				 carne: ['Bitoque', 'Costeletas de Porco', 'Prego no Pão', 'Frango Frito', 'Cozido à Portuguesa', 'Bife com Natas', 'Entremeada', 'Lasanha à Bolonhesa', 'Lombinhos de Porco'],
 				 peixe: ['Arroz de Marisco', 'Bacalhau à Brás', 'Bacalhau com Grão', 'Bacalhau com Natas', 'Chocos Fritos', 'Dourada Grelhada', 'Filetes Panados', 'Lulas Guisadas', 'Pasteis de Bacalhau'],
-				 vegetariano: ['Espetadas de Tofu e Cogumelos', 'Espetadas Vegetarianas', 'Estrogonofe de Soja', 'Gratinado de Beringela', 'Lasanha de Legumes', 'Pataniscas de Legumes', 'Quiche de Legumes', 'Risoto de Cogumelos e Bróculos', 'Rissóis de Espinafres'],
+				 vegetariano: ['Espetadas de Tofu e Cogumelos', 'Espetadas Vegetarianas', 'Estrogonofe de Soja', 'Gratinado de Beringela', 'Lasanha de Legumes', 'Pataniscas de Legumes', 'Quiche de Legumes', 'Risoto de Cogumelos e Brócolos', 'Rissóis de Espinafres'],
 				 sobremesas: ['Arroz Doce', 'Bolo de Bolacha', 'Bolo Brigadeiro', 'Tiramisu', 'Doce da Avó', 'Leite Creme', 'Mousse de Chocolate', 'Pudim Molotof', 'Salada de Frutas']
 				};
 	var imagens = {bebidas: ['cerveja_sagres.jpg','coca_cola.jpg','coca_cola_zero.jpg', 'fanta_laranja.jpg', 'guarana.jpg', 'ice_tea_limao.jpg','ice_tea_pessego.jpg', 'seven_up.jpg', 'sumo_laranja_natural.jpg', 'vinho_tinto.jpg', 'vinho_verde.jpg'],
