@@ -103,16 +103,20 @@ function f1_4_retroceder()
 
 function f1_abrir_cancelar_fazer_pedido() {
 
-	if(pedidos_estao_vazios()){
-		$("#modalOk-msg").text("O seu pedido está vazio!");
-		$("#modalOk").modal();
-		return;
-	}
-	else{
-		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
-		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
-		$("#modalNaoSim").modal();
-	}
+	$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
+	$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
+	$("#modalNaoSim").modal();
+
+}
+
+function f1_pedido_bem_sucedido() {
+	$("#modalOk-msg").text("O seu pedido foi concluído com sucesso!");
+	$("#modalOk").modal();
+
+	// http://stackoverflow.com/a/22944616
+	setTimeout(function(){
+		$("#modalOk").modal('hide');
+	}, 2000);
 }
 
 function f1_abrir_concluir_fazer_pedido() {
@@ -123,7 +127,7 @@ function f1_abrir_concluir_fazer_pedido() {
 	}
 	else{
 		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir?");
-		$("#modalNaoSim-Sim").attr("onclick", "f1_concluir_fazer_pedido()");
+		$("#modalNaoSim-Sim").attr("onclick", "f1_concluir_fazer_pedido(); f1_pedido_bem_sucedido();");
 		$("#modalNaoSim").modal();
 	}
 }
@@ -135,11 +139,11 @@ function f1_concluir_fazer_pedido() {
 
 function f1_desenhar_pedidos() {
 	var template = `
-<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
+<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
 <p class="lista_pedidos_preco_item">%d×%s€: %s€</p>
 `;
 	var template_1 = `
-<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
+<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
 <p class="lista_pedidos_preco_item">%s€</p>
 `;
 	var html_pedidos = "";
@@ -187,6 +191,16 @@ function f1_desenhar_pedidos() {
 	}
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("Total: " + total.toFixed(2) + "€");
+
+	// Atualizar estado dos botões
+	if (pedidos_estao_vazios())
+	{
+		document.getElementById("concluir").disabled = true;
+	}
+	else
+	{
+		document.getElementById("concluir").disabled = false;
+	}
 }
 
 function f1_limpar_pedidos() {
@@ -194,10 +208,27 @@ function f1_limpar_pedidos() {
 	f1_desenhar_pedidos();
 }
 
+function f1_botao_limpar(){
+	if(pedidos_estao_vazios()){
+		$("#modalOk-msg").text("O seu pedido está vazio!");
+		$("#modalOk").modal();
+		return;
+	}
+	else{
+		$("#modalNaoSim-msg").text("Tem a certeza deseja limpar a lista de pedidos?");
+		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
+		$("#modalNaoSim").modal();
+	}
+}
 
+function f1_remover_pedido(_id){
+	var remover_pedido = sprintf("remover_pedido(%d); f1_desenhar_pedidos();", _id);
+	$("#modalNaoSim-msg").text("Tem a certeza deseja remover o pedido?");
+	$("#modalNaoSim-Sim").attr("onclick", remover_pedido);
+	$("#modalNaoSim").modal();
+}
 
-
-/*var time = 60; /* how long the timer runs for 
+/*var time = 60; /* how long the timer runs for
 var initialOffset = '440';
 var i = 1
 var interval = setInterval(function() {

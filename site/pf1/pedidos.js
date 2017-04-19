@@ -25,6 +25,10 @@ function remover_pedido(_id) {
 	{
 		pedidos.splice(index, 1);
 	}
+	if (pedidos.length == 0)
+	{
+		id_counter = 0;
+	}
 }
 
 // Usar f1_limpar_pedidos() se a trabalhar na f1
