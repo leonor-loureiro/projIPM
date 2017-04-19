@@ -190,7 +190,7 @@ function f1_desenhar_pedidos() {
 		total += item.oferta.preco * item.quantidade;
 	}
 	$("#lista_pedidos").html(html_pedidos);
-	$("#lista_pedidos_preco_total").html("Total: " + total.toFixed(2) + "€");
+	$("#lista_pedidos_preco_total").html(total.toFixed(2) + "€");
 
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
@@ -215,17 +215,14 @@ function f1_botao_limpar(){
 		return;
 	}
 	else{
-		$("#modalNaoSim-msg").text("Tem a certeza deseja limpar a lista de pedidos?");
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja limpar a lista de pedidos?");
 		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
 		$("#modalNaoSim").modal();
 	}
 }
 
 function f1_remover_pedido(_id){
-	var remover_pedido = sprintf("remover_pedido(%d); f1_desenhar_pedidos();", _id);
-	$("#modalNaoSim-msg").text("Tem a certeza deseja remover o pedido?");
-	$("#modalNaoSim-Sim").attr("onclick", remover_pedido);
-	$("#modalNaoSim").modal();
+	remover_pedido(_id);
 }
 
 var numero_checkboxes_personalizacoes = 0;
@@ -240,7 +237,7 @@ function f1_registar_personalizacao(id) {
 	{
 		numero_checkboxes_personalizacoes--;
 	}
-	
+
 	// No máximo só se podem escolher 4 acompanhamentos
 	if (numero_checkboxes_personalizacoes >= 4)
 	{
