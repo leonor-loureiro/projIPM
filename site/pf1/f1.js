@@ -106,13 +106,13 @@ function f1_abrir_cancelar_fazer_pedido() {
 	$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
 	$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
 	$("#modalNaoSim").modal();
-	
+
 }
 
 function f1_pedido_bem_sucedido() {
 	$("#modalOk-msg").text("O seu pedido foi concluído com sucesso!");
 	$("#modalOk").modal();
-	
+
 	// http://stackoverflow.com/a/22944616
 	setTimeout(function(){
 		$("#modalOk").modal('hide');
@@ -191,7 +191,7 @@ function f1_desenhar_pedidos() {
 	}
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("Total: " + total.toFixed(2) + "€");
-	
+
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
 	{
@@ -262,3 +262,16 @@ function f1_registar_personalizacao(id) {
 		$("#info_acompanhamentos_selecao").hide();
 	}
 }
+
+/*var time = 60; /* how long the timer runs for
+var initialOffset = '440';
+var i = 1
+var interval = setInterval(function() {
+    $('.circle_animation').css('stroke-dashoffset', initialOffset-(i*(initialOffset/time)));
+    $('h2').text(i);
+    if (i == time) {
+        clearInterval(interval);
+    }
+    i++;
+}, 1000);
+*/

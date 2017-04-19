@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/main-background.jpg");
+  background-image: url("images/main-background.jpg");
 	background-size: cover;
 }
 
@@ -10,8 +10,6 @@ body {
 	/*border-style: solid;
 	border-color: #b1d1c6;*/
 	font-weight: bold;
-
-
 }
 
 .jumbotron text-center{
@@ -21,6 +19,7 @@ body {
 #nome_restaurante{
 	font-family: 'Candy';
 }
+
 .container {
    margin: 0 !important;
    width: auto;
