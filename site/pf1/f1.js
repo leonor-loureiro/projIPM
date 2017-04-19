@@ -222,7 +222,7 @@ function f1_botao_limpar(){
 }
 
 function f1_remover_pedido(_id){
-	var remover_pedido = sprintf("remover_pedido(%d)", _id);
+	var remover_pedido = sprintf("remover_pedido(%d); f1_desenhar_pedidos();", _id);
 	$("#modalNaoSim-msg").text("Tem a certeza deseja remover o pedido?");
 	$("#modalNaoSim-Sim").attr("onclick", remover_pedido);
 	$("#modalNaoSim").modal();
