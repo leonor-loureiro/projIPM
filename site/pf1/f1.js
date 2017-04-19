@@ -227,3 +227,38 @@ function f1_remover_pedido(_id){
 	$("#modalNaoSim-Sim").attr("onclick", remover_pedido);
 	$("#modalNaoSim").modal();
 }
+
+var numero_checkboxes_personalizacoes = 0;
+function set_numero_checkboxes_personalizacoes(n) { numero_checkboxes_personalizacoes = n; }
+
+function f1_registar_personalizacao(id) {
+	if (document.getElementById(id).checked == true)
+	{
+		numero_checkboxes_personalizacoes++;
+	}
+	else if (document.getElementById(id).checked == false)
+	{
+		numero_checkboxes_personalizacoes--;
+	}
+	
+	// No máximo só se podem escolher 4 acompanhamentos
+	if (numero_checkboxes_personalizacoes >= 4)
+	{
+		for (i = 0; i < 12; i++)
+		{
+			if (document.getElementById('f1_checkbox_personalizacao_' + i).checked == false)
+			{
+				document.getElementById('f1_checkbox_personalizacao_' + i).disabled = true;
+			}
+		}
+		$("#info_acompanhamentos_selecao").show();
+	}
+	else
+	{
+		for (i = 0; i < 12; i++)
+		{
+			document.getElementById('f1_checkbox_personalizacao_' + i).disabled = false;
+		}
+		$("#info_acompanhamentos_selecao").hide();
+	}
+}

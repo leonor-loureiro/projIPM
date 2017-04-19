@@ -92,10 +92,16 @@
 	text-align: center;
 }
 
-#f1_1_titulo{
-	font-size: 16px;
+.info_span {
+	font-size: 1.25vw;
+	vertical-align: middle;
 }
 
+.info_img {
+	width: 2vw;
+	height: 2vw;
+	vertical-align: middle;
+}
 
 .icone_tipo {
 	display: block;
@@ -311,32 +317,8 @@
 	margin: 0 0 0 0;
 }
 
-.acompanhamento-container label.btn-default.active{
-	background-color:#228B22;color:#FFF
-
-}
-
-.acompanhamento-container label.btn-default{
+.f1_checkbox_personalizacoes {
 	width: 100%;
-	border:0.1vw solid #228B22;
-	margin:0.35vw;
-	box-shadow:0.35vw 0.57vw 0.57vw 0 #ccc;
-}
-
-.acompanhamento-container label .bizcontent{
-	width:100%;
-}
-
-.acompanhamento-container .btn-group{
-	width:100%
-}
-
-.acompanhamento-container .btn span.glyphicon{
-    opacity: 0;
-}
-
-.acompanhamento-container .btn.active span.glyphicon {
-    opacity: 1;
 }
 
 .quantidade{

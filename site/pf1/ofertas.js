@@ -267,8 +267,12 @@ function f1_personalizacoes_carregar(oferta) {
 </div>
 <div class="col-xs-8 acompanhamentos">
 	<h3><b>Acompanhamentos:</b></h3>
-	<div class="acompanhamento-container">
+	<div class="container acompanhamento-container">
 		%s
+	</div>
+	<div id="info_acompanhamentos_selecao">
+		<img src="images/info.svg" class="info_img"></img>
+		<span class="info_span">Máximo de 4 acompanhamentos</span>
 	</div>
 </div>
 <div class="col-xs-2 quantidade">
@@ -282,41 +286,63 @@ function f1_personalizacoes_carregar(oferta) {
 `;
 
 var template_acompanhamento = `
-<div class="items col-xs-5 col-sm-5 col-md-3 col-lg-3">
-	<div class="info-block block-info clearfix">
-        <div class="square-box pull-left"></div>
-        <div data-toggle="buttons" class="btn-group bizmoduleselect">
-        	<label class="btn btn-default %s">
-           		<div class = "bizcontent">
-            		<input type="checkbox" name="var_id[]" autocomplete="off" value="">
-            		<span class = "glyphicon glyphicon-ok glyphicon-lg"></span>
-            		<h5><b>%s</b></h5>
-            	</div>
-        	</label>
-        </div>
+<div class="[ form-group ]">
+	<input type="checkbox" name="f1_checkbox_personalizacao_%d" id="f1_checkbox_personalizacao_%d" autocomplete="off" onclick=f1_registar_personalizacao("f1_checkbox_personalizacao_%d") />
+	<div class="[ btn-group width100 ]">
+		<label for="f1_checkbox_personalizacao_%d" class="[ btn btn-success width25 ]">
+			<span class="[ glyphicon glyphicon-ok ]"></span>
+			<span> </span>
+		</label>
+		<label for="f1_checkbox_personalizacao_%d" class="[ btn btn-default active width75 ]">
+			%s
+		</label>
 	</div>
 </div>
 `;
 
-
+	var id_checkbox = 0;
 	var acompanhamentos = "";
+	var acompanhamentos2 = "";
+	// Isto está feio...
 	for (var item of oferta.personalizacoes.acompanhamentos)
 	{
-		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,"active",
-			item
+		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
+			id_checkbox, id_checkbox, id_checkbox, id_checkbox, id_checkbox, item
 		));
+		id_checkbox++;
+		
+		if (id_checkbox % 4 == 0)
+		{
+			acompanhamentos2 = acompanhamentos2.concat(
+				sprintf(`<div class="[ col-xs-4 ]">%s</div>`, acompanhamentos));
+			acompanhamentos = "";
+		}
 	}
 	for (var item of oferta.personalizacoes.extras)
 	{
-		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,"",
-			item
+		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
+			id_checkbox, id_checkbox, id_checkbox, id_checkbox, id_checkbox, item
 		));
+		id_checkbox++;
+		
+		if (id_checkbox % 4 == 0)
+		{
+			acompanhamentos2 = acompanhamentos2.concat(
+				sprintf(`<div class="[ col-xs-4 ]">%s</div>`, acompanhamentos));
+			acompanhamentos = "";
+		}
 	}
 
 
 	var dados = sprintf(template,
 		oferta.imagem, oferta.nome, oferta.preco.toFixed(2),
-		acompanhamentos
+		acompanhamentos2
 	);
 	$("#personalizacoes").html(dados);
+	
+	// Estes 2 são os escolhidos, e os que estão em oferta.personalizacoes.acompanhamentos
+	document.getElementById("f1_checkbox_personalizacao_0").checked = true;
+	document.getElementById("f1_checkbox_personalizacao_1").checked = true;
+	set_numero_checkboxes_personalizacoes(2);
+	$("#info_acompanhamentos_selecao").hide();
 }
