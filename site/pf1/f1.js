@@ -109,9 +109,14 @@ function f1_abrir_cancelar_fazer_pedido() {
 	
 }
 
-function f1_pedido_bem_sucedido(){
+function f1_pedido_bem_sucedido() {
 	$("#modalOk-msg").text("O seu pedido foi concluído com sucesso!");
 	$("#modalOk").modal();
+	
+	// http://stackoverflow.com/a/22944616
+	setTimeout(function(){
+		$("#modalOk").modal('hide');
+	}, 2000);
 }
 
 function f1_abrir_concluir_fazer_pedido() {
@@ -122,11 +127,8 @@ function f1_abrir_concluir_fazer_pedido() {
 	}
 	else{
 		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir?");
-		$("#modalNaoSim-Sim").attr("onclick", "f1_concluir_fazer_pedido()");
+		$("#modalNaoSim-Sim").attr("onclick", "f1_concluir_fazer_pedido(); f1_pedido_bem_sucedido();");
 		$("#modalNaoSim").modal();
-
-		$("#modalOk-msg").text("O seu pedido foi concluido com sucesso!");
-		$("#modalOk").modal();
 	}
 }
 
