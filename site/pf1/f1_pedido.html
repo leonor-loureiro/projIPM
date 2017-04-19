@@ -2,7 +2,10 @@
 <div class="container" id="area_pedido">
 	<h4 id = "titulo_listagem" class="center">Listagem do pedido</h4>
 	<div id="lista_pedidos"></div>
-	<div id="lista_pedidos_preco_total"></div>
+	<div>
+		<button class="btn btn-link" id ="botao_limpar" onclick="f1_botao_limpar()">Limpar</button>
+		<span id="lista_pedidos_preco_total"></span>
+	</div>
 	<script>f1_desenhar_pedidos();</script>
 	<div class="row botoes_navegacao">
 		<div class="col-xs-6">

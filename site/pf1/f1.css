@@ -33,8 +33,10 @@
 }
 
 #lista_pedidos_preco_total {
-	text-align: right;
+	/*text-align: right;*/
 	margin-right: 1vw;
+	float: right;
+	padding-top: 0.5vw;
 }
 
 .lista_pedidos_tres_pontos {
@@ -342,4 +344,10 @@
 	padding-top: 5vw;
 	padding-bottom: 5vw;
 	font-size: 1.5vw;
+}
+
+.btn-primary[disabled] {
+	background-color: lightgray !important;
+	border-color: gray !important;
+	color: black;
 }
