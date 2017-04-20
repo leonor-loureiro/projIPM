@@ -103,7 +103,7 @@ function f1_4_retroceder()
 
 function f1_abrir_cancelar_fazer_pedido() {
 
-	$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar?");
+	$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar todo o seu pedido?");
 	$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
 	$("#modalNaoSim").modal();
 
@@ -126,7 +126,7 @@ function f1_abrir_concluir_fazer_pedido() {
 		return;
 	}
 	else{
-		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir?");
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja concluir o seu pedido?");
 		$("#modalNaoSim-Sim").attr("onclick", "f1_concluir_fazer_pedido(); f1_pedido_bem_sucedido();");
 		$("#modalNaoSim").modal();
 	}

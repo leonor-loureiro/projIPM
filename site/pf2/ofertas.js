@@ -150,7 +150,7 @@ function f1_desenhar_oferta(oferta)
 	<img src='%s' class=imagem_oferta onclick="adicionar_pedido('%s', %d, %t, %d); f1_desenhar_pedidos();">
 	<p><b>%s</b>
 	<p>Preço: %s€
-	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-secundary btn-xs">Detalhes</button>
+	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-success btn-xs">Detalhes</button>
 	<p><button type="button" onclick="f1_personalizar_oferta('%s', %d)";" class="btn btn-success btn-xs botao_personalizar" >Personalizar Pedido</button>
 </div>
 `;
