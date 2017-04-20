@@ -142,6 +142,10 @@
 	color: white;
 }
 
+.btn-link{
+	border-color: #337ab7;
+}
+
 #tipo_sopas {
 	top: 36vw;
 	left: 38vw;
