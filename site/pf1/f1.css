@@ -137,6 +137,11 @@
 	left: 28vw;
 }
 
+.btn-secundary{
+	background-color: #a79595;
+	color: white;
+}
+
 #tipo_sopas {
 	top: 36vw;
 	left: 38vw;
