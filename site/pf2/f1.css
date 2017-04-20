@@ -319,6 +319,9 @@
     display: none;
 }
 
+.form-group input[type="checkbox"]:disabled + .btn-group > label:last-child {
+	background-color:  #bfbfbf;
+}
 .form-group input[type="checkbox"] + .btn-group > label span {
     width: 20px;
 }
