@@ -146,6 +146,14 @@ body {
 	width: 30%;
 }
 
+#imagem_sucesso{
+  width: 5vw;
+}
+
+#div_imagem_sucesso{
+  padding-left: 40%;
+}
+
 .form-group input[type="checkbox"] {
     display: none;
 }
