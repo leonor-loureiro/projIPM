@@ -110,12 +110,12 @@ function f1_abrir_cancelar_fazer_pedido() {
 }
 
 function f1_pedido_bem_sucedido() {
-	$("#modalOk-msg").text("O seu pedido foi concluído com sucesso!");
-	$("#modalOk").modal();
+	$("#modalSucesso-msg").text("O seu pedido foi concluído com sucesso!");
+	$("#modalSucesso").modal();
 
 	// http://stackoverflow.com/a/22944616
 	setTimeout(function(){
-		$("#modalOk").modal('hide');
+		$("#modalSucesso").modal('hide');
 	}, 2000);
 }
 
