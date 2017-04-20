@@ -1,0 +1,181 @@
+body {
+  background-image: url("images/main-background.jpg");
+	background-size: cover;
+}
+
+.jumbotron {
+	padding: 0;
+	height: 2.5vw;
+	background-color: transparent;
+	/*border-style: solid;
+	border-color: #b1d1c6;*/
+	font-weight: bold;
+}
+
+.jumbotron text-center{
+	height: auto;
+}
+
+#nome_restaurante{
+	font-family: 'Candy';
+}
+
+.container {
+   margin: 0 !important;
+   width: auto;
+}
+
+#prato {
+	width: 50vw;
+	height: 50vw;
+	border-radius: 50%;
+	position: fixed;
+	left: 25vw; /* (100-50)/2 */
+	top: 39.0625vw; /* (9/16*100-50/2)*(1+0.25) */
+	z-index: -100;
+	border-style: solid;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#imagem_f1 {
+	position: fixed;
+	left: 15vw;
+	top: 40vw;
+	transform: translate(-50%, -50%);
+}
+
+#imagem_f2 {
+	position: fixed;
+	right: 15vw;
+	top: 40vw;
+	transform: translate(50%, -50%);
+}
+
+#imagem_f3 {
+	position: fixed;
+	left: 50vw;
+	top: 28vw;
+	transform: translate(-50%, -50%);
+}
+
+.imagem_funcionalidade {
+	width: 10vw;
+	height: 10vw;
+	margin: auto;
+	display: block;
+	padding: 0.25vw;
+}
+
+.imagem_funcionalidade_div {
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+.imagem_fundo {
+	width: 20vw;
+	height: 20vw;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	border-color: lightgrey;
+	border-width: 0.1px;
+	border-style: solid;
+}
+
+
+#imagem_f1_fundo {
+	position: fixed;
+	left: 15vw;
+	top: 40vw;
+	transform: translate(-50%, -50%);
+}
+
+#imagem_f2_fundo {
+	position: fixed;
+	right: 15vw;
+	top: 40vw;
+	transform: translate(50%, -50%);
+}
+
+#imagem_f3_fundo {
+	position: fixed;
+	left: 50vw;
+	top: 28vw;
+	transform: translate(-50%, -50%);
+}
+
+.loaded {
+	top: 0;
+	left: 0;
+}
+
+.row {
+	padding: 1vw;
+}
+
+.info {
+	display: inline-block;
+	vertical-align: middle;
+	width: 2%;
+	height: 2%;
+}
+
+.btn-secundary:hover{
+	background-color: gray;
+	color: white;
+}
+
+.mirror {
+/* 	http://stackoverflow.com/a/5409373 */
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.modal-dialog{
+	font-size: 16px;
+	width: 30%;
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}
+
+.width100 {
+	width: 100%;
+}
+
+.width25 {
+	width: 25%;
+}
+
+.width75 {
+	width: 75%;
+}

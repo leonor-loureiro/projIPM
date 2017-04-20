@@ -1,0 +1,18 @@
+<img src="images/f2_acompanhar_pedido_listagem.svg" id="area_pedido_fundo">
+<div class="container" id="area_pedido">
+	<h4 id = "titulo_listagem" class="center">Listagem do pedido</h4>
+	<div id="lista_pedidos"></div>
+	<script>f1_desenhar_pedidos();</script>
+	<div class="row botoes_navegacao">
+		<div id = "coluna_1_botoes" class="col-xs-6 colunas_botoes">
+			<button type="button" id ="botao_limpar" onclick="f1_botao_limpar();" class="btn btn-link btn-sm btn-block">Limpar</button>
+			<button type="button" id ="cancelar" onclick="f1_abrir_cancelar_fazer_pedido();" class="btn btn-primary btn-sm btn-block">Cancelar</button>
+		</div>
+		<div  id = "coluna_2_botoes" class="col-xs-6 colunas_botoes">
+			<span id = "total">Total:</span><span id="lista_pedidos_preco_total"></span>
+<!-- 		No futuro irá adicionar os pedidos a outra array além de os limpar -->
+			<button type="button" id ="concluir" onclick="f1_abrir_concluir_fazer_pedido();" class="btn btn-primary btn-sm btn-block">Concluir</button>
+		</div>
+	</div>
+
+</div>

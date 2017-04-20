@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Com.ISTo</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv='cache-control' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+		<meta http-equiv='pragma' content='no-cache'>
+		<link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<script src="../libs/jquery-3.2.1.min.js"></script>
+		<script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="../libs/sprintf.min.js"></script>
+		<link rel="stylesheet" href="widgets/simple_digital_clock/sdc.css">
+		<script src="widgets/simple_digital_clock/sdc.js"></script>
+		<link rel="stylesheet" href="fonts.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="f1.css">
+		<script src="main.js"></script>
+		<script src="pedidos.js"></script>
+		<script src="ofertas.js"></script>
+		<script src="f1.js"></script>
+	</head>
+	<body onload="loadMain(); loadModals(); SDC_startTime()">
+		<div class="jumbotron text-center">
+			<p id = "nome_restaurante">~Com.ISTo~
+			<div id="simple_digital_clock"></div>
+		</div>
+		<div id="loaded">
+		<p>Falha ao carregar fragmento de página.
+		<p>Se se estiver a usar o Chrome/Chromium localmente, iniciar com --allow-file-access-from-files.
+		<p>Exemplo: chromium --allow-file-access-from-files &
+		</div>
+		<div id="modals"></div>
+		<div id="prato"></div>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<div class="item html">
+			<h2>0</h2>
+			<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+			<g>
+			<title>Layer 1</title>
+			<circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="red" fill="none"/>
+			</g>
+			</svg>
+		</div> -->
+		<div id="area_direita"></div>
+		<div id="prato_decor"></div>
+		<div id="modals"></div>
+		<script>$("#modals").load("modals.html");</script>
+	</body>
+</html>
