@@ -361,6 +361,9 @@
 	font-size: 1.5vw;
 }
 
+#limpar{
+	padding-bottom: 1vw;
+}
 .item {
     position: relative;
     float: left;
