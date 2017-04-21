@@ -19,14 +19,17 @@ function adicionar_pedido(_tipo, _id, _personalizado, _quantidade) {
 }
 
 function remover_pedido(_id) {
+
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
 
-	if (index > -1)
-	{
+	if (index > -1 && pedidos[index].quantidade > 1){
+		pedidos[index].quantidade-=1;
+	}
+	else if(index > -1){
 		pedidos.splice(index, 1);
 	}
-	if (pedidos.length == 0)
-	{
+
+	if (pedidos.length == 0){
 		id_counter = 0;
 	}
 }
