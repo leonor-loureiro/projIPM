@@ -319,9 +319,15 @@
     display: none;
 }
 
+.form-group input[type="checkbox"]:disabled + .btn-group > label:first-child {
+	background-color: #78A178;
+	border-color: #78A178;
+}
+
 .form-group input[type="checkbox"]:disabled + .btn-group > label:last-child {
 	background-color:  #bfbfbf;
 }
+
 .form-group input[type="checkbox"] + .btn-group > label span {
     width: 20px;
 }
@@ -339,7 +345,6 @@
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
     display: none;
 }
-
 
 .acompanhamento-container{
 	margin: 0 0 0 0;
