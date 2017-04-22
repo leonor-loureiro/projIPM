@@ -47,13 +47,13 @@ function f1_3_retroceder()
 
 function f1_adicionar_pedido_detalhes()
 {
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, false, 1);
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, null, 1);
 	f1_desenhar_pedidos();
 }
 
 function f1_adicionar_pedido_personalizado()
 {
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, true, qtd);
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, f1_get_personalizacoes(), qtd);
 	f1_desenhar_pedidos();
 }
 
@@ -72,7 +72,7 @@ function f1_personalizar() {
 	var oferta = obter_oferta(f1_anterior_tipo, f1_anterior_id);
 	$("#loaded").load("f1_4.html", function()
 	{
-		f1_personalizacoes_carregar(oferta);
+		f1_personalizacoes_carregar(oferta, null);
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
@@ -147,14 +147,16 @@ function f1_desenhar_pedidos() {
 	var template = `
 <p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
 <p class="lista_pedidos_preco_item">%d×%s€: %s€</p>
+<button type="button" onclick="f1_editar_pedido(%d);" class="btn btn-link btn-sm btn-block">Editar</button>
 `;
 	var template_1 = `
 <p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
 <p class="lista_pedidos_preco_item">%s€</p>
+<button type="button" onclick="f1_editar_pedido(%d);" class="btn btn-link btn-sm btn-block">Editar</button>
 `;
 	var html_pedidos = "";
 	var total = 0;
-	for (var item of pedidos)
+	for (var item of get_pedidos())
 	{
 		if (item.quantidade == 1)
 		{
@@ -162,14 +164,14 @@ function f1_desenhar_pedidos() {
 			{
 				html = sprintf(template_1,
 					item.id, String(item.quantidade) + "×", item.oferta.nome,
-					item.oferta.preco.toFixed(2)
+					item.oferta.preco.toFixed(2), item.id
 				);
 			}
 			else
 			{
 				html = sprintf(template_1,
 					item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
-					item.oferta.preco.toFixed(2)
+					item.oferta.preco.toFixed(2), item.id
 				);
 			}
 		}
@@ -180,7 +182,7 @@ function f1_desenhar_pedidos() {
 				html = sprintf(template,
 					item.id, String(item.quantidade) + "×", item.oferta.nome,
 					item.quantidade, item.oferta.preco.toFixed(2),
-					(item.quantidade * item.oferta.preco).toFixed(2)
+					(item.quantidade * item.oferta.preco).toFixed(2), item.id
 				);
 			}
 			else
@@ -188,7 +190,7 @@ function f1_desenhar_pedidos() {
 				html = sprintf(template,
 					item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
 					item.quantidade, item.oferta.preco.toFixed(2),
-					(item.quantidade * item.oferta.preco).toFixed(2)
+					(item.quantidade * item.oferta.preco).toFixed(2), item.id
 				);
 			}
 		}
@@ -234,16 +236,16 @@ function f1_remover_pedido(_id){
 }
 
 var numero_checkboxes_personalizacoes = 0;
-function set_numero_checkboxes_personalizacoes(n) { numero_checkboxes_personalizacoes = n; }
-
 function f1_registar_personalizacao(id) {
 	if (document.getElementById(id).checked == true)
 	{
 		numero_checkboxes_personalizacoes++;
+		f1_adicionar_personalizacao(id);
 	}
 	else if (document.getElementById(id).checked == false)
 	{
 		numero_checkboxes_personalizacoes--;
+		f1_remover_personalizacao(id);
 	}
 
 	// No máximo só se podem escolher 4 acompanhamentos
@@ -266,6 +268,57 @@ function f1_registar_personalizacao(id) {
 		}
 		$("#info_acompanhamentos_selecao").hide();
 	}
+}
+
+function f1_limpar_personalizacoes()
+{
+	numero_checkboxes_personalizacoes = 0;
+	personalizacoes = [];
+}
+
+var personalizacoes = [];
+function f1_adicionar_personalizacao(id_checkbox)
+{
+	personalizacoes.push(id_checkbox);
+}
+
+function f1_remover_personalizacao(id_checkbox)
+{
+	var index = personalizacoes.map(function(e) { return e; }).indexOf(id_checkbox);
+	personalizacoes.splice(index, 1);
+}
+
+function f1_get_personalizacoes()
+{
+	return personalizacoes;
+}
+
+function f1_editar_personalizacoes_pedido(id)
+{
+	editar_personalizacoes_pedido(id, personalizacoes);
+	get_pedido(id).quantidade = qtd;
+}
+
+function f1_editar_pedido(id)
+{
+	var oferta = get_oferta_pedido(id);
+	f1_anterior = oferta.anterior;
+	f1_anterior_tipo = oferta.tipo;
+	f1_anterior_id = oferta.id;
+	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
+	qtd = get_pedido(id).quantidade + 1;
+	console.log(qtd);
+	var html = `
+<button type="button" class="btn btn-primary btn-lg" onclick="f1_editar_personalizacoes_pedido(%d); f1_4_retroceder()">Guardar Alteração</button>
+`;
+	html = sprintf(html, id);
+	$("#loaded").load("f1_4.html", function()
+	{
+		$("#f1_div_botao_pedido_personalizado").html(html);
+		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id));
+	});
+	$("#prato_decor").html("");
+	$("#area_direita").load("f1_pedido.html");
 }
 
 /*var time = 60; /* how long the timer runs for
