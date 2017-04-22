@@ -2,6 +2,7 @@ function f1_ofertas(tipo) {
 	$("#loaded").load("f1_2.html", function()
 	{
 		f1_carregar_ofertas(tipo);
+		f1_anterior = tipo;
 	});
 	$("#prato_decor").load("f1_tipos_pratos.html");
 	$("#area_direita").load("f1_pedido.html");
@@ -47,13 +48,13 @@ function f1_3_retroceder()
 
 function f1_adicionar_pedido_detalhes()
 {
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, false, 1);
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, null, 1);
 	f1_desenhar_pedidos();
 }
 
 function f1_adicionar_pedido_personalizado()
 {
-	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, true, qtd);
+	adicionar_pedido(f1_anterior_tipo, f1_anterior_id, f1_get_personalizacoes(), qtd);
 	f1_desenhar_pedidos();
 }
 
@@ -72,7 +73,7 @@ function f1_personalizar() {
 	var oferta = obter_oferta(f1_anterior_tipo, f1_anterior_id);
 	$("#loaded").load("f1_4.html", function()
 	{
-		f1_personalizacoes_carregar(oferta);
+		f1_personalizacoes_carregar(oferta, null);
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
@@ -81,12 +82,18 @@ function f1_personalizar() {
 function f1_add_dose(){
 	qtd++;
 	document.getElementById("qtd").innerHTML = ""+qtd;
+	if (qtd >= 2) {
+		document.getElementById("f1_personalizar_menos").style.filter = null;
+	}
 };
 
 function f1_sub_dose(){
 	if(qtd > 1){
 		qtd--;
 		document.getElementById("qtd").innerHTML = ""+qtd;
+	}
+	if (qtd <= 1) {
+		document.getElementById("f1_personalizar_menos").style.filter = "grayscale(100%)";
 	}
 }
 
@@ -140,30 +147,56 @@ function f1_concluir_fazer_pedido() {
 function f1_desenhar_pedidos() {
 	var template = `
 <p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
-<p class="lista_pedidos_preco_item">%d×%s€: %s€</p>
+<div class="row" style="margin: 0; padding: 0;">
+	<div class="col-xs-4" style="padding: 0;">
+		%s
+	</div>
+	<div class="col-xs-8" style="padding: 0;">
+		<p class="lista_pedidos_preco_item">%d×%s€: %s€</p>
+	</div>
+</div>
 `;
 	var template_1 = `
 <p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
-<p class="lista_pedidos_preco_item">%s€</p>
+<div class="row" style="margin: 0; padding: 0;">
+	<div class="col-xs-4" style="padding: 0;">
+		%s
+	</div>
+	<div class="col-xs-8" style="padding: 0;">
+		<p class="lista_pedidos_preco_item">%s€</p>
+	</div>
+</div>
 `;
+
+	var template_editar = `
+<button type="button" onclick="f1_editar_pedido(%d);" class="btn btn-link btn-xs btn-block">Editar</button>
+`;
+
 	var html_pedidos = "";
 	var total = 0;
-	for (var item of pedidos)
+	for (var item of get_pedidos().slice().reverse())
 	{
+		var botao_editar = "";
+		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
+			|| item.oferta.tipo == "vegetariano")
+		{
+			botao_editar = sprintf(template_editar, item.id);
+		}
+		
 		if (item.quantidade == 1)
 		{
 			if (item.personalizado === false)
 			{
 				html = sprintf(template_1,
 					item.id, String(item.quantidade) + "×", item.oferta.nome,
-					item.oferta.preco.toFixed(2)
+					botao_editar, item.oferta.preco.toFixed(2)
 				);
 			}
 			else
 			{
 				html = sprintf(template_1,
 					item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
-					item.oferta.preco.toFixed(2)
+					botao_editar, item.oferta.preco.toFixed(2)
 				);
 			}
 		}
@@ -173,7 +206,7 @@ function f1_desenhar_pedidos() {
 			{
 				html = sprintf(template,
 					item.id, String(item.quantidade) + "×", item.oferta.nome,
-					item.quantidade, item.oferta.preco.toFixed(2),
+					botao_editar, item.quantidade, item.oferta.preco.toFixed(2),
 					(item.quantidade * item.oferta.preco).toFixed(2)
 				);
 			}
@@ -181,7 +214,7 @@ function f1_desenhar_pedidos() {
 			{
 				html = sprintf(template,
 					item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
-					item.quantidade, item.oferta.preco.toFixed(2),
+					botao_editar, item.quantidade, item.oferta.preco.toFixed(2),
 					(item.quantidade * item.oferta.preco).toFixed(2)
 				);
 			}
@@ -189,17 +222,20 @@ function f1_desenhar_pedidos() {
 		html_pedidos = html_pedidos.concat(html);
 		total += item.oferta.preco * item.quantidade;
 	}
+	
 	$("#lista_pedidos").html(html_pedidos);
-	$("#lista_pedidos_preco_total").html(total.toFixed(2) + "€");
+	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
 
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
 	{
 		document.getElementById("concluir").disabled = true;
+		document.getElementById("botao_limpar").disabled = true;
 	}
 	else
 	{
 		document.getElementById("concluir").disabled = false;
+		document.getElementById("botao_limpar").disabled = false;
 	}
 }
 
@@ -226,16 +262,16 @@ function f1_remover_pedido(_id){
 }
 
 var numero_checkboxes_personalizacoes = 0;
-function set_numero_checkboxes_personalizacoes(n) { numero_checkboxes_personalizacoes = n; }
-
 function f1_registar_personalizacao(id) {
 	if (document.getElementById(id).checked == true)
 	{
 		numero_checkboxes_personalizacoes++;
+		f1_adicionar_personalizacao(id);
 	}
 	else if (document.getElementById(id).checked == false)
 	{
 		numero_checkboxes_personalizacoes--;
+		f1_remover_personalizacao(id);
 	}
 
 	// No máximo só se podem escolher 4 acompanhamentos
@@ -258,6 +294,53 @@ function f1_registar_personalizacao(id) {
 		}
 		$("#info_acompanhamentos_selecao").hide();
 	}
+}
+
+function f1_limpar_personalizacoes()
+{
+	numero_checkboxes_personalizacoes = 0;
+	personalizacoes = [];
+}
+
+var personalizacoes = [];
+function f1_adicionar_personalizacao(id_checkbox)
+{
+	personalizacoes.push(id_checkbox);
+}
+
+function f1_remover_personalizacao(id_checkbox)
+{
+	var index = personalizacoes.map(function(e) { return e; }).indexOf(id_checkbox);
+	personalizacoes.splice(index, 1);
+}
+
+function f1_get_personalizacoes()
+{
+	return personalizacoes;
+}
+
+function f1_editar_pedido(id)
+{
+	var oferta = get_oferta_pedido(id);
+	personalizar_from = 1;
+	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
+	qtd = get_pedido(id).quantidade + 1;
+	var html = `
+<button type="button" class="btn btn-primary btn-lg" onclick="f1_editar_pedido2(%d); f1_4_retroceder()">Guardar Alteração</button>
+`;
+	html = sprintf(html, id);
+	$("#loaded").load("f1_4.html", function()
+	{
+		$("#f1_div_botao_pedido_personalizado").html(html);
+		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id));
+	});
+	$("#prato_decor").html("");
+	$("#area_direita").load("f1_pedido.html");
+}
+
+function f1_editar_pedido2(id)
+{
+	editar_pedido(id, personalizacoes, qtd);
 }
 
 /*var time = 60; /* how long the timer runs for

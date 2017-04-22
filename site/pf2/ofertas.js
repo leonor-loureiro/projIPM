@@ -147,7 +147,7 @@ function f1_desenhar_oferta(oferta)
 {
 	var template = `
 <div class = "oferta">
-	<img src='%s' class=imagem_oferta onclick="adicionar_pedido('%s', %d, %t, %d); f1_desenhar_pedidos();">
+	<img src='%s' class=imagem_oferta onclick="adicionar_pedido('%s', %d, null, 1); f1_desenhar_pedidos();">
 	<p><b>%s</b>
 	<p>Preço: %s€
 	<p><button type="button" onclick="f1_info_nutricional('%s', %d);" class="btn btn-success btn-xs">Detalhes</button>
@@ -157,7 +157,7 @@ function f1_desenhar_oferta(oferta)
 	
 	
 	var html = sprintf(template,
-		oferta.imagem, oferta.tipo, oferta.id, false, 1, oferta.nome,
+		oferta.imagem, oferta.tipo, oferta.id, oferta.nome,
 		oferta.preco.toFixed(2), oferta.tipo, oferta.id, oferta.tipo, oferta.id
 	);	
 	
@@ -169,7 +169,7 @@ function f1_desenhar_oferta(oferta)
 
 function obter_oferta(tipo, _id)
 {
-	var i = dados_ofertas[tipo].map(function(e) { return e.id; }).indexOf(_id);;
+	var i = dados_ofertas[tipo].map(function(e) { return e.id; }).indexOf(_id);
 	return dados_ofertas[tipo][i];
 }
 
@@ -257,7 +257,7 @@ function f1_info_nutricional_carregar(oferta) {
 	}
 }
 
-function f1_personalizacoes_carregar(oferta) {
+function f1_personalizacoes_carregar(oferta, personalizacoes) {
 	var template = `
 <div class="col-xs-2 imagem_info_col">
 	<p></p>
@@ -278,11 +278,12 @@ function f1_personalizacoes_carregar(oferta) {
 <div class="col-xs-2 quantidade">
 	<h3><b> Quantidade </b></h3>
 		<p>
-			<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()">
+			<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()" id="f1_personalizar_menos">
 			<span id ="qtd">1</span>
 			<img src="images/plus_sign.svg" class="add_sub" onclick="f1_add_dose()">
 		</p>
 </div>
+<script>f1_sub_dose()</script>
 `;
 
 var template_acompanhamento = `
@@ -300,15 +301,27 @@ var template_acompanhamento = `
 </div>
 `;
 
+	f1_limpar_personalizacoes();
+	
 	var id_checkbox = 0;
 	var acompanhamentos = "";
 	var acompanhamentos2 = "";
+	var haviam_personalizacoes = true;
+	if (personalizacoes == null)
+	{
+		var personalizacoes = [];
+		haviam_personalizacoes = false;
+	}
 	// Isto está feio...
 	for (var item of oferta.personalizacoes.acompanhamentos)
 	{
 		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
 			id_checkbox, id_checkbox, id_checkbox, id_checkbox, id_checkbox, item
 		));
+		if (haviam_personalizacoes == false)
+		{
+			personalizacoes.push("f1_checkbox_personalizacao_" + id_checkbox);
+		}
 		id_checkbox++;
 		
 		if (id_checkbox % 4 == 0)
@@ -339,10 +352,10 @@ var template_acompanhamento = `
 		acompanhamentos2
 	);
 	$("#personalizacoes").html(dados);
-	
-	// Estes 2 são os escolhidos, e os que estão em oferta.personalizacoes.acompanhamentos
-	document.getElementById("f1_checkbox_personalizacao_0").checked = true;
-	document.getElementById("f1_checkbox_personalizacao_1").checked = true;
-	set_numero_checkboxes_personalizacoes(2);
+	for (var item of personalizacoes)
+	{
+		document.getElementById(item).checked = true;
+		f1_registar_personalizacao(item);
+	}
 	$("#info_acompanhamentos_selecao").hide();
 }
