@@ -81,12 +81,18 @@ function f1_personalizar() {
 function f1_add_dose(){
 	qtd++;
 	document.getElementById("qtd").innerHTML = ""+qtd;
+	if (qtd >= 2) {
+		document.getElementById("f1_personalizar_menos").style.filter = null;
+	}
 };
 
 function f1_sub_dose(){
 	if(qtd > 1){
 		qtd--;
 		document.getElementById("qtd").innerHTML = ""+qtd;
+	}
+	if (qtd <= 1) {
+		document.getElementById("f1_personalizar_menos").style.filter = "grayscale(100%)";
 	}
 }
 
@@ -196,10 +202,12 @@ function f1_desenhar_pedidos() {
 	if (pedidos_estao_vazios())
 	{
 		document.getElementById("concluir").disabled = true;
+		document.getElementById("botao_limpar").disabled = true;
 	}
 	else
 	{
 		document.getElementById("concluir").disabled = false;
+		document.getElementById("botao_limpar").disabled = false;
 	}
 }
 

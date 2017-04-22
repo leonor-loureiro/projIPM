@@ -278,11 +278,12 @@ function f1_personalizacoes_carregar(oferta) {
 <div class="col-xs-2 quantidade">
 	<h3><b> Quantidade </b></h3>
 		<p>
-			<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()">
+			<img src="images/minus_sign.svg" class="add_sub" onclick="f1_sub_dose()" id="f1_personalizar_menos">
 			<span id ="qtd">1</span>
 			<img src="images/plus_sign.svg" class="add_sub" onclick="f1_add_dose()">
 		</p>
 </div>
+<script>f1_sub_dose()</script>
 `;
 
 var template_acompanhamento = `

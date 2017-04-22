@@ -55,7 +55,7 @@
 }
 
 .lista_pedidos_tres_pontos {
-	width: 13vw;
+	width: 100%;
 	overflow: hidden;
 	display: inline-block;
 	text-overflow: ellipsis;
@@ -144,6 +144,15 @@
 
 .btn-link{
 	border-color: #337ab7;
+}
+
+.btn-link[disabled] {
+	border-color: gray !important;
+	color: gray !important;
+}
+
+.btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link.active, .open>.dropdown-toggle.btn-link, .btn-link:active:focus {
+	border-color: #204d74 !important;
 }
 
 #tipo_sopas {
