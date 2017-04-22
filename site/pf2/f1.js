@@ -147,32 +147,56 @@ function f1_concluir_fazer_pedido() {
 function f1_desenhar_pedidos() {
 	var template = `
 <p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
-<p class="lista_pedidos_preco_item">%d×%s€: %s€</p>
-<button type="button" onclick="f1_editar_pedido(%d);" class="btn btn-link btn-sm btn-block">Editar</button>
+<div class="row" style="margin: 0; padding: 0;">
+	<div class="col-xs-4" style="padding: 0;">
+		%s
+	</div>
+	<div class="col-xs-8" style="padding: 0;">
+		<p class="lista_pedidos_preco_item">%d×%s€: %s€</p>
+	</div>
+</div>
 `;
 	var template_1 = `
 <p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"> %s %s</p>
-<p class="lista_pedidos_preco_item">%s€</p>
-<button type="button" onclick="f1_editar_pedido(%d);" class="btn btn-link btn-sm btn-block">Editar</button>
+<div class="row" style="margin: 0; padding: 0;">
+	<div class="col-xs-4" style="padding: 0;">
+		%s
+	</div>
+	<div class="col-xs-8" style="padding: 0;">
+		<p class="lista_pedidos_preco_item">%s€</p>
+	</div>
+</div>
 `;
+
+	var template_editar = `
+<button type="button" onclick="f1_editar_pedido(%d);" class="btn btn-link btn-xs btn-block">Editar</button>
+`;
+
 	var html_pedidos = "";
 	var total = 0;
-	for (var item of get_pedidos())
+	for (var item of get_pedidos().slice().reverse())
 	{
+		var botao_editar = "";
+		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
+			|| item.oferta.tipo == "vegetariano")
+		{
+			botao_editar = sprintf(template_editar, item.id);
+		}
+		
 		if (item.quantidade == 1)
 		{
 			if (item.personalizado === false)
 			{
 				html = sprintf(template_1,
 					item.id, String(item.quantidade) + "×", item.oferta.nome,
-					item.oferta.preco.toFixed(2), item.id
+					botao_editar, item.oferta.preco.toFixed(2)
 				);
 			}
 			else
 			{
 				html = sprintf(template_1,
 					item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
-					item.oferta.preco.toFixed(2), item.id
+					botao_editar, item.oferta.preco.toFixed(2)
 				);
 			}
 		}
@@ -182,16 +206,16 @@ function f1_desenhar_pedidos() {
 			{
 				html = sprintf(template,
 					item.id, String(item.quantidade) + "×", item.oferta.nome,
-					item.quantidade, item.oferta.preco.toFixed(2),
-					(item.quantidade * item.oferta.preco).toFixed(2), item.id
+					botao_editar, item.quantidade, item.oferta.preco.toFixed(2),
+					(item.quantidade * item.oferta.preco).toFixed(2)
 				);
 			}
 			else
 			{
 				html = sprintf(template,
 					item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
-					item.quantidade, item.oferta.preco.toFixed(2),
-					(item.quantidade * item.oferta.preco).toFixed(2), item.id
+					botao_editar, item.quantidade, item.oferta.preco.toFixed(2),
+					(item.quantidade * item.oferta.preco).toFixed(2)
 				);
 			}
 		}
@@ -200,7 +224,7 @@ function f1_desenhar_pedidos() {
 	}
 	
 	$("#lista_pedidos").html(html_pedidos);
-	$("#lista_pedidos_preco_total").html(total.toFixed(2) + "€");
+	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
 
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
@@ -214,13 +238,6 @@ function f1_desenhar_pedidos() {
 		document.getElementById("botao_limpar").disabled = false;
 	}
 }
-
-var tempScrollTop = 0;
-$('#lista_pedidos').scroll(function() {
-  if ($('#lista_pedidos').html().length) {
-    tempScrollTop = $('#lista_pedidos').scrollTop();
-  }
-});
 
 function f1_limpar_pedidos() {
 	limpar_pedidos();

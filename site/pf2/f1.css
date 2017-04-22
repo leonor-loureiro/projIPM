@@ -33,8 +33,9 @@
 }
 
 #lista_pedidos_preco_total {
-	margin-bottom: 1.1vw;
+	margin-bottom: 0.625vw;
 	float: right;
+	font-size: 0.95vw;
 }
 
 #coluna_1_botoes{
@@ -67,7 +68,6 @@
 
 .lista_pedidos_preco_item {
 	text-align: right;
-	margin-top: -2%;
 	padding-top: 0;
 	line-height: 100%;
 }
