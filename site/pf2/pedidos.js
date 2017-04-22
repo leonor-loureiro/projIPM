@@ -2,15 +2,17 @@ var pedidos = [];
 var id_counter = 0;
 
 function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade) {
-	_personalizacoes = _personalizacoes.sort();
 	if (_personalizacoes == null)
 	{
 		_personalizacoes = ["f1_checkbox_personalizacao_0", "f1_checkbox_personalizacao_1"];
 	}
+	else
+	{
+		_personalizacoes = _personalizacoes.sort();
+	}
 	
 	var index = pedidos.map(function(e) { return String(e.oferta.tipo) + String(e.oferta.id) + String(e.personalizacoes) }).indexOf(String(_tipo) + String(_id) + String(_personalizacoes));
 	
-	console.log(String(_tipo) + String(_id) + String(_personalizacoes));
 	// Novo pedido
 	if (index < 0)
 	{
@@ -83,11 +85,12 @@ function get_personalizacoes_pedido(_id) {
 	return pedidos[index].personalizacoes;
 }
 
-function editar_personalizacoes_pedido(_id, _personalizacoes)
+function editar_pedido(_id, _personalizacoes, _quantidade)
 {
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
-	if (index >= 0)
-	{
-		pedidos[index].personalizacoes = _personalizacoes;
+	var pedido = pedidos[index];
+	if(index > -1){
+		pedidos.splice(index, 1);
+		adicionar_pedido(pedido.oferta.tipo, pedido.oferta.id, _personalizacoes, _quantidade);
 	}
 }

@@ -2,6 +2,7 @@ function f1_ofertas(tipo) {
 	$("#loaded").load("f1_2.html", function()
 	{
 		f1_carregar_ofertas(tipo);
+		f1_anterior = tipo;
 	});
 	$("#prato_decor").load("f1_tipos_pratos.html");
 	$("#area_direita").load("f1_pedido.html");
@@ -197,6 +198,7 @@ function f1_desenhar_pedidos() {
 		html_pedidos = html_pedidos.concat(html);
 		total += item.oferta.preco * item.quantidade;
 	}
+	
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html(total.toFixed(2) + "€");
 
@@ -212,6 +214,13 @@ function f1_desenhar_pedidos() {
 		document.getElementById("botao_limpar").disabled = false;
 	}
 }
+
+var tempScrollTop = 0;
+$('#lista_pedidos').scroll(function() {
+  if ($('#lista_pedidos').html().length) {
+    tempScrollTop = $('#lista_pedidos').scrollTop();
+  }
+});
 
 function f1_limpar_pedidos() {
 	limpar_pedidos();
@@ -293,23 +302,14 @@ function f1_get_personalizacoes()
 	return personalizacoes;
 }
 
-function f1_editar_personalizacoes_pedido(id)
-{
-	editar_personalizacoes_pedido(id, personalizacoes);
-	get_pedido(id).quantidade = qtd;
-}
-
 function f1_editar_pedido(id)
 {
 	var oferta = get_oferta_pedido(id);
-	f1_anterior = oferta.anterior;
-	f1_anterior_tipo = oferta.tipo;
-	f1_anterior_id = oferta.id;
+	personalizar_from = 1;
 	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
 	qtd = get_pedido(id).quantidade + 1;
-	console.log(qtd);
 	var html = `
-<button type="button" class="btn btn-primary btn-lg" onclick="f1_editar_personalizacoes_pedido(%d); f1_4_retroceder()">Guardar Alteração</button>
+<button type="button" class="btn btn-primary btn-lg" onclick="f1_editar_pedido2(%d); f1_4_retroceder()">Guardar Alteração</button>
 `;
 	html = sprintf(html, id);
 	$("#loaded").load("f1_4.html", function()
@@ -319,6 +319,11 @@ function f1_editar_pedido(id)
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
+}
+
+function f1_editar_pedido2(id)
+{
+	editar_pedido(id, personalizacoes, qtd);
 }
 
 /*var time = 60; /* how long the timer runs for
