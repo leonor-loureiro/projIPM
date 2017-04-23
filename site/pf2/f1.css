@@ -100,6 +100,13 @@
 
 }
 
+#info_fazer_pedidos{
+	text-align: center;
+	font-size: 2vw;
+	font-weight: bold;
+	padding-top: 10vw;
+}
+
 .tipos_comidas{
 	font-size: 15px;
     font-family: 'Open Sans', sans-serif;
@@ -111,6 +118,7 @@
 	font-size: 1.25vw;
 	vertical-align: middle;
 }
+
 
 .info_img {
 	width: 2vw;
@@ -401,3 +409,4 @@ svg {
 	border-color: gray !important;
 	color: black;
 }
+
