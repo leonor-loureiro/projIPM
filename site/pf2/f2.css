@@ -23,6 +23,15 @@
 	border-bottom: 1px solid grey;
 
 }
+
+#listagem_f2_2{
+	height: 30vw;
+	overflow-y: scroll;
+	border-bottom: 1px solid grey;
+	
+	padding-right: 0.5vw;
+}
+
 #header_acompanhar_pedidos{
 	text-align: center;
 }
@@ -63,6 +72,11 @@
 	margin: 0.2vw;
 }
 
+.add_sub_sign{
+	width: 1.5vw;
+	height: 1.5vw;
+	margin: 0.2vw;	
+}
 .tempo_listagem{
 	text-align: right;
 
@@ -80,3 +94,17 @@
 	border: none;
 }
 
+#area_f2_2{
+	margin-top: 1.4vw;
+	font-size: 1.2vw;
+}
+
+#footer_f2_2{
+	bottom: 8.5vw;
+	position: fixed;
+}
+
+#botao_retroceder_editar{
+	position: fixed;
+	right: 1.5vw;
+}
