@@ -40,6 +40,8 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade) {
 	{
 		pedidos[index].quantidade += _quantidade;
 	}
+	
+	pedidos_vazio = false;
 }
 
 function remover_pedido(_id) {
@@ -52,21 +54,16 @@ function remover_pedido(_id) {
 	else if(index > -1){
 		pedidos.splice(index, 1);
 	}
-
-	if (pedidos.length == 0){
-		id_counter = 0;
-	}
 }
 
 // Usar f1_limpar_pedidos() se a trabalhar na f1
 function limpar_pedidos() {
 	// http://stackoverflow.com/a/1232046
 	pedidos.splice(0, pedidos.length);
-	id_counter = 0;
 }
 
 function pedidos_estao_vazios() {
-	return id_counter == 0;
+	return pedidos.length == 0;
 }
 
 function get_pedidos() {
@@ -114,6 +111,18 @@ function get_pedidos_em_preparacao() {
 
 function get_pedidos_entregues() {
 	return pedidos_entregues;
+}
+
+function remover_pedido_em_espera(_id) {
+
+	var index = pedidos_em_espera.map(function(e) { return e.id; }).indexOf(_id);
+
+	if (index > -1 && pedidos_em_espera[index].quantidade > 1){
+		pedidos_em_espera[index].quantidade-=1;
+	}
+	else if(index > -1){
+		pedidos_em_espera.splice(index, 1);
+	}
 }
 
 function TESTING_dup_espera()

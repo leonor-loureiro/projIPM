@@ -25,7 +25,7 @@ function f2_dummy_data() {
 
 function f2_desenhar_pedidos() {
 	var template_em_espera = `
-<p><img src="images/remover.svg" class="img_remover_pedido"><b>%s</b> <span class="preco_listagem">%s €</span></p><p class="tempo_listagem">xxx <b>min</b></p>
+<p><img src="images/remover.svg" class="img_remover_pedido" onclick="remover_pedido_em_espera(%d); f2_desenhar_pedidos()"><b>%s</b> <span class="preco_listagem">%s €</span></p><p class="tempo_listagem">xxx <b>min</b></p>
 `;
 	var template_em_preparacao = `
 <p><b>%s</b> <span class="preco_listagem">%s €</span></p><p class="tempo_listagem">xxx <b>min</b></p>
@@ -40,7 +40,7 @@ function f2_desenhar_pedidos() {
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
 		em_espera = em_espera.concat(sprintf(template_em_espera,
-			item.oferta.nome, item.oferta.preco.toFixed(2)
+			item.id, item.oferta.nome, item.oferta.preco.toFixed(2)
 		));
 	}
 	
@@ -61,4 +61,38 @@ function f2_desenhar_pedidos() {
 	$("#lista_em_espera").html(em_espera);
 	$("#lista_em_preparacao").html(em_preparacao);
 	$("#lista_entregues").html(entregues);
+}
+
+function f2_desenhar_pedidos_editar() {
+	var template_e = `
+<p><img class="add_sub_sign" src="images/minus_sign.svg"><span id="qtd_2">%d</span><img class="add_sub_sign" src="images/plus_sign.svg"><a onclick="f2_editar_pedido(%d)"><b>%s</b></a> <span class="preco_listagem">%s €</span></p>
+`;
+	var template_ne = `
+<p><img class="add_sub_sign" src="images/minus_sign.svg"><span id="qtd_2">%d</span><img class="add_sub_sign" src="images/plus_sign.svg"><b>%s</b> <span class="preco_listagem">%s €</span></p>
+`;
+	
+	var html = "";
+	for (var item of get_pedidos_em_espera().slice().reverse())
+	{
+		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
+			|| item.oferta.tipo == "vegetariano")
+		{
+			html = html.concat(sprintf(template_e,
+				item.quantidade, item.id, item.oferta.nome,
+				item.oferta.preco.toFixed(2)
+			));
+		}
+		else
+		{
+			html = html.concat(sprintf(template_ne,
+				item.quantidade, item.oferta.nome, item.oferta.preco.toFixed(2)
+			));
+		}
+	}
+	
+	$("#listagem_f2_2").html(html);
+}
+
+function f2_editar_pedido(id) {
+	
 }
