@@ -36,14 +36,23 @@ function f1_retroceder() {
 
 function loadAjuda(){
 	if(funcionalidade === "fazer_pedido"){
+		$("#modalAjuda-header").text("Fazer Pedido")
+		$("#modalAjuda-body").load("ajuda_f1.html");
 		$("#modalAjuda-ChamarEmpregado").attr("onclick", "chamar_empregado()");
 		$("#modalAjuda").modal();
 		return;
 	}
+	if(funcionalidade =="acompanhar_pedido"){
+		$("#modalAjuda-header").text("Acompanhar Pedidos")
+		$("#modalAjuda-body").load("ajuda_f2.html");
+		$("#modalAjuda-ChamarEmpregado").attr("onclick", "chamar_empregado()");
+		$("#modalAjuda").modal();
+		return;	
+	}
 }
 
 function f2() {
-	funcionalidade = "acompanhar_pedidos";
+	funcionalidade = "acompanhar_pedido";
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.fontSize = "3.5vw";
 	var atalho_ajuda = document.getElementById('atalho_ajuda');
