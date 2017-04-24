@@ -1,5 +1,8 @@
 var pedidos = [];
 var id_counter = 0;
+var pedidos_em_espera;
+var pedidos_em_preparacao;
+var pedidos_entregues;
 
 function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade) {
 	if (_personalizacoes == null)
@@ -93,4 +96,40 @@ function editar_pedido(_id, _personalizacoes, _quantidade)
 		pedidos.splice(index, 1);
 		adicionar_pedido(pedido.oferta.tipo, pedido.oferta.id, _personalizacoes, _quantidade);
 	}
+}
+
+function concluir_pedido()
+{
+	pedidos_em_espera = pedidos_em_espera.concat(pedidos.splice(0));
+	limpar_pedidos();
+}
+
+function get_pedidos_em_espera() {
+	return pedidos_em_espera;
+}
+
+function get_pedidos_em_preparacao() {
+	return pedidos_em_preparacao;
+}
+
+function get_pedidos_entregues() {
+	return pedidos_entregues;
+}
+
+function TESTING_dup_espera()
+{
+	pedidos_em_espera = pedidos.splice(0);
+	limpar_pedidos();
+}
+
+function TESTING_dup_preparacao()
+{
+	pedidos_em_preparacao = pedidos.splice(0);
+	limpar_pedidos();
+}
+
+function TESTING_dup_entregues()
+{
+	pedidos_entregues = pedidos.splice(0);
+	limpar_pedidos();
 }

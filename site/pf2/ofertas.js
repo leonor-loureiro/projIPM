@@ -135,6 +135,7 @@ function f1_popular_ofertas() {
 	var i = 0;
 	for(var tipo of tipos){
 		i = 0;
+		ofertas_id_counter = 0;
 		for(var nome of nomes[tipo]){
 			f1_inserir_oferta(tipo,nome,f1_random_preco(tipo), 'images/ofertas/' + imagens[tipo][i], tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
 			i += 1;

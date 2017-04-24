@@ -146,7 +146,7 @@ function f1_abrir_concluir_fazer_pedido() {
 }
 
 function f1_concluir_fazer_pedido() {
-	f1_limpar_pedidos();
+	concluir_pedido();
 	f1_retroceder();
 }
 
