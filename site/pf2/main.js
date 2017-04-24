@@ -3,8 +3,8 @@ function loadMain() {
 	$("#loaded").load("main.html");
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.fontSize = "11.5vw";
-	var botao_ajuda = document.getElementById('botao_ajuda');
-    botao_ajuda.style.visibility = 'hidden';
+	var atalho_ajuda = document.getElementById('atalho_ajuda');
+    atalho_ajuda.style.visibility = 'hidden';
     funcionalidade="";
 }
 
@@ -20,8 +20,8 @@ function f1() {
 	funcionalidade = "fazer_pedido";
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.fontSize = "3.5vw";
-	var botao_ajuda = document.getElementById('botao_ajuda');
-    botao_ajuda.style.visibility = 'visible';
+	var atalho_ajuda = document.getElementById('atalho_ajuda');
+    atalho_ajuda.style.visibility = 'visible';
 	$("#loaded").load("f1_1.html");
 	$("#prato_decor").load("f1_tipos_pratos.html");
 	$("#area_direita").load("f1_pedido.html");
@@ -46,8 +46,8 @@ function f2() {
 	funcionalidade = "acompanhar_pedidos";
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.fontSize = "3.5vw";
-	var botao_ajuda = document.getElementById('botao_ajuda');
-    botao_ajuda.style.visibility = 'visible';
+	var atalho_ajuda = document.getElementById('atalho_ajuda');
+    atalho_ajuda.style.visibility = 'visible';
     $("#loaded").html("");
 	$("#area_direita").load("f2_1.html");
 }
