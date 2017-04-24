@@ -29,7 +29,6 @@ function f1() {
 
 function f1_retroceder() {
 	$("#modalNaoSim").modal('hide');
-//	$("#loaded").load("main.html");
 	loadMain();
 	$("#prato_decor").html("");
 	$("#area_direita").html("");
@@ -44,6 +43,13 @@ function loadAjuda(){
 }
 
 function f2() {
+	funcionalidade = "acompanhar_pedidos";
+	var nome_restaurante = document.getElementById("nome_restaurante");
+	nome_restaurante.style.fontSize = "3.5vw";
+	var botao_ajuda = document.getElementById('botao_ajuda');
+    botao_ajuda.style.visibility = 'visible';
+    $("#loaded").html("");
+	$("#area_direita").load("f2_1.html");
 }
 
 function f3() {

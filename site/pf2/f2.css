@@ -1,0 +1,110 @@
+#area_acompanhar_pedido{
+	position: fixed;
+	width: 24vw;
+	height: 42vw;
+	left: 76vw;
+	top: 14vw;
+ 	/*border: 1px solid black;*/
+ 	background-color: transparent;
+ 	margin: 0.2vw;
+}
+
+#area_acompanhar_pedido_fundo{
+	position: fixed;
+	width: 25vw;
+	height: 49vw;
+	left: 75.5vw;
+	top: 8vw;
+}
+
+#listagem_acompanhar_pedido{
+	height: 29vw;
+	overflow-y: scroll;
+	border-bottom: 1px solid grey;
+
+}
+
+#listagem_f2_2{
+	height: 30vw;
+	overflow-y: scroll;
+	border-bottom: 1px solid grey;
+	
+	padding-right: 0.5vw;
+}
+
+#header_acompanhar_pedidos{
+	text-align: center;
+}
+
+.header_seccao_listagem{
+	font-weight: bold;
+	text-align: center;
+}
+
+#total_acompanhar_pedidos{
+	font-weight: normal;
+	font-size: 1.2vw;
+	position: fixed;
+	bottom: 10vw;
+	right: 1.5vw;
+}
+
+
+#footer_acompanhar_pedidos{
+	bottom: 8.5vw;
+	position: fixed;
+}
+#botao_fechar{
+	position: fixed;
+	right:1.5vw;
+}
+
+.seccao_acompanhar_pedidos{
+	border-bottom: black 0.1vw dotted;
+	padding-bottom: 0.5vw;
+	padding-right: 0.5vw;
+	font-size: 1.2vw;
+}
+
+.img_remover_pedido{
+	width: 1.5vw;
+	height: 1.5vw;
+	margin: 0.2vw;
+}
+
+.add_sub_sign{
+	width: 1.5vw;
+	height: 1.5vw;
+	margin: 0.2vw;	
+}
+.tempo_listagem{
+	text-align: right;
+
+}
+
+.preco_listagem{
+	float: right;
+}
+
+#botoes_em_espera{
+	text-align: right;
+}
+
+#entregues{
+	border: none;
+}
+
+#area_f2_2{
+	margin-top: 1.4vw;
+	font-size: 1.2vw;
+}
+
+#footer_f2_2{
+	bottom: 8.5vw;
+	position: fixed;
+}
+
+#botao_retroceder_editar{
+	position: fixed;
+	right: 1.5vw;
+}
