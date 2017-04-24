@@ -10,9 +10,8 @@ body {
 	top: 1.25vw;
 	left: 1.25vw;
 	-webkit-filter: drop-shadow();
-
-
 }
+
 .jumbotron {
 	padding: 0;
 	height: 2.5vw;
@@ -20,7 +19,6 @@ body {
 	/*border-style: solid;
 	border-color: #b1d1c6;*/
 	font-weight: bold;
-
 }
 
 #botao_chamar_empregado{
@@ -160,6 +158,25 @@ body {
 .modal-dialog{
 	font-size: 16px;
 	width: 30%;
+}
+
+#modal-content-Ajuda{
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2%;
+}
+
+ul{
+  padding-left: 2%;
+}
+
+.modal-Ajuda-Pedidos{
+  margin-top: -6px;
+  margin-bottom: 2%;
+}
+
+.modal-body-Ajuda{
+  margin-bottom: -20px;
 }
 
 #imagem_sucesso{

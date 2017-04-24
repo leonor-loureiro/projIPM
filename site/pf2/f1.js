@@ -171,7 +171,7 @@ function f1_desenhar_pedidos() {
 	var total = 0;
 	for (var item of get_pedidos().slice().reverse())
 	{
-		
+
 		if (item.quantidade == 1)
 		{
 			if (item.personalizado === false)
@@ -211,7 +211,7 @@ function f1_desenhar_pedidos() {
 		html_pedidos = html_pedidos.concat(html);
 		total += item.oferta.preco * item.quantidade;
 	}
-	
+
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
 
