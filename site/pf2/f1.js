@@ -108,12 +108,18 @@ function f1_4_retroceder()
 
 }
 
-function f1_abrir_cancelar_fazer_pedido() {
-
-	$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar todo o seu pedido?");
-	$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
-	$("#modalNaoSim").modal();
-
+function f1_abrir_cancelar_fazer_pedido()
+{
+	if (!pedidos_estao_vazios())
+	{
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar todo o seu pedido?");
+		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
+		$("#modalNaoSim").modal();
+	}
+	else
+	{
+		f1_retroceder();
+	}
 }
 
 function f1_pedido_bem_sucedido() {
@@ -146,7 +152,7 @@ function f1_concluir_fazer_pedido() {
 
 function f1_desenhar_pedidos() {
 	var template = `
-<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"><a onclick="f1_editar_pedido(%d)"> %s %s</a></p>
+<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()">%s%s %s%s</p>
 <div class="row" style="margin: 0; padding: 0;">
 	<div class="col-xs-4" style="padding: 0;">
 	</div>
@@ -156,7 +162,7 @@ function f1_desenhar_pedidos() {
 </div>
 `;
 	var template_1 = `
-<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()"><a onclick="f1_editar_pedido(%d)"> %s %s</a></p>
+<p class="lista_pedidos_tres_pontos"><img src="images/remover.svg" class="imagem_pedido_lista" onclick="f1_remover_pedido(%d); f1_desenhar_pedidos()">%s%s %s%s</p>
 <div class="row" style="margin: 0; padding: 0;">
 	<div class="col-xs-4" style="padding: 0;">
 	</div>
@@ -172,19 +178,27 @@ function f1_desenhar_pedidos() {
 	for (var item of get_pedidos().slice().reverse())
 	{
 
+		var a1 = '';
+		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
+			|| item.oferta.tipo == "vegetariano")
+		{
+			a1 = sprintf('<a onclick="f1_editar_pedido(%d)"> ', item.id);
+		}
+		var a2 = '</a>';
+		
 		if (item.quantidade == 1)
 		{
 			if (item.personalizado === false)
 			{
 				html = sprintf(template_1,
-					item.id, item.id, String(item.quantidade) + "×", item.oferta.nome,
+					item.id, a1, String(item.quantidade) + "×", item.oferta.nome, a2,
 					item.oferta.preco.toFixed(2)
 				);
 			}
 			else
 			{
 				html = sprintf(template_1,
-					item.id, item.id, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
+					item.id, a1, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome, a2,
 					item.oferta.preco.toFixed(2)
 				);
 			}
@@ -194,7 +208,7 @@ function f1_desenhar_pedidos() {
 			if (item.personalizado === false)
 			{
 				html = sprintf(template,
-					item.id,  item.id,String(item.quantidade) + "×", item.oferta.nome,
+					item.id, a1, String(item.quantidade) + "×", item.oferta.nome, a2,
 					item.quantidade, item.oferta.preco.toFixed(2),
 					(item.quantidade * item.oferta.preco).toFixed(2)
 				);
@@ -202,7 +216,7 @@ function f1_desenhar_pedidos() {
 			else
 			{
 				html = sprintf(template,
-					item.id,  item.id,String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome,
+					item.id, a1, String(item.quantidade) + "× <b>[P]</b>", item.oferta.nome, a2,
 					item.quantidade, item.oferta.preco.toFixed(2),
 					(item.quantidade * item.oferta.preco).toFixed(2)
 				);
