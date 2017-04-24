@@ -7,10 +7,15 @@ body {
 #botao_ajuda{
 	width: 2.7vw;
 	height: 2.7vw;
+	-webkit-filter: drop-shadow();
+}
+
+#atalho_ajuda{
 	position: fixed;
 	top: 1.25vw;
 	left: 1.25vw;
 	-webkit-filter: drop-shadow();
+
 }
 
 .jumbotron {
