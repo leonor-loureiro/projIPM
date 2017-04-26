@@ -4,7 +4,7 @@ var pedidos_em_espera;
 var pedidos_em_preparacao;
 var pedidos_entregues;
 
-function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade) {
+function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade, onde=pedidos) {
 	if (_personalizacoes == null)
 	{
 		_personalizacoes = ["f1_checkbox_personalizacao_0", "f1_checkbox_personalizacao_1"];
@@ -14,7 +14,7 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade) {
 		_personalizacoes = _personalizacoes.sort();
 	}
 	
-	var index = pedidos.map(function(e) { return String(e.oferta.tipo) + String(e.oferta.id) + String(e.personalizacoes) }).indexOf(String(_tipo) + String(_id) + String(_personalizacoes));
+	var index = onde.map(function(e) { return String(e.oferta.tipo) + String(e.oferta.id) + String(e.personalizacoes) }).indexOf(String(_tipo) + String(_id) + String(_personalizacoes));
 	
 	// Novo pedido
 	if (index < 0)
@@ -33,15 +33,13 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade) {
 			personalizacoes: _personalizacoes
 		};
 		id_counter += 1;
-		pedidos.push(pedido);
+		onde.push(pedido);
 	}
 	// Adicionar a pedido existente
 	else
 	{
-		pedidos[index].quantidade += _quantidade;
+		onde[index].quantidade += _quantidade;
 	}
-	
-	pedidos_vazio = false;
 }
 
 function remover_pedido(_id) {
@@ -122,6 +120,32 @@ function remover_pedido_em_espera(_id) {
 	}
 	else if(index > -1){
 		pedidos_em_espera.splice(index, 1);
+	}
+}
+
+function get_oferta_pedido_em_espera(_id) {
+	var index = pedidos_em_espera.map(function(e) { return e.id; }).indexOf(_id);
+	return pedidos_em_espera[index].oferta;
+}
+
+function get_pedido_em_espera(_id) {
+	var index = pedidos_em_espera.map(function(e) { return e.id; }).indexOf(_id);
+	return pedidos_em_espera[index];
+}
+
+function get_personalizacoes_pedido_em_espera(_id) {
+	var index = pedidos_em_espera.map(function(e) { return e.id; }).indexOf(_id);
+	return pedidos_em_espera[index].personalizacoes;
+}
+
+function editar_pedido_em_espera(_id, _personalizacoes, _quantidade)
+{
+	var index = pedidos_em_espera.map(function(e) { return e.id; }).indexOf(_id);
+	var pedido = pedidos_em_espera[index];
+	if(index > -1){
+		pedidos_em_espera.splice(index, 1);
+		adicionar_pedido(pedido.oferta.tipo, pedido.oferta.id,
+			_personalizacoes, _quantidade, pedidos_em_espera);
 	}
 }
 
