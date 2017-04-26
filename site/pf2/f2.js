@@ -74,6 +74,7 @@ function f2_desenhar_pedidos() {
 	$("#lista_em_espera").html(em_espera);
 	$("#lista_em_preparacao").html(em_preparacao);
 	$("#lista_entregues").html(entregues);
+	sem_pedidos_espera();
 }
 
 function f2_desenhar_pedidos_editar() {
