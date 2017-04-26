@@ -166,10 +166,15 @@ body {
 	width: 30%;
 }
 
+#descricao-bullets-Ajuda-Pedidos{
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 #modal-content-Ajuda{
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 2%;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  margin-top: 6vw;
 }
 
 .modals-content{
@@ -203,7 +208,8 @@ body {
 
 #modalAjuda-header{
 	font-weight: bold;
-	font-size: 1.5vw;
+  font-size: 1.7vw;
+  color: rgba(241, 235, 212, 1) !important;
 }
 
 ul{
