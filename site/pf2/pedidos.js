@@ -42,14 +42,14 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade, onde=pedido
 	}
 }
 
-function remover_pedido(_id) {
+function remover_pedido(_id, quantidade=1) {
 
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
 
-	if (index > -1 && pedidos[index].quantidade > 1){
-		pedidos[index].quantidade-=1;
+	if (quantidade != null && index > -1 && pedidos[index].quantidade > quantidade){
+		pedidos[index].quantidade -= quantidade;
 	}
-	else if(index > -1){
+	else if(quantidade == null || index > -1){
 		pedidos.splice(index, 1);
 	}
 }
@@ -111,26 +111,26 @@ function get_pedidos_entregues() {
 	return pedidos_entregues;
 }
 
-function remover_pedido_em_espera(_id) {
+function remover_pedido_em_espera(_id, quantidade=1) {
 
 	var index = pedidos_em_espera.map(function(e) { return e.id; }).indexOf(_id);
 
-	if (index > -1 && pedidos_em_espera[index].quantidade > 1){
-		pedidos_em_espera[index].quantidade-=1;
+	if (quantidade != null && index > -1 && pedidos_em_espera[index].quantidade > quantidade){
+		pedidos_em_espera[index].quantidade -= quantidade;
 	}
-	else if(index > -1){
+	else if(quantidade == null || index > -1){
 		pedidos_em_espera.splice(index, 1);
 	}
 }
 
-function remover_pedido_em_preparacao(_id) {
+function remover_pedido_em_preparacao(_id, quantidade=1) {
 
 	var index = pedidos_em_preparacao.map(function(e) { return e.id; }).indexOf(_id);
 
-	if (index > -1 && pedidos_em_preparacao[index].quantidade > 1){
-		pedidos_em_preparacao[index].quantidade-=1;
+	if (quantidade != null && index > -1 && pedidos_em_preparacao[index].quantidade > quantidade){
+		pedidos_em_preparacao[index].quantidade -= quantidade;
 	}
-	else if(index > -1){
+	else if(quantidade == null || index > -1){
 		pedidos_em_preparacao.splice(index, 1);
 	}
 }
@@ -166,19 +166,18 @@ function decrementar_tempo_espera(quanto=1)
 	for (var item of pedidos_em_espera)
 	{
 		item.tempo -= quanto;
-		console.log(item.oferta.tipo)
 		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
 			|| item.oferta.tipo == "vegetariano")
 		{
 			if (item.tempo <= item.oferta.informacoes.tempo / 2)
 			{
-				remover_pedido_em_espera(item.id);
+				remover_pedido_em_espera(item.id, null);
 				pedidos_em_preparacao.push(item);
 			}
 		}
 		else if (item.tempo <= 0)
 		{
-			remover_pedido_em_espera(item.id);
+			remover_pedido_em_espera(item.id, null);
 			pedidos_entregues.push(item);
 		}
 	}
@@ -187,7 +186,7 @@ function decrementar_tempo_espera(quanto=1)
 		item.tempo -= quanto;
 		if (item.tempo <= 0)
 		{
-			remover_pedido_em_preparacao(item.id);
+			remover_pedido_em_preparacao(item.id, null);
 			pedidos_entregues.push(item);
 		}
 	}
