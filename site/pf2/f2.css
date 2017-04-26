@@ -1,4 +1,4 @@
-#area_acompanhar_pedido{
+.area_acompanhar_pedido{
 	position: fixed;
 	width: 27vw;
 	height: 38vw;
@@ -9,7 +9,7 @@
  	margin: 0.2vw;
 }
 
-#area_acompanhar_pedido_fundo{
+.area_acompanhar_pedido_fundo{
 	position: fixed;
 	height: 45vw;
 	left: 72vw;

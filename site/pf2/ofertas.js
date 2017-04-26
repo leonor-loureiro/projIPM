@@ -46,12 +46,35 @@ function f1_random_preco(tipo)
 	}
 }
 
-function f1_informacoes_random(tempo_min, tempo_max)
+function f1_informacoes_random_real(tempo_min, tempo_max)
 {
 	return {
 		energia: f1_random(), gorduras: f1_random(), gorduras_saturadas: f1_random(),
 		hidratos_carbono: f1_random(), acucares: f1_random(), proteinas: f1_random(), fibras: f1_random(), sal: f1_random(), colesterol: f1_random(),
 		tempo: f1_random_tempo(tempo_min, tempo_max)};
+}
+
+function f1_informacoes_random(tipo)
+{
+	switch(tipo)
+	{
+		case "bebidas":
+			return f1_informacoes_random_real(1, 5);
+		case "entradas":
+			return f1_informacoes_random_real(1, 5);
+		case "sopas":
+			return f1_informacoes_random_real(1, 5);
+		case "carne":
+			return f1_informacoes_random_real(3, 10);
+		case "peixe":
+			return f1_informacoes_random_real(3, 10);
+		case "vegetariano":
+			return f1_informacoes_random_real(3, 10);
+		case "sobremesas":
+			return f1_informacoes_random_real(1, 5);
+		default:
+			return 99.98;
+	}
 }
 
 function f1_escolher_acompanhamento(opcoes)
@@ -137,7 +160,7 @@ function f1_popular_ofertas() {
 		i = 0;
 		ofertas_id_counter = 0;
 		for(var nome of nomes[tipo]){
-			f1_inserir_oferta(tipo,nome,f1_random_preco(tipo), 'images/ofertas/' + imagens[tipo][i], tipo, f1_informacoes_random(3, 10), f1_personalizacoes_random(tipo));
+			f1_inserir_oferta(tipo,nome,f1_random_preco(tipo), 'images/ofertas/' + imagens[tipo][i], tipo, f1_informacoes_random(tipo), f1_personalizacoes_random(tipo));
 			i += 1;
 		}
 	}
