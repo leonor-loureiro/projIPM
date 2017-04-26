@@ -13,28 +13,20 @@ function f2_dummy_data() {
 	adicionar_pedido('carne', 1, null, 1);
 	adicionar_pedido('sobremesas', 2, null, 1);
 	TESTING_dup_espera();
-	adicionar_pedido('entradas', 0, null, 1);
-	adicionar_pedido('carne', 1, null, 1);
-	adicionar_pedido('sobremesas', 2, null, 1);
-	TESTING_dup_preparacao();
-	adicionar_pedido('entradas', 0, null, 1);
-	adicionar_pedido('carne', 1, null, 1);
-	adicionar_pedido('sobremesas', 2, null, 1);
-	TESTING_dup_entregues();
 }
 
 function f2_desenhar_pedidos() {
 	var template_em_espera = `
 <p><img src="images/remover.svg" class="img_remover_pedido" onclick="remover_pedido_em_espera(%d); f2_desenhar_pedidos()">
-<b>%s</b> <span class="preco_listagem">%s €</span></p>
-<p class="tempo_listagem">xxx <b>min</b></p>
+%s%s <span class="preco_listagem">%s €</span></p>
+<p class="tempo_listagem">%d <b>min</b></p>
 `;
 	var template_em_preparacao = `
-<p><b>%s</b> <span class="preco_listagem">%s €</span></p>
-<p class="tempo_listagem">xxx <b>min</b></p>
+<p>%s%s <span class="preco_listagem">%s €</span></p>
+<p class="tempo_listagem">%d <b>min</b></p>
 `;
 	var template_entregues = `
-<p><b>%s</b> <span class="preco_listagem">%s €</span></p>
+<p>%s%s <span class="preco_listagem">%s €</span></p>
 `;
 	var em_espera = "";
 	var em_preparacao = "";
@@ -42,22 +34,40 @@ function f2_desenhar_pedidos() {
 	
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
-		em_espera = em_espera.concat(sprintf(template_em_espera,
-			item.id, item.oferta.nome, item.oferta.preco.toFixed(2)
+		var personalizado = "";
+		if (item.personalizado)
+		{
+			personalizado = "<b>[P]</b> ";
+		}
+		
+		em_espera = em_espera.concat(sprintf(template_em_espera, item.id,
+			personalizado, item.oferta.nome, item.oferta.preco.toFixed(2), item.tempo
 		));
 	}
 	
 	for (var item of get_pedidos_em_preparacao().slice().reverse())
 	{
+		var personalizado = "";
+		if (item.personalizado)
+		{
+			personalizado = "<b>[P]</b> ";
+		}
+		
 		em_preparacao = em_preparacao.concat(sprintf(template_em_preparacao,
-			item.oferta.nome, item.oferta.preco.toFixed(2)
+			personalizado, item.oferta.nome, item.oferta.preco.toFixed(2), item.tempo
 		));
 	}
 	
 	for (var item of get_pedidos_entregues().slice().reverse())
 	{
+		var personalizado = "";
+		if (item.personalizado)
+		{
+			personalizado = "<b>[P]</b> ";
+		}
+		
 		entregues = entregues.concat(sprintf(template_entregues,
-			item.oferta.nome, item.oferta.preco.toFixed(2)
+			personalizado, item.oferta.nome, item.oferta.preco.toFixed(2)
 		));
 	}
 	
@@ -71,33 +81,39 @@ function f2_desenhar_pedidos_editar() {
 <p><img class="add_sub_sign" id="f2_sub_%d" src="images/minus_sign.svg" onclick="f2_subtrair_dose(%d)">
 <span id="qtd_2">%d</span>
 <img class="add_sub_sign" src="images/plus_sign.svg" onclick="f2_adicionar_dose(%d)">
-<a onclick="f2_editar_pedido(%d)"><b>%s</b></a>
+<a onclick="f2_editar_pedido(%d)">%s%s</a>
 <span class="preco_listagem">%s €</span></p>
 `;
 	var template_ne = `
 <p><img class="add_sub_sign" id="f2_sub_%d" src="images/minus_sign.svg" onclick="f2_subtrair_dose(%d)">
 <span id="qtd_2">%d</span>
 <img class="add_sub_sign" src="images/plus_sign.svg" onclick="f2_adicionar_dose(%d)">
-<b>%s</b>
+%s%s
 <span class="preco_listagem">%s €</span></p>
 `;
 	
 	var html = "";
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
+		var personalizado = "";
+		if (item.personalizado)
+		{
+			personalizado = "<b>[P]</b> ";
+		}
+		
 		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
 			|| item.oferta.tipo == "vegetariano")
 		{
 			html = html.concat(sprintf(template_e,
 				item.id, item.id, item.quantidade, item.id, item.id,
-				item.oferta.nome, item.oferta.preco.toFixed(2)
+				personalizado, item.oferta.nome, item.oferta.preco.toFixed(2)
 			));
 		}
 		else
 		{
 			html = html.concat(sprintf(template_ne,
-				item.id, item.id, item.quantidade, item.id, item.oferta.nome,
-				item.oferta.preco.toFixed(2)
+				item.id, item.id, item.quantidade, item.id, personalizado,
+				item.oferta.nome, item.oferta.preco.toFixed(2)
 			));
 		}
 	}
@@ -160,3 +176,13 @@ function f2_subtrair_dose(id)
 	}
 	f2_desenhar_pedidos_editar();
 }
+
+// H4x0r1ng m0d3
+// 13 = Enter
+// 32 = Space
+$(document).keypress(function(e) {
+	if(e.which == 32) {
+		decrementar_tempo_espera();
+		f2_desenhar_pedidos();
+	}
+});
