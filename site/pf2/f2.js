@@ -31,6 +31,7 @@ function f2_desenhar_pedidos() {
 	var em_espera = "";
 	var em_preparacao = "";
 	var entregues = "";
+	var total = 0;
 	
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
@@ -43,6 +44,8 @@ function f2_desenhar_pedidos() {
 		em_espera = em_espera.concat(sprintf(template_em_espera, item.id,
 			personalizado, item.oferta.nome, item.oferta.preco.toFixed(2), item.tempo
 		));
+
+		total += item.oferta.preco;
 	}
 	
 	for (var item of get_pedidos_em_preparacao().slice().reverse())
@@ -56,6 +59,8 @@ function f2_desenhar_pedidos() {
 		em_preparacao = em_preparacao.concat(sprintf(template_em_preparacao,
 			personalizado, item.oferta.nome, item.oferta.preco.toFixed(2), item.tempo
 		));
+
+		total += item.oferta.prec0;
 	}
 	
 	for (var item of get_pedidos_entregues().slice().reverse())
@@ -69,11 +74,15 @@ function f2_desenhar_pedidos() {
 		entregues = entregues.concat(sprintf(template_entregues,
 			personalizado, item.oferta.nome, item.oferta.preco.toFixed(2)
 		));
+
+		total += item.oferta.preco;
 	}
 	
 	$("#lista_em_espera").html(em_espera);
 	$("#lista_em_preparacao").html(em_preparacao);
 	$("#lista_entregues").html(entregues);
+	$("#preco_total").text(total);
+	sem_pedidos_espera();
 }
 
 function f2_desenhar_pedidos_editar() {
