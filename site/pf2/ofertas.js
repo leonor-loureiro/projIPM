@@ -65,11 +65,11 @@ function f1_informacoes_random(tipo)
 		case "sopas":
 			return f1_informacoes_random_real(1, 5);
 		case "carne":
-			return f1_informacoes_random_real(3, 10);
+			return f1_informacoes_random_real(5, 10);
 		case "peixe":
-			return f1_informacoes_random_real(3, 10);
+			return f1_informacoes_random_real(5, 10);
 		case "vegetariano":
-			return f1_informacoes_random_real(3, 10);
+			return f1_informacoes_random_real(5, 10);
 		case "sobremesas":
 			return f1_informacoes_random_real(1, 5);
 		default:

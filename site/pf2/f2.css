@@ -77,12 +77,11 @@
 	margin: 0.2vw;	
 }
 .tempo_listagem{
-	text-align: right;
-
+	float: right;
 }
 
 .preco_listagem{
-	float: right;
+	text-align: right;
 }
 
 #botoes_em_espera{
