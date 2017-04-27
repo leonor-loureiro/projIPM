@@ -35,7 +35,7 @@
 #lista_pedidos_preco_total {
 	margin-bottom: 0.625vw;
 	float: right;
-	font-size: 0.95vw;
+	font-size: 0.85vw;
 }
 
 #coluna_1_botoes{
@@ -190,7 +190,9 @@
 
 #titulo_listagem{
 	font-weight: bold;
-	font-family: 'Roboto', sans-serif;;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.19vw;
+	margin-top: 0.5vw;
 }
 
 .tipo_comida_fundo {
