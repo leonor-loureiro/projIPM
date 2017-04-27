@@ -19,7 +19,7 @@ function chamar_empregado(){
 function f1() {
 	funcionalidade = "fazer_pedido";
 	var nome_restaurante = document.getElementById("nome_restaurante");
-	nome_restaurante.style.fontSize = "3.5vw";
+	nome_restaurante.style.fontSize = "5vw";
 	var atalho_ajuda = document.getElementById('atalho_ajuda');
     atalho_ajuda.style.visibility = 'visible';
 	$("#loaded").load("f1_1.html");
@@ -47,14 +47,14 @@ function loadAjuda(){
 		$("#modalAjuda-body").load("ajuda_f2.html");
 		$("#modalAjuda-ChamarEmpregado").attr("onclick", "chamar_empregado()");
 		$("#modalAjuda").modal();
-		return;	
+		return;
 	}
 }
 
 function f2() {
 	funcionalidade = "acompanhar_pedido";
 	var nome_restaurante = document.getElementById("nome_restaurante");
-	nome_restaurante.style.fontSize = "3.5vw";
+	nome_restaurante.style.fontSize = "5vw";
 	var atalho_ajuda = document.getElementById('atalho_ajuda');
     atalho_ajuda.style.visibility = 'visible';
     $("#loaded").html("");

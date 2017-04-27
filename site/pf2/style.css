@@ -39,6 +39,9 @@ body {
 #nome_restaurante{
 	font-family: 'Candy';
 	font-weight: normal;
+  top: -1vw;
+  position: fixed;
+  right: 41.09vw;
 }
 
 .container {
