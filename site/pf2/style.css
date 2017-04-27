@@ -39,9 +39,7 @@ body {
 #nome_restaurante{
 	font-family: 'Candy';
 	font-weight: normal;
-  top: -1vw;
-  position: fixed;
-  right: 41.09vw;
+
 }
 
 .container {
@@ -179,6 +177,7 @@ body {
   margin-left: 8vw;
   margin-right: 8vw;
   margin-top: 6vw;
+  margin-top: 3vw;
 }
 
 .modals-content{
@@ -208,6 +207,8 @@ body {
 
 .modal-header-Ajuda{
   background-color: rgba(184, 140, 33, 1);
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
 }
 
 #modalAjuda-header{
