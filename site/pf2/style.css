@@ -1,6 +1,7 @@
 body {
   background-image: url("images/main-background.jpg");
 	background-size: cover;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -203,7 +204,7 @@ body {
 }
 
 .modal-header-Ajuda{
-  background-color: rgba(184, 140, 33, 1)/*#cb833e*/;
+  background-color: rgba(184, 140, 33, 1);
 }
 
 #modalAjuda-header{
