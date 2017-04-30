@@ -32,6 +32,12 @@ body {
 	padding-top: 2vw;
 }
 
+#modalAjuda-ChamarEmpregado{
+  margin-right: 29vw;
+  background-color: rgb(188, 138, 52);
+  border-color: #ae802f;
+}
+
 .jumbotron text-center{
 	height: auto;
 }
