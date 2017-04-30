@@ -228,6 +228,16 @@ function f1_desenhar_pedidos() {
 
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
+	if(total < 10){
+		$("#lista_pedidos_preco_total").css("font-size","0.9vw");	
+	}
+	else if(total >= 100){
+		$("#lista_pedidos_preco_total").css("font-size","0.8vw");	
+	}
+	else if(total >= 10){
+		$("#lista_pedidos_preco_total").css("font-size","0.85vw");	
+	}
+	
 
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
