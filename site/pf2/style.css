@@ -173,12 +173,16 @@ body {
   margin-bottom: 20px;
 }
 
+#bullets-descricao-f1{
+  margin-bottom: 2vw;
+  margin-top: -1vw;
+}
+
 #modal-content-Ajuda{
   margin-left: 8vw;
   margin-right: 8vw;
-  margin-top: 6vw;
   margin-top: 3vw;
-  
+
 }
 
 .modals-content{
