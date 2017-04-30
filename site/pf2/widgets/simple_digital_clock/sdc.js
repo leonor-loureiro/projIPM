@@ -2,11 +2,9 @@ function SDC_startTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
-    var s = today.getSeconds();
     m = SDC_checkTime(m);
-    s = SDC_checkTime(s);
     document.getElementById('simple_digital_clock').innerHTML =
-    h + ":" + m + ":" + s;
+    h + ":" + m;
     var t = setTimeout(SDC_startTime, 500);
 }
 function SDC_checkTime(i) {
