@@ -34,27 +34,31 @@
 #header_acompanhar_pedidos{
 	text-align: center;
 	font-size: 1.5vw;
-	margin-top: 0.7vw;
+	margin-top: 0.9vw;
+	margin-bottom: -1vw;
 }
+
 
 .header_seccao_listagem{
 	font-weight: bold;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 #total_acompanhar_pedidos{
 	font-weight: normal;
 	font-size: 1.2vw;
 	position: absolute;
-	bottom: 3.2vw;
+	bottom: 3.8vw;
 	right: 1.5vw ;
 }
 
 
 #footer_acompanhar_pedidos{
-	bottom: 2.5vw;
+	bottom: -0.1vw;
 	position: absolute;
 }
+
 #botao_fechar{
 	position: fixed;
 	right:1.5vw;
