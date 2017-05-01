@@ -96,6 +96,7 @@
 }
 .tempo_listagem{
 	float: right;
+	font-weight: bold;
 }
 
 .preco_listagem{
