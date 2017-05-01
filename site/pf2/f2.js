@@ -17,22 +17,22 @@ function f2_dummy_data() {
 
 function f2_desenhar_pedidos() {
 	var template_em_espera = `
-<p><img src="images/remover.svg" class="img_remover_pedido" onclick="remover_pedido_em_espera(%d); f2_desenhar_pedidos()">
+<p class = "f2_p_style"><img src="images/remover.svg" class="img_remover_pedido" onclick="remover_pedido_em_espera(%d); f2_desenhar_pedidos()">
 %s%s%s<span class="tempo_listagem">%d <b>min</b></span></p>
 <p class="preco_listagem">%s €</p>
 `;
 	var template_em_preparacao = `
-<p>%s%s%s <span class="tempo_listagem">%d <b>min</b></span></p>
+<p id = "em_preparacao">%s%s%s <span class="tempo_listagem">%d <b>min</b></span></p>
 <p class="preco_listagem">%s €</p>
 `;
 	var template_entregues = `
-<p>%s%s%s <p class="preco_listagem">%s €</p></p>
+<p class = "f2_p_style">%s%s%s <p class="preco_listagem">%s €</p></p>
 `;
 	var em_espera = "";
 	var em_preparacao = "";
 	var entregues = "";
 	var total = 0;
-	
+
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
 		var quantidade = "";
@@ -43,13 +43,13 @@ function f2_desenhar_pedidos() {
 			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
 				+ ": " + (item.quantidade * item.oferta.preco).toFixed(2);
 		}
-		
+
 		var personalizado = "";
 		if (item.personalizado)
 		{
 			personalizado = "<b>[P]</b> ";
 		}
-		
+
 		em_espera = em_espera.concat(sprintf(template_em_espera, item.id,
 			quantidade, personalizado, item.oferta.nome,
 			item.tempo, preco
@@ -57,7 +57,7 @@ function f2_desenhar_pedidos() {
 
 		total += item.oferta.preco * item.quantidade;
 	}
-	
+
 	for (var item of get_pedidos_em_preparacao().slice().reverse())
 	{
 		var quantidade = "";
@@ -68,13 +68,13 @@ function f2_desenhar_pedidos() {
 			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
 				+ ": " + (item.quantidade * item.oferta.preco).toFixed(2);
 		}
-		
+
 		var personalizado = "";
 		if (item.personalizado)
 		{
 			personalizado = "<b>[P]</b> ";
 		}
-		
+
 		em_preparacao = em_preparacao.concat(sprintf(template_em_preparacao,
 			quantidade, personalizado, item.oferta.nome,
 			item.tempo, preco
@@ -82,7 +82,7 @@ function f2_desenhar_pedidos() {
 
 		total += item.oferta.preco * item.quantidade;
 	}
-	
+
 	for (var item of get_pedidos_entregues().slice().reverse())
 	{
 		var quantidade = "";
@@ -93,13 +93,13 @@ function f2_desenhar_pedidos() {
 			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
 				+ ": " + (item.quantidade * item.oferta.preco).toFixed(2);
 		}
-		
+
 		var personalizado = "";
 		if (item.personalizado)
 		{
 			personalizado = "<b>[P]</b> ";
 		}
-		
+
 		entregues = entregues.concat(sprintf(template_entregues,
 			quantidade, personalizado, item.oferta.nome,
 			preco
@@ -107,7 +107,7 @@ function f2_desenhar_pedidos() {
 
 		total += item.oferta.preco * item.quantidade;
 	}
-	
+
 	$("#lista_em_espera").html(em_espera);
 	$("#lista_em_preparacao").html(em_preparacao);
 	$("#lista_entregues").html(entregues);
@@ -130,7 +130,7 @@ function f2_desenhar_pedidos_editar() {
 %s%s
 <span class="preco_listagem">%s €</span></p>
 `;
-	
+
 	var html = "";
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
@@ -139,7 +139,7 @@ function f2_desenhar_pedidos_editar() {
 		{
 			personalizado = "<b>[P]</b> ";
 		}
-		
+
 		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
 			|| item.oferta.tipo == "vegetariano")
 		{
@@ -156,9 +156,9 @@ function f2_desenhar_pedidos_editar() {
 			));
 		}
 	}
-	
+
 	$("#listagem_f2_2").html(html);
-	
+
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
 		if (item.quantidade <= 1)

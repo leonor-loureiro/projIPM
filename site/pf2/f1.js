@@ -129,7 +129,7 @@ function f1_pedido_bem_sucedido() {
 	// http://stackoverflow.com/a/22944616
 	setTimeout(function(){
 		$("#modalSucesso").modal('hide');
-	}, 2000);
+	}, 1500);
 }
 
 function f1_abrir_concluir_fazer_pedido() {
@@ -185,7 +185,7 @@ function f1_desenhar_pedidos() {
 			a1 = sprintf('<a onclick="f1_editar_pedido(%d)"> ', item.id);
 		}
 		var a2 = '</a>';
-		
+
 		if (item.quantidade == 1)
 		{
 			if (item.personalizado === false)
@@ -229,15 +229,15 @@ function f1_desenhar_pedidos() {
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
 	if(total < 10){
-		$("#lista_pedidos_preco_total").css("font-size","0.9vw");	
+		$("#lista_pedidos_preco_total").css("font-size","0.9vw");
 	}
 	else if(total >= 100){
-		$("#lista_pedidos_preco_total").css("font-size","0.8vw");	
+		$("#lista_pedidos_preco_total").css("font-size","0.8vw");
 	}
 	else if(total >= 10){
-		$("#lista_pedidos_preco_total").css("font-size","0.85vw");	
+		$("#lista_pedidos_preco_total").css("font-size","0.85vw");
 	}
-	
+
 
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())

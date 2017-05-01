@@ -45,6 +45,18 @@
 	margin-bottom: 20px;
 }
 
+.f2_p_style{
+	margin-bottom: -0.1vw;
+}
+
+#entregues_preco{
+	margin-left: 17.2vw;
+}
+
+#em_preparacao{
+	margin-bottom: 0vw;
+}
+
 #total_acompanhar_pedidos{
 	font-weight: normal;
 	font-size: 1.2vw;
@@ -65,7 +77,7 @@
 }
 
 .seccao_acompanhar_pedidos{
-	border-bottom: black 0.1vw dotted;
+	border-bottom: black 0.1vw solid;
 	padding-bottom: 0.5vw;
 	padding-right: 0.5vw;
 	font-size: 1.2vw;
@@ -88,6 +100,10 @@
 
 .preco_listagem{
 	text-align: right;
+	text-align: right;
+	border-bottom-style: dashed;
+	border-width: 0.1vw;
+	margin-bottom: 0.1vw;
 }
 
 #botoes_em_espera{
