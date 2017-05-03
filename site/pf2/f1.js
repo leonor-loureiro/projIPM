@@ -377,7 +377,6 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 
 function f1_desligar_botao_guardar()
 {
-	console.log(checkboxes_desligar, mais_menos_desligar);
 	if (checkboxes_desligar && mais_menos_desligar)
 	{
 		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
