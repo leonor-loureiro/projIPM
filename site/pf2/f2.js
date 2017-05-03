@@ -1,10 +1,12 @@
 function f2_fechar() {
 	$("#area_direita").html("");
+	set_f2_vendo_1(false)
 	loadMain();
 }
 
 function f2_editar_pedidos() {
 	$("#area_direita").load("f2_2.html");
+	set_f2_vendo_1(false)
 }
 
 function f2_dummy_data() {
@@ -237,3 +239,61 @@ function f2_sem_pedidos_espera(){
 		botao_editar.disabled = false;
 	}
 }
+
+var f2_vendo_1 = false;
+function set_f2_vendo_1(val)
+{
+	f2_vendo_1 = val;
+}
+function get_f2_vendo_1()
+{
+	return f2_vendo_1;
+}
+
+function f2_load_timer() {
+	var vw = $(window).width() / 100;
+	var template = `
+<svg width="%d" height="%d" xmlns="http://www.w3.org/2000/svg">
+	<g>
+		<title>Layer 1</title>
+		<circle id="circle" class="circle_animation" r="%f" cy="%f" cx="%f" stroke-width="8" stroke="red" fill="none"/>
+	</g>
+</svg>
+`;
+	var html = sprintf(template,
+		10*vw, 10*vw, 4*vw, 5*vw, 5*vw
+	);
+	$("#prato_timer").html(html);
+	var r = 2*Math.PI*4*vw;
+	document.getElementById("circle").style["stroke-dasharray"] = r;
+	document.getElementById("circle").style["stroke-dashoffset"] = r;
+	
+}
+
+window.onresize = function(event) {
+    f2_load_timer();
+};
+
+function f2_timer() {
+	/* (Pi-2*ArcSin(0.25))/(2*Pi) */
+	var fraccao = 0.419569376744833756229049806671515744415935568752463241799;
+	var interval = setInterval(function() {
+		var vw = $(window).width() / 100;
+		var r = 2*Math.PI*4*vw;
+		
+		decrementar_tempo_espera(5);
+		if(f2_vendo_1)
+		{
+			f2_desenhar_pedidos();
+		}
+		
+		var tempos = tempos_proximo_pedido_em_espera();
+		var i = tempos[0];
+		var time = tempos[1];
+		console.log(tempos);
+		
+		
+		$('.circle_animation').css('stroke-dashoffset', r-((time-i)*((r*fraccao)/time)));
+	}, 1000);
+}
+f2_timer();
