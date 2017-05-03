@@ -314,6 +314,30 @@ function f2_timer() {
 		var tempos = tempos_proximo_pedido_em_espera();
 		var i = tempos[0];
 		var time = tempos[1];
+		var item = tempos[2];
+		if (item != null)
+		{
+			var quantidade = "";
+			if (item.quantidade >= 2)
+			{
+				quantidade = item.quantidade + "× ";
+			}
+
+			var personalizado = "";
+			if (item.personalizado)
+			{
+				personalizado = "<b>[P]</b> ";
+			}
+			
+			var template = `Próximo: %s%s%s`;
+			
+			$("#proximo_pedido_entregue").html(sprintf(template,
+				quantidade, personalizado, item.oferta.nome));
+		}
+		else
+		{
+			$("#proximo_pedido_entregue").html("");
+		}
 		
 		$('.prato_timer_circle_animation').css('stroke-dashoffset', r-((time-i)*((r*fraccao)/time)));
 	}, 1000);

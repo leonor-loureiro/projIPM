@@ -282,3 +282,10 @@ ul{
 .width75 {
 	width: 75%;
 }
+
+.estilo_legenda {
+	font-size: 1.5vw;
+	font-family: "Open Sans";
+	color: #FBFBFB;
+	text-shadow: black 0 0 0.5vw;
+}
