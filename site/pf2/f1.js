@@ -228,17 +228,7 @@ function f1_desenhar_pedidos() {
 
 	$("#lista_pedidos").html(html_pedidos);
 	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
-	if(total < 10){
-		$("#lista_pedidos_preco_total").css("font-size","0.9vw");
-	}
-	else if(total >= 100){
-		$("#lista_pedidos_preco_total").css("font-size","0.8vw");
-	}
-	else if(total >= 10){
-		$("#lista_pedidos_preco_total").css("font-size","0.85vw");
-	}
-
-
+	
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
 	{
@@ -275,7 +265,7 @@ function f1_remover_pedido(_id){
 }
 
 var numero_checkboxes_personalizacoes = 0;
-function f1_registar_personalizacao(id) {
+function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 	if (document.getElementById(id).checked == true)
 	{
 		numero_checkboxes_personalizacoes++;
@@ -306,6 +296,33 @@ function f1_registar_personalizacao(id) {
 			document.getElementById('f1_checkbox_personalizacao_' + i).disabled = false;
 		}
 		$("#info_acompanhamentos_selecao").hide();
+	}
+	
+	if (id_pedido != -1)
+	{
+		var pedido = null;
+		if (em_espera == false)
+		{
+			pedido = get_pedido(id_pedido);
+		}
+		else
+		{
+			pedido = get_pedido_em_espera(id_pedido);
+		}
+		
+		for (i = 0; i < 12; i++)
+		{
+			if ((document.getElementById('f1_checkbox_personalizacao_' + i).checked
+				&& !pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i))
+				|| pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i)
+				&& !document.getElementById('f1_checkbox_personalizacao_' + i).checked)
+			{
+				document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+				return;
+			}
+		}
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		return;
 	}
 }
 
@@ -339,13 +356,14 @@ function f1_editar_pedido(id)
 	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
 	qtd = get_pedido(id).quantidade + 1;
 	var html = `
-<button type="button" class="btn btn-primary btn-lg" onclick="f1_editar_pedido2(%d); f1_4_retroceder()">Guardar Alteração</button>
+<button type="button" id="botao_guardar_alteracao_personalizar" class="btn btn-primary btn-lg" onclick="f1_editar_pedido2(%d); f1_4_retroceder()">Guardar Alteração</button>
 `;
 	html = sprintf(html, id);
 	$("#loaded").load("f1_4.html", function()
 	{
 		$("#f1_div_botao_pedido_personalizado").html(html);
-		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id));
+		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id), id, false);
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
