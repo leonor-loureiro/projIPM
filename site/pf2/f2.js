@@ -185,6 +185,7 @@ function f2_editar_pedido(id) {
 		$("#f1_div_botao_pedido_personalizado_retroceder").html(html_retroceder);
 		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido_em_espera(id), id, true);
 		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		set_ignorar_desligar_qtd();
 	});
 	$("#area_direita").html("");
 }

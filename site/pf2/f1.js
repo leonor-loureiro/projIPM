@@ -88,7 +88,6 @@ function f1_add_dose(){
 		document.getElementById("f1_personalizar_menos").style.filter = null;
 	}
 	
-	console.log(qtd, orig_qtd);
 	if (orig_qtd > -1 && !ignorar_desligar_qtd)
 	{
 		if (qtd != orig_qtd)
@@ -127,6 +126,11 @@ function f1_sub_dose(){
 function set_orig_qtd(qtd)
 {
 	orig_qtd = qtd;
+}
+
+function set_ignorar_desligar_qtd(val=false)
+{
+	ignorar_desligar_qtd = false;
 }
 
 function f1_4_retroceder()
@@ -404,6 +408,7 @@ function f1_editar_pedido(id)
 		$("#f1_div_botao_pedido_personalizado").html(html);
 		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id), id, false);
 		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		set_ignorar_desligar_qtd();
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
