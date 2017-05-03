@@ -200,6 +200,11 @@ body {
   margin-top: 2vw;
 }
 
+#imagem_empregado{
+  height: 6vw;
+  margin-top: -3vw;
+}
+
 .modals-content{
   border-color: rgba(184, 140, 33, 1);
   background-color: rgba(241, 235, 212, 1) !important;
@@ -218,11 +223,16 @@ body {
 }
 
 .modals-width{
-  width: 105%;
+  width: 122%;
+  margin-left: -2vw;
 }
 
 .modal-Ajuda-buttonsDiv{
   border-top-color: #d2a4a499;
+}
+
+#modalEmpregado-msg{
+  margin-left: 7vw;
 }
 
 .modal-header-Ajuda{

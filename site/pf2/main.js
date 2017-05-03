@@ -13,12 +13,11 @@ function loadModals() {
 }
 
 function chamar_empregado(){
-	$("#modalOk-msg").text("Um empregado chegará dentro de instantes.");
-	$("#modalOk").modal();
+	$("#modalEmpregado").modal();
 
 	setTimeout(function(){
-		$("#modalOk").modal('hide');
-	}, 1500);
+		$("#modalEmpregado").modal('hide');
+	}, 1600);
 }
 function f1() {
 	funcionalidade = "fazer_pedido";
