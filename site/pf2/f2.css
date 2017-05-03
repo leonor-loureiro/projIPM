@@ -130,17 +130,17 @@
 	right: 1.5vw;
 }
 
-.item {
-	position: relative;
-	float: left;
-}
-
 svg {
 	/* Pi-ArcSin(0.25) in degrees */
 	-webkit-transform: rotate(-165.5deg);
 	transform: rotate(-165.5deg);
 }
 
-.circle_animation {
+.prato_timer_circle_animation {
 	transition: all 1s linear;
+}
+
+#prato_timer {
+	position: fixed;
+	top: 14.0625vw; /* Do prato: 39.0625 - 25 */
 }

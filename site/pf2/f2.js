@@ -256,17 +256,17 @@ function f2_load_timer() {
 <svg width="%d" height="%d" xmlns="http://www.w3.org/2000/svg">
 	<g>
 		<title>Layer 1</title>
-		<circle id="circle" class="circle_animation" r="%f" cy="%f" cx="%f" stroke-width="8" stroke="red" fill="none"/>
+		<circle id="prato_timer_circle" class="prato_timer_circle_animation" r="%f" cy="%f" cx="%f" stroke-width="%f" stroke="red" fill="none"/>
 	</g>
 </svg>
 `;
 	var html = sprintf(template,
-		10*vw, 10*vw, 4*vw, 5*vw, 5*vw
+		100*vw, 100*vw, 25*vw, 50*vw, 50*vw, 0.6*vw
 	);
 	$("#prato_timer").html(html);
-	var r = 2*Math.PI*4*vw;
-	document.getElementById("circle").style["stroke-dasharray"] = r;
-	document.getElementById("circle").style["stroke-dashoffset"] = r;
+	var r = 2*Math.PI*25*vw;
+	document.getElementById("prato_timer_circle").style["stroke-dasharray"] = r;
+	document.getElementById("prato_timer_circle").style["stroke-dashoffset"] = r;
 	
 }
 
@@ -279,7 +279,7 @@ function f2_timer() {
 	var fraccao = 0.419569376744833756229049806671515744415935568752463241799;
 	var interval = setInterval(function() {
 		var vw = $(window).width() / 100;
-		var r = 2*Math.PI*4*vw;
+		var r = 2*Math.PI*25*vw;
 		
 		decrementar_tempo_espera(5);
 		if(f2_vendo_1)
@@ -290,10 +290,8 @@ function f2_timer() {
 		var tempos = tempos_proximo_pedido_em_espera();
 		var i = tempos[0];
 		var time = tempos[1];
-		console.log(tempos);
 		
-		
-		$('.circle_animation').css('stroke-dashoffset', r-((time-i)*((r*fraccao)/time)));
+		$('.prato_timer_circle_animation').css('stroke-dashoffset', r-((time-i)*((r*fraccao)/time)));
 	}, 1000);
 }
 f2_timer();
