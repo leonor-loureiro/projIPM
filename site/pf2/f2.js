@@ -112,7 +112,7 @@ function f2_desenhar_pedidos() {
 	$("#lista_em_preparacao").html(em_preparacao);
 	$("#lista_entregues").html(entregues);
 	$("#preco_total").text(total.toFixed(2) + "€");
-	sem_pedidos_espera();
+	f2_sem_pedidos_espera();
 }
 
 function f2_desenhar_pedidos_editar() {
@@ -227,3 +227,13 @@ $(document).keypress(function(e) {
 		f2_desenhar_pedidos();
 	}
 });
+
+function f2_sem_pedidos_espera(){
+	var botao_editar = document.getElementById('botao_editar_em_espera');
+	if(pedidos_em_espera.length == 0){
+    	botao_editar.disabled = true;
+	}
+	else{
+		botao_editar.disabled = false;
+	}
+}

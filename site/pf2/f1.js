@@ -263,7 +263,12 @@ function f1_desenhar_pedidos() {
 	}
 
 	$("#lista_pedidos").html(html_pedidos);
-	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
+	var total_texto = "<b>Total:</b> ";
+	if (total > 10)
+	{
+		total_texto = "<b>Tot:</b> ";
+	}
+	$("#lista_pedidos_preco_total").html(total_texto + total.toFixed(2) + "€");
 	
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())

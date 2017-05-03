@@ -32,19 +32,14 @@
 	overflow-y: scroll;
 }
 
-#lista_pedidos_preco_total {
-	margin-bottom: 0.625vw;
-	float: right;
-	font-size: 0.84vw;
-}
-
 #coluna_1_botoes{
-	padding-left: 20px;
+	padding-left: 1.5vw;
+	padding-right: 2%;
 }
 
 #coluna_2_botoes{
 	padding-left: 2%;
-	padding-right: 9%;
+	padding-right: 1.5vw;
 }
 
 #total{

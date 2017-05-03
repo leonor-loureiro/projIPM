@@ -42,15 +42,6 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade, onde=pedido
 	}
 }
 
-function sem_pedidos_espera(){
-	var botao_editar = document.getElementById('botao_editar_em_espera');
-	if(pedidos_em_espera.length == 0){
-    	botao_editar.style.visibility = 'hidden';
-	}
-	else{
-		botao_editar.style.visibility = 'visible';
-	}
-}
 function remover_pedido(_id, quantidade=1) {
 
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
