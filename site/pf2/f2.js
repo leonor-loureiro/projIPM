@@ -21,19 +21,23 @@ function f2_desenhar_pedidos() {
 	var template_em_espera = `
 <p class = "f2_p_style"><img src="images/remover.svg" class="img_remover_pedido" onclick="remover_pedido_em_espera(%d); f2_desenhar_pedidos()">
 %s%s%s<span class="tempo_listagem">%d <b>min</b></span></p>
-<p class="preco_listagem">%s €</p>
+<p class="preco_listagem" id="preco_listagem_%d">%s €</p>
 `;
 	var template_em_preparacao = `
 <p id = "em_preparacao">%s%s%s <span class="tempo_listagem">%d <b>min</b></span></p>
-<p class="preco_listagem">%s €</p>
+<p class="preco_listagem" id="preco_listagem_%d">%s €</p>
 `;
 	var template_entregues = `
-<p class = "f2_p_style">%s%s%s <p class="preco_listagem">%s €</p></p>
+<p class = "f2_p_style">%s%s%s <p class="preco_listagem" id="preco_listagem_%d">%s €</p></p>
 `;
 	var em_espera = "";
 	var em_preparacao = "";
 	var entregues = "";
 	var total = 0;
+	var id_preco_counter = 0;
+	var ultimo_preco_espera = -1;
+	var ultimo_preco_preparacao = -1;
+	var ultimo_preco_entregues = -1;
 
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
@@ -54,10 +58,12 @@ function f2_desenhar_pedidos() {
 
 		em_espera = em_espera.concat(sprintf(template_em_espera, item.id,
 			quantidade, personalizado, item.oferta.nome,
-			item.tempo, preco
+			item.tempo, id_preco_counter, preco
 		));
 
 		total += item.oferta.preco * item.quantidade;
+		ultimo_preco_espera = id_preco_counter;
+		id_preco_counter++;
 	}
 
 	for (var item of get_pedidos_em_preparacao().slice().reverse())
@@ -79,10 +85,12 @@ function f2_desenhar_pedidos() {
 
 		em_preparacao = em_preparacao.concat(sprintf(template_em_preparacao,
 			quantidade, personalizado, item.oferta.nome,
-			item.tempo, preco
+			item.tempo, id_preco_counter, preco
 		));
 
 		total += item.oferta.preco * item.quantidade;
+		ultimo_preco_preparacao = id_preco_counter;
+		id_preco_counter++;
 	}
 
 	for (var item of get_pedidos_entregues().slice().reverse())
@@ -104,16 +112,32 @@ function f2_desenhar_pedidos() {
 
 		entregues = entregues.concat(sprintf(template_entregues,
 			quantidade, personalizado, item.oferta.nome,
-			preco
+			id_preco_counter, preco
 		));
 
 		total += item.oferta.preco * item.quantidade;
+		ultimo_preco_entregues = id_preco_counter;
+		id_preco_counter++;
 	}
 
 	$("#lista_em_espera").html(em_espera);
 	$("#lista_em_preparacao").html(em_preparacao);
 	$("#lista_entregues").html(entregues);
 	$("#preco_total").text(total.toFixed(2) + "€");
+	
+	if (ultimo_preco_espera != -1)
+	{
+		document.getElementById("preco_listagem_" + ultimo_preco_espera).style["border-bottom-style"] = "none";
+	}
+	if (ultimo_preco_preparacao != -1)
+	{
+		document.getElementById("preco_listagem_" + ultimo_preco_preparacao).style["border-bottom-style"] = "none";
+	}
+	if (ultimo_preco_entregues != -1)
+	{
+		document.getElementById("preco_listagem_" + ultimo_preco_entregues).style["border-bottom-style"] = "none";
+	}
+	
 	f2_sem_pedidos_espera();
 }
 
@@ -256,7 +280,7 @@ function f2_load_timer() {
 <svg width="%d" height="%d" xmlns="http://www.w3.org/2000/svg">
 	<g>
 		<title>Layer 1</title>
-		<circle id="prato_timer_circle" class="prato_timer_circle_animation" r="%f" cy="%f" cx="%f" stroke-width="%f" stroke="red" fill="none"/>
+		<circle id="prato_timer_circle" class="prato_timer_circle_animation" r="%f" cy="%f" cx="%f" stroke-width="%f" stroke="#f4d65b" fill="none"/>
 	</g>
 </svg>
 `;
