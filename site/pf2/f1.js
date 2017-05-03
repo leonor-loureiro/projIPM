@@ -80,7 +80,8 @@ function f1_personalizar() {
 }
 
 var ignorar_desligar_qtd = false;
-orig_qtd = -1;
+var orig_qtd = -1;
+var mais_menos_desligar = true;
 function f1_add_dose(){
 	qtd++;
 	document.getElementById("qtd").innerHTML = ""+qtd;
@@ -88,15 +89,17 @@ function f1_add_dose(){
 		document.getElementById("f1_personalizar_menos").style.filter = null;
 	}
 	
-	if (orig_qtd > -1 && !ignorar_desligar_qtd)
+	if (orig_qtd > -1)
 	{
 		if (qtd != orig_qtd)
 		{
-			document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+			mais_menos_desligar = false;
+			f1_desligar_botao_guardar();
 		}
 		else
 		{
-			document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+			mais_menos_desligar = true;
+			f1_desligar_botao_guardar();
 		}
 	}
 };
@@ -110,15 +113,17 @@ function f1_sub_dose(){
 		document.getElementById("f1_personalizar_menos").style.filter = "grayscale(100%)";
 	}
 	
-	if (orig_qtd > -1 && !ignorar_desligar_qtd)
+	if (orig_qtd > -1)
 	{
 		if (qtd != orig_qtd)
 		{
-			document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+			mais_menos_desligar = false;
+			f1_desligar_botao_guardar();
 		}
 		else
 		{
-			document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+			mais_menos_desligar = true;
+			f1_desligar_botao_guardar();
 		}
 	}
 }
@@ -306,6 +311,7 @@ function f1_remover_pedido(_id){
 }
 
 var numero_checkboxes_personalizacoes = 0;
+var checkboxes_desligar = true;
 function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 	if (document.getElementById(id).checked == true)
 	{
@@ -341,12 +347,6 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 	
 	if (id_pedido != -1)
 	{
-		if (qtd != orig_qtd)
-		{
-			document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
-			return;
-		}
-		
 		var pedido = null;
 		if (em_espera == false)
 		{
@@ -364,14 +364,27 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 				|| (pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i)
 				&& !document.getElementById('f1_checkbox_personalizacao_' + i).checked))
 			{
-				document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
-				ignorar_desligar_qtd = true;
+				checkboxes_desligar = false;
+				f1_desligar_botao_guardar();
 				return;
 			}
 		}
-		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
-		ignorar_desligar_qtd = false;
+		checkboxes_desligar = true;
+		f1_desligar_botao_guardar();
 		return;
+	}
+}
+
+function f1_desligar_botao_guardar()
+{
+	console.log(checkboxes_desligar, mais_menos_desligar);
+	if (checkboxes_desligar && mais_menos_desligar)
+	{
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+	}
+	else
+	{
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
 	}
 }
 
