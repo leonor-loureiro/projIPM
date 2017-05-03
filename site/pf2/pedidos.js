@@ -195,23 +195,31 @@ function decrementar_tempo_espera(quanto=60)
 
 function tempos_proximo_pedido_em_espera()
 {
-	if (pedidos_em_espera.length == 0)
+	if (pedidos_em_espera.length == 0
+		&& pedidos_em_preparacao.length == 0)
 	{
 		return [1, 1, null];
 	}
 	
-	id_menor = -1;
-	menor_tempo = Infinity;
+	var menor_pedido;
+	var menor_tempo = Infinity;
 	for (var item of pedidos_em_espera)
 	{
 		if (item.tempo < menor_tempo)
 		{
-			id_menor = item.id;
+			menor_pedido = item;
 			menor_tempo = item.tempo;
 		}
 	}
-	return [menor_tempo, get_pedido_em_espera(id_menor).oferta.informacoes.tempo,
-		get_pedido_em_espera(id_menor)];
+	for (var item of pedidos_em_preparacao)
+	{
+		if (item.tempo < menor_tempo)
+		{
+			menor_pedido = item;
+			menor_tempo = item.tempo;
+		}
+	}
+	return [menor_tempo, menor_pedido.oferta.informacoes.tempo, menor_pedido];
 }
 
 function TESTING_dup_espera()
