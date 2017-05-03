@@ -190,6 +190,7 @@ function f2_editar_pedido(id) {
 	var oferta = get_oferta_pedido_em_espera(id);
 	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
 	qtd = get_pedido_em_espera(id).quantidade + 1;
+	personalizacoes = get_personalizacoes_pedido_em_espera(id);
 	var html = `
 <button type="button" id="botao_guardar_alteracao_personalizar" class="btn btn-primary btn-lg" onclick="f2_editar_pedido2(%d); f1_2_retroceder()">Guardar Alteração</button>
 `;
@@ -201,7 +202,7 @@ function f2_editar_pedido(id) {
 	{
 		$("#f1_div_botao_pedido_personalizado").html(html);
 		$("#f1_div_botao_pedido_personalizado_retroceder").html(html_retroceder);
-		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido_em_espera(id), id, true);
+		f1_personalizacoes_carregar(oferta, personalizacoes, id, true);
 		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
 		set_ignorar_desligar_qtd();
 	});

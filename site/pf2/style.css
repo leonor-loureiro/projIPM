@@ -6,8 +6,8 @@ body {
 
 
 #botao_ajuda{
-	width: 2.7vw;
-	height: 2.7vw;
+	width: 2.3vw;
+	height: 2.3vw;
 	-webkit-filter: drop-shadow();
 }
 
@@ -15,7 +15,7 @@ body {
 	position: fixed;
 	top: 1.25vw;
 	left: 1.25vw;
-	-webkit-filter: drop-shadow();
+	
 
 }
 
@@ -45,7 +45,17 @@ body {
 #nome_restaurante{
 	font-family: 'Candy';
 	font-weight: normal;
+	font-size:5.5vw;
+	position: fixed;
+	top: -1.5vw;
+	right: 39vw;
 
+}
+
+#nome_restaurante_menu_principal{
+	font-family: 'Candy';
+	font-weight: normal;
+	font-size: 11.5vw;
 }
 
 .container {
@@ -249,28 +259,6 @@ ul{
   padding-left: 40%;
 }
 
-.form-group input[type="checkbox"] {
-    display: none;
-}
-
-.form-group input[type="checkbox"] + .btn-group > label span {
-    width: 20px;
-}
-
-.form-group input[type="checkbox"] + .btn-group > label span:first-child {
-    display: none;
-}
-.form-group input[type="checkbox"] + .btn-group > label span:last-child {
-    display: inline-block;
-}
-
-.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
-    display: inline-block;
-}
-.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
-    display: none;
-}
-
 .width100 {
 	width: 100%;
 }
@@ -288,4 +276,21 @@ ul{
 	font-family: "Open Sans";
 	color: #FBFBFB;
 	text-shadow: black 0 0 0.5vw;
+}
+
+.prato_timer_circle_animation {
+	transition: all 1s linear;
+}
+
+#prato_timer {
+	position: fixed;
+	top: 14.0625vw; /* Do prato: 39.0625 - 25 */
+}
+
+#proximo_pedido_entregue {
+	position: fixed;
+	top: 1.25vw;
+	right: 8vw;
+	color: #EFEFEF;
+	background-color: rgba(0, 0, 0, 0.1);
 }

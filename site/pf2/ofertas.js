@@ -383,7 +383,9 @@ var template_acompanhamento = `
 		document.getElementById(item).checked = true;
 		f1_registar_personalizacao(item);
 	}
-	$("#info_acompanhamentos_selecao").hide();
+	if(personalizacoes.length < 4){
+		$("#info_acompanhamentos_selecao").hide();
+	}
 	
 	if (id_pedido != -1)
 	{

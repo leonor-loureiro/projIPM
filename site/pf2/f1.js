@@ -153,7 +153,7 @@ function f1_abrir_cancelar_fazer_pedido()
 {
 	if (!pedidos_estao_vazios())
 	{
-		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar todo o seu pedido?");
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja cancelar todos os pedidos?");
 		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos(); f1_retroceder()");
 		$("#modalNaoSim").modal();
 	}
@@ -300,7 +300,7 @@ function f1_botao_limpar(){
 		return;
 	}
 	else{
-		$("#modalNaoSim-msg").text("Tem a certeza deseja limpar a lista de pedidos?");
+		$("#modalNaoSim-msg").text("Tem a certeza deseja remover todos os pedidos?");
 		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
 		$("#modalNaoSim").modal();
 	}

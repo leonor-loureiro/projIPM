@@ -141,18 +141,4 @@ svg {
 	transform: rotate(-165.5deg);
 }
 
-.prato_timer_circle_animation {
-	transition: all 1s linear;
-}
 
-#prato_timer {
-	position: fixed;
-	top: 14.0625vw; /* Do prato: 39.0625 - 25 */
-}
-
-#proximo_pedido_entregue {
-	position: fixed;
-	top: 1.25vw;
-	right: 8vw;
-	color: #EFEFEF;
-}
