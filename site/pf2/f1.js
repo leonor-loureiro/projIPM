@@ -210,7 +210,7 @@ function f1_desenhar_pedidos() {
 
 
 	var html_pedidos = "";
-	var total = 0;
+	var total = get_total_pedidos_efetuados();
 	for (var item of get_pedidos().slice().reverse())
 	{
 

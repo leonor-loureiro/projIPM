@@ -9,14 +9,6 @@ function f2_editar_pedidos() {
 	set_f2_vendo_1(false)
 }
 
-function f2_dummy_data() {
-	// Temporário, para debugging
-	adicionar_pedido('entradas', 0, null, 1);
-	adicionar_pedido('carne', 1, null, 1);
-	adicionar_pedido('sobremesas', 2, null, 1);
-	TESTING_dup_espera();
-}
-
 function f2_desenhar_pedidos() {
 	var template_em_espera = `
 <p class = "f2_p_style"><img src="images/remover.svg" class="img_remover_pedido" onclick="remover_pedido_em_espera(%d); f2_desenhar_pedidos()">
