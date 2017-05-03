@@ -15,7 +15,7 @@ body {
 	position: fixed;
 	top: 1.25vw;
 	left: 1.25vw;
-	
+
 
 }
 
@@ -195,10 +195,9 @@ body {
 }
 
 #modal-content-Ajuda{
-  margin-left: 8vw;
-  margin-right: 8vw;
-  margin-top: 3vw;
-
+  margin-left: 7vw;
+  margin-right: 7vw;
+  margin-top: 2vw;
 }
 
 .modals-content{
