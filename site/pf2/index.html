@@ -23,30 +23,23 @@
 		<script src="f1.js"></script>
 		<script src="f2.js"></script>
 	</head>
-	<body onload="f2_dummy_data(); loadMain(); loadModals(); SDC_startTime()">
+	<body onload="loadMain(); loadModals(); SDC_startTime()">
 		<div class="jumbotron text-center">
-			<div id="atalho_ajuda"><img id = "botao_ajuda" src="images/ajuda.svg" onclick="loadAjuda()"/> Ajuda</div>
+			<div id="atalho_ajuda" class="estilo_legenda"><img id = "botao_ajuda" src="images/ajuda.svg" onclick="loadAjuda()"/> Ajuda</div>
 			<span id = "nome_restaurante">~Com.ISTo~</span>
-			<div id="simple_digital_clock"></div>
+			<div id="simple_digital_clock" class="estilo_legenda"></div>
+			<div id="proximo_pedido_entregue" class="estilo_legenda"></div>
 		</div>
+		<div id="prato_timer" class="html"></div>
 		<div id="loaded">
 			<p>Falha ao carregar fragmento de página.
 			<p>Se se estiver a usar o Chrome/Chromium localmente, iniciar com --allow-file-access-from-files.
 			<p>Exemplo: chromium --allow-file-access-from-files &
 		</div>
 		<div id="prato"></div>
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<div class="item html">
-			<h2>0</h2>
-			<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-			<g>
-			<title>Layer 1</title>
-			<circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="red" fill="none"/>
-			</g>
-			</svg>
-		</div> -->
 		<div id="area_direita"></div>
 		<div id="prato_decor"></div>
 		<div id="modals"></div>
 	</body>
 </html>
+<script>f2_load_timer();</script>

@@ -79,11 +79,28 @@ function f1_personalizar() {
 	$("#area_direita").load("f1_pedido.html");
 }
 
+var ignorar_desligar_qtd = false;
+var orig_qtd = -1;
+var mais_menos_desligar = true;
 function f1_add_dose(){
 	qtd++;
 	document.getElementById("qtd").innerHTML = ""+qtd;
 	if (qtd >= 2) {
 		document.getElementById("f1_personalizar_menos").style.filter = null;
+	}
+	
+	if (orig_qtd > -1)
+	{
+		if (qtd != orig_qtd)
+		{
+			mais_menos_desligar = false;
+			f1_desligar_botao_guardar();
+		}
+		else
+		{
+			mais_menos_desligar = true;
+			f1_desligar_botao_guardar();
+		}
 	}
 };
 
@@ -95,6 +112,30 @@ function f1_sub_dose(){
 	if (qtd <= 1) {
 		document.getElementById("f1_personalizar_menos").style.filter = "grayscale(100%)";
 	}
+	
+	if (orig_qtd > -1)
+	{
+		if (qtd != orig_qtd)
+		{
+			mais_menos_desligar = false;
+			f1_desligar_botao_guardar();
+		}
+		else
+		{
+			mais_menos_desligar = true;
+			f1_desligar_botao_guardar();
+		}
+	}
+}
+
+function set_orig_qtd(qtd)
+{
+	orig_qtd = qtd;
+}
+
+function set_ignorar_desligar_qtd(val=false)
+{
+	ignorar_desligar_qtd = false;
 }
 
 function f1_4_retroceder()
@@ -174,7 +215,7 @@ function f1_desenhar_pedidos() {
 
 
 	var html_pedidos = "";
-	var total = 0;
+	var total = get_total_pedidos_efetuados();
 	for (var item of get_pedidos().slice().reverse())
 	{
 
@@ -227,18 +268,13 @@ function f1_desenhar_pedidos() {
 	}
 
 	$("#lista_pedidos").html(html_pedidos);
-	$("#lista_pedidos_preco_total").html("<b>Total:</b> " + total.toFixed(2) + "€");
-	if(total < 10){
-		$("#lista_pedidos_preco_total").css("font-size","0.9vw");
+	var total_texto = "<b>Total:</b> ";
+	if (total > 10)
+	{
+		total_texto = "<b>Tot:</b> ";
 	}
-	else if(total >= 100){
-		$("#lista_pedidos_preco_total").css("font-size","0.8vw");
-	}
-	else if(total >= 10){
-		$("#lista_pedidos_preco_total").css("font-size","0.85vw");
-	}
-
-
+	$("#lista_pedidos_preco_total").html(total_texto + total.toFixed(2) + "€");
+	
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
 	{
@@ -275,7 +311,8 @@ function f1_remover_pedido(_id){
 }
 
 var numero_checkboxes_personalizacoes = 0;
-function f1_registar_personalizacao(id) {
+var checkboxes_desligar = true;
+function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 	if (document.getElementById(id).checked == true)
 	{
 		numero_checkboxes_personalizacoes++;
@@ -306,6 +343,47 @@ function f1_registar_personalizacao(id) {
 			document.getElementById('f1_checkbox_personalizacao_' + i).disabled = false;
 		}
 		$("#info_acompanhamentos_selecao").hide();
+	}
+	
+	if (id_pedido != -1)
+	{
+		var pedido = null;
+		if (em_espera == false)
+		{
+			pedido = get_pedido(id_pedido);
+		}
+		else
+		{
+			pedido = get_pedido_em_espera(id_pedido);
+		}
+		
+		for (i = 0; i < 12; i++)
+		{
+			if ((document.getElementById('f1_checkbox_personalizacao_' + i).checked
+				&& !pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i))
+				|| (pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i)
+				&& !document.getElementById('f1_checkbox_personalizacao_' + i).checked))
+			{
+				checkboxes_desligar = false;
+				f1_desligar_botao_guardar();
+				return;
+			}
+		}
+		checkboxes_desligar = true;
+		f1_desligar_botao_guardar();
+		return;
+	}
+}
+
+function f1_desligar_botao_guardar()
+{
+	if (checkboxes_desligar && mais_menos_desligar)
+	{
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+	}
+	else
+	{
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
 	}
 }
 
@@ -339,13 +417,15 @@ function f1_editar_pedido(id)
 	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
 	qtd = get_pedido(id).quantidade + 1;
 	var html = `
-<button type="button" class="btn btn-primary btn-lg" onclick="f1_editar_pedido2(%d); f1_4_retroceder()">Guardar Alteração</button>
+<button type="button" id="botao_guardar_alteracao_personalizar" class="btn btn-primary btn-lg" onclick="f1_editar_pedido2(%d); f1_4_retroceder()">Guardar Alteração</button>
 `;
 	html = sprintf(html, id);
 	$("#loaded").load("f1_4.html", function()
 	{
 		$("#f1_div_botao_pedido_personalizado").html(html);
-		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id));
+		f1_personalizacoes_carregar(oferta, get_personalizacoes_pedido(id), id, false);
+		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		set_ignorar_desligar_qtd();
 	});
 	$("#prato_decor").html("");
 	$("#area_direita").load("f1_pedido.html");
@@ -355,16 +435,3 @@ function f1_editar_pedido2(id)
 {
 	editar_pedido(id, personalizacoes, qtd);
 }
-
-/*var time = 60; /* how long the timer runs for
-var initialOffset = '440';
-var i = 1
-var interval = setInterval(function() {
-    $('.circle_animation').css('stroke-dashoffset', initialOffset-(i*(initialOffset/time)));
-    $('h2').text(i);
-    if (i == time) {
-        clearInterval(interval);
-    }
-    i++;
-}, 1000);
-*/

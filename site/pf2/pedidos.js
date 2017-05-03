@@ -42,15 +42,6 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade, onde=pedido
 	}
 }
 
-function sem_pedidos_espera(){
-	var botao_editar = document.getElementById('botao_editar_em_espera');
-	if(pedidos_em_espera.length == 0){
-    	botao_editar.style.visibility = 'hidden';
-	}
-	else{
-		botao_editar.style.visibility = 'visible';
-	}
-}
 function remover_pedido(_id, quantidade=1) {
 
 	var index = pedidos.map(function(e) { return e.id; }).indexOf(_id);
@@ -170,8 +161,9 @@ function editar_pedido_em_espera(_id, _personalizacoes, _quantidade)
 	}
 }
 
-function decrementar_tempo_espera(quanto=1)
+function decrementar_tempo_espera(quanto=60)
 {
+	quanto /= 60;
 	for (var item of pedidos_em_espera)
 	{
 		item.tempo -= quanto;
@@ -201,20 +193,49 @@ function decrementar_tempo_espera(quanto=1)
 	}
 }
 
-function TESTING_dup_espera()
+function tempos_proximo_pedido_em_espera()
 {
-	pedidos_em_espera = pedidos.splice(0);
-	limpar_pedidos();
+	if (pedidos_em_espera.length == 0
+		&& pedidos_em_preparacao.length == 0)
+	{
+		return [1, 1, null];
+	}
+	
+	var menor_pedido;
+	var menor_tempo = Infinity;
+	for (var item of pedidos_em_espera)
+	{
+		if (item.tempo < menor_tempo)
+		{
+			menor_pedido = item;
+			menor_tempo = item.tempo;
+		}
+	}
+	for (var item of pedidos_em_preparacao)
+	{
+		if (item.tempo < menor_tempo)
+		{
+			menor_pedido = item;
+			menor_tempo = item.tempo;
+		}
+	}
+	return [menor_tempo, menor_pedido.oferta.informacoes.tempo, menor_pedido];
 }
 
-function TESTING_dup_preparacao()
+function get_total_pedidos_efetuados()
 {
-	pedidos_em_preparacao = pedidos.splice(0);
-	limpar_pedidos();
-}
-
-function TESTING_dup_entregues()
-{
-	pedidos_entregues = pedidos.splice(0);
-	limpar_pedidos();
+	var total = 0;
+	for (var item of pedidos_em_espera)
+	{
+		total += item.oferta.preco * item.quantidade;
+	}
+	for (var item of pedidos_em_preparacao)
+	{
+		total += item.oferta.preco * item.quantidade;
+	}
+	for (var item of pedidos_entregues)
+	{
+		total += item.oferta.preco * item.quantidade;
+	}
+	return total;
 }

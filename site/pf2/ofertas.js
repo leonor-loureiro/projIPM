@@ -281,7 +281,7 @@ function f1_info_nutricional_carregar(oferta) {
 	}
 }
 
-function f1_personalizacoes_carregar(oferta, personalizacoes) {
+function f1_personalizacoes_carregar(oferta, personalizacoes, id_pedido = -1, em_espera = false) {
 	var template = `
 <div class="col-xs-2 imagem_info_col">
 	<p></p>
@@ -312,7 +312,7 @@ function f1_personalizacoes_carregar(oferta, personalizacoes) {
 
 var template_acompanhamento = `
 <div class="[ form-group ]">
-	<input type="checkbox" name="f1_checkbox_personalizacao_%d" id="f1_checkbox_personalizacao_%d" autocomplete="off" onclick=f1_registar_personalizacao("f1_checkbox_personalizacao_%d") />
+	<input type="checkbox" name="f1_checkbox_personalizacao_%d" id="f1_checkbox_personalizacao_%d" autocomplete="off" onclick="f1_registar_personalizacao('f1_checkbox_personalizacao_%d', %d, %t)" />
 	<div class="[ btn-group width100 ]">
 		<label for="f1_checkbox_personalizacao_%d" class="[ btn btn-success width25 ]">
 			<span class="[ glyphicon glyphicon-ok ]"></span>
@@ -324,7 +324,7 @@ var template_acompanhamento = `
 	</div>
 </div>
 `;
-
+	
 	f1_limpar_personalizacoes();
 	
 	var id_checkbox = 0;
@@ -340,7 +340,8 @@ var template_acompanhamento = `
 	for (var item of oferta.personalizacoes.acompanhamentos)
 	{
 		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
-			id_checkbox, id_checkbox, id_checkbox, id_checkbox, id_checkbox, item
+			id_checkbox, id_checkbox, id_checkbox, id_pedido, em_espera,
+			id_checkbox, id_checkbox, item
 		));
 		if (haviam_personalizacoes == false)
 		{
@@ -358,7 +359,8 @@ var template_acompanhamento = `
 	for (var item of oferta.personalizacoes.extras)
 	{
 		acompanhamentos = acompanhamentos.concat(sprintf(template_acompanhamento,
-			id_checkbox, id_checkbox, id_checkbox, id_checkbox, id_checkbox, item
+			id_checkbox, id_checkbox, id_checkbox, id_pedido, em_espera,
+			id_checkbox, id_checkbox, item
 		));
 		id_checkbox++;
 		
@@ -382,4 +384,20 @@ var template_acompanhamento = `
 		f1_registar_personalizacao(item);
 	}
 	$("#info_acompanhamentos_selecao").hide();
+	
+	if (id_pedido != -1)
+	{
+		if (em_espera == false)
+		{
+			set_orig_qtd(get_pedido(id_pedido).quantidade);
+		}
+		else
+		{
+			set_orig_qtd(get_pedido_em_espera(id_pedido).quantidade);
+		}
+	}
+	else
+	{
+		set_orig_qtd(-1);
+	}
 }

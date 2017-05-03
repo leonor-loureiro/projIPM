@@ -59,6 +59,7 @@ function f2() {
     atalho_ajuda.style.visibility = 'visible';
     $("#loaded").html("");
 	$("#area_direita").load("f2_1.html");
+	set_f2_vendo_1(true);
 }
 
 function f3() {
