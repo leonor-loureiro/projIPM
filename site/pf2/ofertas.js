@@ -384,4 +384,20 @@ var template_acompanhamento = `
 		f1_registar_personalizacao(item);
 	}
 	$("#info_acompanhamentos_selecao").hide();
+	
+	if (id_pedido != -1)
+	{
+		if (em_espera == false)
+		{
+			set_orig_qtd(get_pedido(id_pedido).quantidade);
+		}
+		else
+		{
+			set_orig_qtd(get_pedido_em_espera(id_pedido).quantidade);
+		}
+	}
+	else
+	{
+		set_orig_qtd(-1);
+	}
 }

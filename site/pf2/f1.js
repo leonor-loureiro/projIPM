@@ -79,11 +79,26 @@ function f1_personalizar() {
 	$("#area_direita").load("f1_pedido.html");
 }
 
+var ignorar_desligar_qtd = false;
+orig_qtd = -1;
 function f1_add_dose(){
 	qtd++;
 	document.getElementById("qtd").innerHTML = ""+qtd;
 	if (qtd >= 2) {
 		document.getElementById("f1_personalizar_menos").style.filter = null;
+	}
+	
+	console.log(qtd, orig_qtd);
+	if (orig_qtd > -1 && !ignorar_desligar_qtd)
+	{
+		if (qtd != orig_qtd)
+		{
+			document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+		}
+		else
+		{
+			document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		}
 	}
 };
 
@@ -95,6 +110,23 @@ function f1_sub_dose(){
 	if (qtd <= 1) {
 		document.getElementById("f1_personalizar_menos").style.filter = "grayscale(100%)";
 	}
+	
+	if (orig_qtd > -1 && !ignorar_desligar_qtd)
+	{
+		if (qtd != orig_qtd)
+		{
+			document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+		}
+		else
+		{
+			document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		}
+	}
+}
+
+function set_orig_qtd(qtd)
+{
+	orig_qtd = qtd;
 }
 
 function f1_4_retroceder()
@@ -300,6 +332,12 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 	
 	if (id_pedido != -1)
 	{
+		if (qtd != orig_qtd)
+		{
+			document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+			return;
+		}
+		
 		var pedido = null;
 		if (em_espera == false)
 		{
@@ -314,14 +352,16 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 		{
 			if ((document.getElementById('f1_checkbox_personalizacao_' + i).checked
 				&& !pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i))
-				|| pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i)
-				&& !document.getElementById('f1_checkbox_personalizacao_' + i).checked)
+				|| (pedido.personalizacoes.includes('f1_checkbox_personalizacao_' + i)
+				&& !document.getElementById('f1_checkbox_personalizacao_' + i).checked))
 			{
 				document.getElementById('botao_guardar_alteracao_personalizar').disabled = false;
+				ignorar_desligar_qtd = true;
 				return;
 			}
 		}
 		document.getElementById('botao_guardar_alteracao_personalizar').disabled = true;
+		ignorar_desligar_qtd = false;
 		return;
 	}
 }
