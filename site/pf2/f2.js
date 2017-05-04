@@ -304,10 +304,11 @@ function f2_timer() {
 			f2_desenhar_pedidos();
 		}
 		
-		var tempos = tempos_proximo_pedido_em_espera();
-		var i = tempos[0];
-		var time = tempos[1];
-		var item = tempos[2];
+		var tempos_proximo = tempos_proximo_pedido_em_espera();
+		var tempos_ultimo = tempos_ultimo_pedido_em_espera();
+		var i = tempos_ultimo[0];
+		var time = tempos_ultimo[1];
+		var item = tempos_proximo[2];
 		if (item != null)
 		{
 			var quantidade = "";

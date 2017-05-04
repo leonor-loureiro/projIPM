@@ -222,6 +222,35 @@ function tempos_proximo_pedido_em_espera()
 	return [menor_tempo, menor_pedido.oferta.informacoes.tempo, menor_pedido];
 }
 
+function tempos_ultimo_pedido_em_espera()
+{
+	if (pedidos_em_espera.length == 0
+		&& pedidos_em_preparacao.length == 0)
+	{
+		return [1, 1, null];
+	}
+	
+	var maior_pedido;
+	var maior_tempo = -1;
+	for (var item of pedidos_em_espera)
+	{
+		if (item.tempo > maior_tempo)
+		{
+			maior_pedido = item;
+			maior_tempo = item.tempo;
+		}
+	}
+	for (var item of pedidos_em_preparacao)
+	{
+		if (item.tempo > maior_tempo)
+		{
+			maior_pedido = item;
+			maior_tempo = item.tempo;
+		}
+	}
+	return [maior_tempo, maior_pedido.oferta.informacoes.tempo, maior_pedido];
+}
+
 function get_total_pedidos_efetuados()
 {
 	var total = 0;
