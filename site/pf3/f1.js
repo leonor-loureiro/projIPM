@@ -163,6 +163,7 @@ function f1_abrir_cancelar_fazer_pedido()
 	}
 }
 
+
 function f1_pedido_bem_sucedido() {
 	$("#modalSucesso-msg").text("O seu pedido foi concluído com sucesso!");
 	$("#modalSucesso").modal();

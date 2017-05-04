@@ -20,14 +20,19 @@ function chamar_empregado(){
 	}, 1600);
 }
 function f1() {
-	funcionalidade = "fazer_pedido";
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.visibility='visible';
 	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
 	nome_restaurante_menu_principal.style.visibility = 'hidden';
 	$("#loaded").load("f1_1.html");
 	$("#prato_decor").load("f1_tipos_pratos.html");
-	$("#area_direita").load("f1_pedido.html");
+	$("#area_direita").load("f1_pedido.html", function()
+	{
+		if(funcionalidade === "acompanhar_pedido"){
+			$("#cancelar").attr("onclick", "f1_abrir_cancelar_fazer_pedido()");
+		}
+	});
+	funcionalidade = "fazer_pedido";
 }
 
 function f1_retroceder() {
@@ -60,7 +65,8 @@ function f2() {
 	nome_restaurante.style.visibility='visible';
 	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
 	nome_restaurante_menu_principal.style.visibility = 'hidden';
-    $("#loaded").html("");
+    document.getElementById("imagem_f2").style.visibility = "hidden";
+    document.getElementById("imagem_f2_fundo").style.visibility = "hidden";
 	$("#area_direita").load("f2_1.html");
 	set_f2_vendo_1(true);
 }
