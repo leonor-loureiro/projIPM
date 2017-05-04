@@ -15,9 +15,9 @@ function loadModals() {
 function chamar_empregado(){
 	$("#modalEmpregado").modal();
 
-	setTimeout(function(){
-		$("#modalEmpregado").modal('hide');
-	}, 1600);
+	//setTimeout(function(){
+		//$("#modalEmpregado").modal('hide');
+	//}, 1600);
 }
 function f1() {
 	funcionalidade = "fazer_pedido";

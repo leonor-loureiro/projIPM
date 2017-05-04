@@ -202,8 +202,17 @@ body {
 
 #imagem_empregado{
   height: 6vw;
-  margin-top: -3vw;
+  margin-left: 13vw;
 }
+
+#modalEmpregado-msg{
+  margin-left: 2.5vw;
+}
+
+#modalSucesso-msg{
+  margin-left: 3vw;
+}
+
 
 .modals-content{
   border-color: rgba(184, 140, 33, 1);
@@ -223,16 +232,12 @@ body {
 }
 
 .modals-width{
-  width: 122%;
+  width: 115%;
   margin-left: -2vw;
 }
 
 .modal-Ajuda-buttonsDiv{
   border-top-color: #d2a4a499;
-}
-
-#modalEmpregado-msg{
-  margin-left: 7vw;
 }
 
 .modal-header-Ajuda{
