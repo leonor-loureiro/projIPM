@@ -39,7 +39,7 @@ function f2_desenhar_pedidos() {
 		{
 			quantidade = item.quantidade + "× ";
 			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
-				+ ": " + (item.quantidade * item.oferta.preco).toFixed(2);
+				+ "€: " + (item.quantidade * item.oferta.preco).toFixed(2);
 		}
 
 		var personalizado = "";
@@ -66,7 +66,7 @@ function f2_desenhar_pedidos() {
 		{
 			quantidade = item.quantidade + "× ";
 			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
-				+ ": " + (item.quantidade * item.oferta.preco).toFixed(2);
+				+ "€: " + (item.quantidade * item.oferta.preco).toFixed(2);
 		}
 
 		var personalizado = "";
@@ -93,7 +93,7 @@ function f2_desenhar_pedidos() {
 		{
 			quantidade = item.quantidade + "× ";
 			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
-				+ ": " + (item.quantidade * item.oferta.preco).toFixed(2);
+				+ "€ 	: " + (item.quantidade * item.oferta.preco).toFixed(2);
 		}
 
 		var personalizado = "";
@@ -139,19 +139,26 @@ function f2_desenhar_pedidos_editar() {
 <span id="qtd_2">%d</span>
 <img class="add_sub_sign" src="images/plus_sign.svg" onclick="f2_adicionar_dose(%d)">
 <a onclick="f2_editar_pedido(%d)">%s%s</a>
-<span class="preco_listagem">%s €</span></p>
+<p class="preco_listagem">%s €</p></p>
 `;
 	var template_ne = `
 <p><img class="add_sub_sign" id="f2_sub_%d" src="images/minus_sign.svg" onclick="f2_subtrair_dose(%d)">
 <span id="qtd_2">%d</span>
 <img class="add_sub_sign" src="images/plus_sign.svg" onclick="f2_adicionar_dose(%d)">
 %s%s
-<span class="preco_listagem">%s €</span></p>
+<p class="preco_listagem">%s €</p></p>
 `;
 
 	var html = "";
 	for (var item of get_pedidos_em_espera().slice().reverse())
 	{
+		var preco = item.oferta.preco.toFixed(2);
+		if (item.quantidade >= 2)
+		{
+			preco = item.quantidade + "×" + item.oferta.preco.toFixed(2)
+				+ "€: " + (item.quantidade * item.oferta.preco).toFixed(2);
+		}
+
 		var personalizado = "";
 		if (item.personalizado)
 		{
@@ -163,14 +170,14 @@ function f2_desenhar_pedidos_editar() {
 		{
 			html = html.concat(sprintf(template_e,
 				item.id, item.id, item.quantidade, item.id, item.id,
-				personalizado, item.oferta.nome, item.oferta.preco.toFixed(2)
+				personalizado, item.oferta.nome, preco
 			));
 		}
 		else
 		{
 			html = html.concat(sprintf(template_ne,
 				item.id, item.id, item.quantidade, item.id,
-				personalizado, item.oferta.nome, item.oferta.preco.toFixed(2)
+				personalizado, item.oferta.nome, preco
 			));
 		}
 	}
