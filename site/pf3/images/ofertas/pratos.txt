@@ -1,0 +1,90 @@
+PEIXE:
+
+Arroz Marisco
+Bacalhau à Brás
+Bacalhau com Grão
+Bacalhau com Natas
+Chocos Fritos
+Dourada Grelhada
+Filetes Panados
+Lulas Guisadas
+Pasteis de Bacalhau
+
+
+CARNE:
+
+Costeletas de Porco
+Frango Frito
+Cozido à Portuguesa
+Bife com Natas
+Bitoque
+Entremeada
+Lasanha à Bolonhesa
+Lombinhos de Porco
+Prego no Pão
+
+
+ENTRADAS:
+
+Azeitonas
+Broa
+Manteiga com Sal
+Paté de Sardinha
+Paté de Atum
+Pão
+Pão com Alho
+Queijo de Cabra
+Queijo de Ovelha
+
+
+SOPAS:
+
+Caldo Verde
+Canja de Galinha
+Creme de Abóbora
+Creme de Cenoura
+Sopa de Espinafres
+Sopa de Feijão
+Sopa de Feijão-Verde
+Sopa da Pedra
+Sopa de Tomate
+
+
+BEBIDAS:
+
+Cerveja Sagres
+Coca-cola 
+Coca-cola Zero
+Fanta Laranja
+Guaraná
+Ice Tea Limão
+Ice Tea Pessego
+7-up
+Sumo de Laranja Natural
+Vinho Verde
+Vinho Tinto
+
+SOBREMESAS:
+
+Arroz Doce
+Bolo de Bolacha
+Bolo Brigadeiro
+Tiramisu
+Doce da Avó
+Leite Creme
+Mousse de Chocolate
+Pudim Molotof
+Salada de Frutas
+
+
+VEGETARIANOS:
+
+Espetadas de Tofu e Cogumelos
+Espetadas Vegetarianas
+Estrogonofe de Soja
+Gratinado de Beringela
+Lasanha de Legumes
+Pataniscas de Legumes
+Quiche de Legumes
+Risoto de Cogumelos e Bróculos
+Rissóis de Espinafres

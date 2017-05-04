@@ -1,0 +1,310 @@
+body {
+  background-image: url("images/main-background.jpg");
+	background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#botao_ajuda{
+	width: 2.3vw;
+	height: 2.3vw;
+	-webkit-filter: drop-shadow();
+}
+
+#atalho_ajuda{
+	position: fixed;
+	top: 1.25vw;
+	left: 1.25vw;
+
+
+}
+
+.jumbotron {
+	padding: 0;
+	height: 2.5vw;
+	background-color: transparent;
+	/*border-style: solid;
+	border-color: #b1d1c6;*/
+	font-weight: bold;
+}
+
+#botao_chamar_empregado{
+	padding-top: 2vw;
+}
+
+#modalAjuda-ChamarEmpregado{
+  margin-right: 29vw;
+  background-color: rgb(188, 138, 52);
+  border-color: #ae802f;
+}
+
+.jumbotron text-center{
+	height: auto;
+}
+
+#nome_restaurante{
+	font-family: 'Candy';
+	font-weight: normal;
+	font-size:5.5vw;
+	position: fixed;
+	top: -1.5vw;
+	right: 39vw;
+
+}
+
+#nome_restaurante_menu_principal{
+	font-family: 'Candy';
+	font-weight: normal;
+	font-size: 11.5vw;
+}
+
+.container {
+   margin: 0 !important;
+   width: auto;
+}
+
+#prato {
+	width: 50vw;
+	height: 50vw;
+	border-radius: 50%;
+	position: fixed;
+	left: 25vw; /* (100-50)/2 */
+	top: 39.0625vw; /* (9/16*100-50/2)*(1+0.25) */
+	z-index: -100;
+	border-style: solid;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#imagem_f1 {
+	position: fixed;
+	left: 15vw;
+	top: 40vw;
+	transform: translate(-50%, -50%);
+}
+
+#imagem_f2 {
+	position: fixed;
+	right: 15vw;
+	top: 40vw;
+	transform: translate(50%, -50%);
+}
+
+#imagem_f3 {
+	position: fixed;
+	left: 50vw;
+	top: 28vw;
+	transform: translate(-50%, -50%);
+}
+
+.imagem_funcionalidade {
+	width: 10vw;
+	height: 10vw;
+	margin: auto;
+	display: block;
+	padding: 0.25vw;
+}
+
+.imagem_funcionalidade_div {
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+.imagem_fundo {
+	width: 20vw;
+	height: 20vw;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	border-color: lightgrey;
+	border-width: 0.1px;
+	border-style: solid;
+}
+
+
+#imagem_f1_fundo {
+	position: fixed;
+	left: 15vw;
+	top: 40vw;
+	transform: translate(-50%, -50%);
+}
+
+#imagem_f2_fundo {
+	position: fixed;
+	right: 15vw;
+	top: 40vw;
+	transform: translate(50%, -50%);
+}
+
+#imagem_f3_fundo {
+	position: fixed;
+	left: 50vw;
+	top: 28vw;
+	transform: translate(-50%, -50%);
+}
+
+.loaded {
+	top: 0;
+	left: 0;
+}
+
+.row {
+	padding: 1vw;
+}
+
+.info {
+	display: inline-block;
+	vertical-align: middle;
+	width: 2%;
+	height: 2%;
+}
+
+.btn-secundary:hover{
+	background-color: gray;
+	color: white;
+}
+
+.mirror {
+/* 	http://stackoverflow.com/a/5409373 */
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.modal-dialog{
+	font-size: 16px;
+	width: 30%;
+}
+
+#descricao-bullets-Ajuda-Pedidos{
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+#bullets-descricao-f1{
+  margin-bottom: 2vw;
+  margin-top: -1vw;
+}
+
+#modal-content-Ajuda{
+  margin-left: 7vw;
+  margin-right: 7vw;
+  margin-top: 2vw;
+}
+
+#imagem_empregado{
+  height: 6vw;
+  margin-left: 13vw;
+}
+
+#modalEmpregado-msg{
+  margin-left: 2.5vw;
+}
+
+#modalSucesso-msg{
+  margin-left: 3vw;
+}
+
+
+.modals-content{
+  border-color: rgba(184, 140, 33, 1);
+  background-color: rgba(241, 235, 212, 1) !important;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.modal-footer{
+	border-color: rgba(184, 140, 33, 0.2)
+}
+
+.modal-button{
+  color: white;
+  border-color: #4040ed;
+  background-color: #337ab7;
+}
+
+.modals-width{
+  width: 115%;
+  margin-left: -2vw;
+}
+
+.modal-Ajuda-buttonsDiv{
+  border-top-color: #d2a4a499;
+}
+
+.modal-header-Ajuda{
+  background-color: rgba(184, 140, 33, 1);
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+#modalAjuda-header{
+	font-weight: bold;
+  font-size: 1.7vw;
+  color: rgba(241, 235, 212, 1) !important;
+}
+
+ul{
+  padding-left: 2%;
+}
+
+.modal-Ajuda-Pedidos{
+  margin-top: -6px;
+  margin-bottom: 2%;
+}
+
+.modal-body-Ajuda{
+  margin-bottom: -20px;
+}
+
+#imagem_sucesso{
+  width: 5vw;
+}
+
+#div_imagem_sucesso{
+  padding-left: 40%;
+}
+
+.width100 {
+	width: 100%;
+}
+
+.width25 {
+	width: 25%;
+}
+
+.width75 {
+	width: 75%;
+}
+
+.estilo_legenda {
+	font-size: 1.5vw;
+	font-family: "Open Sans";
+	color: #FBFBFB;
+	text-shadow: black 0 0 0.5vw;
+}
+
+.prato_timer_circle_animation {
+	transition: all 1s linear;
+}
+
+#prato_timer {
+	position: fixed;
+	top: 14.0625vw; /* Do prato: 39.0625 - 25 */
+}
+
+#proximo_pedido_entregue {
+	position: fixed;
+	top: 1.25vw;
+	right: 8vw;
+	color: #EFEFEF;
+	background-color: rgba(0, 0, 0, 0.1);
+}
