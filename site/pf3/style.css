@@ -33,9 +33,10 @@ body {
 }
 
 #modalAjuda-ChamarEmpregado{
-  margin-right: 29vw;
+  margin-right: 27vw;
   background-color: rgb(188, 138, 52);
   border-color: #ae802f;
+  width: 15vw;
 }
 
 .jumbotron text-center{
@@ -213,6 +214,10 @@ body {
   margin-left: 3vw;
 }
 
+#modalNaoSim-msg{
+  font-size: 1.3vw;
+}
+
 
 .modals-content{
   border-color: rgba(184, 140, 33, 1);
@@ -229,11 +234,14 @@ body {
   color: white;
   border-color: #4040ed;
   background-color: #337ab7;
+  font-size: 1.25vw;
+  width: 7vw;
 }
 
 .modals-width{
-  width: 115%;
+  width: 130%;
   margin-left: -2vw;
+  margin-top: 14vw;
 }
 
 .modal-Ajuda-buttonsDiv{
