@@ -210,6 +210,13 @@ body {
   top: 0vw;
 }
 
+.modalNaoSim-pos{
+  margin-top: 25vw;
+  margin-left: -3vw;
+  width: 35vw;
+}
+
+
 #imagem_empregado{
   height: 6vw;
   margin-left: 14vw;

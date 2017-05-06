@@ -30,11 +30,10 @@ function chamar_empregado(){
 	setTimeout(function(){
 		$("#modalEmpregado").modal('hide');
 		empregado = true;
+		var imagem_empregado_main = document.getElementById("imagem_empregado_main");
+		imagem_empregado_main.style.visibility = 'visible';
 	}, 1600);
 	//myMove();
-
-	var imagem_empregado_main = document.getElementById("imagem_empregado_main");
-	imagem_empregado_main.style.visibility = 'visible';
 
 	setTimeout(function(){
 		imagem_empregado_main.style.visibility = 'hidden'
