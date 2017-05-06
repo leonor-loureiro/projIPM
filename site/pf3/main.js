@@ -1,4 +1,5 @@
 var funcionalidade = "";
+var empregado = false;
 function loadMain() {
 	$("#loaded").load("main.html");
 	var nome_restaurante = document.getElementById("nome_restaurante");
@@ -7,12 +8,19 @@ function loadMain() {
 	nome_restaurante_menu_principal.style.visibility = 'visible';
     funcionalidade="main";
 
-	var imagem_empregado_main = document.getElementById("imagem_empregado_main");
-	imagem_empregado_main.style.visibility = 'hidden';
+ if(empregado === false){
+	 var imagem_empregado_main = document.getElementById("imagem_empregado_main");
+ 	 imagem_empregado_main.style.visibility = 'hidden';
+ }
+ else{
+	 var imagem_empregado_main = document.getElementById("imagem_empregado_main");
+ 	 imagem_empregado_main.style.visibility = 'visible';
+ }
 
 }
 
 function loadModals() {
+
 	$("#modals").load("modals.html");
 }
 
@@ -21,12 +29,17 @@ function chamar_empregado(){
 
 	setTimeout(function(){
 		$("#modalEmpregado").modal('hide');
+		empregado = true;
 	}, 1600);
 	//myMove();
 
 	var imagem_empregado_main = document.getElementById("imagem_empregado_main");
 	imagem_empregado_main.style.visibility = 'visible';
-	setTimeout(function(){imagem_empregado_main.style.visibility = 'hidden';}, 9000);
+
+	setTimeout(function(){
+		imagem_empregado_main.style.visibility = 'hidden'
+		empregado = false;
+	}, 9000);
 
 }
 function f1() {
