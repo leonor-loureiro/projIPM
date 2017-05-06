@@ -30,6 +30,8 @@
 #lista_pedidos {
 	height: 13vw;
 	overflow-y: scroll;
+	margin-right: -25px !important;
+	padding-right: 1vw;
 }
 
 #coluna_1_botoes{

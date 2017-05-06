@@ -20,15 +20,17 @@
 	height: 25.5vw;
 	overflow-y: scroll;
 	border-bottom: 1px solid grey;
-
+	margin-right: -25px !important;
+	padding-right: 1vw;
 }
+
 
 #listagem_f2_2{
 	height: 25.5vw;
 	overflow-y: scroll;
 	border-bottom: 1px solid grey;
-
-	padding-right: 0.5vw;
+	margin-right: -25px !important;
+	padding-right: 1vw;
 }
 
 #header_acompanhar_pedidos{
@@ -84,7 +86,7 @@
 }
 
 #titulo_listagem_f2{
-	font-size: 1.7vw; 
+	font-size: 1.7vw;
 }
 
 .img_remover_pedido{
@@ -140,5 +142,3 @@ svg {
 	-webkit-transform: rotate(-165.5deg);
 	transform: rotate(-165.5deg);
 }
-
-

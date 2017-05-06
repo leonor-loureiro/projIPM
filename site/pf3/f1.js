@@ -301,7 +301,7 @@ function f1_botao_limpar(){
 		return;
 	}
 	else{
-		$("#modalNaoSim-msg").text("Tem a certeza deseja remover todos os pedidos?");
+		$("#modalNaoSim-msg").text("Tem a certeza que deseja remover todos os pedidos?");
 		$("#modalNaoSim-Sim").attr("onclick", "f1_limpar_pedidos()");
 		$("#modalNaoSim").modal();
 	}

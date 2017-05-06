@@ -36,11 +36,13 @@ function chamar_empregado(){
 	//myMove();
 
 	setTimeout(function(){
+		var imagem_empregado_main = document.getElementById("imagem_empregado_main");
 		imagem_empregado_main.style.visibility = 'hidden'
 		empregado = false;
-	}, 9000);
+	}, 10000);
 
 }
+
 function f1() {
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.visibility='visible';
@@ -116,3 +118,32 @@ function isOverflowed(element)
     }
   }
 }*/
+
+function restart(){
+
+	"use strict";
+	// retrieve the element
+element = document.getElementById("modalAjuda-ChamarEmpregado");
+element1 = document.getElementById("imagem_empregado_main");
+// reset the transition by...
+element.addEventListener("click", function(e){
+  e.preventDefault;
+
+  // -> removing the class
+  element1.classList.remove("run-animation");
+
+  // -> triggering reflow /* The actual magic */
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+  // Oops! This won't work in strict mode. Thanks Felis Phasma!
+  // element.offsetWidth = element.offsetWidth;
+  // Do this instead:
+  void element1.offsetWidth;
+
+  // -> and re-adding the class
+  element1.classList.add("run-animation");
+	}, false);
+}
+
+function play() {
+    document.getElementById("imagem_empregado_main").style.animationPlayState = "running";
+}
