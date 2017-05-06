@@ -1,5 +1,6 @@
 var funcionalidade = "";
 var empregado = false;
+
 function loadMain() {
 	$("#loaded").load("main.html");
 	var nome_restaurante = document.getElementById("nome_restaurante");
@@ -20,9 +21,9 @@ function loadMain() {
 }
 
 function loadModals() {
-
 	$("#modals").load("modals.html");
 }
+
 
 function chamar_empregado(){
 	$("#modalEmpregado").modal();
@@ -36,14 +37,12 @@ function chamar_empregado(){
 		    blink();
 		});
 	}, 1600);
-	//myMove();
 
 	setTimeout(function(){
 		var imagem_empregado_main = document.getElementById("imagem_empregado_main");
 		imagem_empregado_main.style.visibility = 'hidden'
 		empregado = false;
 	}, 20000);
-
 }
 
 function f1() {
@@ -107,21 +106,7 @@ function isOverflowed(element)
 		return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
 }
 
-/*function myMove() {
-  var elem = document.getElementById("imagem_empregado");
-  var pos = 0;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++;
-      elem.style.top = pos + 'px';
-      elem.style.left = pos + 'px';
-    }
-  }
-}*/
 
 function blink(){
-    $('.run-animation').delay(2000).fadeTo(100,0.1).delay(1000).fadeTo(100,1, blink);
+    $('#imagem_empregado_main').delay(2000).fadeTo(100,0.1).delay(1000).fadeTo(100,1, blink);
 }
