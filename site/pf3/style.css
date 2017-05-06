@@ -210,7 +210,7 @@ body {
   top: 0vw;
 }
 
-.modalNaoSim-pos{
+.modalNaoSim-pos, .modalSucesso-pos{
   margin-top: 25vw;
   margin-left: -3vw;
   width: 35vw;
@@ -229,6 +229,7 @@ body {
 
 #modalSucesso-msg{
   margin-left: 3vw;
+  font-size: 1.3vw;
 }
 
 #modalNaoSim-msg{

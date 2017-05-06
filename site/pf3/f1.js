@@ -88,7 +88,7 @@ function f1_add_dose(){
 	if (qtd >= 2) {
 		document.getElementById("f1_personalizar_menos").style.filter = null;
 	}
-	
+
 	if (orig_qtd > -1)
 	{
 		if (qtd != orig_qtd)
@@ -112,7 +112,7 @@ function f1_sub_dose(){
 	if (qtd <= 1) {
 		document.getElementById("f1_personalizar_menos").style.filter = "grayscale(100%)";
 	}
-	
+
 	if (orig_qtd > -1)
 	{
 		if (qtd != orig_qtd)
@@ -275,7 +275,7 @@ function f1_desenhar_pedidos() {
 		total_texto = "<b>Tot:</b> ";
 	}
 	$("#lista_pedidos_preco_total").html(total_texto + total.toFixed(2) + "€");
-	
+
 	// Atualizar estado dos botões
 	if (pedidos_estao_vazios())
 	{
@@ -345,7 +345,7 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 		}
 		$("#info_acompanhamentos_selecao").hide();
 	}
-	
+
 	if (id_pedido != -1)
 	{
 		var pedido = null;
@@ -357,7 +357,7 @@ function f1_registar_personalizacao(id, id_pedido = -1, em_espera = false) {
 		{
 			pedido = get_pedido_em_espera(id_pedido);
 		}
-		
+
 		for (i = 0; i < 12; i++)
 		{
 			if ((document.getElementById('f1_checkbox_personalizacao_' + i).checked
