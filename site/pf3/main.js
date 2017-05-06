@@ -6,6 +6,7 @@ function loadMain() {
 	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
 	nome_restaurante_menu_principal.style.visibility = 'visible';
     funcionalidade="main";
+
 }
 
 function loadModals() {
@@ -18,6 +19,8 @@ function chamar_empregado(){
 	setTimeout(function(){
 		$("#modalEmpregado").modal('hide');
 	}, 1600);
+	//myMove();
+
 }
 function f1() {
 	funcionalidade = "fazer_pedido";
@@ -73,3 +76,18 @@ function isOverflowed(element)
 {
 		return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
 }
+
+/*function myMove() {
+  var elem = document.getElementById("imagem_empregado");
+  var pos = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}*/

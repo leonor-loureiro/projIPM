@@ -201,13 +201,23 @@ body {
   margin-top: 2vw;
 }
 
+#imagem_empregado_main{
+  animation: blink 3s;
+  animation-iteration-count: 3;
+  height: 4.7vw;
+  position: absolute;
+  left: 10vw;
+  top: 0vw;
+}
+
 #imagem_empregado{
   height: 6vw;
-  margin-left: 13vw;
+  margin-left: 14vw;
 }
 
 #modalEmpregado-msg{
-  margin-left: 2.5vw;
+  margin-left: 1.7vw;
+  font-size: 1.5vw;
 }
 
 #modalSucesso-msg{
@@ -218,6 +228,10 @@ body {
   font-size: 1.3vw;
 }
 
+.empregado{
+  margin-top: -6vw;
+  margin-right: 15vw;
+}
 
 .modals-content{
   border-color: rgba(184, 140, 33, 1);
@@ -238,11 +252,12 @@ body {
   width: 7vw;
 }
 
-.modals-width{
+.modalEmpregado-pos{
   width: 130%;
-  margin-left: -2vw;
+  margin-left: -6vw;
   margin-top: 14vw;
 }
+
 
 .modal-Ajuda-buttonsDiv{
   border-top-color: #d2a4a499;
@@ -315,4 +330,16 @@ ul{
 	right: 8vw;
 	color: #EFEFEF;
 	background-color: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
