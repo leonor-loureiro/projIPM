@@ -202,10 +202,7 @@ body {
 }
 
 .run-animation{
-  webkit-animation: blink 4s;
-  animation: blink 4s;
-  webkit-animation-iteration-count: 3;
-  animation-iteration-count: 3;
+  
   height: 4.7vw;
   position: absolute;
   left: 10vw;
