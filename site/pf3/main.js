@@ -110,8 +110,12 @@ function f2(editar_pedidos) {
 		{
 			f2_editar_pedidos();
 		}
+		else
+		{
+			set_f2_vendo_2(false);
+			set_f2_vendo_1(true);
+		}
 	});
-	set_f2_vendo_1(true);
 }
 
 function nome_restaurante_grande()

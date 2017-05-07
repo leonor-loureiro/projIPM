@@ -1,6 +1,7 @@
 function f2_editar_pedidos() {
 	$("#area_direita").load("f2_2.html");
 	set_f2_vendo_1(false);
+	set_f2_vendo_2(true);
 }
 
 function f2_desenhar_pedidos() {
@@ -188,6 +189,7 @@ function f2_desenhar_pedidos_editar() {
 }
 
 function f2_editar_pedido(id) {
+	set_f2_vendo_2(false);
 	var oferta = get_oferta_pedido_em_espera(id);
 	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
 	qtd = get_pedido_em_espera(id).quantidade + 1;
@@ -247,7 +249,10 @@ function f2_subtrair_dose(id)
 $(document).keypress(function(e) {
 	if(e.which == 32) {
 		decrementar_tempo_espera();
-		f2_desenhar_pedidos();
+		if (f2_vendo_1)
+		{
+			f2_desenhar_pedidos();
+		}
 	}
 });
 
@@ -269,6 +274,16 @@ function set_f2_vendo_1(val)
 function get_f2_vendo_1()
 {
 	return f2_vendo_1;
+}
+
+var f2_vendo_2 = false;
+function set_f2_vendo_2(val)
+{
+	f2_vendo_2 = val;
+}
+function get_f2_vendo_2()
+{
+	return f2_vendo_2;
 }
 
 function f2_load_timer() {
@@ -306,6 +321,10 @@ function f2_timer() {
 		if(f2_vendo_1)
 		{
 			f2_desenhar_pedidos();
+		}
+		if(f2_vendo_2)
+		{
+			f2_desenhar_pedidos_editar();
 		}
 		
 		var tempos_proximo = tempos_proximo_pedido_em_espera();
