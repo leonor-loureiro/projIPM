@@ -20,8 +20,8 @@
 	height: 25.5vw;
 	overflow-y: scroll;
 	border-bottom: 1px solid grey;
-	margin-right: -25px !important;
-	padding-right: 1vw;
+	margin-right: -999vw !important;
+	padding-right: 998vw;
 }
 
 
@@ -29,8 +29,8 @@
 	height: 25.5vw;
 	overflow-y: scroll;
 	border-bottom: 1px solid grey;
-	margin-right: -25px !important;
-	padding-right: 1vw;
+	margin-right: -999vw !important;
+	padding-right: 998vw;
 }
 
 #header_acompanhar_pedidos{
