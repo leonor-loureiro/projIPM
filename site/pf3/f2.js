@@ -1,9 +1,3 @@
-function f2_fechar() {
-	$("#area_direita").html("");
-	set_f2_vendo_1(false)
-	loadMain();
-}
-
 function f2_editar_pedidos() {
 	$("#area_direita").load("f2_2.html");
 	set_f2_vendo_1(false)

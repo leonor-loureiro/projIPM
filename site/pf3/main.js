@@ -61,11 +61,22 @@ function f1() {
 	funcionalidade = "fazer_pedido";
 }
 
+var f1_retroceder_para_f2 = false;
 function f1_retroceder() {
 	$("#modalNaoSim").modal('hide');
-	loadMain();
 	$("#prato_decor").html("");
 	$("#area_direita").html("");
+	if (f1_retroceder_para_f2)
+	{
+		$("#loaded").load("main.html", function()
+		{
+			f2();
+		});
+	}
+	else
+	{
+		loadMain();
+	}
 }
 
 function loadAjuda(){
@@ -86,6 +97,7 @@ function loadAjuda(){
 }
 
 function f2() {
+	f1_retroceder_para_f2 = true;
 	funcionalidade = "acompanhar_pedido";
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.visibility='visible';
@@ -93,8 +105,17 @@ function f2() {
 	nome_restaurante_menu_principal.style.visibility = 'hidden';
     document.getElementById("imagem_f2").style.visibility = "hidden";
     document.getElementById("imagem_f2_fundo").style.visibility = "hidden";
+	$("#imagem_f1").attr("onclick", "f2_fechar(true); f1();");
+	$("#imagem_f1_fundo").attr("onclick", "f2_fechar(true); f1();");
 	$("#area_direita").load("f2_1.html");
 	set_f2_vendo_1(true);
+}
+
+function f2_fechar(retroceder_para_f2 = false) {
+	f1_retroceder_para_f2 = retroceder_para_f2;
+	$("#area_direita").html("");
+	set_f2_vendo_1(false)
+	loadMain();
 }
 
 function f3() {
