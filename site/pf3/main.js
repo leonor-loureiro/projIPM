@@ -96,19 +96,38 @@ function loadAjuda(){
 	$("#modalAjuda").modal();
 }
 
-function f2() {
+function f2(editar_pedidos) {
 	f1_retroceder_para_f2 = true;
 	funcionalidade = "acompanhar_pedido";
+	nome_restaurante_grande();
+	document.getElementById("imagem_f2").style.visibility = "hidden";
+	document.getElementById("imagem_f2_fundo").style.visibility = "hidden";
+	$("#imagem_f1").attr("onclick", "f2_fechar(true); f1();");
+	$("#imagem_f1_fundo").attr("onclick", "f2_fechar(true); f1();");
+	$("#area_direita").load("f2_1.html", function()
+	{
+		if(editar_pedidos)
+		{
+			f2_editar_pedidos();
+		}
+	});
+	set_f2_vendo_1(true);
+}
+
+function nome_restaurante_grande()
+{
+	var nome_restaurante = document.getElementById("nome_restaurante");
+	nome_restaurante.style.visibility='hidden';
+	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
+	nome_restaurante_menu_principal.style.visibility = 'visible';
+}
+
+function nome_restaurante_pequeno()
+{
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.visibility='visible';
 	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
 	nome_restaurante_menu_principal.style.visibility = 'hidden';
-    document.getElementById("imagem_f2").style.visibility = "hidden";
-    document.getElementById("imagem_f2_fundo").style.visibility = "hidden";
-	$("#imagem_f1").attr("onclick", "f2_fechar(true); f1();");
-	$("#imagem_f1_fundo").attr("onclick", "f2_fechar(true); f1();");
-	$("#area_direita").load("f2_1.html");
-	set_f2_vendo_1(true);
 }
 
 function f2_fechar(retroceder_para_f2 = false) {
