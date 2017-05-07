@@ -161,11 +161,15 @@ function editar_pedido_em_espera(_id, _personalizacoes, _quantidade)
 	}
 }
 
-function decrementar_tempo_espera(quanto=60)
+function decrementar_tempo_espera(quanto=60, em_edicao=null)
 {
 	quanto /= 60;
 	for (var item of pedidos_em_espera)
 	{
+		if (item.id == em_edicao)
+		{
+			continue;
+		}
 		item.tempo -= quanto;
 		if (item.oferta.tipo == "carne" || item.oferta.tipo == "peixe"
 			|| item.oferta.tipo == "vegetariano")

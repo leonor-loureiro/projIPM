@@ -188,7 +188,9 @@ function f2_desenhar_pedidos_editar() {
 	}
 }
 
+var em_edicao = null;
 function f2_editar_pedido(id) {
+	em_edicao = id;
 	set_f2_vendo_2(false);
 	var oferta = get_oferta_pedido_em_espera(id);
 	// +1 para compensar pela chamada a f1_sub_dose() ao carregar as personalizações
@@ -224,6 +226,7 @@ function f1_2_retroceder()
 	{
 		f2(true);
 	});
+	em_edicao = null;
 }
 
 function f2_adicionar_dose(id)
@@ -317,7 +320,7 @@ function f2_timer() {
 		var vw = $(window).width() / 100;
 		var r = 2*Math.PI*25*vw;
 		
-		decrementar_tempo_espera(5);
+		decrementar_tempo_espera(5, em_edicao);
 		if(f2_vendo_1)
 		{
 			f2_desenhar_pedidos();
