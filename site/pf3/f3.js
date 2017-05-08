@@ -101,7 +101,19 @@ function f3_6()
 
 function f3_6_concluir()
 {
+	if (document.getElementById('rating_refeicao').value == 5
+		&& document.getElementById('rating_atendimento').value == 5
+		&& document.getElementById('f3_6_checkbox_elogio').checked)
+	{
+		f3_surprise();
+		setTimeout(function(){
+			window.location.reload(false);
+		}, 3000);
+	}
+	else
+	{
 	window.location.reload(false);
+	}
 }
 
 function f3_2_desenhar()
@@ -191,4 +203,38 @@ function f3_2_carregar_checkboxes()
 	{
 		document.getElementById("botao_f3_2_pagar").disabled = false;
 	}
+}
+
+// http://stackoverflow.com/a/7455124
+function translate( elem, x, y ) {
+    var right = parseInt( css( elem, 'right' ), 10 ),
+        bottom = parseInt( css( elem, 'bottom' ), 10 ),
+        dx = right - x,
+        dy = bottom - y,
+        i = 1,
+        count = 20,
+        delay = 20;
+
+    function loop() {
+        if ( i >= count ) { return; }
+        i += 1;
+        elem.style.right = ( right - ( dx * i / count ) ).toFixed( 0 ) + 'px';
+        elem.style.bottom = ( bottom - ( dy * i / count ) ).toFixed( 0 ) + 'px';
+        setTimeout( loop, delay );
+    }
+
+    loop();
+}
+
+function css( element, property ) {
+    return window.getComputedStyle( element, null ).getPropertyValue( property );
+}
+
+function f3_surprise()
+{
+	var height = parseInt(css(surprise, 'height'), 10);
+	translate(surprise, -height/4, -height/4);
+	setTimeout(function(){
+		translate(surprise, -height, -height);
+	}, 2500);
 }

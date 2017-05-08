@@ -246,19 +246,6 @@ function f2_subtrair_dose(id)
 	f2_desenhar_pedidos_editar();
 }
 
-// H4x0r1ng m0d3
-// 13 = Enter
-// 32 = Space
-$(document).keypress(function(e) {
-	if(e.which == 32) {
-		decrementar_tempo_espera();
-		if (f2_vendo_1)
-		{
-			f2_desenhar_pedidos();
-		}
-	}
-});
-
 function f2_sem_pedidos_espera(){
 	var botao_editar = document.getElementById('botao_editar_em_espera');
 	if(pedidos_em_espera.length == 0){

@@ -19,3 +19,11 @@
 	height: 10vw;
 	resize: none;
 }
+
+#surprise {
+	position: fixed;
+	height: 25vw;
+	bottom: -25vw;
+	right: -25vw;
+	transform: rotate(-45deg);
+}
