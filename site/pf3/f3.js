@@ -19,7 +19,6 @@ f3_pagamento_comecado = false;
 
 function f3_2()
 {
-	pedidos_a_pagar = [];
 	$("#loaded").load("f3_2.html", function() {
 		if (f3_pagamento_comecado)
 		{
@@ -81,6 +80,7 @@ function f3_5()
 	}
 	if (existem_itens_por_pagar())
 	{
+		pedidos_a_pagar = [];
 		f3_2();
 	}
 	else
@@ -106,7 +106,7 @@ function f3_6_concluir()
 
 function f3_2_desenhar()
 {
-	template = `<input type="checkbox" name="f3_2_pedidos" value=%d onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s</br>`;
+	template = `<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s</br>`;
 	
 	var html = "";
 	for (var item of get_pedidos_entregues().slice().reverse())
@@ -118,13 +118,14 @@ function f3_2_desenhar()
 		}
 		
 		html = html.concat(sprintf(template,
-			item.id,
+			item.id, item.id,
 			(item.oferta.preco * item.quantidade).toFixed(2),
 			mult, item.oferta.nome
 		));
 	}
 	
 	$("#f3_2_lista_checkboxes").html(html);
+	f3_2_carregar_checkboxes();
 }
 
 // Temporário, depois são movidos para pedidos_pagos de pedidos.js
@@ -147,6 +148,14 @@ function f3_2_checkbox(element)
 		}
 	}
 	f3_2_desenhar_total();
+	if (pedidos_a_pagar.length != 0)
+	{
+		document.getElementById("botao_f3_2_pagar").disabled = false;
+	}
+	else
+	{
+		document.getElementById("botao_f3_2_pagar").disabled = true;
+	}
 }
 
 function f3_2_checkbox_tudo()
@@ -170,4 +179,16 @@ function f3_2_desenhar_total()
 	totais = get_total_pagamento();
 	$("#f3_2_total_selecionado").html("Total: " + total_parte.toFixed(2)
 		+ "€ de " + totais[1].toFixed(2) + "€ (pago: " + totais[0].toFixed(2) + "€)");
+}
+
+function f3_2_carregar_checkboxes()
+{
+	for (var id of pedidos_a_pagar)
+	{
+		document.getElementById("checkbox_pagamento_" + id).checked = true;
+	}
+	if (pedidos_a_pagar.length != 0)
+	{
+		document.getElementById("botao_f3_2_pagar").disabled = false;
+	}
 }
