@@ -37,6 +37,14 @@ var f3_3_voltar_para_f3_1 = false;
 function f3_3(voltar_para_f3_1 = false)
 {
 	f3_3_voltar_para_f3_1 = voltar_para_f3_1;
+	if (voltar_para_f3_1)
+	{
+		pedidos_a_pagar = [];
+		for (var item of get_pedidos_entregues())
+		{
+			pedidos_a_pagar.push(item.id);
+		}
+	}
 	$("#loaded").load("f3_3.html");
 }
 

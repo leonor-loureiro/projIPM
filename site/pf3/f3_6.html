@@ -2,6 +2,13 @@
 	<div class="f3_titulo">
 		(Avaliação, sugestões e reclamações)
 	</div>
+	<form>
+	    Refeição: <input id="rating_refeicao" value="0" type="number" min=0 max=5 step=1 data-size="md" >
+	    Atendimento: <input id="rating_atendimento" value="0" type="number" min=0 max=5 step=1 data-size="md" >
+	</form>
+	<div>
+		<textarea name="f3_6_comentario" cols="40" rows="5"></textarea>
+	</div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-4 text-left">&nbsp;</div>
   		<div class="col-sm-4 text-center">
@@ -9,3 +16,73 @@
 		</div>
 	</div>
 </div>
+<script>
+    jQuery(document).ready(function () {
+        $("#rating_refeicao").rating({
+            starCaptions: {
+            0.5: 'Meia Estrela',
+            1: 'Uma Estrela',
+            1.5: 'Uma Estrela e Meia',
+            2: 'Duas Estrelas',
+            2.5: 'Duas Estrelas e Meia',
+            3: 'Três Estrelas',
+            3.5: 'Três Estrelas e Meia',
+            4: 'Quatro Estrelas',
+            4.5: 'Quatro Estrelas e Meia',
+            5: 'Cinco Estrelas'
+        },
+			clearButtonTitle: 'Limpar',
+			clearCaption: 'Não Avaliado',
+            hoverOnClear: false
+        });
+        
+        $("#rating_atendimento").rating({
+            starCaptions: {
+            0.5: 'Meia Estrela',
+            1: 'Uma Estrela',
+            1.5: 'Uma Estrela e Meia',
+            2: 'Duas Estrelas',
+            2.5: 'Duas Estrelas e Meia',
+            3: 'Três Estrelas',
+            3.5: 'Três Estrelas e Meia',
+            4: 'Quatro Estrelas',
+            4.5: 'Quatro Estrelas e Meia',
+            5: 'Cinco Estrelas'
+        },
+			clearButtonTitle: 'Limpar',
+			clearCaption: 'Não Avaliado',
+            hoverOnClear: false
+        });
+        
+        $('#rating-input').rating({
+              min: 0,
+              max: 5,
+              step: 1,
+              size: 'lg',
+              showClear: false
+           });
+           
+        $('#btn-rating-input').on('click', function() {
+            $('#rating-input').rating('refresh', {
+                showClear:true, 
+                disabled: !$('#rating-input').attr('disabled')
+            });
+        });
+        
+        
+        $('.btn-danger').on('click', function() {
+            $("#kartik").rating('destroy');
+        });
+        
+        $('.btn-success').on('click', function() {
+            $("#kartik").rating('create');
+        });
+        
+        $('#rating-input').on('rating.change', function() {
+            alert($('#rating-input').val());
+        });
+        
+        
+        $('.rb-rating').rating({'showCaption':true, 'stars':'3', 'min':'0', 'max':'3', 'step':'1', 'size':'xs', 'starCaptions': {0:'status:nix', 1:'status:wackelt', 2:'status:geht', 3:'status:laeuft'}});
+    });
+</script>
