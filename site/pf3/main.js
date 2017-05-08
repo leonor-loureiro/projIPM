@@ -46,6 +46,8 @@ function chamar_empregado(){
 }
 
 function f1() {
+	set_f2_vendo_1(false);
+	set_f2_vendo_2(false);
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.visibility='visible';
 	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
@@ -142,6 +144,8 @@ function f2_fechar(retroceder_para_f2 = false) {
 }
 
 function f3() {
+	set_f2_vendo_1(false);
+	set_f2_vendo_2(false);
 }
 
 // http://stackoverflow.com/a/9541579
