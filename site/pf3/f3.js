@@ -19,7 +19,13 @@ f3_pagamento_comecado = false;
 
 function f3_2()
 {
-	$("#loaded").load("f3_2.html");
+	pedidos_a_pagar = [];
+	$("#loaded").load("f3_2.html", function() {
+		if (f3_pagamento_comecado)
+		{
+			$("#botao_f3_2_retroceder").hide();
+		}
+	});
 }
 
 function f3_2_retroceder()
@@ -60,7 +66,19 @@ function f3_4_retroceder()
 
 function f3_5()
 {
-	$("#loaded").load("f3_5.html");
+	f3_pagamento_comecado = true;
+	for (var id of pedidos_a_pagar)
+	{
+		mover_pedido_entregue_para_pago(id);
+	}
+	if (existem_itens_por_pagar())
+	{
+		f3_2();
+	}
+	else
+	{
+		$("#loaded").load("f3_5.html");
+	}
 }
 
 function f3_5_concluir()
@@ -141,11 +159,7 @@ function f3_2_desenhar_total()
 		var item = get_pedido_entregue(id);
 		total_parte += item.quantidade * item.oferta.preco;
 	}
-	var total = 0;
-	for (var item of get_pedidos_entregues())
-	{
-		total += item.quantidade * item.oferta.preco;
-	}
+	totais = get_total_pagamento();
 	$("#f3_2_total_selecionado").html("Total: " + total_parte.toFixed(2)
-		+ "€ de " + total.toFixed(2) + "€");
+		+ "€ de " + totais[1].toFixed(2) + "€ (pago: " + totais[0].toFixed(2) + "€)");
 }

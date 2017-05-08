@@ -309,3 +309,31 @@ function pode_pagar()
 	return pedidos_em_espera.length == 0 && pedidos_em_preparacao.length == 0
 		&& pedidos_entregues.length > 0;
 }
+
+function get_total_pagamento()
+{
+	var total = 0;
+	for (var item of pedidos_entregues)
+	{
+		total += item.quantidade * item.oferta.preco;
+	}
+	var total_entregues = total;
+	for (var item of pedidos_pagos)
+	{
+		total += item.quantidade * item.oferta.preco;
+	}
+	total_entregues = total - total_entregues;
+	return [total_entregues, total];
+}
+
+function mover_pedido_entregue_para_pago(id)
+{
+	pedido = get_pedido_entregue(id);
+	remover_pedido_entregue(id, null);
+	pedidos_pagos.push(pedido);
+}
+
+function existem_itens_por_pagar()
+{
+	return pedidos_entregues.length > 0;
+}
