@@ -24,6 +24,14 @@ function f3_2()
 		{
 			$("#botao_f3_2_retroceder").hide();
 		}
+		if (pedidos_a_pagar.length > 0)
+		{
+			document.getElementById("botao_f3_2_pagar").disabled = false;
+		}
+		else
+		{
+			document.getElementById("botao_f3_2_pagar").disabled = true;
+		}
 	});
 }
 
