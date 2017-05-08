@@ -42,7 +42,7 @@
 			clearCaption: 'Não Avaliado',
             hoverOnClear: false
         });
-        
+
         $("#rating_atendimento").rating({
             starCaptions: {
             0.5: 'Meia Estrela',
@@ -60,7 +60,7 @@
 			clearCaption: 'Não Avaliado',
             hoverOnClear: false
         });
-        
+
         $('#rating-input').rating({
               min: 0,
               max: 5,
@@ -68,28 +68,28 @@
               size: 'lg',
               showClear: false
            });
-           
+
         $('#btn-rating-input').on('click', function() {
             $('#rating-input').rating('refresh', {
-                showClear:true, 
+                showClear:true,
                 disabled: !$('#rating-input').attr('disabled')
             });
         });
-        
-        
+
+
         $('.btn-danger').on('click', function() {
             $("#kartik").rating('destroy');
         });
-        
+
         $('.btn-success').on('click', function() {
             $("#kartik").rating('create');
         });
-        
+
         $('#rating-input').on('rating.change', function() {
             alert($('#rating-input').val());
         });
-        
-        
+
+
         $('.rb-rating').rating({'showCaption':true, 'stars':'3', 'min':'0', 'max':'3', 'step':'1', 'size':'xs', 'starCaptions': {0:'status:nix', 1:'status:wackelt', 2:'status:geht', 3:'status:laeuft'}});
     });
 </script>
