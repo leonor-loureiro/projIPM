@@ -63,12 +63,12 @@ function f1() {
 	funcionalidade = "fazer_pedido";
 }
 
-var f1_retroceder_para_f2 = false;
+var f1e3_retroceder_para_f2 = false;
 function f1_retroceder() {
 	$("#modalNaoSim").modal('hide');
 	$("#prato_decor").html("");
 	$("#area_direita").html("");
-	if (f1_retroceder_para_f2)
+	if (f1e3_retroceder_para_f2)
 	{
 		$("#loaded").load("main.html", function()
 		{
@@ -99,7 +99,7 @@ function loadAjuda(){
 }
 
 function f2(editar_pedidos) {
-	f1_retroceder_para_f2 = true;
+	f1e3_retroceder_para_f2 = true;
 	funcionalidade = "acompanhar_pedido";
 	nome_restaurante_grande();
 	document.getElementById("imagem_f2").style.visibility = "hidden";
@@ -137,15 +137,31 @@ function nome_restaurante_pequeno()
 }
 
 function f2_fechar(retroceder_para_f2 = false) {
-	f1_retroceder_para_f2 = retroceder_para_f2;
+	f1e3_retroceder_para_f2 = retroceder_para_f2;
 	$("#area_direita").html("");
-	set_f2_vendo_1(false)
+	set_f2_vendo_1(false);
 	loadMain();
 }
 
 function f3() {
 	set_f2_vendo_1(false);
 	set_f2_vendo_2(false);
+	$("#loaded").load("f3_1.html");
+	$("#area_direita").html("");
+}
+
+function f3_fechar() {
+	if (f1e3_retroceder_para_f2)
+	{
+		$("#loaded").load("main.html", function()
+		{
+			f2();
+		});
+	}
+	else
+	{
+		loadMain();
+	}
 }
 
 // http://stackoverflow.com/a/9541579
