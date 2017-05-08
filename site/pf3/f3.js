@@ -71,7 +71,7 @@ function f3_4_retroceder()
 	f3_3(f3_3_voltar_para_f3_1);
 }
 
-function f3_5()
+function f3_6()
 {
 	f3_pagamento_comecado = true;
 	for (var id of pedidos_a_pagar)
@@ -85,25 +85,25 @@ function f3_5()
 	}
 	else
 	{
-		$("#loaded").load("f3_5.html");
+		$("#loaded").load("f3_6.html");
 	}
-}
-
-function f3_5_concluir()
-{
-	window.location.reload(false);
-}
-
-function f3_6()
-{
-	$("#loaded").load("f3_6.html");
 }
 
 function f3_6_concluir()
 {
+	window.location.reload(false);
+}
+
+function f3_7()
+{
+	$("#loaded").load("f3_7.html");
+}
+
+function f3_7_concluir()
+{
 	if (document.getElementById('rating_refeicao').value == 5
 		&& document.getElementById('rating_atendimento').value == 5
-		&& document.getElementById('f3_6_checkbox_elogio').checked)
+		&& document.getElementById('f3_7_checkbox_elogio').checked)
 	{
 		f3_surprise();
 		setTimeout(function(){
