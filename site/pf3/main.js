@@ -103,6 +103,10 @@ function loadAjuda(){
 		$("#modalAjuda-header").text("Acompanhar Pedidos")
 		$("#modalAjuda-body").load("ajuda_f2.html");
 	}
+	if(funcionalidade =="fazer_pagamento"){
+		$("#modalAjuda-header").text("Fazer Pagamento")
+		$("#modalAjuda-body").load("ajuda_f3.html");
+	}
 	$("#modalAjuda-ChamarEmpregado").attr("onclick", "chamar_empregado()");
 	$("#modalAjuda").modal();
 }
@@ -157,10 +161,12 @@ function f2_fechar(retroceder_para_f2 = false) {
 }
 
 function f3() {
+	funcionalidade ="fazer_pagamento";
 	if (!pode_pagar())
 	{
 		return;
 	}
+	nome_restaurante_pequeno();
 	set_f2_vendo_1(false);
 	set_f2_vendo_2(false);
 	$("#loaded").load("f3_1.html");
