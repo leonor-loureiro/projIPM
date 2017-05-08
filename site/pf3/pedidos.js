@@ -3,6 +3,7 @@ var id_counter = 0;
 var pedidos_em_espera = [];
 var pedidos_em_preparacao = [];
 var pedidos_entregues = [];
+var pedidos_pagos = [];
 
 function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade, onde=pedidos) {
 	if (_personalizacoes == null)
@@ -140,6 +141,23 @@ function remover_pedido_em_preparacao(_id, quantidade=1) {
 	else if(quantidade == null || index > -1){
 		pedidos_em_preparacao.splice(index, 1);
 	}
+}
+
+function remover_pedido_entregue(_id, quantidade=1) {
+
+	var index = pedidos_entregues.map(function(e) { return e.id; }).indexOf(_id);
+
+	if (quantidade != null && index > -1 && pedidos_entregues[index].quantidade > quantidade){
+		pedidos_entregues[index].quantidade -= quantidade;
+	}
+	else if(quantidade == null || index > -1){
+		pedidos_entregues.splice(index, 1);
+	}
+}
+
+function get_pedido_entregue(_id) {
+	var index = pedidos_entregues.map(function(e) { return e.id; }).indexOf(_id);
+	return pedidos_entregues[index];
 }
 
 function get_oferta_pedido_em_espera(_id) {

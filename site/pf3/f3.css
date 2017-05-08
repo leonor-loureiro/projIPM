@@ -8,3 +8,8 @@
 	border-bottom-style: dashed;
 	border-width: 0.1vw;
 }
+
+#f3_2_lista_checkboxes {
+	height: 12vw;
+	overflow-y: scroll;
+}

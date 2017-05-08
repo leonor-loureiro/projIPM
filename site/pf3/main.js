@@ -214,7 +214,6 @@ function marcar_img_f3()
 	}
 	else if (element != null && pode_pagar())
 	{
-		console.log("Cheguei");
 		element.style.filter = "";
 	}
 }

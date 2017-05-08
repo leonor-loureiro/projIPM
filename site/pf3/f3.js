@@ -1,3 +1,22 @@
+function f3_DUMMY_DATA()
+{
+	adicionar_pedido("sopas", 0, null, 1, get_pedidos_entregues());
+	adicionar_pedido("carne", 1, null, 2, get_pedidos_entregues());
+	adicionar_pedido("peixe", 2, null, 3, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 0, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 1, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 2, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 3, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 4, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 5, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 6, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 7, null, 1, get_pedidos_entregues());
+	adicionar_pedido("sobremesas", 8, null, 1, get_pedidos_entregues());
+}
+
+// Depois de ser true já não se pode fugir do pagamento até estar tudo pago
+f3_pagamento_comecado = false;
+
 function f3_2()
 {
 	$("#loaded").load("f3_2.html");
@@ -57,4 +76,67 @@ function f3_6()
 function f3_6_concluir()
 {
 	window.location.reload(false);
+}
+
+function f3_2_desenhar()
+{
+	template = `<input type="checkbox" name="f3_2_pedidos" value=%d onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s</br>`;
+	
+	var html = "";
+	for (var item of get_pedidos_entregues().slice().reverse())
+	{
+		var mult = "";
+		if (item.quantidade > 1)
+		{
+			mult = String(item.quantidade) + "× ";
+		}
+		
+		html = html.concat(sprintf(template,
+			item.id,
+			(item.oferta.preco * item.quantidade).toFixed(2),
+			mult, item.oferta.nome
+		));
+	}
+	
+	$("#f3_2_lista_checkboxes").html(html);
+}
+
+// Temporário, depois são movidos para pedidos_pagos de pedidos.js
+var pedidos_a_pagar = []
+
+function f3_2_checkbox(element)
+{
+	if (element.checked)
+	{
+		pedidos_a_pagar.push(parseInt(element.value));
+	}
+	else
+	{
+		var index = pedidos_a_pagar.indexOf(parseInt(element.value));
+		if(index > -1) {
+			pedidos_a_pagar.splice(index, 1);
+		}
+	}
+	f3_2_desenhar_total();
+}
+
+function f3_2_checkbox_tudo()
+{
+	checkboxes = document.getElementsByName("f3_2_pedidos");
+	for (var item of checkboxes)
+	{
+		item.checked = f3_selecionar_tudo.checked;
+		f3_2_checkbox(item);
+	}
+}
+
+function f3_2_desenhar_total()
+{
+	var total = 0;
+	for (var id of pedidos_a_pagar)
+	{
+		var item = get_pedido_entregue(id);
+		total += item.quantidade * item.oferta.preco;
+	}
+	$("#f3_2_total_selecionado").html("Total: " + total.toFixed(2) + "€");
 }
