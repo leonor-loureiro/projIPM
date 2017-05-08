@@ -2,12 +2,19 @@
 	<div class="f3_titulo">
 		(Avaliação, sugestões e reclamações)
 	</div>
-	<form>
-	    Refeição: <input id="rating_refeicao" value="0" type="number" min=0 max=5 step=1 data-size="md" >
-	    Atendimento: <input id="rating_atendimento" value="0" type="number" min=0 max=5 step=1 data-size="md" >
-	</form>
-	<div>
-		<textarea name="f3_6_comentario" cols="40" rows="5"></textarea>
+	<div class="row">
+		<div class="col-sm-4">
+			Refeição: <input id="rating_refeicao" value="0" type="number" min=0 max=5 step=1 data-size="sm" >
+			Atendimento: <input id="rating_atendimento" value="0" type="number" min=0 max=5 step=1 data-size="sm" >
+		</div>
+		<div class="col-sm-6">
+			<textarea name="comentario_fim" id="f3_6_comentario"></textarea>
+		</div>
+		<div class="col-sm-2">
+			<input type="radio" name="tipo_comentario" value="elogio">Elogio<br>
+			<input type="radio" name="tipo_comentario" value="sugestao">Sugestão<br>
+			<input type="radio" name="tipo_comentario" value="reclamacao">Reclamação<br>
+		</div>
 	</div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-4 text-left">&nbsp;</div>
