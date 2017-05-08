@@ -190,7 +190,7 @@ function f3_7_concluir()
 function f3_2_desenhar()
 {
 	template = `<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s</br>`;
-	
+
 	var html = "";
 	for (var item of get_pedidos_entregues().slice().reverse())
 	{
@@ -199,14 +199,14 @@ function f3_2_desenhar()
 		{
 			mult = String(item.quantidade) + "× ";
 		}
-		
+
 		html = html.concat(sprintf(template,
 			item.id, item.id,
 			(item.oferta.preco * item.quantidade).toFixed(2),
 			mult, item.oferta.nome
 		));
 	}
-	
+
 	$("#f3_2_lista_checkboxes").html(html);
 	f3_2_carregar_checkboxes();
 }
