@@ -20,6 +20,11 @@ f3_pagamento_comecado = false;
 function f3_2()
 {
 	$("#loaded").load("f3_2.html", function() {
+		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+			$("#lista_produtos").attr("disabled","false");
+			$("#lista_produtos").attr("active","true");
+
+		});
 		if (f3_pagamento_comecado)
 		{
 			$("#botao_f3_2_retroceder").hide();
@@ -52,7 +57,13 @@ function f3_3(voltar_para_f3_1 = false)
 			pedidos_a_pagar.push(item.id);
 		}
 	}
-	$("#loaded").load("f3_3.html");
+	$("#loaded").load("f3_3.html", function(){
+		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+			$("#modo_pagamento").attr("disabled","false");
+			$("#modo_pagamento").attr("active","true");
+
+		});
+	});
 }
 
 function f3_3_retroceder()
@@ -71,7 +82,13 @@ function f3_3_retroceder()
 var f3_modo_de_pagamento = null;
 function f3_4(modo_de_pagamento)
 {
-	$("#loaded").load("f3_4.html");
+	$("#loaded").load("f3_4.html", function(){
+		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+			$("#nr_contribuinte").attr("disabled","false");
+			$("#nr_contribuinte").attr("active","true");
+
+		});
+	});
 	f3_modo_de_pagamento = modo_de_pagamento;
 }
 
@@ -80,20 +97,34 @@ function f3_4_retroceder()
 	f3_3(f3_3_voltar_para_f3_1);
 }
 
+function f3_5_barra_progresso(){
+	$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+			$("#transacao").attr("disabled","false");
+			$("#transacao").attr("active","true");
+
+	});
+}
 function f3_5()
 {
 	switch(f3_modo_de_pagamento)
 	{
 		case "dinheiro":
-			$("#loaded").load("f3_5_dinheiro.html");
+			$("#loaded").load("f3_5_dinheiro.html", function(){
+				f3_5_barra_progresso();
+			});
 			break;
 		case "multibanco":
-			$("#loaded").load("f3_5_multibanco.html");
+			$("#loaded").load("f3_5_multibanco.html", function(){
+				f3_5_barra_progresso();
+			});
 			break;
 		case "smartphone":
-			$("#loaded").load("f3_5_smartphone.html");
+			$("#loaded").load("f3_5_smartphone.html", function(){
+				f3_5_barra_progresso();
+			});
 			break;
 	}
+	
 }
 
 function f3_5_retroceder()
@@ -115,7 +146,12 @@ function f3_6()
 	}
 	else
 	{
-		$("#loaded").load("f3_6.html");
+		$("#loaded").load("f3_6.html", function() {
+			$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+				$("#transacao").attr("disabled","false");
+				$("#transacao").attr("active","true");
+			});
+		});
 	}
 }
 
@@ -126,7 +162,12 @@ function f3_6_concluir()
 
 function f3_7()
 {
-	$("#loaded").load("f3_7.html");
+	$("#loaded").load("f3_7.html", function(){
+		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+				$("#rating").attr("disabled","false");
+				$("#rating").attr("active","true");
+		});
+	});
 }
 
 function f3_7_concluir()
