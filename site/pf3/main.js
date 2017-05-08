@@ -2,22 +2,31 @@ var funcionalidade = "";
 var empregado = false;
 
 function loadMain() {
-	$("#loaded").load("main.html");
+	$("#loaded").load("main.html", function()
+	{
+		if (!pode_acompanhar())
+		{
+			document.getElementById("img_f2").style.filter = "grayscale(1)";
+		}
+		
+		if(!pode_pagar())
+		{
+			document.getElementById("img_f3").style.filter = "grayscale(1)";
+		}
+	});
 	var nome_restaurante = document.getElementById("nome_restaurante");
 	nome_restaurante.style.visibility = 'hidden';
 	var nome_restaurante_menu_principal = document.getElementById("nome_restaurante_menu_principal");
 	nome_restaurante_menu_principal.style.visibility = 'visible';
-    funcionalidade="main";
-
- if(empregado === false){
-	 var imagem_empregado_main = document.getElementById("imagem_empregado_main");
- 	 imagem_empregado_main.style.visibility = 'hidden';
- }
- else{
-	 var imagem_empregado_main = document.getElementById("imagem_empregado_main");
- 	 imagem_empregado_main.style.visibility = 'visible';
- }
-
+	funcionalidade="main";
+	if(empregado === false){
+		var imagem_empregado_main = document.getElementById("imagem_empregado_main");
+		imagem_empregado_main.style.visibility = 'hidden';
+	}
+	else{
+		var imagem_empregado_main = document.getElementById("imagem_empregado_main");
+		imagem_empregado_main.style.visibility = 'visible';
+	}
 }
 
 function loadModals() {
@@ -99,6 +108,10 @@ function loadAjuda(){
 }
 
 function f2(editar_pedidos) {
+	if (!pode_acompanhar())
+	{
+		return;
+	}
 	f1e3_retroceder_para_f2 = true;
 	funcionalidade = "acompanhar_pedido";
 	nome_restaurante_grande();
@@ -144,6 +157,10 @@ function f2_fechar(retroceder_para_f2 = false) {
 }
 
 function f3() {
+	if (!pode_pagar())
+	{
+		return;
+	}
 	set_f2_vendo_1(false);
 	set_f2_vendo_2(false);
 	$("#loaded").load("f3_1.html");
@@ -173,4 +190,31 @@ function isOverflowed(element)
 
 function blink(){
     $('#imagem_empregado_main').delay(2000).fadeTo(100,0.1).delay(1000).fadeTo(100,1, blink);
+}
+
+function marcar_img_f2()
+{
+	var element = document.getElementById("img_f2");
+	if (element != null && !pode_acompanhar())
+	{
+		element.style.filter = "grayscale(1)";
+	}
+	else if (element != null && pode_acompanhar())
+	{
+		element.style.filter = "";
+	}
+}
+
+function marcar_img_f3()
+{
+	var element = document.getElementById("img_f3");
+	if (element != null && !pode_pagar())
+	{
+		element.style.filter = "grayscale(1)";
+	}
+	else if (element != null && pode_pagar())
+	{
+		console.log("Cheguei");
+		element.style.filter = "";
+	}
 }

@@ -329,6 +329,8 @@ function f2_timer() {
 		{
 			f2_desenhar_pedidos_editar();
 		}
+		marcar_img_f2();
+		marcar_img_f3();
 		
 		var tempos_proximo = tempos_proximo_pedido_em_espera();
 		var tempos_ultimo = tempos_ultimo_pedido_em_espera();

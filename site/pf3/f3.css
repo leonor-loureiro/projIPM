@@ -3,3 +3,8 @@
 	font-size: 2vw;
 	font-weight: bold;
 }
+
+#f3_selecionar_tudo_div {
+	border-bottom-style: dashed;
+	border-width: 0.1vw;
+}

@@ -40,6 +40,9 @@ function adicionar_pedido(_tipo, _id, _personalizacoes, _quantidade, onde=pedido
 	{
 		onde[index].quantidade += _quantidade;
 	}
+	
+	marcar_img_f2();
+	marcar_img_f3();
 }
 
 function remover_pedido(_id, quantidade=1) {
@@ -52,6 +55,8 @@ function remover_pedido(_id, quantidade=1) {
 	else if(quantidade == null || index > -1){
 		pedidos.splice(index, 1);
 	}
+	
+	marcar_img_f2();
 }
 
 // Usar f1_limpar_pedidos() se a trabalhar na f1
@@ -121,6 +126,8 @@ function remover_pedido_em_espera(_id, quantidade=1) {
 	else if(quantidade == null || index > -1){
 		pedidos_em_espera.splice(index, 1);
 	}
+	
+	marcar_img_f3();
 }
 
 function remover_pedido_em_preparacao(_id, quantidade=1) {
@@ -271,4 +278,16 @@ function get_total_pedidos_efetuados()
 		total += item.oferta.preco * item.quantidade;
 	}
 	return total;
+}
+
+function pode_acompanhar()
+{
+	return pedidos_em_espera.length > 0 || pedidos_em_preparacao.length > 0
+		|| pedidos_entregues.length > 0;
+}
+
+function pode_pagar()
+{
+	return pedidos_em_espera.length == 0 && pedidos_em_preparacao.length == 0
+		&& pedidos_entregues.length > 0;
 }
