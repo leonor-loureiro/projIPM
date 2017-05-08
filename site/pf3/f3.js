@@ -108,7 +108,10 @@ function f3_2_checkbox(element)
 {
 	if (element.checked)
 	{
-		pedidos_a_pagar.push(parseInt(element.value));
+		var index = pedidos_a_pagar.indexOf(parseInt(element.value));
+		if(index < 0) {
+			pedidos_a_pagar.push(parseInt(element.value));
+		}
 	}
 	else
 	{
@@ -132,11 +135,17 @@ function f3_2_checkbox_tudo()
 
 function f3_2_desenhar_total()
 {
-	var total = 0;
+	var total_parte = 0;
 	for (var id of pedidos_a_pagar)
 	{
 		var item = get_pedido_entregue(id);
+		total_parte += item.quantidade * item.oferta.preco;
+	}
+	var total = 0;
+	for (var item of get_pedidos_entregues())
+	{
 		total += item.quantidade * item.oferta.preco;
 	}
-	$("#f3_2_total_selecionado").html("Total: " + total.toFixed(2) + "€");
+	$("#f3_2_total_selecionado").html("Total: " + total_parte.toFixed(2)
+		+ "€ de " + total.toFixed(2) + "€");
 }
