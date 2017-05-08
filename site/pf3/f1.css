@@ -151,6 +151,10 @@
 	border-color: #337ab7;
 }
 
+label{
+	padding: 6px 2px !important;
+}
+
 .btn-link[disabled] {
 	border-color: gray !important;
 	color: gray !important;
