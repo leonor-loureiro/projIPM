@@ -51,6 +51,7 @@ function f3_3_retroceder()
 {
 	if (f3_3_voltar_para_f3_1)
 	{
+		pedidos_a_pagar = [];
 		f3();
 	}
 	else
@@ -69,6 +70,27 @@ function f3_4(modo_de_pagamento)
 function f3_4_retroceder()
 {
 	f3_3(f3_3_voltar_para_f3_1);
+}
+
+function f3_5()
+{
+	switch(f3_modo_de_pagamento)
+	{
+		case "dinheiro":
+			$("#loaded").load("f3_5_dinheiro.html");
+			break;
+		case "multibanco":
+			$("#loaded").load("f3_5_multibanco.html");
+			break;
+		case "smartphone":
+			$("#loaded").load("f3_5_smartphone.html");
+			break;
+	}
+}
+
+function f3_5_retroceder()
+{
+	f3_4(f3_modo_de_pagamento);
 }
 
 function f3_6()
