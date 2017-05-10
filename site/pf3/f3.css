@@ -19,8 +19,9 @@
 }
 
 #f3_2_lista_checkboxes {
-	height: 12vw;
+	height: 15vw;
 	overflow-y: scroll;
+	column-width: 40vw;
 }
 
 #f3_7_comentario {
@@ -179,47 +180,10 @@ input.current {
     margin-top: 30px;
 }
 
-#cartao-credito{
+.estilo-imagens-modo-pagamento {
+	width: 12vw;
+}
+
+#f3_1_grupo_img {
 	height: 15vw;
-	position: absolute;
-	left: 37vw;
-}
-
-#dinheiro-moedas{
-	height: 12vw;
-	position: absolute;
-	left: 17vw;
-	bottom: 9vw;
-}
-
-#smartphone-NFC{
-	height: 15vw;
-	position: absolute;
-	right: 15vw;
-	bottom: 8vw;
-}
-
-.estilo-modo-pagamento{
-	position: absolute;
-	left: 15vw;
-	bottom: 6vw;
-	font-weight: bold;
-	font-size: 1.3vw;
-}
-
-#text-smartphone{
-	right: -2vw;
-}
-
-#text-multibanco{
-	left: 30vw;
-}
-
-#text-dinheiro{
-	left: 4vw;
-}
-
-.modo-pagamento{
-	bottom: -1vw;
-	position: absolute;
 }
