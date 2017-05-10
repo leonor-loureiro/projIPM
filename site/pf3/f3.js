@@ -94,6 +94,8 @@ function f3_4(modo_de_pagamento)
 
 function f3_4_retroceder()
 {
+	var keyboard = $('#f3_4_contribuinte').getkeyboard();
+	keyboard.destroy();
 	f3_3(f3_3_voltar_para_f3_1);
 }
 
