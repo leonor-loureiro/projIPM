@@ -3,15 +3,18 @@
 	<div class="f3_titulo">
 		Selecione o modo de pagamento
 	</div>
-	<div>
-		<div class = "modo-pagamento-img">
-			<img id = "cartao-credito" onclick="f3_4('multibanco')" src="images/multibanco1.svg"></img>
+	<div class="row estilo-modo-pagamento">
+		<div class="col-sm-4 text-center center-block">
+			<img id = "cartao-credito" onclick="f3_4('multibanco')" src="images/multibanco1.svg" class="estilo-imagens-modo-pagamento"></img>
+			<p onclick="f3_4('dinheiro')">Dinheiro</p>
 		</div>
-		<div class = "modo-pagamento-img">
-			<img id = "dinheiro-moedas" onclick="f3_4('dinheiro')" src="images/dinheiro.svg"></img>
+		<div class="col-sm-4 text-center center-block">
+			<img id = "dinheiro-moedas" onclick="f3_4('dinheiro')" src="images/dinheiro.svg" class="estilo-imagens-modo-pagamento"></img>
+			<p onclick="f3_4('multibanco')">Multibanco</p>
 		</div>
-		<div class = "modo-pagamento-img">
-			<img id = "smartphone-NFC" onclick="f3_4('smartphone')" src="images/smartphone.svg"></img>
+		<div class="col-sm-4 text-center center-block">
+			<img id = "smartphone-NFC" onclick="f3_4('smartphone')" src="images/smartphone.svg" class="estilo-imagens-modo-pagamento"></img>
+			<p onclick="f3_4('smartphone')">Smartphone com NFC</p>
 		</div>
 	</div>
 	<div class="row botoes_navegacao">
@@ -19,18 +22,4 @@
 			<button type="button" class="btn btn-primary btn-lg" onclick="f3_3_retroceder()">Retroceder</button>
 		</div>
 	</div>
-	<div class = "row-modos-pagamento">
-  	<div class="col-sm-8 text-center estilo-modo-pagamento">
-				<div class = "modo-pagamento" id = "text-dinheiro">
-					<p onclick="f3_4('dinheiro')">Dinheiro</p>
-				</div>
-				<div class = "modo-pagamento" id = "text-multibanco">
-					<p onclick="f3_4('multibanco')">Multibanco</p>
-				</div>
-				<div class = "modo-pagamento" id = "text-smartphone">
-					<p onclick="f3_4('smartphone')">Smartphone com NFC</p>
-				</div>
-		</div>
-	</div>
-
 </div>

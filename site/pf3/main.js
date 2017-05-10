@@ -227,6 +227,7 @@ function marcar_img_f3()
 // H4x0r1ng m0d3
 $(document).keypress(function(e) {
 	// Space
+	console.log(e.which);
 	if(e.which == 32) {
 		decrementar_tempo_espera();
 		if (get_f2_vendo_1())
@@ -235,7 +236,7 @@ $(document).keypress(function(e) {
 		}
 	}
 	// S
-	if(e.which == 115) {
-		f3_surprise();
-	}
+// 	if(e.which == 115) {
+// 		f3_surprise();
+// 	}
 });
