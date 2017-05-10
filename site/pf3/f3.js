@@ -269,7 +269,7 @@ function f3_2_desenhar_total()
 		total_parte += item.quantidade * item.oferta.preco;
 	}
 	totais = get_total_pagamento();
-	$("#f3_2_total_selecionado").html("Total: " + total_parte.toFixed(2)
+	$("#f3_2_total_selecionado").html("<b>Total:</b> " + total_parte.toFixed(2)
 		+ "€ de " + totais[1].toFixed(2) + "€ (pago: " + totais[0].toFixed(2) + "€)");
 }
 

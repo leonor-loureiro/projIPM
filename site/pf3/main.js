@@ -169,7 +169,12 @@ function f3() {
 	nome_restaurante_pequeno();
 	set_f2_vendo_1(false);
 	set_f2_vendo_2(false);
-	$("#loaded").load("f3_1.html");
+	$("#loaded").load("f3_1.html",function(){
+		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+			$("#divisao").attr("disabled","false");
+			$("#divisao").attr("active","true");
+		});
+	});
 	$("#area_direita").html("");
 }
 

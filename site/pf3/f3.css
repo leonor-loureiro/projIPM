@@ -16,6 +16,7 @@
 #f3_selecionar_tudo_div {
 	border-bottom-style: dashed;
 	border-width: 0.1vw;
+	font-weight: bold;
 }
 
 #f3_2_lista_checkboxes {
@@ -40,10 +41,17 @@
 
 #img_fatura{
 	width: 10vw;
+	position: absolute;
+	right: 23vw;
 }
 
 
-
+#total_transacao{
+	text-align: center;
+	font-size: 1.7vw;
+	top: 3vw;
+	left: 12vw;
+}
 
 
 .process-row {
@@ -110,7 +118,7 @@
 }
 
 #f3_1_grupo_img {
-	height: 15vw;
+	height: 24vw;
 }
 
 .descricao-modo-pagamento{
@@ -125,4 +133,8 @@
 #cartao-credito{
 	width: 16vw;
 	margin-top: -2vw;
+}
+
+#f3_5_img{
+	height: 24vw;
 }

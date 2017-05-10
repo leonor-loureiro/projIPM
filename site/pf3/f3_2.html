@@ -4,19 +4,20 @@
 		Lista de produtos consumidos
 	</div>
 	<div id="f3_selecionar_tudo_div">
-		<input type="checkbox" id="f3_selecionar_tudo" onchange="f3_2_checkbox_tudo()">Selecionar tudo<br/>
+		<label><input type="checkbox" id="f3_selecionar_tudo" onchange="f3_2_checkbox_tudo()">Selecionar Tudo<label/>
 	</div>
 	<div id="f3_2_lista_checkboxes"></div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-4 text-left">
 			<button type="button" class="btn btn-primary btn-lg" onclick="f3_2_retroceder()" id="botao_f3_2_retroceder">Retroceder</button>
 		</div>
-  		<div class="col-sm-4 text-center">
-			<button type="button" class="btn btn-primary btn-lg" onclick="f3_3()" id="botao_f3_2_pagar">Pagar</button>
-		</div>
 		<div class="col-sm-4 text-center">
 			<div id="f3_2_total_selecionado"></div>
 		</div>
+  		<div class="col-sm-4 text-right">
+			<button type="button" class="btn btn-primary btn-lg" onclick="f3_3()" id="botao_f3_2_pagar">Pagar</button>
+		</div>
+		
 	</div>
 </div>
 <script>
