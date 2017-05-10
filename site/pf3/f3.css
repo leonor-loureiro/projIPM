@@ -19,8 +19,9 @@
 }
 
 #f3_2_lista_checkboxes {
-	height: 12vw;
+	height: 15vw;
 	overflow-y: scroll;
+	column-width: 40vw;
 }
 
 #f3_7_comentario {
@@ -179,13 +180,8 @@ input.current {
     margin-top: 30px;
 }
 
-.estilo-modo-pagamento {
-	font-weight: bold;
-	font-size: 1.3vw;
-}
-
 .estilo-imagens-modo-pagamento {
-	height: 15vw;
+	width: 12vw;
 }
 
 #f3_1_grupo_img {
