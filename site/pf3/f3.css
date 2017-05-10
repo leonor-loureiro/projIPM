@@ -187,3 +187,17 @@ input.current {
 #f3_1_grupo_img {
 	height: 15vw;
 }
+
+.descricao-modo-pagamento{
+	font-weight: bold;
+	font-size: 1.5vw;
+}
+
+#text-multibanco{
+	margin-top: -2vw;
+}
+
+#cartao-credito{
+	width: 16vw;
+	margin-top: -2vw;
+}
