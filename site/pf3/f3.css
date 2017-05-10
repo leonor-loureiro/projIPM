@@ -23,6 +23,7 @@
 	height: 15vw;
 	overflow-y: scroll;
 	column-width: 40vw;
+	font-size: 1.3vw;
 }
 
 #f3_7_comentario {
@@ -40,17 +41,18 @@
 }
 
 #img_fatura{
-	width: 10vw;
+	width: 13vw;
 	position: absolute;
-	right: 23vw;
+	right: 35vw;
+	top: 3vw;
 }
 
 
 #total_transacao{
 	text-align: center;
-	font-size: 1.7vw;
-	top: 3vw;
-	left: 12vw;
+	font-size: 1.8vw;
+	top: 8vw;
+	left: 13vw;
 }
 
 
@@ -216,4 +218,12 @@ input.current {
 
 .f3_1_SNbutton{
 	width: 7vw;
+}
+
+#f3_2_total_selecionado{
+	font-size: 1.3vw;
+}
+
+#f3_selecionar_tudo{
+	font-size: 1.3vw;
 }
