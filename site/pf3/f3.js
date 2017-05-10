@@ -189,7 +189,7 @@ function f3_7_concluir()
 
 function f3_2_desenhar()
 {
-	template = `<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s</br>`;
+	template = `<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s%s</br>`;
 
 	var html = "";
 	for (var item of get_pedidos_entregues().slice().reverse())
@@ -199,11 +199,16 @@ function f3_2_desenhar()
 		{
 			mult = String(item.quantidade) + "× ";
 		}
-
+		var personalizado = "";
+		if (item.personalizado)
+		{
+			personalizado = "<b>[P]</b> "
+		}
+		
 		html = html.concat(sprintf(template,
 			item.id, item.id,
 			(item.oferta.preco * item.quantidade).toFixed(2),
-			mult, item.oferta.nome
+			mult, personalizado, item.oferta.nome
 		));
 	}
 
@@ -277,9 +282,9 @@ function f3_2_carregar_checkboxes()
 }
 
 // http://stackoverflow.com/a/7455124
-function translate( elem, x, y ) {
-    var right = parseInt( css( elem, 'right' ), 10 ),
-        bottom = parseInt( css( elem, 'bottom' ), 10 ),
+function f3_surprise_translate( elem, x, y ) {
+    var right = parseInt( f3_surprise_css( elem, 'right' ), 10 ),
+        bottom = parseInt( f3_surprise_css( elem, 'bottom' ), 10 ),
         dx = right - x,
         dy = bottom - y,
         i = 1,
@@ -297,15 +302,15 @@ function translate( elem, x, y ) {
     loop();
 }
 
-function css( element, property ) {
+function f3_surprise_css( element, property ) {
     return window.getComputedStyle( element, null ).getPropertyValue( property );
 }
 
 function f3_surprise()
 {
-	var height = parseInt(css(surprise, 'height'), 10);
-	translate(surprise, -height/4, -height/4);
+	var height = parseInt(f3_surprise_css(surprise, 'height'), 10);
+	f3_surprise_translate(surprise, -height/4, -height/4);
 	setTimeout(function(){
-		translate(surprise, -height, -height);
+		f3_surprise_translate(surprise, -height, -height);
 	}, 2500);
 }
