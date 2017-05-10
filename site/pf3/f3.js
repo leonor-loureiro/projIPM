@@ -106,6 +106,8 @@ function f3_5_barra_progresso(){
 }
 function f3_5()
 {
+	var keyboard = $('#f3_4_contribuinte').getkeyboard();
+	keyboard.destroy();
 	switch(f3_modo_de_pagamento)
 	{
 		case "dinheiro":
