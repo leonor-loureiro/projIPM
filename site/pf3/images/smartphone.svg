@@ -7,8 +7,8 @@
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
    id="svg3430"
-   height="464.72299"
-   width="464.72299">
+   height="495.70401"
+   width="495.70401">
   <metadata
      id="metadata3484">
     <rdf:RDF>
@@ -24,308 +24,299 @@
   <defs
      id="defs3482" />
   <g
-     transform="translate(1,-17.249892)"
+     transform="translate(0,-50.429362)"
      id="g3432">
     <title
        id="title3434">background</title>
     <rect
-       style="fill:none"
-       x="-1"
-       y="-1"
-       width="582"
-       height="402"
+       style="fill:none;stroke-width:1.06666672"
+       x="-1.0666667"
+       y="-1.0666667"
+       width="620.79999"
+       height="428.79999"
        id="canvas_background" />
+  </g>
+  <g
+     transform="translate(-41.478871,-18.400236)"
+     id="g3437">
+    <title
+       id="title3439">Layer 1</title>
+    <g
+       id="Layer_2">
+      <g
+         id="svg_1">
+        <g
+           id="svg_3"
+           transform="rotate(21.3935,251.7344,271.84747)">
+          <g
+             id="svg_34">
+            <path
+               style="fill:#333134;stroke-width:1.06666672"
+               d="M 347.06754,492.46559 H 156.39883 c -15.77156,0 -28.59988,-12.20127 -28.59988,-27.19896 V 78.428247 c 0,-14.999015 12.82969,-27.19895 28.59988,-27.19895 h 190.67009 c 15.77157,0 28.59986,12.201253 28.59986,27.19895 V 465.26533 c 0,14.99899 -12.82969,27.20026 -28.60124,27.20026 z M 156.39883,57.273063 c -12.26383,0 -22.24481,9.492074 -22.24481,21.155184 V 465.26533 c 0,11.66312 9.98098,21.15518 22.24481,21.15518 h 190.67009 c 12.26379,0 22.24482,-9.49206 22.24482,-21.15518 V 78.428247 c 0,-11.66311 -9.98103,-21.155184 -22.24482,-21.155184 z"
+               id="svg_33" />
+          </g>
+          <g
+             id="svg_59">
+            <path
+               style="fill:#232124;stroke-width:1.06666672"
+               d="m 156.39883,54.251852 h 190.67009 c 14.04065,0 25.42304,10.82616 25.42304,24.176395 v 24.177723 338.48293 24.17643 c 0,13.35287 -11.38379,24.17774 -25.42304,24.17774 H 156.39883 c -14.04064,0 -25.42303,-10.82621 -25.42303,-24.17774 V 441.0889 102.60597 78.428247 c 0,-13.350235 11.38239,-24.176395 25.42303,-24.176395 z"
+               id="svg_35" />
+            <rect
+               style="fill:#ffffff;stroke-width:1.06666672"
+               x="143.68732"
+               y="120.73862"
+               width="216.09172"
+               height="302.21634"
+               id="svg_36" />
+            <rect
+               style="fill:#27bec4;stroke-width:1.06666672"
+               x="308.93436"
+               y="132.82748"
+               width="38.134567"
+               height="36.266598"
+               id="svg_37" />
+            <rect
+               style="opacity:0.2;fill:#373538;stroke-width:1.06666672"
+               x="258.08823"
+               y="132.82748"
+               width="38.134567"
+               height="36.266598"
+               id="svg_38" />
+            <rect
+               style="opacity:0.2;fill:#373538;stroke-width:1.06666672"
+               x="207.24355"
+               y="132.82748"
+               width="38.134567"
+               height="36.266598"
+               id="svg_39" />
+            <rect
+               style="fill:#ff642f;stroke-width:1.06666672"
+               x="156.39885"
+               y="132.82748"
+               width="38.134567"
+               height="36.266598"
+               id="svg_40" />
+            <rect
+               style="opacity:0.2;fill:#373538;stroke-width:1.06666672"
+               x="308.93436"
+               y="181.18294"
+               width="38.134567"
+               height="36.265274"
+               id="svg_41" />
+            <rect
+               style="fill:#ff642f;stroke-width:1.06666672"
+               x="258.08823"
+               y="181.18294"
+               width="38.134567"
+               height="36.265274"
+               id="svg_42" />
+            <rect
+               style="fill:#27bec4;stroke-width:1.06666672"
+               x="207.24355"
+               y="181.18294"
+               width="38.134567"
+               height="36.265274"
+               id="svg_43" />
+            <rect
+               style="opacity:0.2;fill:#373538;stroke-width:1.06666672"
+               x="156.39885"
+               y="181.18294"
+               width="38.134567"
+               height="36.265274"
+               id="svg_44" />
+            <rect
+               style="fill:#ff642f;stroke-width:1.06666672"
+               x="308.93436"
+               y="229.53709"
+               width="38.134567"
+               height="36.266598"
+               id="svg_45" />
+            <rect
+               style="fill:#27bec4;stroke-width:1.06666672"
+               x="258.08823"
+               y="229.53709"
+               width="38.134567"
+               height="36.266598"
+               id="svg_46" />
+            <rect
+               style="opacity:0.2;fill:#373538;stroke-width:1.06666672"
+               x="207.24355"
+               y="229.53709"
+               width="38.134567"
+               height="36.266598"
+               id="svg_47" />
+            <rect
+               style="fill:#ff642f;stroke-width:1.06666672"
+               x="156.39885"
+               y="229.53709"
+               width="38.134567"
+               height="36.266598"
+               id="svg_48" />
+            <rect
+               style="opacity:0.2;fill:#373538;stroke-width:1.06666672"
+               x="308.93436"
+               y="277.89255"
+               width="38.134567"
+               height="36.266598"
+               id="svg_49" />
+            <rect
+               style="fill:#27bec4;stroke-width:1.06666672"
+               x="258.08823"
+               y="277.89255"
+               width="38.134567"
+               height="36.266598"
+               id="svg_50" />
+            <rect
+               style="fill:#ff642f;stroke-width:1.06666672"
+               x="207.24355"
+               y="277.89255"
+               width="38.134567"
+               height="36.266598"
+               id="svg_51" />
+            <rect
+               style="fill:#7a797b;stroke-width:1.06666672"
+               x="308.93436"
+               y="374.60086"
+               width="38.134567"
+               height="36.266598"
+               id="svg_52" />
+            <rect
+               style="fill:#7a797b;stroke-width:1.06666672"
+               x="258.08823"
+               y="374.60086"
+               width="38.134567"
+               height="36.266598"
+               id="svg_53" />
+            <rect
+               style="fill:#7a797b;stroke-width:1.06666672"
+               x="207.24355"
+               y="374.60086"
+               width="38.134567"
+               height="36.266598"
+               id="svg_54" />
+            <rect
+               style="fill:#7a797b;stroke-width:1.06666672"
+               x="156.39885"
+               y="374.60086"
+               width="38.134567"
+               height="36.266598"
+               id="svg_55" />
+            <circle
+               style="fill:#333134;stroke-width:1.06666672"
+               cx="251.73317"
+               cy="456.20035"
+               r="18.132618"
+               id="svg_56" />
+            <g
+               id="svg_58">
+              <rect
+                 style="fill:#333134;stroke-width:1.06666672"
+                 x="213.5986"
+                 y="87.495888"
+                 width="76.267738"
+                 height="6.0437717"
+                 id="svg_57" />
+            </g>
+          </g>
+          <g
+             id="svg_61">
+            <path
+               style="fill:#989798;stroke-width:1.06666672"
+               d="M 353.42396,126.78372 V 416.91253 H 150.04238 V 126.78372 Z m 6.35505,-6.04509 H 143.68732 v 302.21631 h 216.09169 z"
+               id="svg_60" />
+          </g>
+        </g>
+        <line
+           style="fill:none;stroke-width:1.06666672"
+           stroke="null"
+           stroke-opacity="null"
+           fill-opacity="null"
+           x1="434.66666"
+           y1="59.200001"
+           x2="466.66666"
+           y2="216"
+           id="svg_63"
+           stroke-linejoin="null"
+           stroke-linecap="null" />
+        <line
+           style="fill:none;stroke-width:1.06666672"
+           stroke="null"
+           stroke-opacity="null"
+           fill-opacity="null"
+           x1="429.33334"
+           y1="60.266666"
+           x2="481.60001"
+           y2="147.73334"
+           id="svg_64"
+           stroke-linejoin="null"
+           stroke-linecap="null" />
+        <line
+           style="fill:none;stroke-width:1.06666672"
+           stroke="null"
+           stroke-opacity="null"
+           fill-opacity="null"
+           x1="467.73334"
+           y1="74.133331"
+           x2="468.79999"
+           y2="77.333336"
+           id="svg_65"
+           stroke-linejoin="null"
+           stroke-linecap="null" />
+        <line
+           style="fill:none;stroke-width:1.06666672"
+           stroke="null"
+           stroke-opacity="null"
+           fill-opacity="null"
+           x1="510.39999"
+           y1="154.13333"
+           x2="511.46667"
+           y2="155.2"
+           id="svg_66"
+           stroke-linejoin="null"
+           stroke-linecap="null" />
+        <line
+           style="fill:none;stroke-width:1.06666672"
+           stroke="null"
+           stroke-opacity="null"
+           fill-opacity="null"
+           x1="514.66669"
+           y1="129.60001"
+           x2="514.66669"
+           y2="133.86667"
+           id="svg_68"
+           stroke-linejoin="null"
+           stroke-linecap="null" />
+        <line
+           style="fill:none;stroke-width:1.06666672"
+           stroke="null"
+           stroke-opacity="null"
+           fill-opacity="null"
+           x1="420.79999"
+           y1="32.533333"
+           x2="420.79999"
+           y2="34.666668"
+           id="svg_70"
+           stroke-linejoin="null"
+           stroke-linecap="null" />
+      </g>
+    </g>
+    <g
+       id="Layer_1" />
   </g>
   <path
      id="path3488"
-     d="M 394.06755,41.794589 Z"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-  <g
-     transform="translate(-47.357108,-17.24998)"
-     id="g142">
-    <g
-       id="g3437">
-      <title
-         id="title3439">Layer 1</title>
-      <g
-         id="Layer_2">
-        <g
-           id="svg_1">
-          <g
-             transform="rotate(21.3935,236.001,254.857)"
-             id="svg_3">
-            <g
-               id="svg_34">
-              <path
-                 style="fill:#333134"
-                 id="svg_33"
-                 d="M 325.37582,461.68649 H 146.6239 c -14.78583,0 -26.81238,-11.43869 -26.81238,-25.49902 V 73.526482 c 0,-14.061577 12.02783,-25.499016 26.81238,-25.499016 h 178.75321 c 14.78585,0 26.81237,11.438675 26.81237,25.499016 V 436.18625 c 0,14.06155 -12.02783,25.50024 -26.81366,25.50024 z M 146.6239,53.693497 c -11.49734,0 -20.85451,8.898819 -20.85451,19.832985 V 436.18625 c 0,10.93417 9.35717,19.83298 20.85451,19.83298 h 178.75321 c 11.49731,0 20.85452,-8.89881 20.85452,-19.83298 V 73.526482 c 0,-10.934166 -9.35721,-19.832985 -20.85452,-19.832985 z" />
-            </g>
-            <g
-               id="svg_59">
-              <path
-                 style="fill:#232124"
-                 id="svg_35"
-                 d="m 146.6239,50.861111 h 178.75321 c 13.16311,0 23.8341,10.149525 23.8341,22.665371 V 96.1931 413.52084 436.18625 c 0,12.51831 -10.6723,22.66663 -23.8341,22.66663 H 146.6239 c -13.1631,0 -23.83409,-10.14957 -23.83409,-22.66663 V 413.52084 96.1931 73.526482 c 0,-12.515846 10.67099,-22.665371 23.83409,-22.665371 z" />
-              <rect
-                 style="fill:#ffffff"
-                 id="svg_36"
-                 height="283.32782"
-                 width="202.58598"
-                 y="113.19246"
-                 x="134.70686" />
-              <rect
-                 style="fill:#27bec4"
-                 id="svg_37"
-                 height="33.999935"
-                 width="35.751156"
-                 y="124.52577"
-                 x="289.62595" />
-              <rect
-                 style="opacity:0.2;fill:#373538"
-                 id="svg_38"
-                 height="33.999935"
-                 width="35.751156"
-                 y="124.52577"
-                 x="241.95772" />
-              <rect
-                 style="opacity:0.2;fill:#373538"
-                 id="svg_39"
-                 height="33.999935"
-                 width="35.751156"
-                 y="124.52577"
-                 x="194.29082" />
-              <rect
-                 style="fill:#ff642f"
-                 id="svg_40"
-                 height="33.999935"
-                 width="35.751156"
-                 y="124.52577"
-                 x="146.62392" />
-              <rect
-                 style="opacity:0.2;fill:#373538"
-                 id="svg_41"
-                 height="33.998695"
-                 width="35.751156"
-                 y="169.85901"
-                 x="289.62595" />
-              <rect
-                 style="fill:#ff642f"
-                 id="svg_42"
-                 height="33.998695"
-                 width="35.751156"
-                 y="169.85901"
-                 x="241.95772" />
-              <rect
-                 style="fill:#27bec4"
-                 id="svg_43"
-                 height="33.998695"
-                 width="35.751156"
-                 y="169.85901"
-                 x="194.29082" />
-              <rect
-                 style="opacity:0.2;fill:#373538"
-                 id="svg_44"
-                 height="33.998695"
-                 width="35.751156"
-                 y="169.85901"
-                 x="146.62392" />
-              <rect
-                 style="fill:#ff642f"
-                 id="svg_45"
-                 height="33.999935"
-                 width="35.751156"
-                 y="215.19102"
-                 x="289.62595" />
-              <rect
-                 style="fill:#27bec4"
-                 id="svg_46"
-                 height="33.999935"
-                 width="35.751156"
-                 y="215.19102"
-                 x="241.95772" />
-              <rect
-                 style="opacity:0.2;fill:#373538"
-                 id="svg_47"
-                 height="33.999935"
-                 width="35.751156"
-                 y="215.19102"
-                 x="194.29082" />
-              <rect
-                 style="fill:#ff642f"
-                 id="svg_48"
-                 height="33.999935"
-                 width="35.751156"
-                 y="215.19102"
-                 x="146.62392" />
-              <rect
-                 style="opacity:0.2;fill:#373538"
-                 id="svg_49"
-                 height="33.999935"
-                 width="35.751156"
-                 y="260.52426"
-                 x="289.62595" />
-              <rect
-                 style="fill:#27bec4"
-                 id="svg_50"
-                 height="33.999935"
-                 width="35.751156"
-                 y="260.52426"
-                 x="241.95772" />
-              <rect
-                 style="fill:#ff642f"
-                 id="svg_51"
-                 height="33.999935"
-                 width="35.751156"
-                 y="260.52426"
-                 x="194.29082" />
-              <rect
-                 style="fill:#7a797b"
-                 id="svg_52"
-                 height="33.999935"
-                 width="35.751156"
-                 y="351.18829"
-                 x="289.62595" />
-              <rect
-                 style="fill:#7a797b"
-                 id="svg_53"
-                 height="33.999935"
-                 width="35.751156"
-                 y="351.18829"
-                 x="241.95772" />
-              <rect
-                 style="fill:#7a797b"
-                 id="svg_54"
-                 height="33.999935"
-                 width="35.751156"
-                 y="351.18829"
-                 x="194.29082" />
-              <rect
-                 style="fill:#7a797b"
-                 id="svg_55"
-                 height="33.999935"
-                 width="35.751156"
-                 y="351.18829"
-                 x="146.62392" />
-              <circle
-                 style="fill:#333134"
-                 id="svg_56"
-                 r="16.999329"
-                 cy="427.68784"
-                 cx="235.99985" />
-              <g
-                 id="svg_58">
-                <rect
-                   style="fill:#333134"
-                   id="svg_57"
-                   height="5.6660361"
-                   width="71.501007"
-                   y="82.027397"
-                   x="200.24869" />
-              </g>
-            </g>
-            <g
-               id="svg_61">
-              <path
-                 style="fill:#989798"
-                 id="svg_60"
-                 d="M 331.33496,118.85974 V 390.8555 H 140.66473 V 118.85974 Z m 5.95786,-5.66727 H 134.70686 v 283.32779 h 202.58596 z" />
-            </g>
-          </g>
-          <line
-             style="fill:none"
-             stroke-linecap="null"
-             stroke-linejoin="null"
-             id="svg_63"
-             y2="202.5"
-             x2="437.5"
-             y1="55.5"
-             x1="407.5"
-             fill-opacity="null"
-             stroke-opacity="null"
-             stroke="null"
-             stroke-width="null" />
-          <line
-             style="fill:none"
-             stroke-linecap="null"
-             stroke-linejoin="null"
-             id="svg_64"
-             y2="138.5"
-             x2="451.5"
-             y1="56.5"
-             x1="402.5"
-             fill-opacity="null"
-             stroke-opacity="null"
-             stroke="null"
-             stroke-width="NaN" />
-          <line
-             style="fill:none"
-             stroke-linecap="null"
-             stroke-linejoin="null"
-             id="svg_65"
-             y2="72.5"
-             x2="439.5"
-             y1="69.5"
-             x1="438.5"
-             fill-opacity="null"
-             stroke-opacity="null"
-             stroke="null"
-             stroke-width="NaN" />
-          <line
-             style="fill:none"
-             stroke-linecap="null"
-             stroke-linejoin="null"
-             id="svg_66"
-             y2="145.5"
-             x2="479.5"
-             y1="144.5"
-             x1="478.5"
-             fill-opacity="null"
-             stroke-opacity="null"
-             stroke="null"
-             stroke-width="NaN" />
-          <line
-             style="fill:none"
-             stroke-linecap="null"
-             stroke-linejoin="null"
-             id="svg_68"
-             y2="125.5"
-             x2="482.5"
-             y1="121.5"
-             x1="482.5"
-             fill-opacity="null"
-             stroke-opacity="null"
-             stroke="null"
-             stroke-width="NaN" />
-          <line
-             style="fill:none"
-             stroke-linecap="null"
-             stroke-linejoin="null"
-             id="svg_70"
-             y2="32.5"
-             x2="394.5"
-             y1="30.5"
-             x1="394.5"
-             fill-opacity="null"
-             stroke-opacity="null"
-             stroke="null"
-             stroke-width="NaN" />
-        </g>
-      </g>
-      <g
-         id="Layer_1" />
-    </g>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 395.59802,75.914333 c 46.3921,19.400329 39.64415,57.357497 39.64415,57.357497 v 0 0"
-       id="path3494" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.58066726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 402.541,43.271271 c 76.27666,29.481004 65.18186,87.161249 65.18186,87.161249 v 0 0"
-       id="path3494-3" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.1554203px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 408.54507,18.255814 C 512.76002,58.37823 497.60146,136.87861 497.60146,136.87861 v 0 0"
-       id="path3494-6" />
-  </g>
+     d="M 419.27205,12.551418 Z"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.06666672px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="path3494"
+     d="m 380.49235,62.575053 c 49.48491,20.693681 42.28709,61.181327 42.28709,61.181327 v 0 0"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.06666672px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="path3494-3"
+     d="m 387.8982,27.755786 c 81.36177,31.446405 69.52731,92.971994 69.52731,92.971994 v 0 0"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.68604505px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  <path
+     id="path3494-6"
+     d="M 394.30254,1.0726317 C 505.46515,43.869876 489.29602,127.60361 489.29602,127.60361 v 0 0"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.29911494px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
 </svg>
