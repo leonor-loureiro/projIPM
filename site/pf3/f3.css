@@ -255,3 +255,7 @@ input.current {
 	left: right;
 	right: 10vw;
 }
+
+.rating-estilo{
+	font-weight: bold;
+}
