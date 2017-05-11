@@ -354,3 +354,25 @@ ul{
         opacity: 1;
     }
 }
+
+
+#div_imagem_sucesso_pagamento{
+  padding-left: 37%;
+}
+
+#modalPagamento-msg{
+  font-size: 2vw;
+	margin-left: 2vw;
+}
+
+#imagem_sucesso_pagamento{
+  height: 8vw;
+  width: 8vw;
+}
+
+#modalPagamento-size{
+  height: 15vw;
+  width: 33vw;
+  font-size: 2vw;
+  margin-top: 15vw;
+}

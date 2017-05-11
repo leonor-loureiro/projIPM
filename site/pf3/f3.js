@@ -161,7 +161,11 @@ function f3_6()
 
 function f3_6_concluir()
 {
-	window.location.reload(false);
+	f3_despedida();
+	setTimeout(function(){
+		window.location.reload(false);
+	}, 2000);
+
 }
 
 function f3_7()
@@ -180,15 +184,32 @@ function f3_7_concluir()
 		&& document.getElementById('rating_atendimento').value == 5
 		&& document.getElementById('f3_7_checkbox_elogio').checked)
 	{
+		var keyboard = $('#f3_7_comentario_keyboard').getkeyboard();
+		keyboard.destroy();
 		f3_surprise();
+
+		setTimeout(function(){
+			f3_despedida();
+		}, 3000);
+
 		setTimeout(function(){
 			window.location.reload(false);
-		}, 3000);
+		}, 4000);
 	}
 	else
 	{
-	window.location.reload(false);
+		var keyboard = $('#f3_7_comentario_keyboard').getkeyboard();
+		keyboard.destroy();
+
+		setTimeout(function(){
+			f3_despedida();
+		}, 1000);
+
+		setTimeout(function(){
+			window.location.reload(false);
+		}, 2000);
 	}
+
 }
 
 function f3_2_desenhar()
@@ -208,7 +229,7 @@ function f3_2_desenhar()
 		{
 			personalizado = "<b>[P]</b> "
 		}
-		
+
 		html = html.concat(sprintf(template,
 			item.id, item.id,
 			(item.oferta.preco * item.quantidade).toFixed(2),
@@ -317,4 +338,13 @@ function f3_surprise()
 	setTimeout(function(){
 		f3_surprise_translate(surprise, -height, -height);
 	}, 2500);
+}
+
+function f3_despedida(){
+	$("#modalPagamento").modal();
+
+	// http://stackoverflow.com/a/22944616
+	setTimeout(function(){
+		$("#modalPagamento").modal('hide');
+	}, 1500);
 }
