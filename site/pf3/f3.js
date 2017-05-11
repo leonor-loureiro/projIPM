@@ -143,20 +143,20 @@ function f3_6()
 	{
 		mover_pedido_entregue_para_pago(id);
 	}
-	if (existem_itens_por_pagar())
-	{
-		pedidos_a_pagar = [];
-		f3_2();
-	}
-	else
-	{
-		$("#loaded").load("f3_6.html", function() {
-			$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
-				$("#transacao").attr("disabled","false");
-				$("#transacao").attr("active","true");
-			});
+	$("#loaded").load("f3_6.html", function() {
+		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
+			$("#transacao").attr("disabled","false");
+			$("#transacao").attr("active","true");
 		});
-	}
+		if (existem_itens_por_pagar())
+		{
+			pedidos_a_pagar = [];
+			$("#botao_avaliar").attr("onclick","f3_2()");
+			document.getElementById("botao_avaliar").innerHTML="Próximo";
+			document.getElementById("botao_concluir").style.visibility="hidden";
+		
+		}
+	});
 }
 
 function f3_6_concluir()

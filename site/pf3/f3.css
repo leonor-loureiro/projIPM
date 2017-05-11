@@ -42,17 +42,16 @@
 
 #img_fatura{
 	width: 13vw;
-	position: absolute;
-	right: 35vw;
-	top: 3vw;
+	position: relative;
+	top: 1vw;
+	right: 2vw;
+
 }
-
-
 #total_transacao{
-	text-align: center;
+	text-align: left;
 	font-size: 1.8vw;
-	top: 8vw;
-	left: 13vw;
+	top: 4vw;
+	
 }
 
 
