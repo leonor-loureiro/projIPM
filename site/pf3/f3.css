@@ -19,6 +19,10 @@
 	font-weight: bold;
 }
 
+#f3_selecionar_tudo_label {
+	font-size: 1.3vw;
+}
+
 #f3_2_lista_checkboxes {
 	height: 15vw;
 	overflow-y: scroll;
