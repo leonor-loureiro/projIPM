@@ -26,8 +26,30 @@
 #f3_2_lista_checkboxes {
 	height: 15vw;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	column-width: 40vw;
 	font-size: 1.3vw;
+}
+
+#f3_2_lista_pagos {
+	height: 15vw;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	column-width: 40vw;
+	font-size: 1.3vw;
+}
+
+#f3_2_row_listas {
+	padding-top: 0;
+}
+
+#row_listas_header {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.f3_2_separador {
+	border-color: black;
 }
 
 #f3_7_comentario {

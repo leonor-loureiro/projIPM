@@ -318,22 +318,37 @@ function get_total_pagamento()
 		total += item.quantidade * item.oferta.preco;
 	}
 	var total_entregues = total;
-	for (var item of pedidos_pagos)
+	for (var lista of pedidos_pagos)
 	{
-		total += item.quantidade * item.oferta.preco;
+		for (var item of lista)
+		{
+			total += item.quantidade * item.oferta.preco;
+		}
 	}
 	total_entregues = total - total_entregues;
 	return [total_entregues, total];
+}
+
+var pagamento_counter = -1;
+function preparar_novo_pagamento()
+{
+	pagamento_counter++;
+	pedidos_pagos[pagamento_counter] = [];
 }
 
 function mover_pedido_entregue_para_pago(id)
 {
 	pedido = get_pedido_entregue(id);
 	remover_pedido_entregue(id, null);
-	pedidos_pagos.push(pedido);
+	pedidos_pagos[pagamento_counter].push(pedido);
 }
 
 function existem_itens_por_pagar()
 {
 	return pedidos_entregues.length > 0;
+}
+
+function get_pedidos_pagos()
+{
+	return pedidos_pagos;
 }

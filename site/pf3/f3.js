@@ -139,6 +139,7 @@ function f3_5_retroceder()
 function f3_6()
 {
 	f3_pagamento_comecado = true;
+	preparar_novo_pagamento();
 	for (var id of pedidos_a_pagar)
 	{
 		mover_pedido_entregue_para_pago(id);
@@ -236,9 +237,43 @@ function f3_2_desenhar()
 			mult, personalizado, item.oferta.nome
 		));
 	}
-
+	
 	$("#f3_2_lista_checkboxes").html(html);
 	f3_2_carregar_checkboxes();
+	
+	template_pagos = `<p><b>%s€</b>: %s%s%s</p>`;
+	
+	var html = "";
+	var ultimo_separador = -1;
+	for (var lista of get_pedidos_pagos().reverse())
+	{
+		for (var item of lista)
+		{
+			var mult = "";
+			if (item.quantidade > 1)
+			{
+				mult = String(item.quantidade) + "× ";
+			}
+			var personalizado = "";
+			if (item.personalizado)
+			{
+				personalizado = "<b>[P]</b> "
+			}
+			
+			html = html.concat(sprintf(template_pagos,
+				(item.oferta.preco * item.quantidade).toFixed(2),
+				mult, personalizado, item.oferta.nome
+			));
+		}
+		ultimo_separador++;
+		html = html.concat("<hr class=\"f3_2_separador\" id=f3_2_separador_" + ultimo_separador + ">");
+	}
+	
+	$("#f3_2_lista_pagos").html(html);
+	if (ultimo_separador != -1)
+	{
+		$("#f3_2_separador_" + ultimo_separador).hide();
+	}
 }
 
 // Temporário, depois são movidos para pedidos_pagos de pedidos.js
