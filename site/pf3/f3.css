@@ -27,7 +27,7 @@
 }
 
 #f3_7_comentario {
-	width: 100%;
+	width: 80%;
 	height: 10vw;
 	resize: none;
 }
@@ -194,6 +194,11 @@ input.current {
 	width: 12vw;
 }
 
+.estilo-imagens{
+	margin-left: 40vw;
+	margin-top: 3vw;
+}
+
 #f3_1_grupo_img {
 	height: 24vw;
 }
@@ -226,4 +231,21 @@ input.current {
 
 .f3_7_positioning{
 	margin-top: 2vw;
+}
+
+#div-contribuinte{
+	margin-top: 2vw;
+}
+
+#cartao-credito-transacao{
+	width: 22vw;
+	margin-top: -1vw;
+}
+
+#dinheiro-moedas-transacao{
+	height: 15vw;
+}
+
+#smartphone-NFC-transacao{
+	height: 16vw;
 }
