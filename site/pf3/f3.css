@@ -249,3 +249,9 @@ input.current {
 #smartphone-NFC-transacao{
 	height: 16vw;
 }
+
+.coluna-estilo{
+	position: absolute;
+	left: right;
+	right: 10vw;
+}
