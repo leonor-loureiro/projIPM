@@ -1,11 +1,13 @@
 #zona_f3{
 	height: 33.5vw;
 }
+
 #barra_progresso_f3{
 	height: 5vw;
 	background-color: transparent;
 	margin: 0.5vw;
 }
+
 .f3_titulo {
 	text-align: center;
 	font-size: 2vw;
@@ -80,7 +82,7 @@
 	text-align: left;
 	font-size: 1.8vw;
 	top: 4vw;
-	
+
 }
 
 
@@ -220,4 +222,8 @@
 
 .rating-estilo{
 	font-weight: bold;
+}
+
+#f3_7_comentario_keyboard{
+	z-index: 0;
 }

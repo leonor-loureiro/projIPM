@@ -199,6 +199,7 @@ body {
   margin-left: 7vw;
   margin-right: 7vw;
   margin-top: 2vw;
+  z-index: 1;
 }
 
 #imagem_empregado_main{
