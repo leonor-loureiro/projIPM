@@ -106,6 +106,13 @@ function f3_5_barra_progresso(){
 
 	});
 }
+
+var f3_vendo_5 = false;
+function get_f3_vendo_5()
+{
+	return f3_vendo_5;
+}
+
 function f3_5()
 {
 	var keyboard = $('#f3_4_contribuinte').getkeyboard();
@@ -128,16 +135,18 @@ function f3_5()
 			});
 			break;
 	}
-
+	f3_vendo_5 = true;
 }
 
 function f3_5_retroceder()
 {
+	f3_vendo_5 = false;
 	f3_4(f3_modo_de_pagamento);
 }
 
 function f3_6()
 {
+	f3_vendo_5 = false;
 	var total = 0;
 	f3_pagamento_comecado = true;
 	preparar_novo_pagamento();
