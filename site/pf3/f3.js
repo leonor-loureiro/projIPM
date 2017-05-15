@@ -138,10 +138,13 @@ function f3_5_retroceder()
 
 function f3_6()
 {
+	var total = 0;
 	f3_pagamento_comecado = true;
 	preparar_novo_pagamento();
 	for (var id of pedidos_a_pagar)
 	{
+		var pedido = get_pedido_entregue(id);
+		total += pedido.oferta.preco * pedido.quantidade;
 		mover_pedido_entregue_para_pago(id);
 	}
 	$("#loaded").load("f3_6.html", function() {
@@ -149,6 +152,7 @@ function f3_6()
 			$("#transacao").attr("disabled","false");
 			$("#transacao").attr("active","true");
 		});
+		$("#preco_total_transacao").html(total.toFixed(2));
 		if (existem_itens_por_pagar())
 		{
 			pedidos_a_pagar = [];
@@ -304,7 +308,7 @@ function f3_2_desenhar()
 			
 			total_subpagamento += item.oferta.preco * item.quantidade;
 		}
-		html = html.concat("<p class=\"f3_2_subtotal_pagamento\">" + total_subpagamento.toFixed(2) + "€</p>");
+		html = html.concat("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_subpagamento.toFixed(2) + "€</b></p>");
 		ultimo_separador++;
 		html = html.concat("<hr class=\"f3_2_separador\" id=f3_2_separador_" + ultimo_separador + ">");
 		numero_pagamento--;

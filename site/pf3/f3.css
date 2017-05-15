@@ -34,6 +34,8 @@
 	overflow-x: hidden;
 	column-width: 40vw;
 	font-size: 1.3vw;
+	margin-right: -999vw !important;
+	padding-right: 999vw;
 }
 
 #f3_2_lista_pagos {
@@ -42,6 +44,8 @@
 	overflow-x: hidden;
 	column-width: 40vw;
 	font-size: 1.3vw;
+	margin-right: -999vw !important;
+	padding-right: 999vw;
 }
 
 #f3_2_row_listas {
@@ -237,7 +241,6 @@
 }
 
 .f3_2_subtotal_pagamento {
-	font-weight: bold;
 	text-align: right;
 }
 
