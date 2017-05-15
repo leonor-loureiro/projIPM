@@ -241,7 +241,7 @@ $(document).keypress(function(e) {
 		}
 	}
 	// Enter
-	else if(e.which == 13 && get_f3_vendo_5) {
+	else if(e.which == 13 && get_f3_vendo_5()) {
 		f3_6();
 	}
 	// S
