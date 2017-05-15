@@ -333,7 +333,7 @@ var pagamento_counter = -1;
 function preparar_novo_pagamento()
 {
 	pagamento_counter++;
-	pedidos_pagos[pagamento_counter] = [];
+	pedidos_pagos.push([]);
 }
 
 function mover_pedido_entregue_para_pago(id)

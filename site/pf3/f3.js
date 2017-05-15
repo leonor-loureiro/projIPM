@@ -215,11 +215,28 @@ function f3_7_concluir()
 
 function f3_2_desenhar()
 {
-	template = `<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)"><b>%s€</b>: %s%s%s</br>`;
+	template = `
+<div class="checkbox">
+	<div class="row pf3_2_lista_pedidos" id="f3_2_linha_%d">
+		<div class="col-md-10">
+			<label>
+				<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)">
+				<span class="cr"><i class="cr-icon fa fa-check"></i></span>
+				%s%s%s
+			</label>
+		</div>
+		<div class="col-md-2 pull-right text-right">
+			<b>%s€</b>
+		</div>
+	</div>
+</div>
+`;
 
+	var linha_counter = -1;
 	var html = "";
 	for (var item of get_pedidos_entregues().slice().reverse())
 	{
+		linha_counter++;
 		var mult = "";
 		if (item.quantidade > 1)
 		{
@@ -232,21 +249,41 @@ function f3_2_desenhar()
 		}
 
 		html = html.concat(sprintf(template,
-			item.id, item.id,
-			(item.oferta.preco * item.quantidade).toFixed(2),
-			mult, personalizado, item.oferta.nome
+			linha_counter, item.id, item.id,
+			mult, personalizado, item.oferta.nome,
+			(item.oferta.preco * item.quantidade).toFixed(2)
 		));
 	}
 	
 	$("#f3_2_lista_checkboxes").html(html);
 	f3_2_carregar_checkboxes();
 	
-	template_pagos = `<p><b>%s€</b>: %s%s%s</p>`;
+	if (linha_counter != -1)
+	{
+		document.getElementById("f3_2_linha_" + linha_counter).style["border-bottom-style"] = "none";
+	}
+	
+	
+	template_pagos = `
+<div class="row pf3_2_lista_pedidos">
+	<div class="col-md-10">
+		%s%s%s
+	</div>
+	<div class="col-md-2 pull-right text-right">
+		<b>%s€</b>
+	</div>
+</div>
+`;
 	
 	var html = "";
 	var ultimo_separador = -1;
+	var total_subpagamento = 0;
+	var numero_pagamento = get_pedidos_pagos().length;
 	for (var lista of get_pedidos_pagos().reverse())
 	{
+		total_subpagamento = 0;
+		html = html.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Pagamento</p>");
+		
 		for (var item of lista)
 		{
 			var mult = "";
@@ -261,12 +298,16 @@ function f3_2_desenhar()
 			}
 			
 			html = html.concat(sprintf(template_pagos,
-				(item.oferta.preco * item.quantidade).toFixed(2),
-				mult, personalizado, item.oferta.nome
+				mult, personalizado, item.oferta.nome,
+				(item.oferta.preco * item.quantidade).toFixed(2)
 			));
+			
+			total_subpagamento += item.oferta.preco * item.quantidade;
 		}
+		html = html.concat("<p class=\"f3_2_subtotal_pagamento\">" + total_subpagamento.toFixed(2) + "€</p>");
 		ultimo_separador++;
 		html = html.concat("<hr class=\"f3_2_separador\" id=f3_2_separador_" + ultimo_separador + ">");
+		numero_pagamento--;
 	}
 	
 	$("#f3_2_lista_pagos").html(html);
