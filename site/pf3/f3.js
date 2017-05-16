@@ -250,7 +250,7 @@ function f3_2_desenhar()
 
 	var linha_counter = -1;
 	var html = "";
-	for (var item of get_pedidos_entregues().slice().reverse())
+	for (var item of sort_pedidos_por_nome(get_pedidos_entregues().slice()))
 	{
 		linha_counter++;
 		var mult = "";
@@ -295,12 +295,12 @@ function f3_2_desenhar()
 	var ultimo_separador = -1;
 	var total_subpagamento = 0;
 	var numero_pagamento = get_pedidos_pagos().length;
-	for (var lista of get_pedidos_pagos().reverse())
+	for (var lista of get_pedidos_pagos().slice().reverse())
 	{
 		total_subpagamento = 0;
 		html = html.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Pagamento</p>");
 		
-		for (var item of lista)
+		for (var item of sort_pedidos_por_nome(lista))
 		{
 			var mult = "";
 			if (item.quantidade > 1)
@@ -331,6 +331,14 @@ function f3_2_desenhar()
 	{
 		$("#f3_2_separador_" + ultimo_separador).hide();
 	}
+}
+
+// http://stackoverflow.com/a/8175221
+function sort_pedidos_por_nome(array) {
+    return array.sort(function(a, b) {
+        var x = a['oferta']['nome']; var y = b['oferta']['nome'];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
 }
 
 // Temporário, depois são movidos para pedidos_pagos de pedidos.js
@@ -383,7 +391,7 @@ function f3_2_desenhar_total()
 	}
 	totais = get_total_pagamento();
 	$("#f3_2_total_selecionado").html("<b>Total:</b> " + total_parte.toFixed(2)
-		+ "€ de " + totais[1].toFixed(2) + "€ (pago: " + totais[0].toFixed(2) + "€)");
+		+ "€ (faltam pagar " + (totais[1] - totais[0]).toFixed(2) + "€ de " + totais[1].toFixed(2) + "€)");
 }
 
 function f3_2_carregar_checkboxes()
@@ -458,7 +466,7 @@ function f3_5_desenhar()
 	var total_pagamento = 0;
 	var numero_pagamento = get_pedidos_pagos().length;
 	
-	for (var id of pedidos_a_pagar)
+	for (var id of sort_pedidos_por_nome_ids(pedidos_a_pagar))
 	{
 		var item = get_pedido_entregue(id);
 		var mult = "";
@@ -482,4 +490,14 @@ function f3_5_desenhar()
 	
 	$("#f3_5_lista_pagos").html(html);
 	$("#f3_5_lista_pagos_total").html("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_pagamento.toFixed(2) + "€</b></p>");
+}
+
+// http://stackoverflow.com/a/8175221
+function sort_pedidos_por_nome_ids(array) {
+    return array.sort(function(a, b) {
+		item_a = get_pedido_entregue(a);
+		item_b = get_pedido_entregue(b);
+        var x = item_a['oferta']['nome']; var y = item_b['oferta']['nome'];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
 }
