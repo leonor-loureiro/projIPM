@@ -122,16 +122,19 @@ function f3_5()
 		case "dinheiro":
 			$("#loaded").load("f3_5_dinheiro.html", function(){
 				f3_5_barra_progresso();
+				f3_5_desenhar();
 			});
 			break;
 		case "multibanco":
 			$("#loaded").load("f3_5_multibanco.html", function(){
 				f3_5_barra_progresso();
+				f3_5_desenhar();
 			});
 			break;
 		case "smartphone":
 			$("#loaded").load("f3_5_smartphone.html", function(){
 				f3_5_barra_progresso();
+				f3_5_desenhar();
 			});
 			break;
 	}
@@ -229,7 +232,7 @@ function f3_7_concluir()
 function f3_2_desenhar()
 {
 	template = `
-<div class="checkbox">
+<div class="checkbox f3_2_checkbox">
 	<div class="row pf3_2_lista_pedidos" id="f3_2_linha_%d">
 		<div class="col-md-10">
 			<label>
@@ -436,4 +439,47 @@ function f3_despedida(){
 	setTimeout(function(){
 		$("#modalPagamento").modal('hide');
 	}, 1500);
+}
+
+function f3_5_desenhar()
+{
+	template_pagos = `
+<div class="row pf3_2_lista_pedidos">
+	<div class="col-md-10">
+		%s%s%s
+	</div>
+	<div class="col-md-2 pull-right text-right">
+		<b>%s€</b>
+	</div>
+</div>
+`;
+	
+	var html = "";
+	var total_pagamento = 0;
+	var numero_pagamento = get_pedidos_pagos().length;
+	
+	for (var id of pedidos_a_pagar)
+	{
+		var item = get_pedido_entregue(id);
+		var mult = "";
+		if (item.quantidade > 1)
+		{
+			mult = String(item.quantidade) + "× ";
+		}
+		var personalizado = "";
+		if (item.personalizado)
+		{
+			personalizado = "<b>[P]</b> "
+		}
+		
+		html = html.concat(sprintf(template_pagos,
+			mult, personalizado, item.oferta.nome,
+			(item.oferta.preco * item.quantidade).toFixed(2)
+		));
+		
+		total_pagamento += item.oferta.preco * item.quantidade;
+	}
+	
+	$("#f3_5_lista_pagos").html(html);
+	$("#f3_5_lista_pagos_total").html("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_pagamento.toFixed(2) + "€</b></p>");
 }

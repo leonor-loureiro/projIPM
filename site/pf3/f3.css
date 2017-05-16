@@ -32,20 +32,27 @@
 	height: 15vw;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	column-width: 40vw;
 	font-size: 1.3vw;
-	margin-right: -999vw !important;
-	padding-right: 999vw;
 }
 
 #f3_2_lista_pagos {
 	height: 15vw;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	column-width: 40vw;
 	font-size: 1.3vw;
-	margin-right: -999vw !important;
-	padding-right: 999vw;
+}
+
+#f3_5_lista_pagos {
+	margin-top: 1vw;
+	height: 17vw;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-size: 1.3vw;
+}
+
+#f3_5_lista_pagos_total {
+	font-size: 1.3vw;
+	padding-right: 0.8vw;
 }
 
 #f3_2_row_listas {
@@ -194,16 +201,25 @@
 	margin-top: 2vw;
 }
 
-#div-contribuinte{
+#f3_4_contribuinte {
 	margin-top: 2vw;
 }
 
-#cartao-credito-transacao{
-	width: 22vw;
-	margin-top: -1vw;
+#dinheiro-moedas-transacao{
+	height: 15vw;
+	position: relative;
+	left: 21vw;
+	top:2vw;
 }
 
-#dinheiro-moedas-transacao{
+#cartao-credito-transacao{
+	height: 15vw;
+	position: relative;
+	left: 21vw;
+	top:2vw;
+}
+
+#smartphone-NFC-transacao{
 	height: 15vw;
 	position: relative;
 	left: 21vw;
@@ -215,10 +231,6 @@
 	position: relative;
 	top: 2vw;
 	border-color: black;
-}
-
-#smartphone-NFC-transacao{
-	height: 16vw;
 }
 
 .coluna-estilo{
@@ -308,4 +320,8 @@
 .checkbox label input[type="checkbox"]:disabled + .cr,
 .radio label input[type="radio"]:disabled + .cr {
     opacity: .5;
+}
+
+.f3_2_checkbox {
+	margin: 0;
 }
