@@ -24,9 +24,3 @@
   font-style: bold;
   src:url("fonts/candy.ttf");
 }
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;;
-  src:url("fonts/Roboto-Regular.ttf");
-}
