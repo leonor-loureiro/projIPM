@@ -333,14 +333,37 @@ var pagamento_counter = -1;
 function preparar_novo_pagamento()
 {
 	pagamento_counter++;
-	pedidos_pagos[pagamento_counter] = [];
+	pedidos_pagos.push([]);
 }
 
-function mover_pedido_entregue_para_pago(id)
+function mover_pedido_para_pago(pedido, quantidade=null)
 {
-	pedido = get_pedido_entregue(id);
-	remover_pedido_entregue(id, null);
-	pedidos_pagos[pagamento_counter].push(pedido);
+	pedido_entregue = get_pedido_entregue(pedido.id);
+	if (quantidade == null || quantidade >= pedido_entregue.quantidade)
+	{
+		remover_pedido_entregue(pedido.id, null);
+		_inserir_pedido_pago(pedido);
+	}
+	else
+	{
+		var pedido_copiado = jQuery.extend({}, pedido);
+		pedido_copiado.quantidade = quantidade;
+		_inserir_pedido_pago(pedido_copiado);
+		pedido_entregue.quantidade -= quantidade;
+	}
+}
+
+function _inserir_pedido_pago(pedido)
+{
+	var index = pedidos_pagos[pagamento_counter].map(function(e) { return String(e.oferta.tipo) + String(e.oferta.id) + String(e.personalizacoes) }).indexOf(String(pedido.oferta.tipo) + String(pedido.oferta.id) + String(pedido.oferta.personalizacoes));
+	if (index == -1)
+	{
+		pedidos_pagos[pagamento_counter].push(pedido);
+	}
+	else
+	{
+		pedidos_pagos[pagamento_counter][index].quantidade += pedido.quantidade;
+	}
 }
 
 function existem_itens_por_pagar()

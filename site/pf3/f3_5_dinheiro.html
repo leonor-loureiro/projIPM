@@ -1,42 +1,20 @@
 <div class="container tira" id="zona_f3">
 	<div id="barra_progresso_f3"></div>
 	<div class="f3_titulo">
-		Insira o dinheiro na ranhura das moedas.
+		Siga as instruções para efetutar o pagamento no recetor de moedas
 	</div>
 	<div>
 		<div class="col-sm-6">
 			<img id = "dinheiro-moedas-transacao" class="pull-left" src="images/dinheiro.svg" class="estilo-imagens"></img>
 		</div>
 		<div class="col-sm-6">
-			<table class="table" id="f3_5_fatura">
-				<thead class="thead-inverse">
-					<tr>
-						<th colspan="2">Fatura</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Bitoque</td>
-						<td class="preco_fatura">6.99€</td>
-					</tr>
-					<tr>
-						<td>Bacalhau com Natas</td>
-						<td class="preco_fatura">11.99€</td>
-					</tr>
-					<tr>
-						<td>Ice Tea Pessego</td>
-						<td class="preco_fatura">1.99€</td>
-					</tr>
-				</tbody>
-			</table>
+			<div id="f3_5_lista_pagos"></div>
+			<div id="f3_5_lista_pagos_total"></div>
 		</div>
 	</div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-6 text-left">
 			<button type="button" class="btn btn-primary btn-lg" onclick="f3_5_retroceder()">Retroceder</button>
-		</div>
-  		<div class="col-sm-6 text-right">
-			<button type="button" class="btn btn-primary btn-lg" onclick="f3_6()">Próximo</button>
 		</div>
 	</div>
 </div>

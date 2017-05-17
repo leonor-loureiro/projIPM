@@ -3,8 +3,12 @@
 	<div class="f3_titulo">
 		Número de contribuinte
 	</div>
-	<div align="center" id="div-contribuinte">
-		<input type="number" id="f3_4_contribuinte"></input>
+	<div class="row" id="f3_4_row_caixa">
+		<div class="col-sm-4">&nbsp;</div>
+		<div class="col-sm-4">&nbsp;</div>
+		<div class="col-sm-4 text-center">
+			<input type="text" id="f3_4_contribuinte"></input>
+		</div>
 	</div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-6 text-left">
@@ -22,12 +26,16 @@
 			$('#f3_4_contribuinte').keyboard({
 				language     : "pt",
 				layout: 'custom',
-				customLayout: { 'normal': ['7 8 9', '6 5 4', '3 2 1', '{clear} 0 {b}'] },
+				customLayout: { 'normal': ['7 8 9', '4 5 6', '1 2 3', '{clear} 0 {b}'] },
 				// preview added above keyboard if true, original input/textarea used if false
 				usePreview : false,
 				// if true, the keyboard will always be visible
-				alwaysOpen : true
+				alwaysOpen : true,
+				// allow jQuery position utility to reposition the keyboard on window resize
+				reposition : true
 			});
+			document.getElementById('f3_4_contribuinte_keyboard').style['font-size'] = '1.4em';
+			$('#f3_4_contribuinte').getkeyboard().reposition();
 		});
 	});
 </script>

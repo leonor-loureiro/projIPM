@@ -1,17 +1,20 @@
 <div class="container tira" id="zona_f3">
 	<div id="barra_progresso_f3"></div>
 	<div class="f3_titulo">
-		Passe o seu smartphone no leitor NFC
+		Siga as instruções para efetutar o pagamento no terminal NFC
 	</div>
 	<div>
-		<img id = "smartphone-NFC-transacao" src="images/smartphone.svg" class="estilo-imagens"></img>
+		<div class="col-sm-6">
+			<img id = "smartphone-NFC-transacao" class="pull-left" src="images/smartphone.svg" class="estilo-imagens"></img>
+		</div>
+		<div class="col-sm-6">
+			<div id="f3_5_lista_pagos"></div>
+			<div id="f3_5_lista_pagos_total"></div>
+		</div>
 	</div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-6 text-left">
 			<button type="button" class="btn btn-primary btn-lg" onclick="f3_5_retroceder()">Retroceder</button>
-		</div>
-  		<div class="col-sm-6 text-right">
-			<button type="button" class="btn btn-primary btn-lg" onclick="f3_6()">Próximo</button>
 		</div>
 	</div>
 </div>

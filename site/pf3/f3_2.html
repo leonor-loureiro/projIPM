@@ -1,12 +1,16 @@
 <div class="container tira" id="zona_f3">
 	<div id="barra_progresso_f3"></div>
 	<div class="f3_titulo">
-		Lista de pedidos consumidos
+		Selecione o que pretende pagar
 	</div>
 	<div class="row" id="row_listas_header">
 		<div class="col-sm-6">
-			<div id="f3_selecionar_tudo_div">
-				<label id="f3_selecionar_tudo_label"><input type="checkbox" id="f3_selecionar_tudo" onchange="f3_2_checkbox_tudo()">Selecionar Tudo<label/>
+			<div id="f3_selecionar_tudo_div" class="checkbox">
+				<label id="f3_selecionar_tudo_label">
+					<input type="checkbox" id="f3_selecionar_tudo" onchange="f3_2_checkbox_tudo()"/>
+					<span class="cr"><i class="cr-icon fa fa-check"></i></span>
+					Selecionar Tudo
+				</label>
 			</div>
 		</div>
 		<div class="col-sm-6">
@@ -22,16 +26,15 @@
 		</div>
 	</div>
 	<div class="row botoes_navegacao">
-		<div class="col-sm-4 text-left">
+		<div class="col-sm-5 text-left">
 			<button type="button" class="btn btn-primary btn-lg" onclick="f3_2_retroceder()" id="botao_f3_2_retroceder">Retroceder</button>
 		</div>
-		<div class="col-sm-4 text-center">
-			<div id="f3_2_total_selecionado"></div>
-		</div>
-  		<div class="col-sm-4 text-right">
+  		<div class="col-sm-2 text-center">
 			<button type="button" class="btn btn-primary btn-lg f3_1_SNbutton" onclick="f3_3()" id="botao_f3_2_pagar">Pagar</button>
 		</div>
-
+		<div class="col-sm-5 text-right">
+			<div id="f3_2_total_selecionado"></div>
+		</div>
 	</div>
 </div>
 <script>
