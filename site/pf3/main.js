@@ -233,7 +233,10 @@ function marcar_img_f3()
 $(document).keypress(function(e) {
 	// Space
 // 	console.log(e.which);
-	if(e.which == 32) {
+	if(e.which == 32 && get_f3_vendo_5()){
+		f3_3();
+	}
+	else if(e.which == 32) {
 		decrementar_tempo_espera();
 		if (get_f2_vendo_1())
 		{
@@ -244,6 +247,8 @@ $(document).keypress(function(e) {
 	else if(e.which == 13 && get_f3_vendo_5()) {
 		f3_6();
 	}
+
+	
 	// S
 // 	else if(e.which == 115) {
 // 		f3_surprise();
