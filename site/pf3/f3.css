@@ -22,24 +22,32 @@
 	padding-bottom: 0;
 	margin-top: 0;
 	margin-bottom: 0;
+	border-bottom: solid;
 }
 
 #f3_selecionar_tudo_label {
 	font-size: 1.3vw;
 }
 
+
 #f3_2_lista_checkboxes {
-	height: 15vw;
+	height: 14vw;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	font-size: 1.3vw;
+	margin-right: -55vw;
+	padding-right: 55vw;
 }
 
 #f3_2_lista_pagos {
-	height: 15vw;
+	height: 16vw;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	font-size: 1.3vw;
+	margin-right: -10vw;
+	padding-right:10vw;
+	margin-top: 1.5vw;
+
 }
 
 #f3_5_lista_pagos {
@@ -50,6 +58,24 @@
 	font-size: 1.3vw;
 	margin-right: -10vw;
 	padding-right: 10vw;
+
+}
+
+.panel-default > .panel-heading {
+	background-color:  	rgba(92,184,92,1);
+/**	border: solid #5cb85c;
+	border-width: 0.1vw;
+	border-bottom: none;*/
+	box-shadow: 0 0 0.2vw black;
+	color: white;
+}
+
+
+.pagamento_body{
+	background-color: rgba(241, 235, 212, 1) !important;
+	/**border: solid #5cb85c;
+	border-width: 0.1vw;*/
+	box-shadow: 0 0 0.2vw black;
 }
 
 #f3_5_lista_pagos_total {
