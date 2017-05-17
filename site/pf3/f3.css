@@ -168,7 +168,7 @@
 }
 
 #f3_1_grupo_img {
-	height: 24vw;
+	height: 20vw;
 }
 
 .descricao-modo-pagamento{
@@ -332,4 +332,17 @@
 
 #f3_4_row_caixa {
 	padding: 0;
+}
+
+#f3_1_pessoa_img{
+	height: 20vw;
+	margin-left: 20.4vw;
+}
+
+#f3_1_Nbutton{
+	margin-left: 20.5vw;
+}
+
+#f3_1_Sbutton{
+	margin-right: 32.1vw;
 }
