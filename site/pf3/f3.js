@@ -54,7 +54,7 @@ function f3_3(voltar_para_f3_1 = false)
 		pedidos_a_pagar = [];
 		for (var item of get_pedidos_entregues())
 		{
-			pedidos_a_pagar.push(item.id);
+			pedidos_a_pagar.push(item);
 		}
 	}
 	$("#loaded").load("f3_3.html", function(){
@@ -153,11 +153,10 @@ function f3_6()
 	var total = 0;
 	f3_pagamento_comecado = true;
 	preparar_novo_pagamento();
-	for (var id of pedidos_a_pagar)
+	for (var item of pedidos_a_pagar)
 	{
-		var pedido = get_pedido_entregue(id);
-		total += pedido.oferta.preco * pedido.quantidade;
-		mover_pedido_entregue_para_pago(id);
+		total += item.oferta.preco * item.quantidade;
+		mover_pedido_para_pago(item, item.quantidade);
 	}
 	$("#loaded").load("f3_6.html", function() {
 		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
@@ -236,9 +235,9 @@ function f3_2_desenhar()
 	<div class="row pf3_2_lista_pedidos" id="f3_2_linha_%d">
 		<div class="col-md-10">
 			<label>
-				<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d" onchange="f3_2_checkbox(this)">
+				<input type="checkbox" name="f3_2_pedidos" value=%d id="checkbox_pagamento_%d_%d" onchange="f3_2_checkbox(this)">
 				<span class="cr"><i class="cr-icon fa fa-check"></i></span>
-				%s%s%s
+				%s%s
 			</label>
 		</div>
 		<div class="col-md-2 pull-right text-right">
@@ -252,23 +251,23 @@ function f3_2_desenhar()
 	var html = "";
 	for (var item of sort_pedidos_por_nome(get_pedidos_entregues().slice()))
 	{
-		linha_counter++;
-		var mult = "";
-		if (item.quantidade > 1)
+		var checkbox_counter = 0;
+		for (i = item.quantidade; i > 0; i--)
 		{
-			mult = String(item.quantidade) + "× ";
-		}
-		var personalizado = "";
-		if (item.personalizado)
-		{
-			personalizado = "<b>[P]</b> "
-		}
+			linha_counter++;
+			var personalizado = "";
+			if (item.personalizado)
+			{
+				personalizado = "<b>[P]</b> "
+			}
 
-		html = html.concat(sprintf(template,
-			linha_counter, item.id, item.id,
-			mult, personalizado, item.oferta.nome,
-			(item.oferta.preco * item.quantidade).toFixed(2)
-		));
+			html = html.concat(sprintf(template,
+				linha_counter, item.id, item.id, checkbox_counter,
+				personalizado, item.oferta.nome,
+				item.oferta.preco.toFixed(2)
+			));
+			checkbox_counter++;
+		}
 	}
 	
 	$("#f3_2_lista_checkboxes").html(html);
@@ -346,18 +345,30 @@ var pedidos_a_pagar = []
 
 function f3_2_checkbox(element)
 {
+	var pedido_copiado = jQuery.extend({}, get_pedido_entregue(parseInt(element.value)));
+	pedido_copiado.quantidade = 1;
+	var index = pedidos_a_pagar.map(function(e) { return e.id; }).indexOf(parseInt(element.value));
 	if (element.checked)
 	{
-		var index = pedidos_a_pagar.indexOf(parseInt(element.value));
 		if(index < 0) {
-			pedidos_a_pagar.push(parseInt(element.value));
+			pedidos_a_pagar.push(pedido_copiado);
+		}
+		else
+		{
+			pedidos_a_pagar[index].quantidade++;
 		}
 	}
 	else
 	{
-		var index = pedidos_a_pagar.indexOf(parseInt(element.value));
 		if(index > -1) {
-			pedidos_a_pagar.splice(index, 1);
+			if (pedidos_a_pagar[index].quantidade == 1)
+			{
+				pedidos_a_pagar.splice(index, 1);
+			}
+			else
+			{
+				pedidos_a_pagar[index].quantidade--;
+			}
 		}
 	}
 	f3_2_desenhar_total();
@@ -376,18 +387,29 @@ function f3_2_checkbox_tudo()
 	checkboxes = document.getElementsByName("f3_2_pedidos");
 	for (var item of checkboxes)
 	{
-		item.checked = f3_selecionar_tudo.checked;
-		f3_2_checkbox(item);
+		var atualizar = true;
+		if (item.checked == f3_selecionar_tudo.checked)
+		{
+			atualizar = false;
+		}
+		else
+		{
+			item.checked = f3_selecionar_tudo.checked;
+		}
+		
+		if (atualizar)
+		{
+			f3_2_checkbox(item);
+		}
 	}
 }
 
 function f3_2_desenhar_total()
 {
 	var total_parte = 0;
-	for (var id of pedidos_a_pagar)
+	for (var item of pedidos_a_pagar)
 	{
-		var item = get_pedido_entregue(id);
-		total_parte += item.quantidade * item.oferta.preco;
+		total_parte += item.oferta.preco * item.quantidade;
 	}
 	totais = get_total_pagamento();
 	$("#f3_2_total_selecionado").html("<b>Total:</b> " + total_parte.toFixed(2)
@@ -396,9 +418,12 @@ function f3_2_desenhar_total()
 
 function f3_2_carregar_checkboxes()
 {
-	for (var id of pedidos_a_pagar)
+	for (var item of pedidos_a_pagar)
 	{
-		document.getElementById("checkbox_pagamento_" + id).checked = true;
+		for (i = 0; i < item.quantidade; i++)
+		{
+			document.getElementById("checkbox_pagamento_" + item.id + "_" + i).checked = true;
+		}
 	}
 	if (pedidos_a_pagar.length != 0)
 	{
@@ -466,9 +491,8 @@ function f3_5_desenhar()
 	var total_pagamento = 0;
 	var numero_pagamento = get_pedidos_pagos().length;
 	
-	for (var id of sort_pedidos_por_nome_ids(pedidos_a_pagar))
+	for (var item of sort_pedidos_por_nome(pedidos_a_pagar))
 	{
-		var item = get_pedido_entregue(id);
 		var mult = "";
 		if (item.quantidade > 1)
 		{
@@ -490,14 +514,4 @@ function f3_5_desenhar()
 	
 	$("#f3_5_lista_pagos").html(html);
 	$("#f3_5_lista_pagos_total").html("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_pagamento.toFixed(2) + "€</b></p>");
-}
-
-// http://stackoverflow.com/a/8175221
-function sort_pedidos_por_nome_ids(array) {
-    return array.sort(function(a, b) {
-		item_a = get_pedido_entregue(a);
-		item_b = get_pedido_entregue(b);
-        var x = item_a['oferta']['nome']; var y = item_b['oferta']['nome'];
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    });
 }
