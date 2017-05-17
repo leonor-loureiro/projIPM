@@ -338,12 +338,15 @@ function sort_pedidos_por_nome(array) {
 
 // Temporário, depois são movidos para pedidos_pagos de pedidos.js
 var pedidos_a_pagar = []
+var selecionou_tudo = false;
+var tudo_selecionado = false;
 
 function f3_2_checkbox(element)
 {
 	var pedido_copiado = jQuery.extend({}, get_pedido_entregue(parseInt(element.value)));
 	pedido_copiado.quantidade = 1;
 	var index = pedidos_a_pagar.map(function(e) { return e.id; }).indexOf(parseInt(element.value));
+
 	if (element.checked)
 	{
 		if(index < 0) {
@@ -364,9 +367,14 @@ function f3_2_checkbox(element)
 			else
 			{
 				pedidos_a_pagar[index].quantidade--;
+
+				if(selecionou_tudo){
+					f3_selecionar_tudo.checked = false;
+				}
 			}
 		}
 	}
+
 	f3_2_desenhar_total();
 	if (pedidos_a_pagar.length != 0)
 	{
@@ -380,13 +388,16 @@ function f3_2_checkbox(element)
 
 function f3_2_checkbox_tudo()
 {
+	selecionou_tudo = true;
 	checkboxes = document.getElementsByName("f3_2_pedidos");
+
 	for (var item of checkboxes)
 	{
 		var atualizar = true;
 		if (item.checked == f3_selecionar_tudo.checked)
 		{
 			atualizar = false;
+
 		}
 		else
 		{
