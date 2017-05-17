@@ -48,11 +48,13 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 	font-size: 1.3vw;
+	margin-right: -10vw;
+	padding-right: 10vw;
 }
 
 #f3_5_lista_pagos_total {
 	font-size: 1.3vw;
-	padding-right: 0.8vw;
+	padding-right: 0.4vw;
 }
 
 #f3_2_row_listas {
@@ -213,10 +215,9 @@
 }
 
 #cartao-credito-transacao{
-	height: 15vw;
+	height: 20vw;
 	position: relative;
-	left: 21vw;
-	top:2vw;
+	left: 18vw;
 }
 
 #smartphone-NFC-transacao{
@@ -258,6 +259,7 @@
 
 .f3_2_subtotal_pagamento {
 	text-align: right;
+	margin-top: 1vw;
 }
 
 .pf3_2_lista_pedidos {
@@ -345,4 +347,12 @@
 
 #f3_1_Sbutton{
 	margin-right: 32.1vw;
+}
+
+.pull-right{
+	padding-right: 0.7vw !important;
+}
+
+.col-sm-6{
+	margin-top: 5px;
 }
