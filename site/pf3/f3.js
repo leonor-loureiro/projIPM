@@ -200,8 +200,6 @@ function f3_7_concluir()
 		&& document.getElementById('rating_atendimento').value == 5
 		&& document.getElementById('f3_7_checkbox_elogio').checked)
 	{
-		var keyboard = $('#f3_7_comentario_keyboard').getkeyboard();
-		keyboard.destroy();
 		f3_surprise();
 
 		setTimeout(function(){
@@ -214,8 +212,6 @@ function f3_7_concluir()
 	}
 	else
 	{
-		var keyboard = $('#f3_7_comentario_keyboard').getkeyboard();
-		keyboard.destroy();
 
 		setTimeout(function(){
 			f3_despedida();
