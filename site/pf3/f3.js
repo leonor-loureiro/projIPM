@@ -112,6 +112,7 @@ function get_f3_vendo_5()
 
 function f3_5()
 {
+	$("#modalContribuinte").modal('hide');
 	var keyboard = $('#f3_4_contribuinte').getkeyboard();
 	keyboard.destroy();
 	switch(f3_modo_de_pagamento)
@@ -293,7 +294,7 @@ function f3_2_desenhar()
 	</div>
 </div>
 `;
-	
+
 	var html="";
 	var ultimo_separador = -1;
 	var total_subpagamento = 0;
@@ -324,7 +325,7 @@ function f3_2_desenhar()
 
 			total_subpagamento += item.oferta.preco * item.quantidade;
 		}
-	
+
 		content = content.concat("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_subpagamento.toFixed(2) + "€</b></p>");
 		html=html.concat(sprintf(template_collapse_pago,numero_pagamento,header,numero_pagamento,content));
 		numero_pagamento--;
