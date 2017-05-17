@@ -8,7 +8,7 @@ function loadMain() {
 		{
 			document.getElementById("img_f2").style.filter = "grayscale(1)";
 		}
-		
+
 		if(!pode_pagar())
 		{
 			document.getElementById("img_f3").style.filter = "grayscale(1)";

@@ -82,13 +82,10 @@ function f3_3_retroceder()
 var f3_modo_de_pagamento = null;
 function f3_4(modo_de_pagamento)
 {
-	$("#loaded").load("f3_4.html", function(){
-		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
-			$("#nr_contribuinte").attr("disabled","false");
-			$("#nr_contribuinte").attr("active","true");
-
-		});
-	});
+	$("#modalContribuinte").modal();
+	setTimeout(function(){
+		document.getElementById("f3_4_contribuinte_keyboard").style.visibility ="visible";
+	}, 500);
 	f3_modo_de_pagamento = modo_de_pagamento;
 }
 

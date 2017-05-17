@@ -206,7 +206,7 @@
 }
 
 #f3_4_contribuinte {
-	margin-top: 2vw;
+	margin-left: -0.6vw;
 }
 
 #dinheiro-moedas-transacao{
@@ -255,7 +255,10 @@
 }
 
 #f3_4_contribuinte_keyboard{
-	z-index: 0;
+	visibility: hidden;
+	z-index: 10000;
+	margin-left: 44.7vw;
+	margin-top: 20vw;
 }
 
 .f3_2_subtitulo_pagamento {

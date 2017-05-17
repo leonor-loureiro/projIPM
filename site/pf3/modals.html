@@ -111,3 +111,61 @@
 			</div>
 	</div>
 </div>
+
+<!-- Modal Contribuinte-->
+<div class="modal-container">
+	<div class="modal fade" id="modalContribuinte" role="dialog">
+
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalContribuinte-pos" id = "modalContribuinte-size">
+					<div class="modal-header">
+						<h class="modal-title" id = "modalContribuinte-msg">Número Contribuinte</h>
+					</div>
+						<div class="modal-body">
+							<div class="col-sm-4 text-center">
+								<div class="row" id="f3_4_row_caixa">
+
+									<div class="col-sm-4">&nbsp;</div>
+									<div class="col-sm-4">&nbsp;</div>
+									<div class="col-sm-4 text-center">
+										<input type="text" id="f3_4_contribuinte"></input>
+										<script>
+											jQuery(document).ready(function () {
+												$(function(){
+													// https://github.com/Mottie/Keyboard/wiki/Setup
+													$('#f3_4_contribuinte').keyboard({
+														language     : "pt",
+														layout: 'custom',
+														customLayout: { 'normal': ['7 8 9', '4 5 6', '1 2 3', '{clear} 0 {b}'] },
+														// preview added above keyboard if true, original input/textarea used if false
+														usePreview : false,
+														// if true, the keyboard will always be visible
+														alwaysOpen : true,
+														// allow jQuery position utility to reposition the keyboard on window resize
+														reposition : true
+													});
+													document.getElementById('f3_4_contribuinte_keyboard').style['font-size'] = '1.4em';
+													$('#f3_4_contribuinte').getkeyboard().reposition();
+												});
+											});
+										</script>
+
+									</div>
+
+								</div>
+
+						</div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row row-modal">
+							<button type="button" class="btn btn-primary btn-lg text-left" id ="modal-ok-button" onclick="f3_5()">Ok</button>
+							<button type="button" class="btn btn-primary btn-lg text-left" onclick="f3_5()">Fechar</button>
+						</div>
+					</div>
+			</div>
+	</div>
+</div>

@@ -385,3 +385,26 @@ html{
 ::-webkit-scrollbar {
     display: none;
 }
+
+.modalContribuinte-pos{
+  height: 28.5vw;
+  margin-top: 10vw;
+  width: 33vw;
+  margin-left: -2vw;
+}
+
+#modalContribuinte-msg{
+  margin-left: 5.5vw;
+  font-size: 25px;
+}
+
+.row-modal{
+  padding: 2px;
+  margin-top: 3.7vw;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#modal-ok-button{
+  float: right;
+}
