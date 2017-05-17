@@ -170,7 +170,7 @@ function f3_6()
 			$("#botao_avaliar").attr("onclick","f3_2()");
 			document.getElementById("botao_avaliar").innerHTML="Próximo";
 			document.getElementById("botao_concluir").style.visibility="hidden";
-		
+
 		}
 	});
 }
@@ -200,8 +200,6 @@ function f3_7_concluir()
 		&& document.getElementById('rating_atendimento').value == 5
 		&& document.getElementById('f3_7_checkbox_elogio').checked)
 	{
-		var keyboard = $('#f3_7_comentario_keyboard').getkeyboard();
-		keyboard.destroy();
 		f3_surprise();
 
 		setTimeout(function(){
@@ -214,9 +212,6 @@ function f3_7_concluir()
 	}
 	else
 	{
-		var keyboard = $('#f3_7_comentario_keyboard').getkeyboard();
-		keyboard.destroy();
-
 		setTimeout(function(){
 			f3_despedida();
 		}, 1000);
@@ -269,16 +264,16 @@ function f3_2_desenhar()
 			checkbox_counter++;
 		}
 	}
-	
+
 	$("#f3_2_lista_checkboxes").html(html);
 	f3_2_carregar_checkboxes();
-	
+
 	if (linha_counter != -1)
 	{
 		document.getElementById("f3_2_linha_" + linha_counter).style["border-bottom-style"] = "none";
 	}
-	
-	
+
+
 	template_pagos = `
 <div class="row pf3_2_lista_pedidos">
 	<div class="col-md-10">
@@ -289,7 +284,7 @@ function f3_2_desenhar()
 	</div>
 </div>
 `;
-	
+
 	var html = "";
 	var ultimo_separador = -1;
 	var total_subpagamento = 0;
@@ -298,7 +293,7 @@ function f3_2_desenhar()
 	{
 		total_subpagamento = 0;
 		html = html.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Pagamento</p>");
-		
+
 		for (var item of sort_pedidos_por_nome(lista))
 		{
 			var mult = "";
@@ -311,12 +306,12 @@ function f3_2_desenhar()
 			{
 				personalizado = "<b>[P]</b> "
 			}
-			
+
 			html = html.concat(sprintf(template_pagos,
 				mult, personalizado, item.oferta.nome,
 				(item.oferta.preco * item.quantidade).toFixed(2)
 			));
-			
+
 			total_subpagamento += item.oferta.preco * item.quantidade;
 		}
 		html = html.concat("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_subpagamento.toFixed(2) + "€</b></p>");
@@ -324,7 +319,7 @@ function f3_2_desenhar()
 		html = html.concat("<hr class=\"f3_2_separador\" id=f3_2_separador_" + ultimo_separador + ">");
 		numero_pagamento--;
 	}
-	
+
 	$("#f3_2_lista_pagos").html(html);
 	if (ultimo_separador != -1)
 	{
@@ -396,7 +391,7 @@ function f3_2_checkbox_tudo()
 		{
 			item.checked = f3_selecionar_tudo.checked;
 		}
-		
+
 		if (atualizar)
 		{
 			f3_2_checkbox(item);
@@ -486,11 +481,11 @@ function f3_5_desenhar()
 	</div>
 </div>
 `;
-	
+
 	var html = "";
 	var total_pagamento = 0;
 	var numero_pagamento = get_pedidos_pagos().length;
-	
+
 	for (var item of sort_pedidos_por_nome(pedidos_a_pagar))
 	{
 		var mult = "";
@@ -503,15 +498,15 @@ function f3_5_desenhar()
 		{
 			personalizado = "<b>[P]</b> "
 		}
-		
+
 		html = html.concat(sprintf(template_pagos,
 			mult, personalizado, item.oferta.nome,
 			(item.oferta.preco * item.quantidade).toFixed(2)
 		));
-		
+
 		total_pagamento += item.oferta.preco * item.quantidade;
 	}
-	
+
 	$("#f3_5_lista_pagos").html(html);
 	$("#f3_5_lista_pagos_total").html("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_pagamento.toFixed(2) + "€</b></p>");
 }
