@@ -34,6 +34,7 @@ function loadModals() {
 }
 
 
+
 function chamar_empregado(){
 	$("#modalEmpregado").modal();
 
@@ -248,7 +249,7 @@ $(document).keypress(function(e) {
 		f3_6();
 	}
 
-	
+
 	// S
 // 	else if(e.which == 115) {
 // 		f3_surprise();
