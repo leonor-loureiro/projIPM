@@ -5,36 +5,27 @@
 	</div>
 	<div class="row f3_7_positioning">
 		<div class="col-sm-4 rating-estilo">
-			Refeição: <input id="rating_refeicao" value="0" type="number" min=0 max=5 step=1 data-size="sm" >
-			Atendimento: <input id="rating_atendimento" value="0" type="number" min=0 max=5 step=1 data-size="sm" >
+			<span class ="rating-size">Refeição</span>: <input id="rating_refeicao" value="0" type="number" min=0 max=5 step=1 data-size="sm" />
+			<span class ="rating-size">Atendimento:</span> <input id="rating_atendimento" value="0" type="number" min=0 max=5 step=1 data-size="sm" />
 		</div>
 		<div class="col-sm-6">
 			<textarea name="comentario_fim" id="f3_7_comentario"></textarea>
 		</div>
 		<div class="col-sm-2 coluna-estilo">
-			<div class="radio">
-				<label style="font-size: 1.5em">
-					<input type="radio" name="tipo_comentario" value="elogio" checked id="f3_7_checkbox_elogio">
-					<span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-					Elogio
-				</label>
-			</div>
-			<div class="radio">
-				<label style="font-size: 1.5em">
-					<input type="radio" name="tipo_comentario" value="sugestao" id="f3_7_checkbox_sugestao">
-					<span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-					Sugestão
-				</label>
-			</div>
-			<div class="radio">
-				<label style="font-size: 1.5em">
-					<input type="radio" name="tipo_comentario" value="reclamacao" id="f3_7_checkbox_reclamacao">
-					<span class="cr"><i class="cr-icon fa fa-circle"></i></span>
-					Reclamação
-				</label>
-			</div>
-		</div>
-	</div>
+
+      <label>
+        <input type="radio" class="option-input radio" name="example" checked />
+        <span>Elogios</span>
+      </label>
+      <label>
+        <input type="radio" class="option-input radio" name="example" />
+        Reclamações
+      </label>
+      <label>
+        <input type="radio" class="option-input radio" name="example" />
+        Avaliações
+      </label>
+	  </div>
 	<div class="row botoes_navegacao">
 		<div class="col-sm-6 text-left">&nbsp;</div>
   		<div class="col-sm-6 text-right">
