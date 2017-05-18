@@ -393,9 +393,27 @@ html{
   margin-left: -2vw;
 }
 
+.modalInsucesso-pos{
+  margin-top: 17vw;
+  width: 42vw;
+  margin-left: -5vw;
+  height: 18vw;
+}
+
 #modalContribuinte-msg{
   margin-left: 5.5vw;
   font-size: 25px;
+}
+
+#modalInsucesso-msg{
+  font-size: 21px;
+  font-weight: bold;
+}
+
+#imagem_insucesso{
+  height: 10vw;
+  margin-left: 14vw;
+  margin-top: 1vw;
 }
 
 

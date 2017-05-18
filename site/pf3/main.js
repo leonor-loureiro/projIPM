@@ -236,11 +236,14 @@ $(document).keypress(function(e) {
 // 	console.log(e.which);
 	if(e.which == 32 && get_f3_vendo_5()){
 		f3_3();
+		modalInsucesso();
+
 	}
 	else if(e.which == 32) {
 		decrementar_tempo_espera();
 		if (get_f2_vendo_1())
 		{
+			modalInsucesso();
 			f2_desenhar_pedidos();
 		}
 	}
@@ -255,3 +258,12 @@ $(document).keypress(function(e) {
 // 		f3_surprise();
 // 	}
 });
+
+function modalInsucesso(){
+	$("#modalInsucesso").modal();
+
+	// http://stackoverflow.com/a/22944616
+	setTimeout(function(){
+		$("#modalInsucesso").modal('hide');
+	}, 1000);
+}
