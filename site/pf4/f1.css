@@ -1,0 +1,417 @@
+.tira {
+	position: relative;
+	height: 24vw;
+	border-width: 0.5vw;
+	border-left: 0;
+	border-right: 0;
+	border-style: solid;
+	border-color: rgba(184, 140, 33, 1);
+	background-color: rgba(241, 235, 212, 1) !important;
+}
+
+#area_pedido {
+	position: fixed;
+	width: 16vw;
+	height: 21vw;
+	left: 84vw;
+	top: 34vw;
+/* 	border: 1px solid black; */
+	padding-left: 1vw;
+}
+
+#area_pedido_fundo {
+	position: fixed;
+	width: 16vw;
+	height: 26vw;
+	left: 84vw;
+	top: 30vw;
+}
+
+#lista_pedidos {
+	height: 13vw;
+	overflow-y: scroll;
+	margin-right: -999vw !important;
+	padding-right: 998vw;
+}
+
+#coluna_1_botoes{
+	padding-left: 1.5vw;
+	padding-right: 2%;
+}
+
+#coluna_2_botoes{
+	padding-left: 2%;
+	padding-right: 1.5vw;
+}
+
+#total{
+	font-weight: bold;
+}
+
+.colunas_botoes{
+	margin-bottom: -8px;
+}
+
+.lista_pedidos_tres_pontos {
+	width: 100%;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	line-height: 100%;
+}
+
+.lista_pedidos_preco_item {
+	text-align: right;
+	padding-top: 0;
+	line-height: 100%;
+}
+
+.botao_navegacao {
+	position: absolute;
+	bottom: 1vw;
+}
+
+.botoes_navegacao {
+	position: absolute;
+	bottom: 1vw;
+	width: 100%;
+	padding: 0;
+}
+
+.grupo_botoes_navegacao {
+	position: absolute;
+	bottom: 1vw;
+	width: 100%;
+}
+
+.tipo_comida {
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+	height: 8vw;
+	width: 8vw;
+	position: fixed;
+
+}
+
+#info_fazer_pedidos{
+	text-align: center;
+	font-size: 2vw;
+	font-weight: bold;
+	padding-top: 10vw;
+}
+
+.tipos_comidas{
+	font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+.info_span {
+	font-size: 1.25vw;
+	vertical-align: middle;
+}
+
+
+.info_img {
+	width: 2vw;
+	height: 2vw;
+	vertical-align: middle;
+	padding-top: 2px;
+}
+
+.icone_tipo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 5vw;
+	width: 5vw;
+}
+
+#tipo_bebidas {
+	top: 51vw;
+	left: 22vw;
+}
+
+#tipo_entradas {
+	top: 42vw;
+	left: 28vw;
+}
+
+.btn-secundary{
+	background-color: #a79595;
+	color: white;
+}
+
+.btn-link{
+	border-color: #337ab7;
+}
+
+label{
+	padding: 6px 2px !important;
+}
+
+.btn-link[disabled] {
+	border-color: gray !important;
+	color: gray !important;
+}
+
+.btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link.active, .open>.dropdown-toggle.btn-link, .btn-link:active:focus {
+	border-color: #204d74 !important;
+}
+
+#tipo_sopas {
+	top: 36vw;
+	left: 38vw;
+}
+
+#tipo_carne {
+	top: 33.75vw;
+	left: 50vw;
+}
+
+#tipo_peixe {
+	top: 36vw;
+	left: 62vw;
+}
+
+#tipo_vegetariano {
+	top: 42vw;
+	left: 72vw;
+}
+
+#tipo_sobremesas {
+	top: 51vw;
+	left: 78vw;
+}
+
+#titulo_listagem{
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.4vw;
+	margin-top: 0.5vw;
+}
+
+.tipo_comida_fundo {
+	transform: translate(-50%, -50%);
+	position: fixed;
+	width: 10vw;
+	height: 10vw;
+	background-color: rgba(255, 255, 255, .2);
+	border-radius: 50%;
+	border-color: lightgrey;
+	border-style: solid;
+	border-width: 0.05px;
+}
+
+#tipo_bebidas_fundo {
+	top: 51vw;
+	left: 22vw;
+}
+
+#tipo_entradas_fundo {
+	top: 42vw;
+	left: 28vw;
+}
+
+#tipo_sopas_fundo {
+	top: 36vw;
+	left: 38vw;
+}
+
+#tipo_carne_fundo {
+	top: 33.75vw;
+	left: 50vw;
+}
+
+#tipo_peixe_fundo {
+	top: 36vw;
+	left: 62vw;
+}
+
+#tipo_vegetariano_fundo {
+	top: 42vw;
+	left: 72vw;
+}
+
+#tipo_sobremesas_fundo {
+	top: 51vw;
+	left: 78vw;
+}
+
+#ofertas {
+	width: 80vw;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	margin-bottom: -55vw;
+	padding-bottom: 55vw;
+}
+
+.oferta {
+	padding-left: 0.25vw;
+	padding-right: 0.25vw;
+	display: inline-block;
+	text-align: center;
+}
+
+.imagem_oferta {
+	object-fit: cover;
+	width: 8vw;
+	height: 8vw;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.seta {
+	width: 8vw;
+	height: 8vw;
+	border-radius: 50%;
+	background-color: #D47729;
+}
+
+#seta_esquerda {
+	position: absolute;
+	top: 1vw;
+	left: 1vw;
+}
+
+#seta_direita {
+	position: absolute;
+	top: 1vw;
+	right: 1vw;
+}
+
+.imagem_pedido_lista {
+	width: 1.5vw;
+	height: 1.5vw;
+}
+
+
+.imagem_info_col {
+	padding-left: 10vw;
+	padding-right: 0.25vw;
+	padding-top: 1.5vw;
+	display: inline-block;
+	text-align: center;
+}
+
+.info_nutricional {
+	padding-left: 1vw;
+	padding-right: 0.25vw;
+	text-align: left;
+}
+
+.tempo_espera {
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-top: 5.0vw;
+	padding-bottom: 5.0vw;
+	text-align: center;
+}
+
+.add_sub{
+	width: 2vw;
+	height: 2vw;
+	border-radius: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.acompanhamentos{
+	padding-left: 9vw;
+	padding-right: 5vw;
+	padding-top: 0vw;
+	padding-bottom: 2vw;
+	text-align: center;
+}
+.extras{
+	padding-top: 2vw;
+	padding-bottom: 2vw;
+	text-align: center;
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"]:disabled + .btn-group > label:first-child {
+	background-color: #78A178;
+	border-color: #78A178;
+}
+
+.form-group input[type="checkbox"]:disabled + .btn-group > label:last-child {
+	background-color:  #bfbfbf;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}
+
+.acompanhamento-container{
+	margin: 0 0 0 0;
+}
+
+.f1_checkbox_personalizacoes {
+	width: 100%;
+}
+
+.quantidade{
+	text-align: center;
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+	font-size: 1.5vw;
+}
+
+#limpar{
+	padding-bottom: 1vw;
+}
+
+.btn-primary[disabled] {
+	background-color: lightgray !important;
+	border-color: gray !important;
+	color: black;
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}

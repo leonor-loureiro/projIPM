@@ -1,0 +1,148 @@
+<div class="container tira" id="zona_f3">
+    <div id="barra_progresso_f3"></div>
+	<div class="f3_titulo">
+		Avaliação
+	</div>
+	<div class="row f3_7_positioning">
+		<div class="col-sm-4 rating-estilo">
+			<span class = "rating-font-size">Refeição:</span> <input id="rating_refeicao" value="0" type="number" min=0 max=5 step=1 data-size="sm" />
+			<span class = "rating-font-size">Atendimento:</span><input id="rating_atendimento" value="0" type="number" min=0 max=5 step=1 data-size="sm" />
+		</div>
+		<div class="col-sm-6">
+			<textarea name="comentario_fim" id="f3_7_comentario"></textarea>
+		</div>
+		<div class="col-sm-2 coluna-estilo">
+
+      <label>
+        <input type="radio" id= "f3_7_checkbox_elogio"class="option-input radio" name="example" checked />
+        <span>Elogios</span>
+      </label>
+      <label>
+        <input type="radio" class="option-input radio" name="example" />
+        <span>Reclamações</span>
+      </label>
+      <label>
+        <input type="radio" class="option-input radio" name="example" />
+        <span>Avaliações</span>
+      </label>
+	  </div>
+	<div class="row botoes_navegacao">
+		<div class="col-sm-6 text-left">&nbsp;</div>
+  		<div class="col-sm-6 text-right">
+			<button type="button" class="btn btn-primary btn-lg" onclick="f3_7_concluir()">Concluir</button>
+		</div>
+	</div>
+</div>
+<script>
+	jQuery(document).ready(function () {
+		$(function(){
+			// https://github.com/Mottie/Keyboard/wiki/Setup
+			$('#f3_7_comentario').keyboard({
+				language     : "pt",
+				layout: 'custom',
+				customLayout: {
+					'normal' : [
+						"\u005C 1 2 3 4 5 6 7 8 9 0 \u0027 \u00ab {bksp}",
+						"{tab} q w e r t y u i o p \u002b \u00b4",
+						"a s d f g h j k l \u00e7 \u00ba \u007e {enter}",
+						"{shift} \u003c z x c v b n m \u002c \u002e \u002d {shift}",
+						"{space} {alt}"
+					],
+					'shift' : [
+						"\u007c \u0021 \u0022 \u0023 \u0024 \u0025 \u0026 \u002f \u0028 \u0029 \u003d \u003F \u00bb {bksp}",
+						"{tab} Q W E R T Y U I O P \u002a \u0060",
+						"A S D F G H J K L \u00c7 \u00aa \u005e {enter}",
+						"{shift} \u003e Z X C V B N M \u003b \u003a \u005f {shift}",
+						"{space} {alt}"
+					],
+					// AltGr
+					'alt' : [
+						"\u005C 1 \u0040 \u00a3 \u00a7 \u20ac 6 \u007b \u005b \u005d \u007d \u0027 \u00ab {bksp}",
+						"{tab} q w \u20ac r t y u i o p \u0308 \u00b4",
+						"a s d f g h j k l \u00e7 \u00ba \u007e {enter}",
+						"{shift} \u003c z x c v b n m \u002c \u002e \u002d {shift}",
+						"{space} {alt}"
+					],
+					'alt-shift' : [
+						"\u007c \u0021 \u0022 \u0023 \u0024 \u0025 \u0026 \u002f \u0028 \u0029 \u003d \u003F \u00bb {bksp}",
+						"{tab} Q W \u20ac R T Y U I O P \u0308 \u0060",
+						"A S D F G H J K L \u00c7 \u00aa \u005e {enter}",
+						"{shift} \u003e Z X C V B N M \u003b \u003a \u005f {shift}",
+						"{space} {alt}"
+					]
+				},
+				// preview added above keyboard if true, original input/textarea used if false
+				usePreview : false,
+				// if true, the keyboard will always be visible
+				alwaysOpen : true
+			});
+		});
+
+		$("#rating_refeicao").rating({
+			starCaptions: {
+			0.5: 'Meia Estrela',
+			1: 'Uma Estrela',
+			1.5: 'Uma Estrela e Meia',
+			2: 'Duas Estrelas',
+			2.5: 'Duas Estrelas e Meia',
+			3: 'Três Estrelas',
+			3.5: 'Três Estrelas e Meia',
+			4: 'Quatro Estrelas',
+			4.5: 'Quatro Estrelas e Meia',
+			5: 'Cinco Estrelas'
+		},
+			clearButtonTitle: 'Limpar',
+			clearCaption: 'Não Avaliado',
+			hoverOnClear: false
+		});
+
+		$("#rating_atendimento").rating({
+			starCaptions: {
+			0.5: 'Meia Estrela',
+			1: 'Uma Estrela',
+			1.5: 'Uma Estrela e Meia',
+			2: 'Duas Estrelas',
+			2.5: 'Duas Estrelas e Meia',
+			3: 'Três Estrelas',
+			3.5: 'Três Estrelas e Meia',
+			4: 'Quatro Estrelas',
+			4.5: 'Quatro Estrelas e Meia',
+			5: 'Cinco Estrelas'
+		},
+			clearButtonTitle: 'Limpar',
+			clearCaption: 'Não Avaliado',
+			hoverOnClear: false
+		});
+
+		$('#rating-input').rating({
+				min: 0,
+				max: 5,
+				step: 1,
+				size: 'lg',
+				showClear: false
+			});
+
+		$('#btn-rating-input').on('click', function() {
+			$('#rating-input').rating('refresh', {
+				showClear:true,
+				disabled: !$('#rating-input').attr('disabled')
+			});
+		});
+
+
+		$('.btn-danger').on('click', function() {
+			$("#kartik").rating('destroy');
+		});
+
+		$('.btn-success').on('click', function() {
+			$("#kartik").rating('create');
+		});
+
+		$('#rating-input').on('rating.change', function() {
+			alert($('#rating-input').val());
+		});
+
+
+		$('.rb-rating').rating({'showCaption':true, 'stars':'3', 'min':'0', 'max':'3', 'step':'1', 'size':'xs', 'starCaptions': {0:'status:nix', 1:'status:wackelt', 2:'status:geht', 3:'status:laeuft'}});
+	});
+</script>

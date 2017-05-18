@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Com.ISTo</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv='cache-control' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+		<meta http-equiv='pragma' content='no-cache'>
+		<link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<script src="../libs/jquery-3.2.1.min.js"></script>
+		<script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="../libs/sprintf.min.js"></script>
+		<link rel="stylesheet" href="widgets/simple_digital_clock/sdc.css">
+		<script src="widgets/simple_digital_clock/sdc.js"></script>
+		<link rel="stylesheet" href="widgets/bootstrap-star-rating-4.0.1/css/star-rating.min.css">
+		<script src="widgets/bootstrap-star-rating-4.0.1/js/star-rating.min.js"></script>
+		<script src="widgets/bootstrap-star-rating-4.0.1/js/star-rating_locale_pt-br.js"></script>
+		<link href="../libs/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+		<script src="../libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+		<link href="../libs/Keyboard-1.26.22/css/keyboard.min.css" rel="stylesheet">
+		<script src="../libs/Keyboard-1.26.22/js/jquery.keyboard.min.js"></script>
+		<script src="../libs/Keyboard-1.26.22/js/jquery.mousewheel.min.js"></script>
+		<script src="../libs/Keyboard-1.26.22/languages/pt.min.js"></script>
+<!--		<script src="../libs/Keyboard-1.26.22/layouts/portuguese.min.js"></script>-->
+		<link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="fonts.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="f1.css">
+		<link rel="stylesheet" href="f2.css">
+		<link rel="stylesheet" href="f3.css">
+		<script src="main.js"></script>
+		<script src="pedidos.js"></script>
+		<script src="ofertas.js"></script>
+		<script src="f1.js"></script>
+		<script src="f2.js"></script>
+		<script src="f3.js"></script>
+	</head>
+	<body onload="f3_DUMMY_DATA(); loadMain(); loadModals(); SDC_startTime()">
+		<div class="jumbotron text-center">
+			<div id="atalho_ajuda" class="estilo_legenda" style="font-size: 1.15vw"><img id = "botao_ajuda" src="images/ajuda.svg" onclick="loadAjuda()"/> Ajuda</div>
+			<span id = "nome_restaurante">~Com.ISTo~</span>
+			<div id ="nome_restaurante_menu_principal">~Com.ISTo~</div>
+			<div id="simple_digital_clock" class="estilo_legenda">~Com.ISTo~</div>
+			<div id="proximo_pedido_entregue" class="estilo_legenda"></div>
+			<div id = "div_imagem_empregado" class = "empregado"><img id = "imagem_empregado_main" src = "images/waiter-icon.svg"/></div>
+		</div>
+		<div id="prato_timer" class="html"></div>
+		<div id="loaded">
+			<p>Falha ao carregar fragmento de página.
+			<p>Se se estiver a usar o Chrome/Chromium localmente, iniciar com --allow-file-access-from-files.
+			<p>Exemplo: chromium --allow-file-access-from-files &
+		</div>
+		<div id="prato"></div>
+		<div id="area_direita"></div>
+		<div id="prato_decor"></div>
+		<div id="modals"></div>
+		<img src="images/surprise.svg" id="surprise"></img>
+	</body>
+</html>
+<script>f2_load_timer();</script>

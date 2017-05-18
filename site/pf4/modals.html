@@ -1,0 +1,188 @@
+<!-- Modal OK-->
+<div class="modal-container">
+	<div class="modal fade" id="modalOk" role="dialog">
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content modals-content modals-width">
+					<div class="modal-body">
+						<p id = "modalOk-msg">O seu pedido está vazio!</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="modalOk-Ok" class="btn btn-default modal-button" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+<!-- Modal NaoSim-->
+<div class="modal-container">
+	<div class="modal fade" id="modalNaoSim" role="dialog">
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalNaoSim-pos">
+					<div class="modal-body">
+						<p id = "modalNaoSim-msg">Tem a certeza que deseja cancelar o seu pedido?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="modalNaoSim-Nao" class="btn btn-default modal-button" data-dismiss="modal">Não</button>
+						<button type="button" id="modalNaoSim-Sim" class="btn btn-default modal-button" data-dismiss="modal">Sim</button>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+<!-- Modal Sucesso-->
+<div class="modal-container">
+	<div class="modal fade" id="modalSucesso" role="dialog">
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalSucesso-pos">
+					<div class="modal-body">
+						<p id = "modalSucesso-msg">O seu pedido foi bem sucedido!</p>
+						<div id = "div_imagem_sucesso"><img id = "imagem_sucesso" src = "images/sucesso.svg"/></div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<!-- Modal Ajuda-->
+<div class="modal-container">
+	<div class="modal fade" id="modalAjuda" role="document">
+
+		<!-- Modal content-->
+		<div class="modal-content modals-content" id = "modal-content-Ajuda">
+			<div class="modal-header modal-header-Ajuda" style="text-align:center;">
+				<h4 id="modalAjuda-header">Fazer Pedido</h4>
+			</div>
+
+			<div class="modal-body modal-body-Ajuda" id="modalAjuda-body" style="font-weight: normal; font-size: 1.2vw;">
+      </div>
+
+			<div class="modal-footer modal-Ajuda-buttonsDiv">
+				<button type="button" onclick="play()"id="modalAjuda-ChamarEmpregado" class="btn btn-default modal-button" data-dismiss="modal" onclick="">Chamar Empregado</button>
+				<button type="button" id="modalAjuda-Fechar" class="btn btn-default modal-button" data-dismiss="modal">Fechar</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Modal Empregado-->
+<div class="modal-container">
+	<div class="modal fade" id="modalEmpregado" role="dialog">
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalEmpregado-pos" id = "modalEmpregado-size">
+					<div class="modal-body">
+						<div><p id = "modalEmpregado-msg">Um empregado chegará dentro de instantes!</p></div>
+						<div id = "div_imagem_empregado"><img id = "imagem_empregado" src = "images/waiter-icon.svg"/></div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<!-- Modal PagamentoConcluido-->
+<div class="modal-container">
+	<div class="modal fade" id="modalPagamento" role="dialog">
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalPagamento-pos" id = "modalPagamento-size">
+					<div class="modal-body">
+						<div><p id = "modalPagamento-msg">Obrigada e volte sempre!</p></div>
+						<div id = "div_imagem_sucesso_pagamento"><img id = "imagem_sucesso_pagamento" src = "images/sucesso.svg"/></div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<!-- Modal Contribuinte-->
+<div class="modal-container">
+	<div class="modal fade" id="modalContribuinte" role="dialog">
+
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalContribuinte-pos" id = "modalContribuinte-size">
+					<div class="modal-header">
+						<h class="modal-title" id = "modalContribuinte-msg"><b>Número Contribuinte</b></h>
+					</div>
+						<div class="modal-body">
+							<div class="col-sm-4 text-center">
+								<div class="row" id="f3_4_row_caixa">
+
+									<div class="col-sm-4">&nbsp;</div>
+									<div class="col-sm-4">&nbsp;</div>
+									<div class="col-sm-4 text-center">
+										<input type="text" id="f3_4_contribuinte"></input>
+										<script>
+											jQuery(document).ready(function () {
+												$(function(){
+													// https://github.com/Mottie/Keyboard/wiki/Setup
+													$('#f3_4_contribuinte').keyboard({
+														language     : "pt",
+														layout: 'custom',
+														customLayout: { 'normal': ['7 8 9', '4 5 6', '1 2 3', '{clear} 0 {b}'] },
+														// preview added above keyboard if true, original input/textarea used if false
+														usePreview : false,
+														// if true, the keyboard will always be visible
+														alwaysOpen : true,
+														// allow jQuery position utility to reposition the keyboard on window resize
+														reposition : true
+													});
+													document.getElementById('f3_4_contribuinte_keyboard').style['font-size'] = '1.4em';
+													$('#f3_4_contribuinte').getkeyboard().reposition();
+												});
+											});
+										</script>
+
+									</div>
+
+								</div>
+						</div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row"><p></div>
+						<div class="row row-modal">
+							<button type="button" class="btn btn-primary btn-lg text-left" id ="modal-ok-button" onclick="f3_5()">Ok</button>
+							<button type="button" class="btn btn-primary btn-lg text-left" onclick="f3_5()">Fechar</button>
+						</div>
+					</div>
+			</div>
+	</div>
+</div>
+
+
+<!-- Modal InSucesso-->
+<div class="modal-container">
+	<div class="modal fade" id="modalInsucesso" role="dialog">
+
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content modals-content modalInsucesso-pos">
+					<div class="modal-body">
+						<p id = "modalInsucesso-msg">Não foi possível concluir a transação com sucesso. Tente novamente.</p>
+						<div id = "div_imagem_insucesso"><img id = "imagem_insucesso" src = "images/insucesso.svg"/></div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>

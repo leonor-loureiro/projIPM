@@ -1,0 +1,37 @@
+<img src="images/f2_acompanhar_pedido_listagem.svg" class="area_acompanhar_pedido_fundo">
+<div class="container area_acompanhar_pedido">
+	<div class="row" id ="header_acompanhar_pedidos">
+
+		<p id ="titulo_listagem_f2"><b>Pedidos Efetuados</b></p>
+	</div>
+	<div id="listagem_acompanhar_pedido">
+		<div class="seccao_acompanhar_pedidos" id="em_espera">
+			<h4 class="header_seccao_listagem">~Em Espera~</h4>
+			<div id="lista_em_espera">
+			</div>
+		</div>
+
+		<div class=" seccao_acompanhar_pedidos" id="em_preparacao">
+			<h4 class="header_seccao_listagem">~Em Preparação~</h4>
+			<div id="lista_em_preparacao">
+			</div>
+		</div>
+
+		<div class=" seccao_acompanhar_pedidos" id="entregues">
+			<h4 class="header_seccao_listagem">~Entregues~</h4>
+			<div id="lista_entregues">
+			</div>
+		</div>
+	</div>
+
+	<div class="row" id="total_acompanhar_pedidos">
+		<span><b>Total: </b></span><span id = "preco_total">xxxx</span>
+	</div>
+
+
+	<div class="row" id="footer_acompanhar_pedidos">
+		<button class="btn btn-primary botoes_acompanhar_pedidos pull-right" id="botao_fechar" onclick="f2_fechar()">Fechar</button>
+		<button class="btn btn-primary botoes_acompanhar_pedidos" id="botao_editar_em_espera" onclick="f2_editar_pedidos()">Editar Pedidos</button>
+	</div>
+</div>
+<script>f2_desenhar_pedidos();</script>

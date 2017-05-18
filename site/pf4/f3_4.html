@@ -1,0 +1,41 @@
+<div class="container tira" id="zona_f3">
+	<div id="barra_progresso_f3"></div>
+	<div class="f3_titulo">
+		Número de contribuinte
+	</div>
+	<div class="row" id="f3_4_row_caixa">
+		<div class="col-sm-4">&nbsp;</div>
+		<div class="col-sm-4">&nbsp;</div>
+		<div class="col-sm-4 text-center">
+			<input type="text" id="f3_4_contribuinte"></input>
+		</div>
+	</div>
+	<div class="row botoes_navegacao">
+		<div class="col-sm-6 text-left">
+			<button type="button" class="btn btn-primary btn-lg" onclick="f3_4_retroceder()">Retroceder</button>
+		</div>
+  		<div class="col-sm-6 text-right">
+			<button type="button" class="btn btn-primary btn-lg" onclick="f3_5()">Próximo</button>
+		</div>
+	</div>
+</div>
+<script>
+	jQuery(document).ready(function () {
+		$(function(){
+			// https://github.com/Mottie/Keyboard/wiki/Setup
+			$('#f3_4_contribuinte').keyboard({
+				language     : "pt",
+				layout: 'custom',
+				customLayout: { 'normal': ['7 8 9', '4 5 6', '1 2 3', '{clear} 0 {b}'] },
+				// preview added above keyboard if true, original input/textarea used if false
+				usePreview : false,
+				// if true, the keyboard will always be visible
+				alwaysOpen : true,
+				// allow jQuery position utility to reposition the keyboard on window resize
+				reposition : true
+			});
+			document.getElementById('f3_4_contribuinte_keyboard').style['font-size'] = '1.4em';
+			$('#f3_4_contribuinte').getkeyboard().reposition();
+		});
+	});
+</script>

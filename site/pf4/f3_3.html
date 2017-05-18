@@ -1,0 +1,32 @@
+<div class="container tira" id="zona_f3">
+	<div id="barra_progresso_f3"></div>
+	<div class="f3_titulo">
+		Selecione o modo de pagamento
+	</div>
+	<div class="row estilo-modo-pagamento">
+		<div class="col-sm-1">&nbsp;</div>
+		<div class="col-sm-10">
+			<div class="col-sm-4 text-center center-block" onclick="f3_4('dinheiro')">
+				<img onclick="f3_4('dinheiro')" src="images/dinheiro.svg" class="estilo-imagens-modo-pagamento"></img>
+				<br/><br/>
+				<p class = "descricao-modo-pagamento" onclick="f3_4('dinheiro')">Dinheiro</p>
+			</div>
+			<div class="col-sm-4 text-center center-block" onclick="f3_4('multibanco')">
+				<img id = "cartao-credito" onclick="f3_4('multibanco')" src="images/multibanco2.svg" class="estilo-imagens-modo-pagamento"></img>
+				<br/><br/>
+				<p id = "text-multibanco"class = "descricao-modo-pagamento" onclick="f3_4('multibanco')">Multibanco</p>
+			</div>
+			<div class="col-sm-4 text-center center-block" onclick="f3_4('smartphone')">
+				<img id = "smartphone-NFC" onclick="f3_4('smartphone')" src="images/smartphone.svg" class="estilo-imagens-modo-pagamento"></img>
+				<br/><br/>
+				<p class = "descricao-modo-pagamento" onclick="f3_4('smartphone')">Smartphone com NFC</p>
+			</div>
+		</div>
+		<div class="col-sm-1">&nbsp;</div>
+	</div>
+	<div class="row botoes_navegacao">
+		<div class="col-sm-2 text-left">
+			<button type="button" class="btn btn-primary btn-lg" onclick="f3_3_retroceder()">Retroceder</button>
+		</div>
+	</div>
+</div>
