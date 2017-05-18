@@ -387,14 +387,14 @@ html{
 }
 
 .modalContribuinte-pos{
-  height: 28.5vw;
+  height: 30vw;
   margin-top: 10vw;
   width: 33vw;
   margin-left: -2vw;
 }
 
 .modalInsucesso-pos{
-  margin-top: 17vw;
+  margin-top: 19vw;
   width: 42vw;
   margin-left: -5vw;
   height: 18vw;
@@ -408,10 +408,11 @@ html{
 #modalInsucesso-msg{
   font-size: 21px;
   font-weight: bold;
+  text-align: center;
 }
 
 #imagem_insucesso{
-  height: 10vw;
+  height: 8.5vw;
   margin-left: 14vw;
   margin-top: 1vw;
 }
