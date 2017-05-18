@@ -205,31 +205,29 @@ function f3_7_concluir()
 {
 	f3_vendo_7_flag = "false";
 	if (document.getElementById('rating_refeicao').value == 5
-		&& document.getElementById('rating_atendimento').value == 5
-		&& document.getElementById('f3_7_checkbox_elogio').checked)
+		&& document.getElementById('rating_atendimento').value == 5)
+		//&& document.getElementById('f3_7_checkbox_elogio').checked)
 	{
 		f3_surprise();
-
 		setTimeout(function(){
-			f3_despedida();
-		}, 3000);
-
+			$("#modalOk-msg").text("A sua avaliação foi submetida.");
+			$("#modalOk-footer").hide();
+			$("#modalOk").modal();
+		}, 1700);
 		setTimeout(function(){
+			$("#modalOk").modal('hide');
 			window.location.reload(false);
-		}, 4000);
+		}, 3300);
 	}
-	else
-	{
-
+	else{
+		$("#modalOk-msg").text("A sua avaliação foi submetida.");
+		$("#modalOk-footer").hide();
+		$("#modalOk").modal();
 		setTimeout(function(){
-			f3_despedida();
-		}, 1000);
-
-		setTimeout(function(){
-			window.location.reload(false);
-		}, 2000);
+				$("#modalOk").modal('hide');
+				window.location.reload(false);
+		}, 1500);
 	}
-
 }
 
 function f3_2_desenhar()
@@ -548,6 +546,7 @@ function f3_despedida(){
 		f3_vendo_7();
 	}, 4000);
 }
+
 
 function f3_5_desenhar()
 {
