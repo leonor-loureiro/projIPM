@@ -143,7 +143,7 @@ function f3_5()
 function f3_5_retroceder()
 {
 	f3_vendo_5 = false;
-	f3_4(f3_modo_de_pagamento);
+	f3_3();
 }
 
 function f3_6()
