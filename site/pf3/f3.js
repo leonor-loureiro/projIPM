@@ -112,10 +112,10 @@ function get_f3_vendo_5()
 
 function f3_5()
 {
-	
+
 	$("#modalContribuinte").modal('hide');
-	var keyboard = $('#f3_4_contribuinte').getkeyboard();
-	keyboard.destroy();
+	document.getElementById("f3_4_contribuinte_keyboard").style.visibility ="hidden";
+
 	switch(f3_modo_de_pagamento)
 	{
 		case "dinheiro":
