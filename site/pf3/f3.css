@@ -68,6 +68,7 @@
 	border-bottom: none;*/
 	box-shadow: 0 0 0.2vw black;
 	color: white;
+	padding-bottom: 1px;
 }
 
 
@@ -296,6 +297,8 @@
 .f3_2_subtotal_pagamento {
 	text-align: right;
 	margin-top: 1vw;
+	margin-right: -0.4vw;
+	margin-bottom: -0.5vw;
 }
 
 .pf3_2_lista_pedidos {
@@ -390,7 +393,7 @@
 }
 
 .col-sm-6{
-	margin-top: 5px;
+	margin-top: 8px;
 }
 
 
@@ -421,8 +424,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 40px;
-  width: 40px;
+	height: 30px;
+	width: 30px;
   transition: all 0.15s ease-out 0s;
   background: #cbd1d8;
   border: none;
@@ -475,4 +478,8 @@
 
 .rating-font-size{
 	font-size: 20px;
+}
+
+.lista-pos{
+	margin-top: -0.2vw;
 }
