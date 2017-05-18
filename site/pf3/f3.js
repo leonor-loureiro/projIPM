@@ -139,6 +139,7 @@ function f3_5()
 	}
 	f3_vendo_5 = true;
 }
+ 
 
 function f3_5_retroceder()
 {
