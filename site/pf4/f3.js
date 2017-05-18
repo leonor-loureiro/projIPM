@@ -91,8 +91,8 @@ function f3_4(modo_de_pagamento)
 
 function f3_4_retroceder()
 {
-	var keyboard = $('#f3_4_contribuinte').getkeyboard();
-	keyboard.destroy();
+	$("#modalContribuinte").modal('hide');
+	document.getElementById("f3_4_contribuinte_keyboard").style.visibility ="hidden";
 	f3_3(f3_3_voltar_para_f3_1);
 }
 
@@ -167,25 +167,32 @@ function f3_6()
 		if (existem_itens_por_pagar())
 		{
 			pedidos_a_pagar = [];
-			$("#botao_avaliar").attr("onclick","f3_2()");
-			document.getElementById("botao_avaliar").innerHTML="Próximo";
-			document.getElementById("botao_concluir").style.visibility="hidden";
+			$("#botao_concluir").attr("onclick","f3_2()");
+			document.getElementById("botao_concluir").innerHTML="Próximo";
+			
 
 		}
 	});
 }
 
+f3_vendo_7_flag="false";
+function f3_vendo_7(){
+	if(f3_vendo_7_flag=="true"){
+		return;
+	}
+	window.location.reload(false);
+}
 function f3_6_concluir()
 {
 	f3_despedida();
-	setTimeout(function(){
-		window.location.reload(false);
-	}, 2000);
+	
+	
 
 }
 
 function f3_7()
 {
+	f3_vendo_7_flag = "true";
 	$("#loaded").load("f3_7.html", function(){
 		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
 				$("#rating").attr("disabled","false");
@@ -196,6 +203,7 @@ function f3_7()
 
 function f3_7_concluir()
 {
+	f3_vendo_7_flag = "false";
 	if (document.getElementById('rating_refeicao').value == 5
 		&& document.getElementById('rating_atendimento').value == 5
 		&& document.getElementById('f3_7_checkbox_elogio').checked)
@@ -537,7 +545,8 @@ function f3_despedida(){
 	// http://stackoverflow.com/a/22944616
 	setTimeout(function(){
 		$("#modalPagamento").modal('hide');
-	}, 1500);
+		f3_vendo_7();
+	}, 4000);
 }
 
 function f3_5_desenhar()

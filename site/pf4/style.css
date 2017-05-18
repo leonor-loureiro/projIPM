@@ -236,6 +236,7 @@ body {
   font-size: 1.3vw;
 }
 
+
 #modalNaoSim-msg{
   font-size: 1.3vw;
 }
@@ -359,7 +360,9 @@ ul{
     }
 }
 
-
+#modalPagamento-Avaliacao{
+	width: 10vw;
+}
 #div_imagem_sucesso_pagamento{
   padding-left: 37%;
 }
@@ -375,8 +378,8 @@ ul{
 }
 
 #modalPagamento-size{
-  height: 15vw;
-  width: 33vw;
+  height: 20vw;
+  width: 35vw;
   font-size: 2vw;
   margin-top: 15vw;
 }
@@ -390,7 +393,7 @@ html{
 }
 
 .modalContribuinte-pos{
-  height: 30vw;
+  height: 29.5vw;
   margin-top: 10vw;
   width: 33vw;
   margin-left: -2vw;
@@ -400,7 +403,7 @@ html{
   margin-top: 19vw;
   width: 42vw;
   margin-left: -5vw;
-  height: 17vw;
+  height: 18vw;
 }
 
 #modalContribuinte-msg{

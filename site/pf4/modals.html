@@ -99,16 +99,20 @@
 <div class="modal-container">
 	<div class="modal fade" id="modalPagamento" role="dialog">
 
-			<div class="modal-dialog">
+		<div class="modal-dialog">
 
-				<!-- Modal content-->
-				<div class="modal-content modals-content modalPagamento-pos" id = "modalPagamento-size">
-					<div class="modal-body">
-						<div><p id = "modalPagamento-msg">Obrigada e volte sempre!</p></div>
-						<div id = "div_imagem_sucesso_pagamento"><img id = "imagem_sucesso_pagamento" src = "images/sucesso.svg"/></div>
-					</div>
+			<!-- Modal content-->
+			<div class="modal-content modals-content modalPagamento-pos" id = "modalPagamento-size">
+				<div class="modal-body">
+					<div><p id = "modalPagamento-msg">Obrigada e volte sempre!</p></div>
+					<div id = "div_imagem_sucesso_pagamento"><img id = "imagem_sucesso_pagamento" src = "images/sucesso.svg"/></div>
+				</div>
+				<div class="modal-footer">
+						<button type="button" id="modalPagamento-Fechar" class="btn btn-default modal-button pull-left" data-dismiss="modal">Fechar</button>
+						<button type="button" id="modalPagamento-Avaliacao" class="btn btn-lg btn-default modal-button " data-dismiss="modal" onclick="f3_7()">Avaliação</button>
 				</div>
 			</div>
+		</div>
 	</div>
 </div>
 
@@ -162,7 +166,7 @@
 						<div class="row"><p></div>
 						<div class="row row-modal">
 							<button type="button" class="btn btn-primary btn-lg text-left" id ="modal-ok-button" onclick="f3_5()">Ok</button>
-							<button type="button" class="btn btn-primary btn-lg text-left" onclick="f3_5()">Fechar</button>
+							<button type="button" class="btn btn-primary btn-lg text-left" onclick="f3_4_retroceder()">Fechar</button>
 						</div>
 					</div>
 			</div>
@@ -186,3 +190,5 @@
 			</div>
 	</div>
 </div>
+
+

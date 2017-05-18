@@ -235,7 +235,7 @@ $(document).keypress(function(e) {
 	// Space
 // 	console.log(e.which);
 	if(e.which == 32 && get_f3_vendo_5()){
-		f3_3();
+		f3_5_retroceder();
 		modalInsucesso();
 
 	}
