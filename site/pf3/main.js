@@ -265,5 +265,5 @@ function modalInsucesso(){
 	// http://stackoverflow.com/a/22944616
 	setTimeout(function(){
 		$("#modalInsucesso").modal('hide');
-	}, 1500);
+	}, 1850);
 }

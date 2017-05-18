@@ -253,7 +253,7 @@ body {
 }
 
 .modal-footer{
-	border-color: rgba(184, 140, 33, 0.2)
+	border-color: rgba(184, 140, 33, 0.2);
 }
 
 .modal-button{
@@ -270,6 +270,9 @@ body {
   margin-top: 14vw;
 }
 
+.modal-header{
+	border-color: rgba(184, 140, 33, 0.2);
+}
 
 .modal-Ajuda-buttonsDiv{
   border-top-color: #d2a4a499;
