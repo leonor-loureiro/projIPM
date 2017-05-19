@@ -91,8 +91,8 @@ function f3_4(modo_de_pagamento)
 
 function f3_4_retroceder()
 {
-	var keyboard = $('#f3_4_contribuinte').getkeyboard();
-	keyboard.destroy();
+	$("#modalContribuinte").modal('hide');
+	document.getElementById("f3_4_contribuinte_keyboard").style.visibility ="hidden";
 	f3_3(f3_3_voltar_para_f3_1);
 }
 
@@ -167,25 +167,32 @@ function f3_6()
 		if (existem_itens_por_pagar())
 		{
 			pedidos_a_pagar = [];
-			$("#botao_avaliar").attr("onclick","f3_2()");
-			document.getElementById("botao_avaliar").innerHTML="Próximo";
-			document.getElementById("botao_concluir").style.visibility="hidden";
+			$("#botao_concluir").attr("onclick","f3_2()");
+			document.getElementById("botao_concluir").innerHTML="Próximo";
+			
 
 		}
 	});
 }
 
+f3_vendo_7_flag="false";
+function f3_vendo_7(){
+	if(f3_vendo_7_flag=="true"){
+		return;
+	}
+	window.location.reload(false);
+}
 function f3_6_concluir()
 {
 	f3_despedida();
-	setTimeout(function(){
-		window.location.reload(false);
-	}, 2000);
+	
+	
 
 }
 
 function f3_7()
 {
+	f3_vendo_7_flag = "true";
 	$("#loaded").load("f3_7.html", function(){
 		$("#barra_progresso_f3").load("f3_barra_progresso.html", function(){
 				$("#rating").attr("disabled","false");
@@ -196,32 +203,31 @@ function f3_7()
 
 function f3_7_concluir()
 {
+	f3_vendo_7_flag = "false";
 	if (document.getElementById('rating_refeicao').value == 5
-		&& document.getElementById('rating_atendimento').value == 5
-		&& document.getElementById('f3_7_checkbox_elogio').checked)
+		&& document.getElementById('rating_atendimento').value == 5)
+		//&& document.getElementById('f3_7_checkbox_elogio').checked)
 	{
 		f3_surprise();
-
 		setTimeout(function(){
-			f3_despedida();
-		}, 3000);
-
+			$("#modalOk-msg").text("A sua avaliação foi submetida.");
+			$("#modalOk-footer").hide();
+			$("#modalOk").modal();
+		}, 1700);
 		setTimeout(function(){
+			$("#modalOk").modal('hide');
 			window.location.reload(false);
-		}, 4000);
+		}, 3300);
 	}
-	else
-	{
-
+	else{
+		$("#modalOk-msg").text("A sua avaliação foi submetida.");
+		$("#modalOk-footer").hide();
+		$("#modalOk").modal();
 		setTimeout(function(){
-			f3_despedida();
-		}, 1000);
-
-		setTimeout(function(){
-			window.location.reload(false);
-		}, 2000);
+				$("#modalOk").modal('hide');
+				window.location.reload(false);
+		}, 1500);
 	}
-
 }
 
 function f3_2_desenhar()
@@ -332,54 +338,6 @@ function f3_2_desenhar()
 		html=html.concat(sprintf(template_collapse_pago,numero_pagamento,header,numero_pagamento,content));
 		numero_pagamento--;
 	}
-/**
-	template_pagos = `
-<div class="row pf3_2_lista_pedidos">
-	<div class="col-md-10">
-		%s%s%s
-	</div>
-	<div class="col-md-2 pull-right text-right">
-		<b>%s€</b>
-	</div>
-</div>
-`;
-
-	var html = "";
-	var ultimo_separador = -1;
-	var total_subpagamento = 0;
-	var numero_pagamento = get_pedidos_pagos().length;
-	for (var lista of get_pedidos_pagos().slice().reverse())
-	{
-		total_subpagamento = 0;
-		html = html.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Pagamento</p>");
-
-		for (var item of sort_pedidos_por_nome(lista))
-		{
-			var mult = "";
-			if (item.quantidade > 1)
-			{
-				mult = String(item.quantidade) + "× ";
-			}
-			var personalizado = "";
-			if (item.personalizado)
-			{
-				personalizado = "<b>[P]</b> "
-			}
-
-			html = html.concat(sprintf(template_pagos,
-				mult, personalizado, item.oferta.nome,
-				(item.oferta.preco * item.quantidade).toFixed(2)
-			));
-
-			total_subpagamento += item.oferta.preco * item.quantidade;
-		}
-		html = html.concat("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_subpagamento.toFixed(2) + "€</b></p>");
-		ultimo_separador++;
-		html = html.concat("<hr class=\"f3_2_separador\" id=f3_2_separador_" + ultimo_separador + ">");
-		numero_pagamento--;
-	}
-
-	$("#f3_2_lista_pagos").html(html);*/
 	$("#accordion").html(html);
 	if (ultimo_separador != -1)
 	{
@@ -427,9 +385,9 @@ function f3_2_checkbox(element)
 			{
 				pedidos_a_pagar[index].quantidade--;
 
-				if(selecionou_tudo){
+			}
+			if(selecionou_tudo){
 					f3_selecionar_tudo.checked = false;
-				}
 			}
 		}
 	}
@@ -537,8 +495,10 @@ function f3_despedida(){
 	// http://stackoverflow.com/a/22944616
 	setTimeout(function(){
 		$("#modalPagamento").modal('hide');
-	}, 1500);
+		f3_vendo_7();
+	}, 4000);
 }
+
 
 function f3_5_desenhar()
 {
