@@ -581,3 +581,19 @@ function f3_5_desenhar()
 	$("#f3_5_lista_pagos").html(html);
 	$("#f3_5_lista_pagos_total").html("<p class=\"f3_2_subtotal_pagamento\">Total: <b>" + total_pagamento.toFixed(2) + "€</b></p>");
 }
+
+function f3_4_contribuinte_handler()
+{
+	var valor = document.getElementById('f3_4_contribuinte').value;
+	if (valor.length >= 9)
+	{
+		$("#modal-contribuinte-ok-button").text('OK');
+		document.getElementById('f3_4_contribuinte').value = valor.substr(0, 9);
+		return false;
+	}
+	else
+	{
+		$("#modal-contribuinte-ok-button").text('Fechar sem inserir contribuinte');
+		return true;
+	}
+}

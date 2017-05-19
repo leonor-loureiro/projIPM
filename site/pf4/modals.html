@@ -129,7 +129,7 @@
 									<div class="col-sm-4">&nbsp;</div>
 									<div class="col-sm-4">&nbsp;</div>
 									<div class="col-sm-4 text-center">
-										<input type="text" id="f3_4_contribuinte"></input>
+										<input type="text" maxlength="9" id="f3_4_contribuinte"></input>
 										<script>
 											jQuery(document).ready(function () {
 												$(function(){
@@ -143,9 +143,12 @@
 														// if true, the keyboard will always be visible
 														alwaysOpen : true,
 														// allow jQuery position utility to reposition the keyboard on window resize
-														reposition : true
+														reposition : true,
+														change: function(event, keyboard, el) {
+															f3_4_contribuinte_handler();
+														},
 													});
-													document.getElementById('f3_4_contribuinte_keyboard').style['font-size'] = '1.4em';
+													document.getElementById('f3_4_contribuinte_keyboard').style['font-size'] = '1.3em';
 													$('#f3_4_contribuinte').getkeyboard().reposition();
 												});
 											});
@@ -160,9 +163,8 @@
 						<div class="row"><p></div>
 						<div class="row"><p></div>
 						<div class="row"><p></div>
-						<div class="row row-modal">
-							<button type="button" class="btn btn-primary btn-lg text-left" id ="modal-ok-button" onclick="f3_5()">Ok</button>
-							<button type="button" class="btn btn-primary btn-lg text-left" onclick="f3_5()">Fechar</button>
+						<div class="row row-modal text-center">
+							<button type="button" class="btn btn-primary btn-lg text-left" id ="modal-contribuinte-ok-button" onclick="f3_5()">Fechar sem inserir contribuinte</button>
 						</div>
 					</div>
 			</div>
