@@ -496,7 +496,7 @@ function f3_despedida(){
 	setTimeout(function(){
 		$("#modalPagamento").modal('hide');
 		f3_vendo_7();
-	}, 4000);
+	}, 15000);
 }
 
 
