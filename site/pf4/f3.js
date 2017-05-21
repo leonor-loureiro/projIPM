@@ -311,7 +311,7 @@ function f3_2_desenhar()
 	{	content="";
 		header = "";
 		total_subpagamento = 0;
-		header = header.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Pagamento</p>");
+		header = header.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Transação</p>");
 
 		for (var item of sort_pedidos_por_nome(lista))
 		{
