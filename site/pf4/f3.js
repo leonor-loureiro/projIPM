@@ -499,6 +499,10 @@ function f3_despedida(){
 	}, 15000);
 }
 
+function f3_6_fim()
+{
+	window.location.reload(false);
+}
 
 function f3_5_desenhar()
 {
