@@ -238,7 +238,6 @@ $(document).keypress(function(e) {
 		decrementar_tempo_espera();
 		if (get_f2_vendo_1())
 		{
-			modalInsucesso();
 			f2_desenhar_pedidos();
 		}
 	}
