@@ -307,7 +307,7 @@ function f2_timer() {
 		var vw = $(window).width() / 100;
 		var r = 2*Math.PI*25*vw;
 		
-		decrementar_tempo_espera(5, em_edicao);
+		decrementar_tempo_espera(1, em_edicao);
 		if(f2_vendo_1)
 		{
 			f2_desenhar_pedidos();

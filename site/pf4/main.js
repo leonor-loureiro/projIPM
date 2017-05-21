@@ -232,14 +232,9 @@ function marcar_img_f3()
 
 // H4x0r1ng m0d3
 $(document).keypress(function(e) {
+//  	console.log(e.which);
 	// Space
-// 	console.log(e.which);
-	if(e.which == 32 && get_f3_vendo_5()){
-		f3_5_retroceder();
-		modalInsucesso();
-
-	}
-	else if(e.which == 32) {
+	if(e.which == 32) {
 		decrementar_tempo_espera();
 		if (get_f2_vendo_1())
 		{
@@ -247,12 +242,16 @@ $(document).keypress(function(e) {
 			f2_desenhar_pedidos();
 		}
 	}
-	// Enter
-	else if(e.which == 13 && get_f3_vendo_5()) {
+	// Space
+	if(e.which == 32 && get_f3_vendo_5()) {
 		f3_6();
 	}
+	// Enter
+	else if(e.which == 13 && get_f3_vendo_5()){
+		f3_5_retroceder();
+		modalInsucesso();
 
-
+	}
 	// S
 // 	else if(e.which == 115) {
 // 		f3_surprise();
