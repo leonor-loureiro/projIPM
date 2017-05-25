@@ -139,7 +139,7 @@ function f3_5()
 	}
 	f3_vendo_5 = true;
 }
- 
+
 
 function f3_5_retroceder()
 {
@@ -169,7 +169,7 @@ function f3_6()
 			pedidos_a_pagar = [];
 			$("#botao_concluir").attr("onclick","f3_2()");
 			document.getElementById("botao_concluir").innerHTML="Próximo";
-			
+
 
 		}
 	});
@@ -185,8 +185,8 @@ function f3_vendo_7(){
 function f3_6_concluir()
 {
 	f3_despedida();
-	
-	
+
+
 
 }
 
@@ -311,7 +311,7 @@ function f3_2_desenhar()
 	{	content="";
 		header = "";
 		total_subpagamento = 0;
-		header = header.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "º Transação</p>");
+		header = header.concat("<p class=\"f3_2_subtitulo_pagamento\">" + numero_pagamento + "ª Transação</p>");
 
 		for (var item of sort_pedidos_por_nome(lista))
 		{
