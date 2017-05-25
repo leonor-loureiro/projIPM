@@ -243,7 +243,7 @@ $(document).keypress(function(e) {
 	}
 	// Space
 	if(e.which == 32 && get_f3_vendo_5()) {
-		f3_6();
+		f3_6();		
 	}
 	// Enter
 	else if(e.which == 13 && get_f3_vendo_5()){

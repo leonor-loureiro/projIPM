@@ -173,6 +173,12 @@ function f3_6()
 
 		}
 	});
+	if(existem_itens_por_pagar()){
+		setTimeout(function(){
+			f3_2();
+		}, 3000);
+	}
+
 }
 
 f3_vendo_7_flag="false";
