@@ -557,7 +557,7 @@ function f3_4_contribuinte_handler()
 	}
 	else
 	{
-		$("#modal-contribuinte-ok-button").text('Fechar sem inserir contribuinte');
+		$("#modal-contribuinte-ok-button").text('Prosseguir sem inserir contribuinte');
 		return true;
 	}
 }
